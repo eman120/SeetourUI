@@ -87,7 +87,7 @@
                         <small *ngIf="AccountNumber.errors?.['required']">AccountNumber is Required!!</small>
 
                       </div>
-                      <!-- <input type="text" class="form-control mb-4 p-2" id="validationDefault01" required placeholder="Bank Name"> -->
+
                          <input #SwiftCode="ngModel"  ngModel name ="SwiftCode" type="number" id="SwiftCode" class="form-control form-control-lg mb-4 p-2" placeholder="SwiftCode" required/>
                         <div class="alert alert-danger" [hidden]="SwiftCode.valid || SwiftCode.untouched">
                           <small *ngIf="SwiftCode.errors?.['required']">SwiftCode is Required!!</small>
