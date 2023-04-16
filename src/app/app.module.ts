@@ -9,12 +9,12 @@ import { AboutUsComponent } from './component/about-us/about-us.component';
 import { ContactUsComponent } from './component/contact-us/contact-us.component';
 import { DetailsComponent } from './component/details/details.component';
 import { TourHomeComponent } from './component/tour-home/tour-home.component';
-
-import { TourGuidComponent } from './component/tour-guid/tour-guid.component';
+import { TourGuideComponent } from './component/tour-guide/tour-guide.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ErrorComponent } from './component/error/error.component';
 import { HeaderComponent } from './component/header/header.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +26,10 @@ import { HeaderComponent } from './component/header/header.component';
     ContactUsComponent,
     DetailsComponent,
     TourHomeComponent,
-
-    TourGuidComponent,
+    TourGuideComponent,
     ErrorComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
