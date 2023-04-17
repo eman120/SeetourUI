@@ -18,8 +18,7 @@ export class UploadImageComponent {
       this.http.post('https://localhost:7277/api/AzureImagesURL/UploadImage', formData)
         .subscribe((result: any) => {
           console.log(result);
-          // Reset the form after successful upload
-          fileInput.value = '';
+          // Reset the form after
         }, (error: any) => {
           console.error(error);
         });
