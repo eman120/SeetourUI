@@ -1,15 +1,14 @@
 <form (submit)="onSubmit()">
-    <div class="form-group">
-      <label for="formFileLg" class="form-label">Select images:</label>
-      <input class="form-control form-control-lg" type="file" multiple (change)="onSelect($event)">
-    </div>
-    <button type="submit" class="btn btn-primary">Upload Images</button>
-  </form>
-  
-  <div *ngIf="uploadedUrls.length > 0" >
-    <div *ngFor="let image of uploadedUrls">
+  <div class="form-group">
+    <label for="formFileLg" class="form-label">Select images:</label>
+    <input class="form-control form-control-lg" type="file" multiple (change)="onSelect($event)">
+  </div>
+  <button type="submit" class="btn btn-primary">Upload Images</button>
+</form>
 
-        <img  [src]="image.url" />
-      </div>
+<div *ngIf="uploadedUrls.length > 0" >
+  <div *ngFor="let image of uploadedUrls">
+
+      <img  [src]="image.url" />
     </div>
-  
+  </div>

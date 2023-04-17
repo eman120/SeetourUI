@@ -11,12 +11,13 @@ import { DetailsComponent } from './component/details/details.component';
 import { TourHomeComponent } from './component/tour-home/tour-home.component';
 
 import { TourGuidComponent } from './component/tour-guid/tour-guid.component';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ErrorComponent } from './component/error/error.component';
 import { HeaderComponent } from './component/header/header.component';
 import { UploadImageComponent } from './component/upload-image/upload-image.component';
 import { UploadImagesComponent } from './component/upload-images/upload-images.component';
+
 
 @NgModule({
   declarations: [
