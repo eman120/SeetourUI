@@ -10,13 +10,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="service.html" class="nav-item nav-link">Services</a>
-                    <a href="package.html" class="nav-item nav-link">Packages</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a routerLink="/home" routerLinkActive="active" class="nav-item nav-link">Home</a>
+                    <a routerLink="/about" routerLinkActive="active" class="nav-item nav-link">About</a>
+                    <a routerLink="/services" routerLinkActive="active" class="nav-item nav-link">Services</a>
+                    <a routerLink="/tour" routerLinkActive="active" class="nav-item nav-link">Tours</a>
+                    <a routerLink="/contact" routerLinkActive="active" class="nav-item nav-link">Contact</a>
                 </div>
-                <a href="" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
+                <a routerLink="/login" class="btn btn-primary rounded-pill py-2 px-4 me-2">Login</a>
+                <a routerLink="/register" class="btn btn-primary rounded-pill py-2 px-4 me-2">Become A Partner</a>
+                <a routerLink="" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
             </div>
         </nav>
         <!-- <div class="container-fluid bg-primary py-5 mb-5 hero-header">

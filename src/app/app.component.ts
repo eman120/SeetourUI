@@ -17,6 +17,10 @@ export class AppComponent implements OnInit {
     }, 1);
   }
   
+  onBackToTopClick() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   ngOnInit(): void {
     this.spinner();
     $('.back-to-top').css('display', 'none');

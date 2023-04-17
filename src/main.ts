@@ -12,15 +12,15 @@ $(window).scroll(() => {
     $('.back-to-top').css('display', 'none');
   }
 });
-$('a.back-to-top').click(function(event) {
-  event.preventDefault(); // Prevent the default behavior of the link
-  var target = $(this).attr('href'); // Get the href attribute of the link
-  if (target === '#' || !target) { // If the href is empty or "#"
-    $('html, body').animate({scrollTop: 0}, 800); // Scroll to the top of the page
-  } else { // If the href is not empty or "#"
-    $('html, body').animate({scrollTop: 0}, 800); // Scroll to the top of the page
-  }
-});
+// $('a.back-to-top').click(function(event) {
+//   event.preventDefault(); // Prevent the default behavior of the link
+//   var target = $(this).attr('href'); // Get the href attribute of the link
+//   if (target === '#' || !target) { // If the href is empty or "#"
+//     $('html, body').animate({scrollTop: 0}, 800); // Scroll to the top of the page
+//   } else { // If the href is not empty or "#"
+//     $('html, body').animate({scrollTop: 0}, 800); // Scroll to the top of the page
+//   }
+// });
 
 // Dropdown on mouse hover
 // const $dropdown = $(".dropdown");
