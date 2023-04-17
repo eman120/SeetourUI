@@ -15,8 +15,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ErrorComponent } from './component/error/error.component';
 import { HeaderComponent } from './component/header/header.component';
-import { ImagesComponent } from './component/images/images.component';
 import { UploadImageComponent } from './component/upload-image/upload-image.component';
+import { UploadImagesComponent } from './component/upload-images/upload-images.component';
 
 @NgModule({
   declarations: [
@@ -28,12 +28,11 @@ import { UploadImageComponent } from './component/upload-image/upload-image.comp
     ContactUsComponent,
     DetailsComponent,
     TourHomeComponent,
-
     TourGuidComponent,
     ErrorComponent,
     HeaderComponent,
-    ImagesComponent,
-    UploadImageComponent
+    UploadImageComponent,
+    UploadImagesComponent
   ],
   imports: [
     BrowserModule,
