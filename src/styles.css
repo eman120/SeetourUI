@@ -5,6 +5,7 @@
     --dark: #14141F;
 }
 
+
 .fw-medium {
     font-weight: 600 !important;
 }
@@ -42,7 +43,14 @@
     font-family: 'Nunito', sans-serif;
     font-weight: 600;
     transition: .5s;
+    /* padding-left: 0 !important;
+    padding-right: 0 !important; */
 }
+
+.back-to-top {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 
 .btn.btn-primary,
 .btn.btn-secondary ,
@@ -77,4 +85,16 @@
     justify-content: center;
     font-weight: normal;
     border-radius: 0px;
+}
+
+/*** Hero Header ***/
+.hero-header {
+    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(src/assets/Images/bg-hero.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: rgba(255, 255, 255, .5);
 }

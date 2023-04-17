@@ -11,3 +11,20 @@
     visibility: visible;
     opacity: 1;
 }
+
+
+.text-primary{
+    color:#86B817 !important;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('src/assets/Fonts/Nunito-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
+    font-family: "Nunito";
+    color: #2C3E50;
+}
