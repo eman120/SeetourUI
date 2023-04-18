@@ -1,18 +1,8 @@
-.Ima-error{
-  width: 400px;
-  height: 300px;
-  margin:80px auto;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-img{
-  width: 400px;
-  height:300px
-
+.text-primary{
+    color:#86B817 !important;
 }
 
-h4{
-  font-weight: bold;
-  text-align: center;
-  margin-top: 50px;
-  color:red
+a {
+    color: #86B817;
+    text-decoration: none;
 }
