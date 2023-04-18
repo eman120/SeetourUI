@@ -14,6 +14,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ErrorComponent } from './component/error/error.component';
 import { HeaderComponent } from './component/header/header.component';
+import { AuthInterceptorProviders } from './Middlewares/auth-interceptor';
 import { FooterComponent } from './component/footer/footer.component';
 import { UserregisterComponent } from './component/userregister/userregister.component';
 
@@ -38,9 +39,9 @@ import { UserregisterComponent } from './component/userregister/userregister.com
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-   HttpClientModule
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
