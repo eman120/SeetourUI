@@ -70,12 +70,12 @@
 
 
                   <div class="input-group mb-3">
-                    <input type="file" class="form-control" id="inputGroupFile02">
+                    <input #file="ngModel"  ngModel name ="file" type="file" class="form-control" id="inputGroupFile02">
                     <label class="input-group-text" for="inputGroupFile02">Upload Image</label>
                   </div>
 
                   <div class="d-flex justify-content-center">
-                    <button  [disabled]="registerFrm.invalid || confirmPassword.value !== password.value " type="submit" (click)="UserRegister(name.value, email.value, phone.value,password.value,snn.value)"
+                    <button  [disabled]="registerFrm.invalid || confirmPassword.value !== password.value " type="submit" (click)="UserRegister(file.value,name.value, email.value, phone.value,password.value,snn.value)"
                     class="btn btn-outline-secondary btn-lg ms-2">Register</button>
                   </div>
               </form>

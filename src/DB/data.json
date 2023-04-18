@@ -8,8 +8,9 @@
       "snn": 6666603,
       "bankAccount": "dina@ddd",
       "password": "2221211",
-      "imgUrl": ""
-
+      "SwiftCode": "97",
+      "AccountNumber": "123",
+      "file": ""
     },
     {
       "id": 2,
@@ -19,8 +20,9 @@
       "snn": 6340003,
       "bankAccount": "eman@eed",
       "password": "0033331",
-      "imgUrl": ""
-
+      "SwiftCode": "75",
+      "AccountNumber": "702",
+      "file": ""
     },
     {
       "id": 3,
@@ -30,7 +32,9 @@
       "snn": 6340003,
       "bankAccount": "eman@wwd",
       "password": "09898",
-      "imgUrl": ""
+      "SwiftCode": "45",
+      "AccountNumber": "654",
+      "file": ""
     },
     {
       "id": 4,
@@ -40,7 +44,9 @@
       "snn": 6340003,
       "bankAccount": "ola@ood",
       "password": "6556",
-      "imgUrl": ""
+      "SwiftCode": "90",
+      "AccountNumber": "942",
+      "file": ""
     },
     {
       "id": 5,
@@ -50,7 +56,9 @@
       "snn": 63469233,
       "bankAccount": "salma@ssd",
       "password": "67896",
-      "imgUrl": ""
+      "SwiftCode": "18",
+      "AccountNumber": "652",
+      "file": ""
     },
     {
       "id": 8,
@@ -60,7 +68,9 @@
       "snn": 6871233,
       "bankAccount": "ahmed@aad",
       "password": "65925",
-      "imgUrl": ""
+      "SwiftCode": "22",
+      "AccountNumber": "332",
+      "file": ""
     },
     {
       "id": 9,
@@ -69,8 +79,23 @@
       "phone": "0502739335",
       "snn": 63211233,
       "bankAccount": "dina@ssd",
-      "password": "12345"
-
+      "SwiftCode": "12",
+      "AccountNumber": "222",
+      "password": "12345",
+      "file": ""
+    },
+    {
+      "file": "C:\\fakepath\\1.png",
+      "name": "dina elmasry",
+      "email": "dinaelmasry666@gmail.com",
+      "phone": "Mansoura",
+      "snn": "12345",
+      "password": 21,
+      "address": "0502739335",
+      "bankAccount": "dina@assd",
+      "SwiftCode": 162134,
+      "AccountNumber": 88,
+      "id": 10
     }
   ]
 }

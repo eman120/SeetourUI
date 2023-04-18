@@ -10,10 +10,10 @@ import { Router } from '@angular/router';
 export class UserregisterComponent {
   constructor(private service:UserregisterService, private router: Router){}
 
-  UserRegister(name:any, email:any, phone:any , snn:any , password:any){
-    if (name && email && phone  && snn && password)
+  UserRegister(file:any,name:any, email:any, phone:any , snn:any , password:any){
+    if (file && name && email && phone  && snn && password)
     { // Check if all required fields have data
-      let newReg = {name , email , phone , snn , password};
+      let newReg = {file ,name , email , phone , snn , password};
       this.service.AddNewRegister(newReg).subscribe();
       // Navigate to home component after adding the new Register
       this.router.navigate(['/']);
