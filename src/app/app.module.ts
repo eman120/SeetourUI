@@ -15,6 +15,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { ErrorComponent } from './component/error/error.component';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { TourDetailsComponent } from './component/tour-details/tour-details.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FooterComponent } from './component/footer/footer.component';
     TourGuideComponent,
     ErrorComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    TourDetailsComponent
   ],
   imports: [
     BrowserModule,

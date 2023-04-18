@@ -1,0 +1,70 @@
+<div class="container-fluid bg-primary py-5 mb-5 hero-header">
+  <div class="container py-5">
+      <div class="row justify-content-center py-5">
+          <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+              <h1 class="display-3 text-white animated slideInDown">Tour Detail</h1>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <form>
+    <div class="form-group">
+      <label for="">Questions</label>
+      <span class="ms-3"></span>
+      <textarea class="form-control" name="answer" id="answer" cols="30" rows="10"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <h4>Photos</h4>
+      <!-- <div *ngFor="let photo of photos">
+        <img src="{{photo.url}}" alt="{{photo.alt}}" class="img-fluid">
+      </div> -->
+    </div>
+    <div class="col-md-6">
+      <h4>Tour Information</h4>
+      <div>
+        <p>Destination</p>
+        <div>
+          <p *ngIf="tour.DateFrom">{{ tour?.DateFrom.toString() }}</p>
+          <p>Date To</p>
+        </div>
+      </div>
+      <div>
+        <label for="price">Price</label>
+        <span>price</span>
+      </div>
+      <div>
+        <label for="likescounts">Likes</label>
+        <span>likes</span>
+      </div>
+      <div>
+        <label for="availble-seats">Available Seats</label>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+      <div>
+        <a href="">Tour Guide Profile</a>
+      </div>
+      <div>
+        <h4>Reviews</h4>
+        <p>No reviews yet</p>
+      </div>
+      <div>
+        <label for="">Add Photos</label>
+        <button class="btn btn-primary">Add Photos</button>
+      </div>
+      <div>
+        <label for="transportation">Transportation</label>
+        <input type="checkbox" name="transportation" id="transportation" disabled>
+      </div>
+    </div>
+  </div>
+
+</div>
