@@ -15,6 +15,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ErrorComponent } from './component/error/error.component';
 import { HeaderComponent } from './component/header/header.component';
+import { UserregisterComponent } from './component/userregister/userregister.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HeaderComponent } from './component/header/header.component';
 
     TourGuidComponent,
     ErrorComponent,
-    HeaderComponent
+    HeaderComponent,
+    UserregisterComponent
   ],
   imports: [
     BrowserModule,
