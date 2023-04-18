@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import * as moment from 'moment';
 import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
@@ -16,6 +17,10 @@ export class LoginComponent {
   constructor(private fb:FormBuilder,
     private authService: AuthService,
     private router: Router) {
+
+      if (authService.isLoggedIn()){
+        router.navigateByUrl('/');
+      }
 
       this.formlogin = this.fb.group({
           username: ['',Validators.required],
