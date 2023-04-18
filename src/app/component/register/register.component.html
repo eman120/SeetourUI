@@ -99,12 +99,12 @@
 
 
                   <div class="input-group mb-3">
-                    <input type="file" class="form-control" id="inputGroupFile02" (change)="onFileSelected($event)">
+                    <input #file="ngModel"  ngModel name ="file" type="file" class="form-control" id="inputGroupFile02" >
                     <label class="input-group-text" for="inputGroupFile02">Upload Image</label>
                   </div>
 
                   <div class="d-flex justify-content-center">
-                    <button  [disabled]="registerFrm.invalid || confirmPassword.value !== password.value " type="submit" (click)="Register(name.value, email.value,Address.value,phone.value,password.value,snn.value ,bankAccount.value,SwiftCode.value ,AccountNumber.value)"
+                    <button  [disabled]="registerFrm.invalid || confirmPassword.value !== password.value " type="submit" (click)="Register(file.value,name.value, email.value,Address.value,phone.value,password.value,snn.value ,bankAccount.value,SwiftCode.value ,AccountNumber.value)"
                     class="btn btn-outline-secondary btn-lg ms-2">Register</button>
                   </div>
               </form>
