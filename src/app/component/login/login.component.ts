@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterContentInit, Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/Services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements AfterContentInit {
 
   formlogin:FormGroup;
   loginStatus = 'Pending';
@@ -25,6 +25,24 @@ export class LoginComponent {
       this.formlogin = this.fb.group({
           username: ['',Validators.required],
           password: ['',Validators.required]
+      });
+
+    }
+
+  ngAfterContentInit(): void {
+    const togglePassword = document.querySelector("#togglePassword");
+    const password = document.querySelector("#password-input");
+
+    if (togglePassword && password)
+      togglePassword.addEventListener("click", function () {
+
+        // toggle the type attribute
+        const type = password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
+
+        // toggle the eye icon
+        togglePassword.classList.toggle('fa-eye');
+        togglePassword.classList.toggle('fa-eye-slash');
       });
   }
 

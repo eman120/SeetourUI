@@ -17,9 +17,13 @@
                     <small *ngIf="username.value && !usernameValid" id="HelpUsername" class="text-danger">Username is not valid</small>
                   </div>
 
-                  <div class="mb-3">
-                    <input #password formControlName="password" type="text"
+                  <div class="mb-3 input-group flex-nowrap">
+                    <input #password formControlName="password" type="password" id="password-input"
                     class="form-control form-control-sm" aria-describedby="HelpPassword" placeholder="Password">
+                    <span class="input-group-text">
+                      <i class="fa fa-eye" id="togglePassword"
+                      style="cursor: pointer"></i>
+                     </span>
                     <small *ngIf="password.value && !passwordValid" id="HelpPassword" class="text-danger">Password is not valid</small>
                   </div>
 
