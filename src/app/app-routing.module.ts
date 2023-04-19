@@ -10,6 +10,7 @@ import { TourHomeComponent } from './component/tour-home/tour-home.component';
 import { DetailsComponent } from './component/details/details.component';
 import { HeaderComponent } from './component/header/header.component';
 import { TourDetailsComponent } from './component/tour-details/tour-details.component';
+import { UserregisterComponent } from './component/userregister/userregister.component';
 
 const routes: Routes = [
   {path: "",component:HomeComponent},
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path:"services" , component:DetailsComponent},
   {path:"header" , component:HeaderComponent},
   {path:"TourDetails",component:TourDetailsComponent},
-  {path:"**" , component:ErrorComponent},
+  {path:"userregister" , component:UserregisterComponent},
+  {path:"**" , component:ErrorComponent}
 ];
 
 @NgModule({
