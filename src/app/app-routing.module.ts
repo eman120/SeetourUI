@@ -10,6 +10,7 @@ import { TourHomeComponent } from './component/tour-home/tour-home.component';
 import { DetailsComponent } from './component/details/details.component';
 import { HeaderComponent } from './component/header/header.component';
 import { UserregisterComponent } from './component/userregister/userregister.component';
+import { TourGuideComponent } from './component/tour-guide/tour-guide.component';
 
 const routes: Routes = [
   {path: "",component:HomeComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:"services" , component:DetailsComponent},
   {path:"header" , component:HeaderComponent},
   {path:"userregister" , component:UserregisterComponent},
+  {path:"tourguid" , component:TourGuideComponent},
   {path:"**" , component:ErrorComponent}
 ];
 
