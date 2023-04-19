@@ -1,9 +1,10 @@
 export interface ReviewCard {
   Id: number,
-  TourId: number,
-  TourGuideId: number,
+  BookedTourId: number,
+  BookedTourTitle: string,
+  TourGuideId: string,
   CustomerName: string,
-  ReviewText: string,
+  Comment: string,
   Rating: number,
   CreatedAt: string,
   Photos: string[],

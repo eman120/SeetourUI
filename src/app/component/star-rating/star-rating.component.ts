@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
       [class.filled]="i < rating" [class.empty]="i >= rating">
       &#9733;
     </span>
-    ({{count}})
+    <span *ngIf="count">({{count}})</span>
   `,
   styles: [`
     .star {

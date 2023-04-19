@@ -2,6 +2,15 @@
   <img *ngFor="let photo of photos" [src]="photo">
 </div> -->
 
-<ngb-carousel *ngIf="photos && showGallery" class="gallery" [interval]="0">
-  <i class="bi bi-x-lg close-button" (click)="closeGallery()"></i>
+
+<ngb-carousel *ngIf="photos && showGallery" class="gallery gallery-bg" [interval]="0">
+  <ng-template ngbSlide *ngFor="let photo of photos">
+    <div class="carousel-item active">
+      <img src="{{photo}}" class="d-block w-100">
+    </div>
+  </ng-template>
 </ngb-carousel>
+
+<div *ngIf="showGallery" class="gallery">
+  <i class="bi bi-x-lg close-button" (click)="closeGallery()"></i>
+</div>
