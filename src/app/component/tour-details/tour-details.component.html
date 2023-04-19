@@ -10,14 +10,18 @@
 
 <div class="container">
 
-  <form>
+  <!-- <form (ngSubmit)="submitForm()">
     <div class="form-group">
-      <label for="">Questions</label>
-      <span class="ms-3"></span>
-      <textarea class="form-control" name="answer" id="answer" cols="30" rows="10"></textarea>
-    </div>
+      <h4 for="">Questions</h4>
+      <div *ngFor="let quest of tour.questions; let i=index">
+        <div class="ms-3">{{i+1}}. {{quest.question}}</div>
+        <input class="form-control" name="answer" id="answer" cols="30" rows="10" [(ngModel)]="tourAnswer[i]"
+        [attr.data-question-index]="i"/>
+      </div>
+    </div>    
     <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+  </form> -->
+
 
   <div class="row mt-5">
     <div class="col-md-6">
@@ -29,41 +33,45 @@
     <div class="col-md-6">
       <h4>Tour Information</h4>
       <div>
-        <p>Destination</p>
+        <p>Destination :<span *ngIf="tour.locationTo"> {{ tour?.locationTo}}</span></p>
         <div>
-          <p *ngIf="tour.DateFrom">{{ tour?.DateFrom.toString() }}</p>
-          <p>Date To</p>
+          <p *ngIf="tour.dateFrom"><span>Date From : </span>{{ tour?.dateFrom | date:'dd/MM/yyyy'  }}</p>
+          <p *ngIf="tour.dateTo"><span>Date To : </span>{{ tour?.dateTo | date:'dd/MM/yyyy' }}</p>
         </div>
       </div>
       <div>
-        <label for="price">Price</label>
-        <span>price</span>
+        <label for="price">Price :</label>
+        <span *ngIf="tour.price"> {{ tour?.price}}$</span>
       </div>
       <div>
-        <label for="likescounts">Likes</label>
-        <span>likes</span>
+        <label for="likescounts">Likes :</label>
+        <span> {{ tour.likes ? tour.likes.length : 0 }}</span>
       </div>
       <div>
-        <label for="availble-seats">Available Seats</label>
+        <label for="available-seats">Available Seats</label>
         <div class="progress">
-          <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress-bar" role="progressbar" [style.width.%]="(tour.bookingsCount / tour.capacity ) * 100" [attr.aria-valuenow]="tour.bookingsCount" aria-valuemin="0" [attr.aria-valuemax]="tour.capacity"></div>
         </div>
       </div>
+      
       <div>
         <a href="">Tour Guide Profile</a>
       </div>
       <div>
         <h4>Reviews</h4>
-        <p>No reviews yet</p>
+        <!-- <p *ngIf="tour.bookings.review.comment">{{ tour.bookings.review.comment }}</p>
+        <p *ngIf="!tour.bookings.review.comment">No reviews yet</p> -->
       </div>
+      
       <div>
         <label for="">Add Photos</label>
         <button class="btn btn-primary">Add Photos</button>
       </div>
       <div>
         <label for="transportation">Transportation</label>
-        <input type="checkbox" name="transportation" id="transportation" disabled>
+        <input type="checkbox" name="transportation" id="transportation" [checked]="tour?.hasTransportation" disabled>
       </div>
+      
     </div>
   </div>
 
