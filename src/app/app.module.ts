@@ -16,7 +16,9 @@ import { ErrorComponent } from './component/error/error.component';
 import { HeaderComponent } from './component/header/header.component';
 import { AuthInterceptorProviders } from './Middlewares/auth-interceptor';
 import { FooterComponent } from './component/footer/footer.component';
+import { TourDetailsComponent } from './component/tour-details/tour-details.component';
 import { UserregisterComponent } from './component/userregister/userregister.component';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { UserregisterComponent } from './component/userregister/userregister.com
     ErrorComponent,
     HeaderComponent,
     FooterComponent,
+    TourDetailsComponent
     UserregisterComponent
+
   ],
   imports: [
     BrowserModule,
