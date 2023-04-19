@@ -27,10 +27,10 @@ export class WishListButtonComponent {
   @Input() isInWishlist: boolean = false;
   @Input() Id: number = 0;
 
-  @Output() wishlistUpdated = new EventEmitter<{ isInWishlist: boolean, Id: number }>();
+  @Output() wishlisted = new EventEmitter<{ isInWishlist: boolean, Id: number }>();
 
   toggleWishlist() {
     this.isInWishlist = !this.isInWishlist;
-    this.wishlistUpdated.emit({ isInWishlist: this.isInWishlist, Id: this.Id });
+    this.wishlisted.emit({ isInWishlist: this.isInWishlist, Id: this.Id });
   }
 }

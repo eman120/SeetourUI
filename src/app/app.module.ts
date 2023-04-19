@@ -46,8 +46,8 @@ import { WishListButtonComponent } from './component/wish-list-button/wish-list-
     StarRatingComponent,
     LikeButtonComponent,
     TruncatePipe,
-    WishListButtonComponent
-    TourDetailsComponent
+    WishListButtonComponent,
+    TourDetailsComponent,
     UserregisterComponent
 
   ],
