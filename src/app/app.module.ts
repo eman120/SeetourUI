@@ -16,6 +16,7 @@ import { ErrorComponent } from './component/error/error.component';
 import { HeaderComponent } from './component/header/header.component';
 import { AuthInterceptorProviders } from './Middlewares/auth-interceptor';
 import { FooterComponent } from './component/footer/footer.component';
+import { TourDetailsComponent } from './component/tour-details/tour-details.component';
 import { UserregisterComponent } from './component/userregister/userregister.component';
 import { TourCardComponent } from './component/tour-card/tour-card.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -23,6 +24,7 @@ import { StarRatingComponent } from './component/star-rating/star-rating.compone
 import { LikeButtonComponent } from './component/like-button/like-button.component';
 import { TruncatePipe } from './Pipes/truncate.pipe';
 import { WishListButtonComponent } from './component/wish-list-button/wish-list-button.component';
+
 
 @NgModule({
   declarations: [
@@ -38,12 +40,16 @@ import { WishListButtonComponent } from './component/wish-list-button/wish-list-
     ErrorComponent,
     HeaderComponent,
     FooterComponent,
+
     UserregisterComponent,
     TourCardComponent,
     StarRatingComponent,
     LikeButtonComponent,
     TruncatePipe,
     WishListButtonComponent
+    TourDetailsComponent
+    UserregisterComponent
+
   ],
   imports: [
     BrowserModule,
