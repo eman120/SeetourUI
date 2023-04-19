@@ -4,7 +4,7 @@
 
   <div class="card flex-md-row align-items-start">
 
-    <div class="col-md-9 p-3 d-flex flex-column align-self-stretch">
+    <div class="p-3 d-flex flex-column flex-fill">
 
       <h5 class="card-title">{{review.CustomerName}}</h5>
       <star-rating [rating]="review.Rating"></star-rating>
@@ -17,7 +17,7 @@
 
     </div>
 
-    <div class="image-grid col-12 col-md-3 gap-1 gap-md-2" (click)="openGallery()">
+    <div *ngIf="photos.length" class="image-grid col-12 col-md-3 gap-1 gap-md-2" (click)="openGallery()">
       <div class="image-box cursor-pointer" *ngFor="let photo of photos">
         <img [src]="photo">
       </div>
