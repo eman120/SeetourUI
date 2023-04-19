@@ -1,3 +1,4 @@
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -10,14 +11,22 @@ import { ContactUsComponent } from './component/contact-us/contact-us.component'
 import { DetailsComponent } from './component/details/details.component';
 import { TourHomeComponent } from './component/tour-home/tour-home.component';
 
-import { TourGuidComponent } from './component/tour-guid/tour-guid.component';
-import { FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { TourGuideComponent } from './component/tour-guide/tour-guide.component';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ErrorComponent } from './component/error/error.component';
 import { HeaderComponent } from './component/header/header.component';
 import { UploadImageComponent } from './component/upload-image/upload-image.component';
 import { UploadImagesComponent } from './component/upload-images/upload-images.component';
 
+import { AuthInterceptorProviders } from './Middlewares/auth-interceptor';
+import { FooterComponent } from './component/footer/footer.component';
+import { UserregisterComponent } from './component/userregister/userregister.component';
+import { TourCardComponent } from './component/tour-card/tour-card.component';
+import { StarRatingComponent } from './component/star-rating/star-rating.component';
+import { LikeButtonComponent } from './component/like-button/like-button.component';
+import { TruncatePipe } from './Pipes/truncate.pipe';
+import { WishListButtonComponent } from './component/wish-list-button/wish-list-button.component';
 
 @NgModule({
   declarations: [
@@ -29,9 +38,16 @@ import { UploadImagesComponent } from './component/upload-images/upload-images.c
     ContactUsComponent,
     DetailsComponent,
     TourHomeComponent,
-    TourGuidComponent,
+    TourGuideComponent,
     ErrorComponent,
     HeaderComponent,
+    FooterComponent,
+    UserregisterComponent,
+    TourCardComponent,
+    StarRatingComponent,
+    LikeButtonComponent,
+    TruncatePipe,
+    WishListButtonComponent,
     UploadImageComponent,
     UploadImagesComponent
   ],
@@ -40,9 +56,10 @@ import { UploadImagesComponent } from './component/upload-images/upload-images.c
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-   HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
-  providers: [],
+  providers: [AuthInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

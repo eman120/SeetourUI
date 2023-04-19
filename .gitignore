@@ -9,6 +9,12 @@ lerna-debug.log*
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
+# Ignore the .vs directory
+.vs/
+
+# Ignore the .angular directory
+.angular/
+
 # Runtime data
 pids
 *.pid
@@ -260,3 +266,4 @@ dist
 .svelte-kit
 
 # End of https://www.toptal.com/developers/gitignore/api/node
+.angular
