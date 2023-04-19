@@ -1,10 +1,23 @@
-<div class="container-fluid bg-primary py-5 mb-5 hero-header">
-    <div class="container py-5">
-        <div class="row justify-content-center py-5">
-            <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
-                <h1 class="display-3 text-white animated slideInDown">Our Tours</h1>
-
-            </div>
-        </div>
+<div class="container-fluid bg-primary py-5 hero-header">
+  <div class="container py-5">
+    <div class="row justify-content-center py-5">
+      <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+        <h1 class="display-3 text-white animated slideInDown">Our Tours</h1>
+      </div>
     </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-secondary pb-5 bg-gradient">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="row gy-4">
+
+        <div *ngFor="let tour of tours" class="col-md-4">
+          <app-tour-card [tour]="tour"></app-tour-card>
+        </div>
+
+      </div>
+    </div>
+  </div>
 </div>
