@@ -17,6 +17,9 @@ import { HeaderComponent } from './component/header/header.component';
 import { AuthInterceptorProviders } from './Middlewares/auth-interceptor';
 import { FooterComponent } from './component/footer/footer.component';
 import { UserregisterComponent } from './component/userregister/userregister.component';
+import { ReviewCardComponent } from './component/review-card/review-card.component';
+import { GalleryComponent } from './component/gallery/gallery.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -32,14 +35,17 @@ import { UserregisterComponent } from './component/userregister/userregister.com
     ErrorComponent,
     HeaderComponent,
     FooterComponent,
-    UserregisterComponent
+    UserregisterComponent,
+    ReviewCardComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [AuthInterceptorProviders],
   bootstrap: [AppComponent]
