@@ -1,0 +1,35 @@
+<div *ngIf="review" class="container-md">
+  <app-gallery *ngIf="review.Photos" [showGallery]="showGallery"
+  [photos]="review.Photos" (closed)="closeGallery()"></app-gallery>
+
+  <div class="card flex-md-row align-items-start">
+
+    <div class="p-3 d-flex flex-column flex-fill">
+
+      <h5 class="card-title">{{review.CustomerName}}</h5>
+      <star-rating [rating]="review.Rating"></star-rating>
+      <p class="card-text">{{review.Comment}}</p>
+
+      <div class="d-flex justify-content-between text-muted flex-grow-1 align-items-end">
+        <div>{{review.BookedTourTitle}}</div>
+        <div>{{review.CreatedAt}}</div>
+      </div>
+
+    </div>
+
+    <div *ngIf="photos.length" class="image-grid col-12 col-md-3 gap-1 gap-md-2" (click)="openGallery()">
+      <div class="image-box cursor-pointer" *ngFor="let photo of photos">
+        <img [src]="photo">
+      </div>
+    </div>
+
+    <!-- <ngb-carousel class="col-4" *ngIf="review.Photos" [interval]="0">
+      <ng-template ngbSlide *ngFor="let photo of review.Photos">
+        <div class="carousel-item active">
+          <img src="{{photo}}" class="d-block w-100">
+        </div>
+      </ng-template>
+    </ngb-carousel> -->
+  </div>
+
+</div>
