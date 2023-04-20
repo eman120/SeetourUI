@@ -9,15 +9,12 @@
 </div>
 
 <div class="container-fluid bg-secondary pb-5 bg-gradient">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="row gy-4">
+  <div class="row justify-content-center">
+    <div class="d-flex justify-content-center flex-wrap gy-4">
 
-        <div *ngFor="let tour of tours" class="col-md-4">
-          <app-tour-card [tour]="tour"></app-tour-card>
-        </div>
+        <app-tour-card *ngFor="let tour of tours" [tour]="tour"
+        class="m-2" style="flex: 0 1 auto"></app-tour-card>
 
-      </div>
     </div>
   </div>
 </div>
