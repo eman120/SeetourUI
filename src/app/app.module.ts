@@ -27,6 +27,7 @@ import { WishListButtonComponent } from './component/wish-list-button/wish-list-
 
 import { ReviewCardComponent } from './component/review-card/review-card.component';
 import { GalleryComponent } from './component/gallery/gallery.component';
+import { TourGuideProfileComponent } from './component/tour-guide-profile/tour-guide-profile.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { GalleryComponent } from './component/gallery/gallery.component';
     WishListButtonComponent,
     TourDetailsComponent,
     ReviewCardComponent,
-    GalleryComponent
+    GalleryComponent,
+    TourGuideProfileComponent
 
   ],
   imports: [
