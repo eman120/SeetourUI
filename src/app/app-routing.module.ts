@@ -11,6 +11,7 @@ import { DetailsComponent } from './component/details/details.component';
 import { HeaderComponent } from './component/header/header.component';
 import { TourDetailsComponent } from './component/tour-details/tour-details.component';
 import { UserregisterComponent } from './component/userregister/userregister.component';
+import { TourGuideComponent } from './component/tour-guide/tour-guide.component';
 
 const routes: Routes = [
   {path: "",component:HomeComponent},
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:"header" , component:HeaderComponent},
   {path:"TourDetails",component:TourDetailsComponent},
   {path:"userregister" , component:UserregisterComponent},
+  {path:"tourguid" , component:TourGuideComponent},
   {path:"**" , component:ErrorComponent}
 ];
 
