@@ -10,6 +10,7 @@ import { TourHomeComponent } from './component/tour-home/tour-home.component';
 import { DetailsComponent } from './component/details/details.component';
 import { HeaderComponent } from './component/header/header.component';
 import { TourDetailsComponent } from './component/tour-details/tour-details.component';
+import { UserregisterComponent } from './component/userregister/userregister.component';
 import { AdminStatisticsComponent } from './component/admin-statistics/admin-statistics.component';
 
 const routes: Routes = [
@@ -23,7 +24,6 @@ const routes: Routes = [
   {path:"services" , component:DetailsComponent},
   {path:"header" , component:HeaderComponent},
   {path:"TourDetails",component:TourDetailsComponent},
-  {path :"admin-statistics",component:AdminStatisticsComponent},
   {path:"**" , component:ErrorComponent},
 ];
 

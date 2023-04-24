@@ -14,9 +14,12 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ErrorComponent } from './component/error/error.component';
 import { HeaderComponent } from './component/header/header.component';
+import { AuthInterceptorProviders } from './Middlewares/auth-interceptor';
 import { FooterComponent } from './component/footer/footer.component';
 import { TourDetailsComponent } from './component/tour-details/tour-details.component';
 import { AdminStatisticsComponent } from './component/admin-statistics/admin-statistics.component';
+import { UserregisterComponent } from './component/userregister/userregister.component';
+
 
 @NgModule({
   declarations: [
@@ -32,17 +35,23 @@ import { AdminStatisticsComponent } from './component/admin-statistics/admin-sta
     ErrorComponent,
     HeaderComponent,
     FooterComponent,
+
     TourDetailsComponent,
-    AdminStatisticsComponent
+    AdminStatisticsComponent,
+
+    TourDetailsComponent,
+    UserregisterComponent
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-   HttpClientModule
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
