@@ -16,6 +16,7 @@ import { ErrorComponent } from './component/error/error.component';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { TourDetailsComponent } from './component/tour-details/tour-details.component';
+import { AdminStatisticsComponent } from './component/admin-statistics/admin-statistics.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { TourDetailsComponent } from './component/tour-details/tour-details.comp
     ErrorComponent,
     HeaderComponent,
     FooterComponent,
-    TourDetailsComponent
+    TourDetailsComponent,
+    AdminStatisticsComponent
   ],
   imports: [
     BrowserModule,
