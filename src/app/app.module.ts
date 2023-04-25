@@ -25,6 +25,8 @@ import { LikeButtonComponent } from './component/like-button/like-button.compone
 import { TruncatePipe } from './Pipes/truncate.pipe';
 import { WishListButtonComponent } from './component/wish-list-button/wish-list-button.component';
 
+import { ReviewCardComponent } from './component/review-card/review-card.component';
+import { GalleryComponent } from './component/gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { WishListButtonComponent } from './component/wish-list-button/wish-list-
     TruncatePipe,
     WishListButtonComponent,
     TourDetailsComponent,
-    UserregisterComponent
+
+    ReviewCardComponent,
+    GalleryComponent
 
   ],
   imports: [
