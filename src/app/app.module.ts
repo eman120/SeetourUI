@@ -14,8 +14,19 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ErrorComponent } from './component/error/error.component';
 import { HeaderComponent } from './component/header/header.component';
+import { AuthInterceptorProviders } from './Middlewares/auth-interceptor';
 import { FooterComponent } from './component/footer/footer.component';
+import { TourDetailsComponent } from './component/tour-details/tour-details.component';
 import { UserregisterComponent } from './component/userregister/userregister.component';
+import { TourCardComponent } from './component/tour-card/tour-card.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { StarRatingComponent } from './component/star-rating/star-rating.component';
+import { LikeButtonComponent } from './component/like-button/like-button.component';
+import { TruncatePipe } from './Pipes/truncate.pipe';
+import { WishListButtonComponent } from './component/wish-list-button/wish-list-button.component';
+
+import { ReviewCardComponent } from './component/review-card/review-card.component';
+import { GalleryComponent } from './component/gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -31,16 +42,28 @@ import { UserregisterComponent } from './component/userregister/userregister.com
     ErrorComponent,
     HeaderComponent,
     FooterComponent,
-    UserregisterComponent
+
+    UserregisterComponent,
+    TourCardComponent,
+    StarRatingComponent,
+    LikeButtonComponent,
+    TruncatePipe,
+    WishListButtonComponent,
+    TourDetailsComponent,
+
+    ReviewCardComponent,
+    GalleryComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-   HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
-  providers: [],
+  providers: [AuthInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
