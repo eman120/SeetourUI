@@ -1,1 +1,46 @@
-<p>tour-guid works!</p>
+<div class="contact">
+
+  <!-- <div class="contact_background" style="background-image:url(/assets/Images/man.png)"></div> -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5">
+        <div class="contact_image">
+          <div class="col-xl-6 d-none d-xl-block h-100  w-100 mr-5">
+            <img src="/assets/Images/man.png"
+              alt="Sample photo" class="img-fluid"
+              style=" height:700px; border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="contact_form_container">
+          <div class="contact_title">get in touch</div>
+          <form #TourFrm="ngForm" action="#" id="contact_form" class="contact_form">
+            <input #name="ngModel" ngModel name ="name" type="text" id="contact_form_name" class="contact_form_name input_field" placeholder="Name" required="required" data-error="Name is required.">
+            <input #email="ngModel" ngModel name ="email" type="text" id="contact_form_email" class="contact_form_email input_field" placeholder="E-mail" required="required" data-error="Email is required.">
+            <input #capacity="ngModel" ngModel name ="capacity" type="number" id="contact_form_name" class="contact_form_name input_field" placeholder="capacity" required="required" data-error="capacity is required.">
+            <input #price="ngModel" ngModel name ="price" type="number" id="contact_form_email" class="contact_form_email input_field" placeholder="price" required="required" data-error="price is required.">
+            <input #locationFrom="ngModel" ngModel name ="locationFrom" type="text" id="contact_form_name" class="contact_form_name input_field" placeholder="locationFrom" required="required" data-error="locationFrom is required.">
+            <input #locationTo="ngModel" ngModel name ="locationTo" type="text" id="contact_form_email" class="contact_form_email input_field" placeholder="locationTo" required="required" data-error="locationTo is required.">
+            <input  #date="ngModel" ngModel name ="date" type="date" id="contact_form_name" class="contact_form_name input_field" placeholder="date" required="required" data-error="date is required.">
+            <input  #dateForCancellation="ngModel" ngModel name ="dateForCancellation" type="date" id="contact_form_email" class="contact_form_email input_field" placeholder="date For Cancellation" required="required" data-error="dateForCancellation is required.">
+
+
+            <textarea #detailedDescription="ngModel" ngModel name ="detailedDescription" id="contact_form_message" class="text_field contact_form_message mb-3" name="message" rows="4" placeholder="Message" required="required" data-error="Please, write us a message."></textarea>
+            <div class="input-group mb-3">
+              <input #file="ngModel"  ngModel name ="file" type="file" class="form-control" id="inputGroupFile02">
+              <label class="input-group-text" for="inputGroupFile02">Upload Image</label>
+            </div>
+
+            <input  #TransportationIncluded="ngModel" ngModel name ="TransportationIncluded" type="checkbox" id="contact_form_email" class="contact_form_email input_field" placeholder="Transportation Included" required="required" data-error="TransportationIncluded is required.">
+
+            <button  [disabled]="TourFrm.invalid" type="submit" id="form_submit_button" (click)="tourGuid(file.value,name.value, email.value, date.value , capacity.value,locationFrom.value,locationTo.value,TransportationIncluded.value, detailedDescription.value)"
+            class="form_submit_button button">Create<span></span><span></span><span></span></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
