@@ -50,6 +50,7 @@ import { GalleryComponent } from './component/gallery/gallery.component';
     TruncatePipe,
     WishListButtonComponent,
     TourDetailsComponent,
+
     ReviewCardComponent,
     GalleryComponent
 
