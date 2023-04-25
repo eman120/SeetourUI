@@ -19,6 +19,9 @@ import { FooterComponent } from './component/footer/footer.component';
 import { TourDetailsComponent } from './component/tour-details/tour-details.component';
 import { AdminStatisticsComponent } from './component/admin-statistics/admin-statistics.component';
 import { UserregisterComponent } from './component/userregister/userregister.component';
+import { PaymentComponent } from './component/payment/payment.component';
+
+
 
 
 @NgModule({
@@ -40,7 +43,8 @@ import { UserregisterComponent } from './component/userregister/userregister.com
     AdminStatisticsComponent,
 
     TourDetailsComponent,
-    UserregisterComponent
+    UserregisterComponent,
+    PaymentComponent
 
 
   ],

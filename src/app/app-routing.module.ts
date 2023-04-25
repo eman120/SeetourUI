@@ -12,6 +12,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { TourDetailsComponent } from './component/tour-details/tour-details.component';
 import { UserregisterComponent } from './component/userregister/userregister.component';
 import { AdminStatisticsComponent } from './component/admin-statistics/admin-statistics.component';
+import { PaymentComponent } from './component/payment/payment.component';
 
 const routes: Routes = [
   {path: "",component:HomeComponent},
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:"services" , component:DetailsComponent},
   {path:"header" , component:HeaderComponent},
   {path:"TourDetails",component:TourDetailsComponent},
+  {path:"payment",component:PaymentComponent},
   {path:"**" , component:ErrorComponent},
 ];
 

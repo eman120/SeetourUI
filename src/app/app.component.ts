@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { render } from 'creditcardpayments/creditCardPayments';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'projFront';
-  
+
   spinner(): void {
     setTimeout(() => {
       const spinnerElement = document.getElementById('spinner');
@@ -16,7 +17,7 @@ export class AppComponent implements OnInit {
       }
     }, 1);
   }
-  
+
   onBackToTopClick() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
