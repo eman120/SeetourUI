@@ -28,7 +28,7 @@ const routes: Routes = [
   {path:"tour/:id",component:TourDetailsComponent},
   {path:"tourguide/:id",component:TourGuideProfileComponent},
   {path:"userregister" , component:UserregisterComponent},
-  {path:"tourguid" , component:TourGuideComponent},
+  {path:"tourguide" , component:TourGuideComponent},
   {path:"dashboard" , component:TourguideDashboardComponent},
   {path:"**" , component:ErrorComponent}
 ];

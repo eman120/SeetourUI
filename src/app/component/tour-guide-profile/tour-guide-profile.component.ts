@@ -24,11 +24,25 @@ export class TourGuideProfileComponent implements OnInit {
 
   ngOnInit(): void {
     const tourguideId = this.route.snapshot.paramMap.get('id');
-    const url = environment.baseUrl+ApiPaths.tourGuide+ApiPaths.tourGuideProfile+tourguideId
 
-    this.http.get(url).subscribe({
+    const urlUpcoming = environment.baseUrl+ApiPaths.tourguide+ApiPaths.tgUpcomingTours+tourguideId
+    this.http.get(urlUpcoming).subscribe({
       next: (data) => {
-        this.upcomingTours = data['upcomingTours'];
+        this.upcomingTours = data as TourCard[];
+      }
+    });
+
+    const urlPast = environment.baseUrl+ApiPaths.tourguide+ApiPaths.tgPastTours+tourguideId
+    this.http.get(urlPast).subscribe({
+      next: (data) => {
+        this.pastTours = data as TourCard[];
+      }
+    });
+
+    const urlReviews = environment.baseUrl+ApiPaths.tourguide+ApiPaths.tgReviews+tourguideId
+    this.http.get(urlReviews).subscribe({
+      next: (data) => {
+        this.reviews = data as ReviewCard[];
       }
     });
   }

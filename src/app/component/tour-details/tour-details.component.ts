@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { ApiPaths } from 'src/app/Enums/api-paths';
 
@@ -18,16 +18,20 @@ export class TourDetailsComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
     const tourId = this.route.snapshot.paramMap.get('id');
     const url = environment.baseUrl+ApiPaths.tour+ApiPaths.tourdetails+tourId
-    
+
     this.http.get(url).subscribe({
       next: (data) => {
         this.tour = data;
+      },
+      error: () => {
+        //this.router.navigateByUrl('/Error');
       }
     });
   }

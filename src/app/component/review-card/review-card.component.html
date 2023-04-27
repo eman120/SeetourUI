@@ -4,14 +4,16 @@
 
   <div class="card flex-md-row align-items-start">
 
-    <div class="p-3 d-flex flex-column flex-fill">
+    <div class="p-3 d-flex flex-column align-self-stretch">
 
       <h5 class="card-title">{{review.CustomerName}}</h5>
       <star-rating [rating]="review.Rating"></star-rating>
       <p class="card-text">{{review.Comment}}</p>
 
       <div class="d-flex justify-content-between text-muted flex-grow-1 align-items-end">
-        <div>{{review.BookedTourTitle}}</div>
+        <a [routerLink]="tourLink" class="btn mb-1 p-0 text-start">
+          <div>{{review.BookedTourTitle}}</div>
+        </a>
         <div>{{review.CreatedAt}}</div>
       </div>
 

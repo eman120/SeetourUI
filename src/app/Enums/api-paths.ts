@@ -3,6 +3,8 @@ export enum ApiPaths {
   userLogin = '/login',
   tour = '/tour/',
   tourdetails = '/GetById?id=',
-  tourGuide = '/tourguide',
-  tourGuideProfile = '/'
+  tourguide = '/TourGuide',
+  tgUpcomingTours = '/UpcomingTours',
+  tgPastTours = '/PastTours',
+  tgReviews = '/Reviews'
 }

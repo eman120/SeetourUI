@@ -32,6 +32,10 @@ export class ReviewCardComponent {
     ],
   }
 
+  get tourLink(): string {
+    return this.review ? `/tour/${this.review.BookedTourId}` : '#';
+  }
+
   get photos() {
     if (this.review)
     {
