@@ -1,0 +1,26 @@
+<div class="row justify-content-center">
+  <div class="d-flex justify-content-center flex-wrap gy-4">
+    <div class="col-12 col-lg-9 mx-auto pb-3 bg-light border rounded">
+
+      <div class="d-flex flex-row justify-content-between">
+        <h3 class="m-3">{{Title}}</h3>
+
+        <a *ngIf="MoreText" [routerLink]="MoreLink" class="btn">
+          <h6 class="m-3">{{MoreText}}</h6>
+        </a>
+      </div>
+
+      <ng-container *ngIf="Reviews.length; else elseTemplate">
+        <div class="d-flex flex-column">
+          <app-review-card class="m-2" [review]="review"
+          *ngFor="let review of Reviews">
+          </app-review-card>
+        </div>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <p class="mx-auto">No reviews found, yet</p>
+      </ng-template>
+
+    </div>
+  </div>
+</div>

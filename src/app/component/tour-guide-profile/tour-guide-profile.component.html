@@ -1,1 +1,39 @@
-<p>tour-guide-profile works!</p>
+<div *ngIf="tourGuide">
+
+  <div class="container-fluid bg-primary py-5 hero-header">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+
+          <div class="col-4 col-md-3 mb-3 mx-auto image-box rounded-circle
+          border border-3 border-white overflow-hidden">
+            <img [src]="tourGuide.profilePic" class="rounded-circle">
+          </div>
+
+          <h1 class="display-3 text-white mb-3 animated slideInDown">{{tourGuide.name}}</h1>
+
+          <star-rating [count]="tourGuide.ratingCount" [rating]="tourGuide.rating"></star-rating>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid bg-secondary pb-5 bg-gradient">
+
+        <app-tour-slider [Tours]="upcomingTours.slice(0,10)"
+        [MoreLink]="'Upcoming-Tours'" [MoreText]="'View All'"
+        [Title]="'Upcoming Tours'">
+        </app-tour-slider>
+
+        <app-tour-slider [Tours]="pastTours.slice(0,10)" [MoreLink]="'Past-Tours'"
+        [MoreText]="'View All'" [Title]="'Past Tours'">
+        </app-tour-slider>
+
+        <app-review-lister [Reviews]="reviews.slice(0,10)" [MoreLink]="'Reviews'"
+        [MoreText]="'View All'" [Title]="'Reviews'">
+        </app-review-lister>
+
+  </div>
+
+</div>

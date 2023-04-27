@@ -6,5 +6,5 @@ export enum ApiPaths {
   tourguide = '/TourGuide',
   tgUpcomingTours = '/UpcomingTours',
   tgPastTours = '/PastTours',
-  tgReviews = '/Reviews'
+  tgReviews = '/Reviews',
 }

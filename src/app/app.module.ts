@@ -30,6 +30,8 @@ import { GalleryComponent } from './component/gallery/gallery.component';
 import { TourGuideProfileComponent } from './component/tour-guide-profile/tour-guide-profile.component';
 import { TourguideDashboardComponent } from './component/tourguide-dashboard/tourguide-dashboard.component';
 import { TourguideHeaderComponent } from './component/tourguide-header/tourguide-header.component';
+import { TourSliderComponent } from './component/tour-slider/tour-slider.component';
+import { ReviewListerComponent } from './component/review-lister/review-lister.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { TourguideHeaderComponent } from './component/tourguide-header/tourguide
     TourguideDashboardComponent,
     TourguideHeaderComponent,
     GalleryComponent,
-    TourGuideProfileComponent
+    TourGuideProfileComponent,
+    TourSliderComponent,
+    ReviewListerComponent
 
   ],
   imports: [
