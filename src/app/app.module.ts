@@ -32,6 +32,12 @@ import { TourguideDashboardComponent } from './component/tourguide-dashboard/tou
 import { TourguideHeaderComponent } from './component/tourguide-header/tourguide-header.component';
 import { TourSliderComponent } from './component/tour-slider/tour-slider.component';
 import { ReviewListerComponent } from './component/review-lister/review-lister.component';
+import { TGUpcomingToursComponent } from './component/tgupcoming-tours/tgupcoming-tours.component';
+import { TGPastToursComponent } from './component/tgpast-tours/tgpast-tours.component';
+import { TGReviewsComponent } from './component/tgreviews/tgreviews.component';
+import { TourListerComponent } from './component/tour-lister/tour-lister.component';
+import { TGProfileInfoComponent } from './component/tgprofile-info/tgprofile-info.component';
+import { TGOverviewComponent } from './component/tgoverview/tgoverview.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +69,13 @@ import { ReviewListerComponent } from './component/review-lister/review-lister.c
     GalleryComponent,
     TourGuideProfileComponent,
     TourSliderComponent,
-    ReviewListerComponent
+    ReviewListerComponent,
+    TGUpcomingToursComponent,
+    TGPastToursComponent,
+    TGReviewsComponent,
+    TourListerComponent,
+    TGProfileInfoComponent,
+    TGOverviewComponent,
 
   ],
   imports: [

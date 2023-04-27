@@ -8,7 +8,7 @@ import { TourCard } from 'src/app/Interfaces/tour-card';
 })
 export class TourHomeComponent {
 
-  tours: (TourCard | undefined)[] = [{
+  tours: TourCard[] = [{
     Id: 1,
     Photos: [
       'https://picsum.photos/200/300',

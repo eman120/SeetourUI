@@ -10,4 +10,7 @@ export class ReviewListerComponent {
   @Input() Title: string = "";
   @Input() MoreText: string = "";
   @Input() MoreLink: string = "";
+  @Input() MoreOutlet: string = "primary";
+
+  get link() { return {outlets: { [this.MoreOutlet]: [this.MoreLink] }} };
 }

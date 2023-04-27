@@ -9,12 +9,7 @@
 </div>
 
 <div class="container-fluid bg-secondary pb-5 bg-gradient">
-  <div class="row justify-content-center">
-    <div class="d-flex justify-content-center flex-wrap gy-4">
 
-        <app-tour-card *ngFor="let tour of tours" [tour]="tour"
-        class="m-2" style="flex: 0 1 auto;width: 22rem;"></app-tour-card>
+  <app-tour-lister [tours]="tours"></app-tour-lister>
 
-    </div>
-  </div>
 </div>
