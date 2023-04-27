@@ -28,6 +28,8 @@ import { WishListButtonComponent } from './component/wish-list-button/wish-list-
 import { ReviewCardComponent } from './component/review-card/review-card.component';
 import { GalleryComponent } from './component/gallery/gallery.component';
 import { TourGuideProfileComponent } from './component/tour-guide-profile/tour-guide-profile.component';
+import { TourguideDashboardComponent } from './component/tourguide-dashboard/tourguide-dashboard.component';
+import { TourguideHeaderComponent } from './component/tourguide-header/tourguide-header.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,11 @@ import { TourGuideProfileComponent } from './component/tour-guide-profile/tour-g
     TruncatePipe,
     WishListButtonComponent,
     TourDetailsComponent,
+
     ReviewCardComponent,
+    GalleryComponent,
+    TourguideDashboardComponent,
+    TourguideHeaderComponent,
     GalleryComponent,
     TourGuideProfileComponent
 

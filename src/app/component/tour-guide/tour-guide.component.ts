@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./tour-guide.component.css']
 })
 export class TourGuideComponent {
+  
+
 
 }

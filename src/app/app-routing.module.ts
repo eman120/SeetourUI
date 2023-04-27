@@ -12,6 +12,8 @@ import { HeaderComponent } from './component/header/header.component';
 import { TourDetailsComponent } from './component/tour-details/tour-details.component';
 import { UserregisterComponent } from './component/userregister/userregister.component';
 import { TourGuideProfileComponent } from './component/tour-guide-profile/tour-guide-profile.component';
+import { TourGuideComponent } from './component/tour-guide/tour-guide.component';
+import { TourguideDashboardComponent } from './component/tourguide-dashboard/tourguide-dashboard.component';
 
 const routes: Routes = [
   {path: "",component:HomeComponent},
@@ -26,6 +28,8 @@ const routes: Routes = [
   {path:"tour/:id",component:TourDetailsComponent},
   {path:"tourguide/:id",component:TourGuideProfileComponent},
   {path:"userregister" , component:UserregisterComponent},
+  {path:"tourguid" , component:TourGuideComponent},
+  {path:"dashboard" , component:TourguideDashboardComponent},
   {path:"**" , component:ErrorComponent}
 ];
 

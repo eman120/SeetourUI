@@ -7,5 +7,4 @@ import 'bootstrap';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  
 }
