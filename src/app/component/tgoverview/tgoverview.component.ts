@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiPaths } from 'src/app/Enums/api-paths';
 import { ReviewCard } from 'src/app/Interfaces/review-card';
@@ -7,6 +7,8 @@ import { TourCard } from 'src/app/Interfaces/tour-card';
 import { environment } from 'src/environments/environment';
 
 import { TourSliderComponent } from '../tour-slider/tour-slider.component';
+import { TourGuide } from 'src/app/Interfaces/tour-guide';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-tgoverview',
@@ -17,15 +19,19 @@ export class TGOverviewComponent implements OnInit {
   upcomingTours: TourCard[] = [];
   pastTours: TourCard[] = [];
   reviews: ReviewCard[] = [];
+  @Input() tourGuide: TourGuide | undefined;
 
   constructor(
     private http: HttpClient,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private titleService:Title
   ) { }
 
   ngOnInit(): void {
     const tourguideId = this.route.snapshot.paramMap.get('id');
     const urlBase = environment.baseUrl+ApiPaths.tourguide+'/'+tourguideId;
+
+    this.titleService.setTitle("Seetour - " + this.tourGuide?.name);
 
     const urlUpcoming = urlBase+ApiPaths.tgUpcomingTours
     this.http.get(urlUpcoming).subscribe({

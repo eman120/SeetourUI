@@ -4,8 +4,7 @@ import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-tour-guide-profile',
-  templateUrl: './tour-guide-profile.component.html',
-  styleUrls: ['./tour-guide-profile.component.css']
+  templateUrl: './tour-guide-profile.component.html'
 })
 export class TourGuideProfileComponent {
 
@@ -21,6 +20,5 @@ export class TourGuideProfileComponent {
 
   TGLoaded(data: TourGuide) {
     this.tourGuide = data;
-    this.titleService.setTitle("Seetour - " + this.tourGuide.name);
   }
 }

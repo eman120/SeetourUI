@@ -7,8 +7,7 @@ import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-tgprofile-info',
-  templateUrl: './tgprofile-info.component.html',
-  styleUrls: ['./tgprofile-info.component.css']
+  templateUrl: './tgprofile-info.component.html'
 })
 export class TGProfileInfoComponent implements OnInit {
 
