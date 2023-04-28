@@ -20,6 +20,7 @@ import { TourDetailsComponent } from './component/tour-details/tour-details.comp
 import { AdminStatisticsComponent } from './component/admin-statistics/admin-statistics.component';
 import { UserregisterComponent } from './component/userregister/userregister.component';
 import { PaymentComponent } from './component/payment/payment.component';
+import { AdminReviewComponent } from './component/admin-review/admin-review.component';
 
 
 
@@ -44,7 +45,8 @@ import { PaymentComponent } from './component/payment/payment.component';
 
     TourDetailsComponent,
     UserregisterComponent,
-    PaymentComponent
+    PaymentComponent,
+    AdminReviewComponent
 
 
   ],
