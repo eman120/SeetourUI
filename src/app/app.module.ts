@@ -28,7 +28,9 @@ import { StarRatingComponent } from './component/star-rating/star-rating.compone
 import { LikeButtonComponent } from './component/like-button/like-button.component';
 import { TruncatePipe } from './Pipes/truncate.pipe';
 import { WishListButtonComponent } from './component/wish-list-button/wish-list-button.component';
-
+import { CreateTourComponent } from './component/create-tour/create-tour.component';
+import { GoogleMapsComponent } from './component/google-maps/google-maps.component';
+import { DatePipe, CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,6 @@ import { WishListButtonComponent } from './component/wish-list-button/wish-list-
     ErrorComponent,
     HeaderComponent,
     FooterComponent,
-
     UserregisterComponent,
     TourCardComponent,
     StarRatingComponent,
@@ -52,10 +53,11 @@ import { WishListButtonComponent } from './component/wish-list-button/wish-list-
     TruncatePipe,
     WishListButtonComponent,
     UploadImageComponent,
-    UploadImagesComponent
-    TourDetailsComponent
-    UserregisterComponent
-
+    UploadImagesComponent,
+    TourDetailsComponent,
+    UserregisterComponent,
+    CreateTourComponent,
+    GoogleMapsComponent
   ],
   imports: [
     BrowserModule,
@@ -63,9 +65,10 @@ import { WishListButtonComponent } from './component/wish-list-button/wish-list-
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    CommonModule
   ],
-  providers: [AuthInterceptorProviders],
+  providers: [AuthInterceptorProviders,DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

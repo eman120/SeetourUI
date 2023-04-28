@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: []
 })
 export class UploadImageComponent {
+  @Output() imageUrl = new EventEmitter<string>();
    fileInput = document.querySelector('#fileInput') as HTMLInputElement;
    file = this.fileInput?.files?.[0];
   readonly maxFileSize = 1; // MB
@@ -32,9 +33,11 @@ export class UploadImageComponent {
     if (file) {
       const formData = new FormData();
       formData.append('file', file);
-      this.http.post('https://localhost:7277/api/AzureImagesURL/UploadImage', formData)
+      console.log(file);
+      this.http.post('https://localhost:44362/api/AzureImagesURL/UploadImage', formData)
         .subscribe((result: any) => {
-          console.log(result);
+          this.imageUrl.emit(result.url);
+          console.log(result.url);
           // Reset the form after successful upload
           this.uploadForm.reset();
         }, (error: any) => {
