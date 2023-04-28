@@ -1,7 +1,7 @@
 <div style="min-width: 22rem;" *ngIf="tour" class="card h-100">
 
   <ngb-carousel class="rounded-top overflow-hidden" [interval]="0">
-    <ng-template ngbSlide *ngFor="let photo of tour.Photos">
+    <ng-template ngbSlide *ngFor="let photo of tour.photos">
       <!-- slide content -->
       <div class="carousel-item active">
         <img src="{{photo}}" class="d-block w-100">
@@ -12,7 +12,7 @@
   <div class="card-body text-start text-break d-flex flex-column">
 
     <a [routerLink]="tourLink" class="btn flex-grow-1 mb-1 p-0 text-start">
-      <h5 class="card-title">{{tour.Title | truncate }}</h5>
+      <h5 class="card-title">{{tour.title | truncate }}</h5>
     </a>
 
 
@@ -20,33 +20,33 @@
 
       <li class="list-group-item px-0">
         <div class="d-flex justify-content-end align-items-center">
-          <h6 class="m-0 flex-grow-1 text-truncate">{{tour.TourGuideName}}</h6>
-          <star-rating [rating]="tour.TourGuideRating"[count]="tour.TourGuideRatingCount"></star-rating>
+          <h6 class="m-0 flex-grow-1 text-truncate">{{tour.tourGuideName}}</h6>
+          <star-rating [rating]="tour.tourGuideRating"[count]="tour.tourGuideRatingCount"></star-rating>
         </div>
       </li>
 
       <li class="list-group-item px-0">
         <div class="d-flex justify-content-between align-items-center">
-          <span class="m-0 flex-grow-1 text-truncate">{{tour.LocationTo}}</span>
-          <span>{{tour.Price | currency}}</span>
+          <span class="m-0 flex-grow-1 text-truncate">{{tour.locationTo}}</span>
+          <span>{{tour.price | currency}}</span>
         </div>
       </li>
 
       <li class="list-group-item px-0">
         <div class="d-flex justify-content-between align-items-center">
-          <span>{{tour.DateFrom}}</span>
+          <span>{{tour.dateFrom}}</span>
           <span> - </span>
-          <span>{{tour.DateTo}}</span>
+          <span>{{tour.dateTo}}</span>
         </div>
       </li>
 
       <li class="list-group-item px-0">
         <div class="d-flex justify-content-between align-items-center">
-          <ngb-progressbar type="success" [value]="tour.Bookings" class="flex-grow-1 me-1"
-          [max]="tour.Capacity" height=".5rem"></ngb-progressbar>
+          <ngb-progressbar type="success" [value]="tour.bookings" class="flex-grow-1 me-1"
+          [max]="tour.capacity" height=".5rem"></ngb-progressbar>
 
-          <like-button [likes]="tour.Likes" [isLiked]="tour.isLiked" [Id]="tour.Id"></like-button>
-          <wishlist-button [isInWishlist]="tour.AddedToWishList" [Id]="tour.Id"></wishlist-button>
+          <like-button [likes]="tour.likes" [isLiked]="tour.isLiked" [Id]="tour.id"></like-button>
+          <wishlist-button [isInWishlist]="tour.addedToWishList" [Id]="tour.id"></wishlist-button>
         </div>
       </li>
 

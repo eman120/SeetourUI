@@ -36,6 +36,7 @@ export class TGOverviewComponent implements OnInit {
     const urlUpcoming = urlBase+ApiPaths.tgUpcomingTours
     this.http.get(urlUpcoming).subscribe({
       next: (data) => {
+        console.log(data)
         this.upcomingTours = data as TourCard[];
       },
       error: () => {}

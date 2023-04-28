@@ -10,6 +10,6 @@ export class TourCardComponent {
   @Input() tour: TourCard | undefined;
 
   get tourLink(): string {
-    return this.tour ? `/tour/${this.tour.Id}` : '#';
+    return this.tour ? `/tour/${this.tour.id}` : '#';
   }
 }
