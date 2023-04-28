@@ -31,6 +31,10 @@ import { WishListButtonComponent } from './component/wish-list-button/wish-list-
 import { CreateTourComponent } from './component/create-tour/create-tour.component';
 import { GoogleMapsComponent } from './component/google-maps/google-maps.component';
 import { DatePipe, CommonModule } from '@angular/common';
+import { ReviewCardComponent } from './component/review-card/review-card.component';
+import { GalleryComponent } from './component/gallery/gallery.component';
+import { TourguideDashboardComponent } from './component/tourguide-dashboard/tourguide-dashboard.component';
+import { TourguideHeaderComponent } from './component/tourguide-header/tourguide-header.component';
 
 @NgModule({
   declarations: [
@@ -53,9 +57,13 @@ import { DatePipe, CommonModule } from '@angular/common';
     TruncatePipe,
     WishListButtonComponent,
     UploadImageComponent,
-    UploadImagesComponent,
-    TourDetailsComponent,
-    UserregisterComponent,
+    UploadImagesComponent,,
+    TourDetailsComponent,,
+
+    ReviewCardComponent,
+    GalleryComponent,
+    TourguideDashboardComponent,
+    TourguideHeaderComponent,
     CreateTourComponent,
     GoogleMapsComponent
   ],
