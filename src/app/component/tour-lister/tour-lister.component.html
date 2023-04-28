@@ -4,9 +4,19 @@
     <app-tour-card *ngFor="let tour of tours" [tour]="tour"
     class="m-2" style="flex: 0 1 auto;width: 22rem;"></app-tour-card>
 
-    <p *ngIf="!tours.length" class="text-center mx-auto mb-0 mt-3">
-      No tours found, yet
-    </p>
+    <ng-container *ngIf="tours; else elseTemplate">
+
+      <p *ngIf="!tours.length" class="text-center mx-auto mb-0 mt-3">
+        No tours found, yet
+      </p>
+    </ng-container>
+
+    <ng-template #elseTemplate>
+
+      <app-spinner class="flex-grow-1"></app-spinner>
+
+    </ng-template>
+
 
   </div>
 </div>

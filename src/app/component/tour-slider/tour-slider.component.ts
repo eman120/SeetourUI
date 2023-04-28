@@ -6,7 +6,7 @@ import { TourCard } from 'src/app/Interfaces/tour-card';
   templateUrl: './tour-slider.component.html'
 })
 export class TourSliderComponent {
-  @Input() Tours: TourCard[] = [];
+  @Input() Tours: TourCard[] | undefined;
   @Input() Title: string = "";
   @Input() MoreText: string = "";
   @Input() MoreLink: string = "";

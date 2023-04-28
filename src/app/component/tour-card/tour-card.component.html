@@ -9,16 +9,16 @@
     </ng-template>
   </ngb-carousel>
 
-  <div class="card-body text-start text-break d-flex flex-column">
+  <div class="card-body text-start text-break d-flex flex-column pb-0">
 
     <a [routerLink]="tourLink" class="btn flex-grow-1 mb-1 p-0 text-start">
-      <h5 class="card-title">{{tour.title | truncate }}</h5>
+      <h5 class="card-title m-0">{{tour.title | truncate }}</h5>
     </a>
 
 
     <ul class="list-group list-group-flush text-nowrap">
 
-      <li class="list-group-item px-0">
+      <li class="list-group-item px-0 pt-0">
         <div class="d-flex justify-content-end align-items-center">
           <h6 class="m-0 flex-grow-1 text-truncate">{{tour.tourGuideName}}</h6>
           <star-rating [rating]="tour.tourGuideRating"[count]="tour.tourGuideRatingCount"></star-rating>

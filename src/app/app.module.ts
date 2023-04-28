@@ -38,6 +38,7 @@ import { TGReviewsComponent } from './component/tgreviews/tgreviews.component';
 import { TourListerComponent } from './component/tour-lister/tour-lister.component';
 import { TGProfileInfoComponent } from './component/tgprofile-info/tgprofile-info.component';
 import { TGOverviewComponent } from './component/tgoverview/tgoverview.component';
+import { SpinnerComponent } from './component/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { TGOverviewComponent } from './component/tgoverview/tgoverview.component
     TourListerComponent,
     TGProfileInfoComponent,
     TGOverviewComponent,
+    SpinnerComponent,
 
   ],
   imports: [

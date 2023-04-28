@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
   templateUrl: './tgpast-tours.component.html'
 })
 export class TGPastToursComponent {
-  tours: TourCard[] = [];
+  tours: TourCard[] | undefined;
   @Input() tourGuide: TourGuide | undefined;
 
   constructor(

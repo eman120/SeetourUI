@@ -1,17 +1,17 @@
 <div class="container-fluid bg-secondary pb-5 bg-gradient">
 
-  <app-tour-slider [Tours]="upcomingTours.slice(0,10)"
+  <app-tour-slider [Tours]="upcomingTours"
   MoreLink="Upcoming-Tours" MoreText="View All"
   MoreOutlet="TGProfile"
   Title="Upcoming Tours">
   </app-tour-slider>
 
-  <app-tour-slider [Tours]="pastTours.slice(0,10)" MoreLink="Past-Tours"
+  <app-tour-slider [Tours]="pastTours" MoreLink="Past-Tours"
   MoreOutlet="TGProfile"
   MoreText="View All" Title="Past Tours">
   </app-tour-slider>
 
-  <app-review-lister [Reviews]="reviews.slice(0,10)" MoreLink="Reviews"
+  <app-review-lister [Reviews]="reviews" MoreLink="Reviews"
   MoreOutlet="TGProfile"
   MoreText="View All" Title="Reviews">
   </app-review-lister>

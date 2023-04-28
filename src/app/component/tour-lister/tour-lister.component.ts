@@ -6,5 +6,5 @@ import { TourCard } from 'src/app/Interfaces/tour-card';
   templateUrl: './tour-lister.component.html',
 })
 export class TourListerComponent {
-  @Input() tours: TourCard[] = [];
+  @Input() tours: TourCard[] | undefined;
 }

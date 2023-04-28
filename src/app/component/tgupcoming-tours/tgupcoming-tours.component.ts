@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
   templateUrl: './tgupcoming-tours.component.html'
 })
 export class TGUpcomingToursComponent {
-  tours: TourCard[] = [];
+  tours: TourCard[] | undefined;
   @Input() tourGuide: TourGuide | undefined;
 
   constructor(

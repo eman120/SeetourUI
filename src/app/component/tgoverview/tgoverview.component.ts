@@ -16,9 +16,9 @@ import { Title } from '@angular/platform-browser';
 })
 export class TGOverviewComponent implements OnInit {
 
-  upcomingTours: TourCard[] = [];
-  pastTours: TourCard[] = [];
-  reviews: ReviewCard[] = [];
+  upcomingTours: TourCard[] | undefined;
+  pastTours: TourCard[] | undefined;
+  reviews: ReviewCard[] | undefined;
   @Input() tourGuide: TourGuide | undefined;
 
   constructor(

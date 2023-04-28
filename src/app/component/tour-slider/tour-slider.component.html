@@ -1,6 +1,6 @@
 <div class="row justify-content-center">
   <div class="d-flex justify-content-center flex-wrap gy-4">
-    <div class="col-12 col-lg-9 mx-auto pb-3 bg-light border rounded">
+    <div class="col-12 col-lg-9 mx-auto bg-light border rounded p-3">
 
       <div class="d-flex flex-row justify-content-between">
         <h3 class="m-3">{{Title}}</h3>
@@ -16,9 +16,19 @@
         *ngFor="let tour of Tours">
         </app-tour-card>
 
-        <p *ngIf="!Tours.length" class="mx-auto text-center mb-0 mt-3">
-          No tours found, yet
-        </p>
+        <ng-container *ngIf="Tours; else elseTemplate">
+
+          <p *ngIf="!Tours.length" class="mx-auto text-center mb-0 mt-3">
+            No tours found.,, yet
+          </p>
+
+        </ng-container>
+        <ng-template #elseTemplate>
+
+          <app-spinner class="flex-grow-1"></app-spinner>
+
+        </ng-template>
+
       </div>
 
     </div>

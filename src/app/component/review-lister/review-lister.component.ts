@@ -6,7 +6,7 @@ import { ReviewCard } from 'src/app/Interfaces/review-card';
   templateUrl: './review-lister.component.html'
 })
 export class ReviewListerComponent {
-  @Input() Reviews: ReviewCard[] = [];
+  @Input() Reviews: ReviewCard[] | undefined;
   @Input() Title: string = "";
   @Input() MoreText: string = "";
   @Input() MoreLink: string = "";

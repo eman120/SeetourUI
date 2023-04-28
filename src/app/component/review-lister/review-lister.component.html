@@ -15,9 +15,17 @@
           *ngFor="let review of Reviews">
           </app-review-card>
 
-          <p *ngIf="!Reviews.length" class="mx-auto text-center mb-0 mt-3">
-            No reviews found, yet
-          </p>
+          <ng-container *ngIf="Reviews; else elseTemplate">
+
+            <p *ngIf="!Reviews.length" class="mx-auto text-center mb-0 mt-3">
+              No reviews found, yet
+            </p>
+
+          </ng-container>
+          <ng-template #elseTemplate>
+            <app-spinner class="flex-grow-1"></app-spinner>
+          </ng-template>
+
         </div>
 
     </div>
