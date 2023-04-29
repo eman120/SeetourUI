@@ -7,7 +7,7 @@ import * as moment from "moment";
 
 @Injectable({
   providedIn: 'root'
-})
+}) 
 export class AuthService {
 
   constructor(private http: HttpClient) {
