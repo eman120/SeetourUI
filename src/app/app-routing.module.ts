@@ -11,8 +11,12 @@ import { DetailsComponent } from './component/details/details.component';
 import { HeaderComponent } from './component/header/header.component';
 import { TourDetailsComponent } from './component/tour-details/tour-details.component';
 import { UserregisterComponent } from './component/userregister/userregister.component';
+import { TourGuideProfileComponent } from './component/tour-guide-profile/tour-guide-profile.component';
 import { TourGuideComponent } from './component/tour-guide/tour-guide.component';
 import { TourguideDashboardComponent } from './component/tourguide-dashboard/tourguide-dashboard.component';
+import { TGReviewsComponent } from './component/tgreviews/tgreviews.component';
+import { TGOverviewComponent } from './component/tgoverview/tgoverview.component';
+import { TGToursComponent } from './component/tgtours/tgtours.component';
 
 const routes: Routes = [
   {path: "",component:HomeComponent},
@@ -24,9 +28,34 @@ const routes: Routes = [
   {path:"tour" , component:TourHomeComponent},
   {path:"services" , component:DetailsComponent},
   {path:"header" , component:HeaderComponent},
-  {path:"TourDetails",component:TourDetailsComponent},
+  {path:"tour/:id",component:TourDetailsComponent},
+
+  {path:"tourguide/:id",component:TourGuideProfileComponent,
+    children: [
+      {path:"",component:TGOverviewComponent,outlet:'TGProfile'},
+      {
+        path:"Upcoming-Tours",
+        component:TGToursComponent,
+        outlet:'TGProfile',
+        data: {
+          state:'Upcoming',
+          isCompleted: false
+        }
+      },
+      {
+        path:"Past-Tours",
+        component:TGToursComponent,
+        outlet:'TGProfile',
+        data: {
+          state:'Past',
+          isCompleted: true
+        }
+      },
+      {path:"Reviews",component:TGReviewsComponent,outlet:'TGProfile'},
+    ]},
+
   {path:"userregister" , component:UserregisterComponent},
-  {path:"tourguid" , component:TourGuideComponent},
+  {path:"tourguide" , component:TourGuideComponent},
   {path:"dashboard" , component:TourguideDashboardComponent},
   {path:"**" , component:ErrorComponent}
 ];

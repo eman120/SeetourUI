@@ -33,8 +33,19 @@ import { GoogleMapsComponent } from './component/google-maps/google-maps.compone
 import { DatePipe, CommonModule } from '@angular/common';
 import { ReviewCardComponent } from './component/review-card/review-card.component';
 import { GalleryComponent } from './component/gallery/gallery.component';
+import { TourGuideProfileComponent } from './component/tour-guide-profile/tour-guide-profile.component';
 import { TourguideDashboardComponent } from './component/tourguide-dashboard/tourguide-dashboard.component';
 import { TourguideHeaderComponent } from './component/tourguide-header/tourguide-header.component';
+import { TourSliderComponent } from './component/tour-slider/tour-slider.component';
+import { ReviewListerComponent } from './component/review-lister/review-lister.component';
+import { TGReviewsComponent } from './component/tgreviews/tgreviews.component';
+import { TourListerComponent } from './component/tour-lister/tour-lister.component';
+import { TGProfileInfoComponent } from './component/tgprofile-info/tgprofile-info.component';
+import { TGOverviewComponent } from './component/tgoverview/tgoverview.component';
+import { SpinnerComponent } from './component/spinner/spinner.component';
+import { ToursFilterComponent } from './component/tours-filter/tours-filter.component';
+import { TGToursComponent } from './component/tgtours/tgtours.component';
+import { ToursSectionFilterableComponent } from './component/tours-section-filterable/tours-section-filterable.component';
 
 @NgModule({
   declarations: [
@@ -59,13 +70,23 @@ import { TourguideHeaderComponent } from './component/tourguide-header/tourguide
     UploadImageComponent,
     UploadImagesComponent,,
     TourDetailsComponent,,
-
     ReviewCardComponent,
-    GalleryComponent,
     TourguideDashboardComponent,
     TourguideHeaderComponent,
     CreateTourComponent,
-    GoogleMapsComponent
+    GoogleMapsComponent,
+    GalleryComponent,
+    TourGuideProfileComponent,
+    TourSliderComponent,
+    ReviewListerComponent,
+    TGReviewsComponent,
+    TourListerComponent,
+    TGProfileInfoComponent,
+    TGOverviewComponent,
+    SpinnerComponent,
+    ToursFilterComponent,
+    TGToursComponent,
+    ToursSectionFilterableComponent
   ],
   imports: [
     BrowserModule,

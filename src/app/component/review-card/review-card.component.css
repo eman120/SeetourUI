@@ -5,27 +5,3 @@
   gap: 0.5rem;
   cursor: pointer;
 }
-
-.image-box {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.16);
-}
-
-.image-box img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-}
-
-.image-box:before {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
-}

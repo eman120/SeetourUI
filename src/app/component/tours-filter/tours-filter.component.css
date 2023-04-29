@@ -1,0 +1,13 @@
+/* Set the color of the stars */
+::ng-deep ngb-rating span {
+  color: #f0ad4e;
+}
+
+/* Set the size of the stars */
+::ng-deep ngb-rating span {
+  font-size: 1.5rem;
+}
+
+form label {
+  font-size: 1.25rem;
+}

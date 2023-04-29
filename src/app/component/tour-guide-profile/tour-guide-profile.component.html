@@ -1,0 +1,7 @@
+<app-tgprofile-info (TGLoaded)="TGLoaded($event)"></app-tgprofile-info>
+
+<div *ngIf="tourGuide">
+
+  <router-outlet name="TGProfile" (activate)="PassTGInfo($event)"></router-outlet>
+
+</div>

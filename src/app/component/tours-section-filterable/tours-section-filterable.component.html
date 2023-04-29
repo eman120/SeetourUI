@@ -1,0 +1,30 @@
+<div class="container-fluid bg-secondary pt-5 pb-5 bg-gradient">
+
+  <div class="d-flex flex-row">
+    <button class="btn btn-primary" type="button"
+    data-bs-toggle="offcanvas" data-bs-target="#filterSide"
+    aria-controls="filterSide">
+      <i class="bi bi-funnel-fill"></i>
+    </button>
+
+    <h3 class="text-center text-white flex-grow-1">{{title}}</h3>
+  </div>
+
+  <div class="offcanvas offcanvas-start" tabindex="-1"
+  data-bs-scroll="true" data-bs-backdrop="false"
+  id="filterSide" aria-labelledby="filterSideLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="filterSideLabel">Filter</h5>
+      <button #FilterClose type="button" class="btn-close" data-bs-dismiss="offcanvas"
+      aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+
+      <app-tours-filter (FilterValue)="Filter($event)"></app-tours-filter>
+
+    </div>
+  </div>
+
+  <app-tour-lister [tours]="tours"></app-tour-lister>
+
+</div>
