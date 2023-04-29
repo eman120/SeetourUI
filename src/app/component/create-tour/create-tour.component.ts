@@ -111,7 +111,7 @@ DateNow= new Date();
   }
 
 
-  
+
   submitForm() {
     // Access the values of the URLs from the parent component and submit them along with the other form data
     const formValue = { ...this.createtourform.value, imageurl: this.imageurl, firsturl: this.firsturl, locationFrom: this.locationFrom, secondurl: this.secondurl, locationTo: this.locationTo };
@@ -181,7 +181,7 @@ DateNow= new Date();
       // datefromTracker.setHours(0,0,0,0);
 
        // console.log(this.InValidDateFrom);
-        if (canceldate && datefromTracker  &&  canceldate  > datefromTracker) {
+        if (canceldate && datefromTracker  &&  (canceldate  > datefromTracker || canceldate >today )) {
           this.InValidCancelDate = true;
           observer.next({ 'InValidCancelDate': true });
         } else {
