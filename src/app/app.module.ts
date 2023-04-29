@@ -1,3 +1,4 @@
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -9,22 +10,27 @@ import { AboutUsComponent } from './component/about-us/about-us.component';
 import { ContactUsComponent } from './component/contact-us/contact-us.component';
 import { DetailsComponent } from './component/details/details.component';
 import { TourHomeComponent } from './component/tour-home/tour-home.component';
+
 import { TourGuideComponent } from './component/tour-guide/tour-guide.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ErrorComponent } from './component/error/error.component';
 import { HeaderComponent } from './component/header/header.component';
+import { UploadImageComponent } from './component/upload-image/upload-image.component';
+import { UploadImagesComponent } from './component/upload-images/upload-images.component';
+
 import { AuthInterceptorProviders } from './Middlewares/auth-interceptor';
 import { FooterComponent } from './component/footer/footer.component';
 import { TourDetailsComponent } from './component/tour-details/tour-details.component';
 import { UserregisterComponent } from './component/userregister/userregister.component';
 import { TourCardComponent } from './component/tour-card/tour-card.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { StarRatingComponent } from './component/star-rating/star-rating.component';
 import { LikeButtonComponent } from './component/like-button/like-button.component';
 import { TruncatePipe } from './Pipes/truncate.pipe';
 import { WishListButtonComponent } from './component/wish-list-button/wish-list-button.component';
-
+import { CreateTourComponent } from './component/create-tour/create-tour.component';
+import { GoogleMapsComponent } from './component/google-maps/google-maps.component';
+import { DatePipe, CommonModule } from '@angular/common';
 import { ReviewCardComponent } from './component/review-card/review-card.component';
 import { GalleryComponent } from './component/gallery/gallery.component';
 import { TourGuideProfileComponent } from './component/tour-guide-profile/tour-guide-profile.component';
@@ -55,19 +61,20 @@ import { ToursSectionFilterableComponent } from './component/tours-section-filte
     ErrorComponent,
     HeaderComponent,
     FooterComponent,
-
     UserregisterComponent,
     TourCardComponent,
     StarRatingComponent,
     LikeButtonComponent,
     TruncatePipe,
     WishListButtonComponent,
-    TourDetailsComponent,
-
+    UploadImageComponent,
+    UploadImagesComponent,,
+    TourDetailsComponent,,
     ReviewCardComponent,
-    GalleryComponent,
     TourguideDashboardComponent,
     TourguideHeaderComponent,
+    CreateTourComponent,
+    GoogleMapsComponent,
     GalleryComponent,
     TourGuideProfileComponent,
     TourSliderComponent,
@@ -79,8 +86,7 @@ import { ToursSectionFilterableComponent } from './component/tours-section-filte
     SpinnerComponent,
     ToursFilterComponent,
     TGToursComponent,
-    ToursSectionFilterableComponent,
-
+    ToursSectionFilterableComponent
   ],
   imports: [
     BrowserModule,
@@ -88,9 +94,10 @@ import { ToursSectionFilterableComponent } from './component/tours-section-filte
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    CommonModule
   ],
-  providers: [AuthInterceptorProviders],
+  providers: [AuthInterceptorProviders,DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
