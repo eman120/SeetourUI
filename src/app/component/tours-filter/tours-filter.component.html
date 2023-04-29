@@ -1,0 +1,59 @@
+<div class="container-md">
+
+  <form [formGroup]="filterForm" class="row g-3 border rounded bg-light pb-2">
+    <div class="col-sm-6 col-lg-12">
+      <label for="dateFrom" class="form-label">Date From</label>
+      <input type="date" formControlName="dateFrom" id="dateFrom" class="form-control">
+    </div>
+    <div class="col-sm-6 col-lg-12">
+      <label for="dateTo" class="form-label">To</label>
+      <input type="date" formControlName="dateTo" id="dateTo" class="form-control">
+    </div>
+
+    <label for="locationFrom" class="form-label">Location</label>
+    <div class="col-sm-6 col-lg-12">
+      <input type="text" formControlName="locationFrom"
+      id="locationFrom" class="form-control" placeholder="From">
+    </div>
+    <div class="col-sm-6 col-lg-12">
+      <input type="text" formControlName="locationTo"
+      id="locationTo" class="form-control" placeholder="To">
+    </div>
+
+    <label for="priceFrom" class="form-label">Price</label>
+    <div class="col-sm-6 col-lg-12">
+      <input type="number" formControlName="priceFrom"
+      id="priceFrom" class="form-control" placeholder="From">
+    </div>
+    <div class="col-sm-6 col-lg-12">
+      <input type="number" formControlName="priceTo"
+      id="priceTo" class="form-control" placeholder="To">
+    </div>
+
+    <label for="capacityFrom" class="form-label">Capacity</label>
+    <div class="col-sm-6 col-lg-12">
+      <input type="number" formControlName="capacityFrom"
+      id="capacityFrom" class="form-control" placeholder="From">
+    </div>
+    <div class="col-sm-6 col-lg-12">
+      <input type="number" formControlName="capacityTo"
+      id="capacityTo" class="form-control" placeholder="To">
+    </div>
+
+    <div class="col-sm-6 col-lg-12">
+      <label for="hasSeats" class="form-label">Available Seats</label>
+      <input type="number" formControlName="hasSeats"
+      id="hasSeats" class="form-control" placeholder="0">
+    </div>
+    <div class="col-sm-6 col-lg-12">
+      <label for="minRating" class="form-label d-block">Minimum Rating</label>
+      <ngb-rating id="minRating" formControlName="minRating" [max]="5"
+      [readonly]="false" [resettable]="true" class="form-control py-0"></ngb-rating>
+    </div>
+    
+    <div class="col-sm-6 col-lg-12">
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+  </form>
+
+</div>
