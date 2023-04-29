@@ -1,7 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { TourCard } from 'src/app/Interfaces/tour-card';
-import { TourGuide } from 'src/app/Interfaces/tour-guide';
 import { FormGroupQueryService } from 'src/app/Services/form-group-query.service';
 
 @Component({
@@ -14,15 +13,19 @@ export class ToursSectionFilterableComponent {
   @Input() title: string = ""
   @Output() FilterValue = new EventEmitter();
 
+  @ViewChild('FilterClose') FilterClose: ElementRef |undefined;
+
   Filter(data: any) {
     this.ChangeQueryParams(data);
     this.FilterValue.emit(data);
+    this.FilterClose?.nativeElement.click();
   }
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private FGQuery: FormGroupQueryService
-  ) { }
+  ) {
+  }
 
   public ChangeQueryParams(data:any) {
     const queryParams: Params = this.FGQuery.GetQuery(data);
