@@ -12,7 +12,7 @@
       <input type="date" formControlName="dateTo" id="dateTo" class="form-control">
     </div>
 
-    <label for="locationFrom" class="form-label">Location</label>
+    <label for="locationFrom" class="form-label mb-0">Location</label>
     <div class="col-sm-6">
       <input type="text" formControlName="locationFrom"
       id="locationFrom" class="form-control" placeholder="From">
@@ -22,7 +22,7 @@
       id="locationTo" class="form-control" placeholder="To">
     </div>
 
-    <label for="priceFrom" class="form-label">Price</label>
+    <label for="priceFrom" class="form-label mb-0">Price</label>
     <div class="col-sm-6">
       <input type="number" formControlName="priceFrom"
       id="priceFrom" class="form-control" placeholder="From">
@@ -32,7 +32,7 @@
       id="priceTo" class="form-control" placeholder="To">
     </div>
 
-    <label for="capacityFrom" class="form-label">Capacity</label>
+    <label for="capacityFrom" class="form-label mb-0">Capacity</label>
     <div class="col-sm-6">
       <input type="number" formControlName="capacityFrom"
       id="capacityFrom" class="form-control" placeholder="From">
@@ -51,6 +51,26 @@
       <label for="minRating" class="form-label d-block">Minimum Rating</label>
       <ngb-rating id="minRating" formControlName="minRating" [max]="5"
       [readonly]="false" [resettable]="true" class="form-control py-0"></ngb-rating>
+    </div>
+
+    <div class="col-12 d-flex flex-row align-items-center">
+      <input type="checkbox" formControlName="hasTransportaion"
+      id="hasTransportaion" class="form-check-input">
+      <label for="hasTransportaion" class="form-check-label ps-3">Has Transportation</label>
+    </div>
+
+    <div class="col-12">
+
+      <label for="hasTransportaion" class="form-check-label">Tour Category</label>
+
+      <select class="form-select" formControlName="tourCategory">
+        <option selected>Any</option>
+
+        <option *ngFor="let category of categories" [value]="category">
+          {{category}}
+        </option>
+
+      </select>
     </div>
 
     <div class="col-sm-6">

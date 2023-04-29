@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { ApiPaths } from '../Enums/api-paths';
 import { FormGroup } from '@angular/forms';
 import { FormGroupQueryService } from './form-group-query.service';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +12,12 @@ import { FormGroupQueryService } from './form-group-query.service';
 export class ToursService {
 
   urlBase: string = environment.baseUrl;
+  queryParams: Params = {};
 
   constructor(private readonly client : HttpClient,
-    private readonly FGQuery: FormGroupQueryService) { }
+    private route: ActivatedRoute,
+    private readonly FGQuery: FormGroupQueryService) {
+    }
 
   GetTours(isCompleted: boolean,
     toursFilter: FormGroup<any>|undefined = undefined) {
@@ -26,7 +30,18 @@ export class ToursService {
   }
 
   private FilterTours(url: string, toursFilter: FormGroup<any> | undefined) {
-    url += '?' + this.FGQuery.GetQuery(toursFilter);
+
+    if (toursFilter)
+    {
+      this.queryParams = this.FGQuery.GetQuery(toursFilter);
+    }
+    else {
+      this.queryParams = this.route.snapshot.queryParams;
+    }
+
+    this.queryParams = new URLSearchParams(this.queryParams);
+
+    url += '?' + this.queryParams.toString();
     return  this.client.get(url);
   }
 

@@ -6,6 +6,7 @@ export enum ApiPaths {
   tourdetails = '/GetById?id=',
   tourUpcoming = '/Upcoming',
   tourPast = '/Past',
+  tourCategories = "/categories",
 
   tourguide = '/TourGuide',
   tgUpcomingTours = '/UpcomingTours',

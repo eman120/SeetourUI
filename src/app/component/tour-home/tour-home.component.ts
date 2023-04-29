@@ -32,9 +32,9 @@ export class TourHomeComponent {
     this.tours = undefined;
 
     this.toursService.GetTours(false, filter).subscribe({
-      next: (data) => {
-        this.tours = data as TourCard[];
-      }
-    });
+        next: (data) => {
+          this.tours = data as TourCard[];
+        }
+      });
   }
 }
