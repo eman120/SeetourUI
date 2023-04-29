@@ -1,0 +1,21 @@
+.form-group {
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    font-weight: bold;
+    color: antiquewhite;
+  }
+  
+  input[type="datetime-local"] {
+    padding: .375rem .75rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    border: 1px solid #ced4da;
+    font-size: 1rem;
+  }
+  
+  select {
+    height: calc(2.25rem + 2px);
+  }
+  

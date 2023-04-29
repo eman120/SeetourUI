@@ -46,6 +46,7 @@ import { SpinnerComponent } from './component/spinner/spinner.component';
 import { ToursFilterComponent } from './component/tours-filter/tours-filter.component';
 import { TGToursComponent } from './component/tgtours/tgtours.component';
 import { ToursSectionFilterableComponent } from './component/tours-section-filterable/tours-section-filterable.component';
+import { BookTourComponent } from './component/book-tour/book-tour.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import { ToursSectionFilterableComponent } from './component/tours-section-filte
     SpinnerComponent,
     ToursFilterComponent,
     TGToursComponent,
-    ToursSectionFilterableComponent
+    ToursSectionFilterableComponent,
+    BookTourComponent
   ],
   imports: [
     BrowserModule,

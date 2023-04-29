@@ -17,6 +17,7 @@ import { TourguideDashboardComponent } from './component/tourguide-dashboard/tou
 import { TGReviewsComponent } from './component/tgreviews/tgreviews.component';
 import { TGOverviewComponent } from './component/tgoverview/tgoverview.component';
 import { TGToursComponent } from './component/tgtours/tgtours.component';
+import { BookTourComponent } from './component/book-tour/book-tour.component';
 
 const routes: Routes = [
   {path: "",component:HomeComponent},
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path:"services" , component:DetailsComponent},
   {path:"header" , component:HeaderComponent},
   {path:"tour/:id",component:TourDetailsComponent},
+  {path:"bookTour/:id",component:BookTourComponent},
 
   {path:"tourguide/:id",component:TourGuideProfileComponent,
     children: [
@@ -55,8 +57,8 @@ const routes: Routes = [
     ]},
 
   {path:"userregister" , component:UserregisterComponent},
-  {path:"tourguide" , component:TourGuideComponent},
   {path:"dashboard" , component:TourguideDashboardComponent},
+  {path:"tourguide" , component:TourGuideComponent},
   {path:"**" , component:ErrorComponent}
 ];
 
