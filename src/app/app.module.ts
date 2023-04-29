@@ -39,6 +39,7 @@ import { TGOverviewComponent } from './component/tgoverview/tgoverview.component
 import { SpinnerComponent } from './component/spinner/spinner.component';
 import { ToursFilterComponent } from './component/tours-filter/tours-filter.component';
 import { TGToursComponent } from './component/tgtours/tgtours.component';
+import { ToursSectionFilterableComponent } from './component/tours-section-filterable/tours-section-filterable.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { TGToursComponent } from './component/tgtours/tgtours.component';
     SpinnerComponent,
     ToursFilterComponent,
     TGToursComponent,
+    ToursSectionFilterableComponent,
 
   ],
   imports: [
