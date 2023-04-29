@@ -1,5 +1,5 @@
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgModule } from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +12,7 @@ import { DetailsComponent } from './component/details/details.component';
 import { TourHomeComponent } from './component/tour-home/tour-home.component';
 
 import { TourGuideComponent } from './component/tour-guide/tour-guide.component';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule,NgModel,ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ErrorComponent } from './component/error/error.component';
 import { HeaderComponent } from './component/header/header.component';
@@ -57,6 +57,7 @@ import { ToursFilterComponent } from './component/tours-filter/tours-filter.comp
 import { TGToursComponent } from './component/tgtours/tgtours.component';
 import { ToursSectionFilterableComponent } from './component/tours-section-filterable/tours-section-filterable.component';
 
+import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -90,6 +91,7 @@ import { ToursSectionFilterableComponent } from './component/tours-section-filte
     WishListButtonComponent,
     UploadImageComponent,
     UploadImagesComponent,
+    TourDetailsComponent,
     ReviewCardComponent,
     TourguideDashboardComponent,
     TourguideHeaderComponent,
