@@ -27,8 +27,18 @@ import { WishListButtonComponent } from './component/wish-list-button/wish-list-
 
 import { ReviewCardComponent } from './component/review-card/review-card.component';
 import { GalleryComponent } from './component/gallery/gallery.component';
+import { TourGuideProfileComponent } from './component/tour-guide-profile/tour-guide-profile.component';
 import { TourguideDashboardComponent } from './component/tourguide-dashboard/tourguide-dashboard.component';
 import { TourguideHeaderComponent } from './component/tourguide-header/tourguide-header.component';
+import { TourSliderComponent } from './component/tour-slider/tour-slider.component';
+import { ReviewListerComponent } from './component/review-lister/review-lister.component';
+import { TGUpcomingToursComponent } from './component/tgupcoming-tours/tgupcoming-tours.component';
+import { TGPastToursComponent } from './component/tgpast-tours/tgpast-tours.component';
+import { TGReviewsComponent } from './component/tgreviews/tgreviews.component';
+import { TourListerComponent } from './component/tour-lister/tour-lister.component';
+import { TGProfileInfoComponent } from './component/tgprofile-info/tgprofile-info.component';
+import { TGOverviewComponent } from './component/tgoverview/tgoverview.component';
+import { SpinnerComponent } from './component/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +66,18 @@ import { TourguideHeaderComponent } from './component/tourguide-header/tourguide
     ReviewCardComponent,
     GalleryComponent,
     TourguideDashboardComponent,
-    TourguideHeaderComponent
+    TourguideHeaderComponent,
+    GalleryComponent,
+    TourGuideProfileComponent,
+    TourSliderComponent,
+    ReviewListerComponent,
+    TGUpcomingToursComponent,
+    TGPastToursComponent,
+    TGReviewsComponent,
+    TourListerComponent,
+    TGProfileInfoComponent,
+    TGOverviewComponent,
+    SpinnerComponent,
 
   ],
   imports: [

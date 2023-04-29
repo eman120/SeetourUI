@@ -11,6 +11,7 @@ import { Component, Input } from '@angular/core';
   `,
   styles: [`
     .star {
+      font-size: 1.5rem;
       color: #ccc;
     }
     .filled {

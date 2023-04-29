@@ -9,15 +9,7 @@
 </div>
 
 <div class="container-fluid bg-secondary pb-5 bg-gradient">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="row gy-4">
 
-        <div *ngFor="let tour of tours" class="col-md-4">
-          <app-tour-card [tour]="tour"></app-tour-card>
-        </div>
+  <app-tour-lister [tours]="tours"></app-tour-lister>
 
-      </div>
-    </div>
-  </div>
 </div>
