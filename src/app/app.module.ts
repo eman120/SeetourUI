@@ -32,14 +32,13 @@ import { TourguideDashboardComponent } from './component/tourguide-dashboard/tou
 import { TourguideHeaderComponent } from './component/tourguide-header/tourguide-header.component';
 import { TourSliderComponent } from './component/tour-slider/tour-slider.component';
 import { ReviewListerComponent } from './component/review-lister/review-lister.component';
-import { TGUpcomingToursComponent } from './component/tgupcoming-tours/tgupcoming-tours.component';
-import { TGPastToursComponent } from './component/tgpast-tours/tgpast-tours.component';
 import { TGReviewsComponent } from './component/tgreviews/tgreviews.component';
 import { TourListerComponent } from './component/tour-lister/tour-lister.component';
 import { TGProfileInfoComponent } from './component/tgprofile-info/tgprofile-info.component';
 import { TGOverviewComponent } from './component/tgoverview/tgoverview.component';
 import { SpinnerComponent } from './component/spinner/spinner.component';
 import { ToursFilterComponent } from './component/tours-filter/tours-filter.component';
+import { TGToursComponent } from './component/tgtours/tgtours.component';
 
 @NgModule({
   declarations: [
@@ -72,14 +71,13 @@ import { ToursFilterComponent } from './component/tours-filter/tours-filter.comp
     TourGuideProfileComponent,
     TourSliderComponent,
     ReviewListerComponent,
-    TGUpcomingToursComponent,
-    TGPastToursComponent,
     TGReviewsComponent,
     TourListerComponent,
     TGProfileInfoComponent,
     TGOverviewComponent,
     SpinnerComponent,
     ToursFilterComponent,
+    TGToursComponent,
 
   ],
   imports: [

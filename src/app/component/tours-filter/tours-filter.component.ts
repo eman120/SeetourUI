@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-tours-filter',
@@ -7,7 +7,15 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./tours-filter.component.css']
 })
 export class ToursFilterComponent {
-  filterForm: any
+
+  Filter() {
+    if (this.filterForm.valid) {
+      this.FilterValue.emit(this.filterForm);
+    }
+  }
+
+  filterForm: FormGroup<any> = new FormGroup({});
+  @Output() FilterValue = new EventEmitter();
 
   constructor(private formBuilder: FormBuilder) { }
 
