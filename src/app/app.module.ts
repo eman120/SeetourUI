@@ -29,6 +29,7 @@ import { ReviewCardComponent } from './component/review-card/review-card.compone
 import { GalleryComponent } from './component/gallery/gallery.component';
 import { TourguideDashboardComponent } from './component/tourguide-dashboard/tourguide-dashboard.component';
 import { TourguideHeaderComponent } from './component/tourguide-header/tourguide-header.component';
+import { AdminReportComponent } from './component/admin-report/admin-report.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { TourguideHeaderComponent } from './component/tourguide-header/tourguide
     ReviewCardComponent,
     GalleryComponent,
     TourguideDashboardComponent,
-    TourguideHeaderComponent
+    TourguideHeaderComponent,
+    AdminReportComponent
 
   ],
   imports: [

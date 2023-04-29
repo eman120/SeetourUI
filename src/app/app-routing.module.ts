@@ -13,6 +13,8 @@ import { TourDetailsComponent } from './component/tour-details/tour-details.comp
 import { UserregisterComponent } from './component/userregister/userregister.component';
 import { TourGuideComponent } from './component/tour-guide/tour-guide.component';
 import { TourguideDashboardComponent } from './component/tourguide-dashboard/tourguide-dashboard.component';
+import { ReviewCardComponent } from './component/review-card/review-card.component';
+import { AdminReportComponent } from './component/admin-report/admin-report.component';
 
 const routes: Routes = [
   {path: "",component:HomeComponent},
@@ -28,6 +30,8 @@ const routes: Routes = [
   {path:"userregister" , component:UserregisterComponent},
   {path:"tourguid" , component:TourGuideComponent},
   {path:"dashboard" , component:TourguideDashboardComponent},
+  {path:"review" , component:ReviewCardComponent},
+  {path:"report" , component:AdminReportComponent},
   {path:"**" , component:ErrorComponent}
 ];
 
