@@ -8,8 +8,7 @@
   </div>
 </div>
 
-<div class="container-fluid bg-secondary pb-5 bg-gradient">
+<app-tours-section-filterable title="Upcoming Tours" [tours]="tours"
+(FilterValue)="Filter($event)">
 
-  <app-tour-lister [tours]="tours"></app-tour-lister>
-
-</div>
+</app-tours-section-filterable>

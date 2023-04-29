@@ -11,6 +11,7 @@ export class ReviewListerComponent {
   @Input() MoreText: string = "";
   @Input() MoreLink: string = "";
   @Input() MoreOutlet: string = "primary";
+  @Input() Limit: number|undefined;
 
   get link() { return {outlets: { [this.MoreOutlet]: [this.MoreLink] }} };
 }

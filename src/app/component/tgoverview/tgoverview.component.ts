@@ -6,7 +6,6 @@ import { ReviewCard } from 'src/app/Interfaces/review-card';
 import { TourCard } from 'src/app/Interfaces/tour-card';
 import { environment } from 'src/environments/environment';
 
-import { TourSliderComponent } from '../tour-slider/tour-slider.component';
 import { TourGuide } from 'src/app/Interfaces/tour-guide';
 import { Title } from '@angular/platform-browser';
 
@@ -36,7 +35,6 @@ export class TGOverviewComponent implements OnInit {
     const urlUpcoming = urlBase+ApiPaths.tgUpcomingTours
     this.http.get(urlUpcoming).subscribe({
       next: (data) => {
-        console.log(data)
         this.upcomingTours = data as TourCard[];
       },
       error: () => {}

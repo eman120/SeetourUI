@@ -12,7 +12,7 @@
 
         <div class="d-flex flex-column">
           <app-review-card class="m-2" [review]="review"
-          *ngFor="let review of Reviews">
+          *ngFor="let review of Reviews?.slice(0,Limit)">
           </app-review-card>
 
           <ng-container *ngIf="Reviews; else elseTemplate">
