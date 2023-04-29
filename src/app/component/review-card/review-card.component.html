@@ -14,7 +14,7 @@
         <a [routerLink]="tourLink" class="btn mb-1 p-0 text-start">
           <div>{{review.bookedTourTitle}}</div>
         </a>
-        <div>{{review.createdAt}}</div>
+        <div>{{review.createdAt | truncate: 16: false: ""}}</div>
       </div>
 
     </div>
