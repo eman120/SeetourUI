@@ -57,7 +57,6 @@ import { ToursFilterComponent } from './component/tours-filter/tours-filter.comp
 import { TGToursComponent } from './component/tgtours/tgtours.component';
 import { ToursSectionFilterableComponent } from './component/tours-section-filterable/tours-section-filterable.component';
 
-import { AdminReportComponent } from './component/admin-report/admin-report.component';
 
 @NgModule({
   declarations: [
@@ -107,8 +106,7 @@ import { AdminReportComponent } from './component/admin-report/admin-report.comp
     SpinnerComponent,
     ToursFilterComponent,
     TGToursComponent,
-    ToursSectionFilterableComponent,
-    AdminReportComponent
+    ToursSectionFilterableComponent
 
   ],
   imports: [
