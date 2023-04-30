@@ -1,10 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
-import { render } from 'creditcardpayments/creditCardPayments';
-import { RouterModule, Routes } from '@angular/router';
-
-
 import { ActivatedRoute } from '@angular/router';
 
 
