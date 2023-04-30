@@ -58,6 +58,12 @@ import { TGToursComponent } from './component/tgtours/tgtours.component';
 import { ToursSectionFilterableComponent } from './component/tours-section-filterable/tours-section-filterable.component';
 
 import { NgModule } from '@angular/core';
+import { AboutStartComponent } from './component/about-start/about-start.component';
+import { TeamDataComponent } from './component/team-data/team-data.component';
+import { OurServiceComponent } from './component/our-service/our-service.component';
+import { PopularDistnationsComponent } from './component/popular-distnations/popular-distnations.component';
+import { PaymentprocessHomeComponent } from './component/paymentprocess-home/paymentprocess-home.component';
+import { PartialServiceHomeComponent } from './component/partial-service-home/partial-service-home.component';
 
 @NgModule({
   declarations: [
@@ -108,7 +114,13 @@ import { NgModule } from '@angular/core';
     SpinnerComponent,
     ToursFilterComponent,
     TGToursComponent,
-    ToursSectionFilterableComponent
+    ToursSectionFilterableComponent,
+    AboutStartComponent,
+    TeamDataComponent,
+    OurServiceComponent,
+    PopularDistnationsComponent,
+    PaymentprocessHomeComponent,
+    PartialServiceHomeComponent
 
   ],
   imports: [
