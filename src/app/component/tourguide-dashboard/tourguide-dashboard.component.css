@@ -60,8 +60,14 @@
 }
 
 /*** Navbar ***/
+
 .sidebar .navbar{
     z-index: 0;
+    margin-top: 30px;
+}
+
+.sidebar .navbar .navbar-nav{
+  margin-bottom: 20px;
 }
 .sidebar .navbar .navbar-nav .nav-link {
     padding: 7px 20px;
