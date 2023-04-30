@@ -73,6 +73,17 @@ import { ToursSectionFilterableComponent } from './component/tours-section-filte
     HeaderComponent,
     FooterComponent,
     AdminStatisticsComponent,
+
+
+
+    TourDetailsComponent,
+
+
+
+
+
+
+
     UserregisterComponent,
     PaymentComponent,
     AdminReviewComponent,
@@ -85,7 +96,6 @@ import { ToursSectionFilterableComponent } from './component/tours-section-filte
     WishListButtonComponent,
     UploadImageComponent,
     UploadImagesComponent,
-    TourDetailsComponent,
     ReviewCardComponent,
     TourguideDashboardComponent,
     TourguideHeaderComponent,
