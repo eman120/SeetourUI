@@ -22,7 +22,17 @@ import { UploadImagesComponent } from './component/upload-images/upload-images.c
 import { AuthInterceptorProviders } from './Middlewares/auth-interceptor';
 import { FooterComponent } from './component/footer/footer.component';
 import { TourDetailsComponent } from './component/tour-details/tour-details.component';
+import { AdminStatisticsComponent } from './component/admin-statistics/admin-statistics.component';
 import { UserregisterComponent } from './component/userregister/userregister.component';
+
+import { PaymentComponent } from './component/payment/payment.component';
+import { AdminReviewComponent } from './component/admin-review/admin-review.component';
+import { PaymentSuccessComponent } from './component/payment-success/payment-success.component';
+import { QuestionAnswerComponent } from './component/question-answer/question-answer.component';
+
+
+
+
 import { TourCardComponent } from './component/tour-card/tour-card.component';
 import { StarRatingComponent } from './component/star-rating/star-rating.component';
 import { LikeButtonComponent } from './component/like-button/like-button.component';
@@ -47,6 +57,7 @@ import { ToursFilterComponent } from './component/tours-filter/tours-filter.comp
 import { TGToursComponent } from './component/tgtours/tgtours.component';
 import { ToursSectionFilterableComponent } from './component/tours-section-filterable/tours-section-filterable.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +72,16 @@ import { ToursSectionFilterableComponent } from './component/tours-section-filte
     ErrorComponent,
     HeaderComponent,
     FooterComponent,
+
+
+    AdminStatisticsComponent,
+    TourDetailsComponent,
+    PaymentComponent,
+    AdminReviewComponent,
+    PaymentSuccessComponent,
+    QuestionAnswerComponent,
+
+
     UserregisterComponent,
     TourCardComponent,
     StarRatingComponent,
@@ -69,7 +90,6 @@ import { ToursSectionFilterableComponent } from './component/tours-section-filte
     WishListButtonComponent,
     UploadImageComponent,
     UploadImagesComponent,
-    TourDetailsComponent,
     ReviewCardComponent,
     TourguideDashboardComponent,
     TourguideHeaderComponent,
@@ -87,6 +107,7 @@ import { ToursSectionFilterableComponent } from './component/tours-section-filte
     ToursFilterComponent,
     TGToursComponent,
     ToursSectionFilterableComponent
+
   ],
   imports: [
     BrowserModule,
