@@ -8,4 +8,11 @@ import { TourCard } from 'src/app/Interfaces/tour-card';
 })
 export class TourCardComponent {
   @Input() tour: TourCard | undefined;
+
+  get tourLink(): string {
+    return this.tour ? `/tour/${this.tour.id}` : '#';
+  }
+  get tourguideLink(): string {
+    return this.tour? `/tourguide/${this.tour.tourGuideId}` : '#';
+  }
 }

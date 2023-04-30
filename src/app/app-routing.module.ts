@@ -11,10 +11,20 @@ import { DetailsComponent } from './component/details/details.component';
 import { HeaderComponent } from './component/header/header.component';
 import { TourDetailsComponent } from './component/tour-details/tour-details.component';
 import { UserregisterComponent } from './component/userregister/userregister.component';
+
+import { AdminStatisticsComponent } from './component/admin-statistics/admin-statistics.component';
+import { PaymentComponent } from './component/payment/payment.component';
+import { PaymentSuccessComponent } from './component/payment-success/payment-success.component';
+
+import { TourGuideProfileComponent } from './component/tour-guide-profile/tour-guide-profile.component';
 import { TourGuideComponent } from './component/tour-guide/tour-guide.component';
 import { TourguideDashboardComponent } from './component/tourguide-dashboard/tourguide-dashboard.component';
+import { TGReviewsComponent } from './component/tgreviews/tgreviews.component';
+import { TGOverviewComponent } from './component/tgoverview/tgoverview.component';
+import { TGToursComponent } from './component/tgtours/tgtours.component';
 import { ReviewCardComponent } from './component/review-card/review-card.component';
 import { AdminReportComponent } from './component/admin-report/admin-report.component';
+
 
 const routes: Routes = [
   {path: "",component:HomeComponent},
@@ -26,13 +36,45 @@ const routes: Routes = [
   {path:"tour" , component:TourHomeComponent},
   {path:"services" , component:DetailsComponent},
   {path:"header" , component:HeaderComponent},
+
   {path:"TourDetails",component:TourDetailsComponent},
+  {path:"payment",component:PaymentComponent},
+  {path:"payment-success",component:PaymentSuccessComponent},
+
+
+  {path:"tour/:id",component:TourDetailsComponent},
+
+  {path:"tourguide/:id",component:TourGuideProfileComponent,
+    children: [
+      {path:"",component:TGOverviewComponent,outlet:'TGProfile'},
+      {
+        path:"Upcoming-Tours",
+        component:TGToursComponent,
+        outlet:'TGProfile',
+        data: {
+          state:'Upcoming',
+          isCompleted: false
+        }
+      },
+      {
+        path:"Past-Tours",
+        component:TGToursComponent,
+        outlet:'TGProfile',
+        data: {
+          state:'Past',
+          isCompleted: true
+        }
+      },
+      {path:"Reviews",component:TGReviewsComponent,outlet:'TGProfile'},
+    ]},
+
   {path:"userregister" , component:UserregisterComponent},
-  {path:"tourguid" , component:TourGuideComponent},
+  {path:"tourguide" , component:TourGuideComponent},
   {path:"dashboard" , component:TourguideDashboardComponent},
   {path:"review" , component:ReviewCardComponent},
   {path:"report" , component:AdminReportComponent},
   {path:"**" , component:ErrorComponent}
+
 ];
 
 @NgModule({
