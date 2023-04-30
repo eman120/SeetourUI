@@ -22,6 +22,7 @@ import { TourguideDashboardComponent } from './component/tourguide-dashboard/tou
 import { TGReviewsComponent } from './component/tgreviews/tgreviews.component';
 import { TGOverviewComponent } from './component/tgoverview/tgoverview.component';
 import { TGToursComponent } from './component/tgtours/tgtours.component';
+import { OurServiceComponent } from './component/our-service/our-service.component';
 
 
 const routes: Routes = [
@@ -38,6 +39,7 @@ const routes: Routes = [
   {path:"TourDetails",component:TourDetailsComponent},
   {path:"payment",component:PaymentComponent},
   {path:"payment-success",component:PaymentSuccessComponent},
+  {path:"service",component:OurServiceComponent},
 
 
   {path:"tour/:id",component:TourDetailsComponent},

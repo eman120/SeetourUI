@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class ContactService {
 
   constructor(private readonly client : HttpClient) { }
-  private readonly URL = "";
+  private readonly URL = ""
 
 
   AddNewMessage(contactMsg:any){
