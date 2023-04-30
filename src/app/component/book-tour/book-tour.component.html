@@ -9,7 +9,7 @@
       <form>
           <div class="form-group">
             <label for="tourName">Tour Name</label>
-            <input type="text" class="form-control" id="tourName" placeholder="Enter tour name">
+            <!-- <p *ngIf="tour.name">{{ tour?.name }}</p> -->
           </div>
           <div class="form-group">
             <label for="guideName">Tour Guide Name</label>
@@ -17,7 +17,7 @@
           </div>
           <div class="form-group">
             <label for="tourTime">Tour Time</label>
-            <input type="datetime-local" class="form-control" id="tourTime">
+              <!-- <p *ngIf="tour.dateFrom">{{ tour?.dateFrom | date:'dd/MM/yyyy'  }}</p> -->
           </div>
           <div class="form-group">
             <label for="meetingPoint">Meeting Point</label>
