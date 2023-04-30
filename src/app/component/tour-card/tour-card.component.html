@@ -1,0 +1,61 @@
+<div style="min-width: 22rem;" *ngIf="tour" class="card h-100">
+
+  <ngb-carousel class="rounded-top overflow-hidden" [interval]="0">
+    <ng-template ngbSlide *ngFor="let photo of tour.photos">
+      <!-- slide content -->
+      <div class="carousel-item active">
+        <img src="{{photo}}" class="d-block w-100">
+      </div>
+    </ng-template>
+  </ngb-carousel>
+
+  <div class="card-body text-start text-break d-flex flex-column pb-0">
+
+    <a [routerLink]="tourLink" class="btn flex-grow-1 mb-1 p-0 text-start">
+      <h5 class="card-title m-0">{{tour.title | truncate }}</h5>
+    </a>
+
+
+    <ul class="list-group list-group-flush text-nowrap">
+
+      <li class="list-group-item px-0 pt-0">
+        <a [routerLink]="tourguideLink" class="text-decoration-none text-black">
+          <div class="d-flex justify-content-end align-items-center">
+            <h6 class="m-0 flex-grow-1 text-truncate">{{tour.tourGuideName}}</h6>
+
+            <star-rating [rating]="tour.tourGuideRating"[count]="tour.tourGuideRatingCount"></star-rating>
+          </div>
+        </a>
+      </li>
+
+      <li class="list-group-item px-0">
+        <div class="d-flex justify-content-between align-items-center">
+          <span class="m-0 flex-grow-1 text-truncate">{{tour.locationTo}}</span>
+          <span>{{tour.price | currency}}</span>
+        </div>
+      </li>
+
+      <li class="list-group-item px-0">
+        <div class="d-flex justify-content-between align-items-center">
+          <span>{{tour.dateFrom | truncate: 16: false: ""}}</span>
+          <span> - </span>
+          <span>{{tour.dateTo | truncate: 16: false: ""}}</span>
+        </div>
+      </li>
+
+      <li class="list-group-item px-0">
+        <div class="d-flex justify-content-between align-items-center">
+          <ngb-progressbar type="success" [value]="tour.bookings" class="flex-grow-1 me-1"
+          [max]="tour.capacity" height=".5rem"></ngb-progressbar>
+
+          <like-button [likes]="tour.likes" [isLiked]="tour.isLiked" [Id]="tour.id"></like-button>
+          <wishlist-button [isInWishlist]="tour.addedToWishList" [Id]="tour.id"></wishlist-button>
+        </div>
+      </li>
+
+
+    </ul>
+
+  </div>
+
+</div>

@@ -1,5 +1,4 @@
 import { Component} from '@angular/core';
-import 'bootstrap';
 
 @Component({
   selector: 'app-header',

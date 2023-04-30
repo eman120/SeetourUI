@@ -27,18 +27,23 @@ export class AuthService {
 
   private setSession(authResult: any) {
     const expiresAt = moment(authResult.expiry);
-
-    localStorage.setItem('id_token', authResult.tokenString);
+    localStorage.setItem('id_token', authResult.token);
+    localStorage.setItem('interface', authResult.interface);
     localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()) );
   }
 
-  logout() {
+  public logout() {
     localStorage.removeItem("id_token");
     localStorage.removeItem("expires_at");
+    localStorage.removeItem("interface");
   }
 
   public isLoggedIn() {
     return moment().isBefore(this.getExpiration());
+  }
+
+  public getInterface() {
+    return localStorage.getItem('interface') || '';
   }
 
   isLoggedOut() {

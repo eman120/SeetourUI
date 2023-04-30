@@ -1,0 +1,49 @@
+#map{
+    height: 600px;
+    
+   
+}
+.bg-holder {
+    position: absolute;
+    width: 100%;
+    top: 350px;
+    height: 500px;
+    left: 0;
+    z-index: 0;
+  }
+  
+  .bg-holder.bg-right {
+    left: auto;
+    right: 0;
+  }
+  .input-group-icon {
+    position: relative;
+  }
+  
+  .input-group-icon .input-box {
+    padding-left: 2.8rem;
+    vertical-align: middle;
+  }
+  
+  .input-group-icon .input-box-icon {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    color: #86b35f;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  #checkbox1{
+    margin-left: 30px !important;
+  }
+ 
+  .form-voyage-control {
+    background-color: #FFFEFE;
+    background-clip: padding-box;
+    border: 0 solid #ACCAE5;
+    border-bottom: 1px solid #99B4CC;
+    border-radius: 0;
+    color: #39434D;
+  }
