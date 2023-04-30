@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
+import { Router } from '@angular/router';
 
 declare var paypal: any;
 
@@ -9,24 +10,23 @@ declare var paypal: any;
 })
 export class PaymentComponent implements OnInit {
 
+  constructor(private router: Router, private ngZone: NgZone) { }
 
-  constructor() { }
   handler:any = null;
-  ngOnInit() {
 
+  ngOnInit() {
     this.loadStripe();
   }
 
   pay(amount: any) {
-
     var handler = (<any>window).StripeCheckout.configure({
       key: 'pk_test_51HxRkiCumzEESdU2Z1FzfCVAJyiVHyHifo0GeCMAyzHPFme6v6ahYeYbQPpD9BvXbAacO2yFQ8ETlKjo4pkHSHSh00qKzqUVK9',
       locale: 'auto',
-      token: function (token: any) {
-        // You can access the token ID with `token.id`.
-        // Get the token ID to your server-side code for use.
-        console.log(token)
-        alert('Token Created!!');
+      token: (token: any) => {
+        console.log(token);
+        this.ngZone.run(() => {
+          this.router.navigate(['/payment-success']);
+        });
       }
     });
 
@@ -35,11 +35,9 @@ export class PaymentComponent implements OnInit {
       description: '2 widgets',
       amount: amount * 100
     });
-
   }
 
   loadStripe() {
-
     if(!window.document.getElementById('stripe-script')) {
       var s = window.document.createElement("script");
       s.id = "stripe-script";
@@ -49,15 +47,15 @@ export class PaymentComponent implements OnInit {
         this.handler = (<any>window).StripeCheckout.configure({
           key: 'pk_test_51HxRkiCumzEESdU2Z1FzfCVAJyiVHyHifo0GeCMAyzHPFme6v6ahYeYbQPpD9BvXbAacO2yFQ8ETlKjo4pkHSHSh00qKzqUVK9',
           locale: 'auto',
-          token: function (token: any) {
-            // You can access the token ID with `token.id`.
-            // Get the token ID to your server-side code for use.
-            console.log(token)
+          token: (token: any) => {
+            console.log(token);
             alert('Payment Success!!');
+            this.ngZone.run(() => {
+              this.router.navigate(['/']);
+            });
           }
         });
       }
-
       window.document.body.appendChild(s);
     }
   }

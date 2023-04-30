@@ -13,6 +13,7 @@ import { TourDetailsComponent } from './component/tour-details/tour-details.comp
 import { UserregisterComponent } from './component/userregister/userregister.component';
 import { AdminStatisticsComponent } from './component/admin-statistics/admin-statistics.component';
 import { PaymentComponent } from './component/payment/payment.component';
+import { PaymentSuccessComponent } from './component/payment-success/payment-success.component';
 
 const routes: Routes = [
   {path: "",component:HomeComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path:"header" , component:HeaderComponent},
   {path:"TourDetails",component:TourDetailsComponent},
   {path:"payment",component:PaymentComponent},
+  {path:"payment-success",component:PaymentSuccessComponent},
   {path:"**" , component:ErrorComponent},
 ];
 

@@ -21,6 +21,8 @@ import { AdminStatisticsComponent } from './component/admin-statistics/admin-sta
 import { UserregisterComponent } from './component/userregister/userregister.component';
 import { PaymentComponent } from './component/payment/payment.component';
 import { AdminReviewComponent } from './component/admin-review/admin-review.component';
+import { PaymentSuccessComponent } from './component/payment-success/payment-success.component';
+import { QuestionAnswerComponent } from './component/question-answer/question-answer.component';
 
 
 
@@ -46,7 +48,9 @@ import { AdminReviewComponent } from './component/admin-review/admin-review.comp
     TourDetailsComponent,
     UserregisterComponent,
     PaymentComponent,
-    AdminReviewComponent
+    AdminReviewComponent,
+    PaymentSuccessComponent,
+    QuestionAnswerComponent
 
 
   ],

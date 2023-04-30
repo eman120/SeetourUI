@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { render } from 'creditcardpayments/creditCardPayments';
+import { RouterModule, Routes } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
