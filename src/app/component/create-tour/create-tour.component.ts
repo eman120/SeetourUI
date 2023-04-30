@@ -14,7 +14,7 @@ declare var google: any;
 export class CreateTourComponent implements OnInit {
   createtourform: FormGroup;
   formattedDate: string = '';
-  imageurl: string = '';
+  Photos: any[]=[];
   @Input() firsturl: any;
   @Input() secondurl: any;
   @Input() locationFrom: any;
@@ -90,22 +90,22 @@ export class CreateTourComponent implements OnInit {
 
   //FormControlls
   constructor(private fb: FormBuilder, private datepi: DatePipe, private changeDetectorRef: ChangeDetectorRef, private ClientService: CreatetourService, private router: Router) {
-    const imageurlcontrol = new FormControl('', Validators.required);
+   // const imageurlcontrol = new FormControl('', Validators.required);
 
 
     this.formattedDate = this.datepi.transform(new Date, 'yyyy-MM-dd HH:mm:ss.SSSSSSS') ?? '';
     this.createtourform = this.fb.group({
       title: ['', [Validators.required, Validators.minLength(16), Validators.maxLength(100)]],
-      transportation: ['', [Validators.required]],
+      hasTransportation: ['', [Validators.required]],
       price: ['', [Validators.required, Validators.min(0)]],
       capacity: ['', [Validators.required, Validators.min(0)]],
-      datefrom: ['', Validators.required, this.DateFromValidator()],
-      dateto: ['', Validators.required, this.DateToValidator()],
-      duedate: ['', Validators.required, this.CancelDateValidator()],
+      dateFrom: ['', Validators.required, this.DateFromValidator()],
+      dateTo: ['', Validators.required, this.DateToValidator()],
+      lastDateToCancel: ['', Validators.required, this.CancelDateValidator()],
       description: ['', [Validators.required]],
       category: ['', Validators.required],
       // postedAt: [''],
-      imageurl: imageurlcontrol
+      
 
     });
     // this.createtourform.get('postedAt')?.setValue(this.formattedDate);
@@ -117,7 +117,7 @@ export class CreateTourComponent implements OnInit {
 
   submitForm() {
     // Access the values of the URLs from the parent component and submit them along with the other form data
-    const formValue = { ...this.createtourform.value, imageurl: this.imageurl, firsturl: this.firsturl, locationFrom: this.locationFrom, secondurl: this.secondurl, locationTo: this.locationTo };
+    const formValue = { ...this.createtourform.value,  locationFromUrl: this.firsturl, locationFrom: this.locationFrom, locationToUrl: this.secondurl, locationTo: this.locationTo,Photos:this.Photos };
 
     console.log('form:', formValue);
     if (formValue) {
@@ -169,7 +169,7 @@ export class CreateTourComponent implements OnInit {
         const datetoo = new Date(control.value);
         datetoo.setHours(23, 59, 59, 900);
         const today = new Date();
-        const datefromTracker = new Date(this.createtourform.get('datefrom')?.value);
+        const datefromTracker = new Date(this.createtourform.get('dateFrom')?.value);
         // datefromTracker.setHours(0,0,0,0);
 
         // console.log(this.InValidDateFrom);
@@ -196,7 +196,7 @@ export class CreateTourComponent implements OnInit {
         const canceldate = new Date(control.value);
         canceldate.setHours(23, 59, 59, 900);
         const today = new Date();
-        const datefromTracker = new Date(this.createtourform.get('datefrom')?.value);
+        const datefromTracker = new Date(this.createtourform.get('dateFrom')?.value);
 
         // datefromTracker.setHours(0,0,0,0);
 

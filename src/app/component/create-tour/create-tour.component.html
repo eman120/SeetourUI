@@ -97,18 +97,18 @@
                       <!-- Date From -->
 
                       <div class="input-group-icon col-sm-6 col-md-6 col-xl-5">
-                        <input #datefrom class="form-control input-box form-voyage-control" type="text"
-                          placeholder="Date From" onfocus="(this.type='date')" formControlName="datefrom" /><span
+                        <input #dateFrom class="form-control input-box form-voyage-control" type="text"
+                          placeholder="Date From" onfocus="(this.type='date')" formControlName="dateFrom" /><span
                           class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-calendar"></i></span>
                         <!-- <div *ngIf="InValidDateFrom " class="alert alert-danger">
                           Invalid Date
                         </div> -->
                         <div class="alert alert-danger"
-                          *ngIf="(createtourform.controls['datefrom'].errors && createtourform.controls['datefrom'].errors['required'] && (createtourform.controls['datefrom'].dirty || createtourform.controls['datefrom'].touched))">
+                          *ngIf="(createtourform.controls['dateFrom'].errors && createtourform.controls['dateFrom'].errors['required'] && (createtourform.controls['dateFrom'].dirty || createtourform.controls['dateFrom'].touched))">
 
                           Datefrom is required
                         </div>
-                        <div *ngIf="datefrom && InValidDateFrom" class="alert alert-danger">
+                        <div *ngIf="dateFrom && InValidDateFrom" class="alert alert-danger">
                           Invalid Date &nbsp;
 
                           DateFrom Should be set after or at {{DateNow}}
@@ -117,15 +117,15 @@
 
                       <!-- Date To -->
                       <div class="input-group-icon col-sm-6 col-md-6 col-xl-5">
-                        <input #dateto class="form-control input-box form-voyage-control" type="text"
-                          placeholder="Date To" formControlName="dateto" onfocus="(this.type='date')" /><span
+                        <input #dateTo class="form-control input-box form-voyage-control" type="text"
+                          placeholder="Date To" formControlName="dateTo" onfocus="(this.type='date')" /><span
                           class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-calendar"></i></span>
                         <div class="alert alert-danger"
-                          *ngIf="(createtourform.controls['dateto'].errors && createtourform.controls['dateto'].errors['required'] && (createtourform.controls['dateto'].dirty || createtourform.controls['dateto'].touched))">
+                          *ngIf="(createtourform.controls['dateTo'].errors && createtourform.controls['dateTo'].errors['required'] && (createtourform.controls['dateTo'].dirty || createtourform.controls['dateTo'].touched))">
 
                           DateTo is required
                         </div>
-                        <div *ngIf="dateto && InValidDateTo" class="alert alert-danger">
+                        <div *ngIf="dateTo && InValidDateTo" class="alert alert-danger">
                           Invalid Date
                           <br>
                           DateTo Should be set after
@@ -136,15 +136,15 @@
 
                       <!--Cancel Due Date  -->
                       <div class="input-group-icon col-sm-6 col-md-6 col-xl-10">
-                        <input #duedate class="form-control input-box form-voyage-control" type="text"
-                          placeholder="Cancel Due Date" formControlName="duedate" onfocus="(this.type='date')" /><span
+                        <input #lastDateToCancel class="form-control input-box form-voyage-control" type="text"
+                          placeholder="Cancel Due Date" formControlName="lastDateToCancel" onfocus="(this.type='date')" /><span
                           class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-calendar"></i></span>
                         <div class="alert alert-danger"
-                          *ngIf="(createtourform.controls['duedate'].errors && createtourform.controls['duedate'].errors['required'] && (createtourform.controls['duedate'].dirty || createtourform.controls['duedate'].touched))">
+                          *ngIf="(createtourform.controls['lastDateToCancel'].errors && createtourform.controls['lastDateToCancel'].errors['required'] && (createtourform.controls['lastDateToCancel'].dirty || createtourform.controls['lastDateToCancel'].touched))">
 
                           Cancel Date is required
                         </div>
-                        <div *ngIf="duedate && InValidCancelDate" class="alert alert-danger">
+                        <div *ngIf="lastDateToCancel && InValidCancelDate" class="alert alert-danger">
                           Invalid Date
                           <br>
                           DateTo Should be set before
@@ -213,10 +213,10 @@
 
                       <div class=" input-group-icon col-sm-6 col-md-4 col-xl-5">
                         <span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-bus"></i></span>
-                        <input #transportation class="form-voyage-control" id="checkbox1" type="checkbox" value="false"
-                          placeholder="Transportaion Included?" formControlName="transportation" />
+                        <input #hasTransportation class="form-voyage-control" id="checkbox1" type="checkbox" value="false"
+                          placeholder="Transportaion Included?" formControlName="hasTransportation" />
                         <div class="alert alert-danger"
-                          *ngIf="(createtourform.controls['transportation'].errors && createtourform.controls['transportation'].errors['transportation'] && (createtourform.controls['transportation'].dirty || createtourform.controls['transportation'].touched))">
+                          *ngIf="(createtourform.controls['hasTransportation'].errors && createtourform.controls['hasTransportation'].errors['hasTransportation'] && (createtourform.controls['hasTransportation'].dirty || createtourform.controls['hasTransportation'].touched))">
                           Description field is required
                         </div>
                         Transportation Included ?
@@ -227,7 +227,7 @@
 
 
                       <div class="input-group-icon col-sm-6 col-md-6 col-xl-10">
-                        <app-upload-image (imageUrl)="imageurl=$event"></app-upload-image>
+                        <app-upload-images (imagesUrls)="Photos=$event"></app-upload-images>
                       </div>
 
 
@@ -237,17 +237,17 @@
                           <select #category class="form-select form-voyage-select input-box" id="inputPersonOne"
                             formControlName="category">
                             <option selected="selected">{{Categories}}</option>
-                            <option value="0">Adventure</option>
-                            <option value="1">Family</option>
-                            <option value="2">Parks</option>
-                            <option value="3">Religious</option>
-                            <option value="4">Themed</option>
-                            <option value="5">Snorkeling</option>
-                            <option value="6">Safari</option>
-                            <option value="7">Cruise</option>
-                            <option value="8">Food</option>
-                            <option value="9">Historical</option>
-                            <option value="10">OTHER</option>
+                            <option value="Adventure">Adventure</option>
+                            <option value="Family">Family</option>
+                            <option value="Parks">Parks</option>
+                            <option value="Religious">Religious</option>
+                            <option value="Themed">Themed</option>
+                            <option value="Snorkeling">Snorkeling</option>
+                            <option value="Safari">Safari</option>
+                            <option value="Cruise">Cruise</option>
+                            <option value="Food">Food</option>
+                            <option value="Historical">Historical</option>
+                            <option value="OTHER">OTHER</option>
                           </select><span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fa fa-list-alt">
                             </i></span>
                           <div class="alert alert-danger"

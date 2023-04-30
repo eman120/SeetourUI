@@ -34,7 +34,7 @@ export class UploadImageComponent {
       const formData = new FormData();
       formData.append('file', file);
       console.log(file);
-      this.http.post('https://localhost:44362/api/AzureImagesURL/UploadImage', formData)
+      this.http.post('https://localhost:7277/api/AzureImagesURL/UploadImage', formData)
         .subscribe((result: any) => {
           this.imageUrl.emit(result.url);
           console.log(result.url);
