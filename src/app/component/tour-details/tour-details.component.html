@@ -10,6 +10,8 @@
 
 <div class="container" *ngIf="tour">
 
+  <app-admin-post-request-form [tourId]="tour.id"></app-admin-post-request-form>
+
   <!-- <form (ngSubmit)="submitForm()">
     <div class="form-group">
       <h4 for="">Questions</h4>
@@ -18,7 +20,7 @@
         <input class="form-control" name="answer" id="answer" cols="30" rows="10" [(ngModel)]="tourAnswer[i]"
         [attr.data-question-index]="i"/>
       </div>
-    </div>    
+    </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form> -->
 
@@ -61,7 +63,7 @@
           <div class="progress-bar" role="progressbar" [style.width.%]="(tour.bookings / tour.capacity ) * 100" [attr.aria-valuenow]="tour.bookings" aria-valuemin="0" [attr.aria-valuemax]="tour.capacity"></div>
         </div>
       </div>
-      
+
       <div>
         <a href="">Tour Guide Profile</a>
       </div>
@@ -70,7 +72,7 @@
         <!-- <p *ngIf="tour.bookings.review.comment">{{ tour.bookings.review.comment }}</p>
         <p *ngIf="!tour.bookings.review.comment">No reviews yet</p> -->
       </div>
-      
+
       <div>
         <label for="">Add Photos</label>
         <button class="btn btn-primary">Add Photos</button>
@@ -79,7 +81,7 @@
         <label for="transportation">Transportation</label>
         <input type="checkbox" name="transportation" id="transportation" [checked]="tour.hasTransportation" disabled>
       </div>
-      
+
     </div>
   </div>
 

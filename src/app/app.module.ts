@@ -65,6 +65,7 @@ import { PopularDistnationsComponent } from './component/popular-distnations/pop
 import { PaymentprocessHomeComponent } from './component/paymentprocess-home/paymentprocess-home.component';
 import { PartialServiceHomeComponent } from './component/partial-service-home/partial-service-home.component';
 import { AdminPostsRequestsComponent } from './component/admin-posts-requests/admin-posts-requests.component';
+import { AdminPostRequestFormComponent } from './component/admin-post-request-form/admin-post-request-form.component';
 
 @NgModule({
   declarations: [
@@ -122,7 +123,8 @@ import { AdminPostsRequestsComponent } from './component/admin-posts-requests/ad
     PopularDistnationsComponent,
     PaymentprocessHomeComponent,
     PartialServiceHomeComponent,
-    AdminPostsRequestsComponent
+    AdminPostsRequestsComponent,
+    AdminPostRequestFormComponent
 
   ],
   imports: [
