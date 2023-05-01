@@ -11,6 +11,8 @@
 <div *ngIf="!loading">
   <div class="container" *ngIf="tour">
 
+    <app-admin-post-request-form [tourId]="tour.id"></app-admin-post-request-form>
+
     <!-- <form (ngSubmit)="submitForm()">
       <div class="form-group">
         <h5 for="">Questions</h5>
