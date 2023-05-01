@@ -44,7 +44,7 @@
 
 
                   <div class="form-outline mb-4">
-                    <input #password="ngModel"  ngModel name ="password" type="password" id="phone" class="form-control form-control-lg" placeholder="Your password *"  required>
+                    <input #password="ngModel"  ngModel name ="password" type="password" id="password" class="form-control form-control-lg" placeholder="Your password *"  required>
                     <div class="alert alert-danger" [hidden]="password.valid || password.untouched">
                       <small *ngIf="password.errors?.['required']">Password is Required!!</small>
 
@@ -62,7 +62,7 @@
 
 
                   <div class="form-outline mb-4">
-                    <input #snn="ngModel"  ngModel name ="snn" type="number" id="form3Example4cg" class="form-control form-control-lg"  placeholder="Your SNN" pattern="^[0-9]{6,16}$" required/>
+                    <input #snn="ngModel"  ngModel name ="snn" type="number" id="snn" class="form-control form-control-lg"  placeholder="Your SNN" pattern="^[0-9]{6,16}$" required/>
                     <div class="alert alert-danger" [hidden]="snn.valid || snn.untouched">
                       <small *ngIf="snn.errors?.['required']">snn Number is Required!!</small>
                       <small *ngIf="snn.errors?.['pattern']">snn Number Length must be between 6 and 16 Numbers</small>
@@ -72,7 +72,7 @@
                       <!-- bankAccount -->
                   <div class=" form-outline row g-3 ">
                     <div class="col-md-6 mb-4 p-2">
-                      <input #bankAccount="ngModel"  ngModel name ="bankAccount" type="email" id="bankAccount" class="form-control form-control-lg mb-4 p-2" placeholder="Your bankAccount" required />
+                      <input #bankAccount="ngModel"  ngModel name ="bankAccount" type="text" id="bankAccount" class="form-control form-control-lg mb-4 p-2" placeholder="Your bankAccount" required />
                       <div class="alert alert-danger" [hidden]=" bankAccount.valid || bankAccount.untouched">
                         <small *ngIf="bankAccount.errors?.['required']">bankAccount is Required!!</small>
 
@@ -84,7 +84,7 @@
 
                     </div>
                     <div class="col-md-6 mb-4 p-2">
-                      <input #AccountNumber="ngModel"  ngModel name ="AccountNumber" type="number" id="bankAccount" class="form-control form-control-lg mb-4 p-2" placeholder="AccountNumber" required />
+                      <input #AccountNumber="ngModel"  ngModel name ="AccountNumber" type="number" id="AccountNumber" class="form-control form-control-lg mb-4 p-2" placeholder="AccountNumber" required />
                       <div class="alert alert-danger" [hidden]="AccountNumber.valid || AccountNumber.untouched">
                         <small *ngIf="AccountNumber.errors?.['required']">AccountNumber is Required!!</small>
 
@@ -106,7 +106,7 @@
                   </div>
 
                   <div class="d-flex justify-content-center">
-                    <button  [disabled]="registerFrm.invalid || confirmPassword.value !== password.value " type="submit" (click)="Register(file.value,name.value, email.value,Address.value,phone.value,password.value,snn.value ,bankAccount.value,SwiftCode.value ,AccountNumber.value)"
+                    <button  [disabled]="registerFrm.invalid || confirmPassword.value !== password.value " type="submit" (click)="Register(name.value , email.value , phone.value , password.value , snn.value , bankAccount.value , Address.value , AccountNumber.value , SwiftCode.value , file.value)"
                     class="btn btn-outline-secondary btn-lg ms-2">Register</button>
                   </div>
               </form>
