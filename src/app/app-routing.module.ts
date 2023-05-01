@@ -80,6 +80,9 @@ const routes: Routes = [
   {path:"dashboard" , component:TourguideDashboardComponent},
   {path:"review" , component:ReviewCardComponent},
   {path:"report" , component:AdminReportComponent},
+
+  {path:"admin/posts", component:AdminPostsRequestsComponent},
+
   {path:"**" , component:ErrorComponent}
 
 ];

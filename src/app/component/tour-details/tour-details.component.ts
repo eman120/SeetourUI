@@ -37,7 +37,7 @@ export class TourDetailsComponent implements OnInit {
     private titleService:Title,
     private route: ActivatedRoute
     ) {}
-    
+
     ngOnInit(): void {
       const tourId = this.route.snapshot.paramMap.get('id');
       this.toursService.GetTourById(tourId ? tourId.toString() : "").subscribe({
@@ -61,7 +61,7 @@ export class TourDetailsComponent implements OnInit {
     //   }
     // });
 
-    
+
   }
 
   // submitForm() {
