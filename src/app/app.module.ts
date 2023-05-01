@@ -66,6 +66,7 @@ import { PaymentprocessHomeComponent } from './component/paymentprocess-home/pay
 import { PartialServiceHomeComponent } from './component/partial-service-home/partial-service-home.component';
 import { AdminPostsRequestsComponent } from './component/admin-posts-requests/admin-posts-requests.component';
 import { AdminPostRequestFormComponent } from './component/admin-post-request-form/admin-post-request-form.component';
+import { AdminHeaderComponent } from './component/admin-header/admin-header.component';
 
 @NgModule({
   declarations: [
@@ -124,7 +125,8 @@ import { AdminPostRequestFormComponent } from './component/admin-post-request-fo
     PaymentprocessHomeComponent,
     PartialServiceHomeComponent,
     AdminPostsRequestsComponent,
-    AdminPostRequestFormComponent
+    AdminPostRequestFormComponent,
+    AdminHeaderComponent
 
   ],
   imports: [
