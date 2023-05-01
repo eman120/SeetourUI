@@ -35,7 +35,7 @@ const routes: Routes = [
   {path:"services" , component:DetailsComponent},
   {path:"header" , component:HeaderComponent},
 
-  {path:"TourDetails",component:TourDetailsComponent},
+  {path:"TourDetails/:id",component:TourDetailsComponent},
   {path:"payment",component:PaymentComponent},
   {path:"payment-success",component:PaymentSuccessComponent},
 
