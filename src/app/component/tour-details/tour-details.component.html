@@ -11,6 +11,8 @@
 <div *ngIf="!loading">
   <div class="container" *ngIf="tour">
 
+    <app-admin-post-request-form [tourId]="tour.id"></app-admin-post-request-form>
+
     <!-- <form (ngSubmit)="submitForm()">
       <div class="form-group">
         <h5 for="">Questions</h5>
@@ -19,7 +21,7 @@
           <input class="form-control" name="answer" id="answer" cols="30" rows="10" [(ngModel)]="tourAnswer[i]"
           [attr.data-question-index]="i"/>
         </div>
-      </div>    
+      </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form> -->
 
@@ -50,11 +52,11 @@
           <span *ngIf="tour.tourCard.locationTo"> {{ tour.tourCard.locationTo}}</span>
         </div>
         <div>
-          <h5 *ngIf="tour.tourCard.dateFrom">Date From : </h5> 
+          <h5 *ngIf="tour.tourCard.dateFrom">Date From : </h5>
           <span>{{ tour.tourCard.dateFrom }}</span>
         </div>
         <div>
-          <h5 *ngIf="tour.tourCard.dateTo">Date To : </h5> 
+          <h5 *ngIf="tour.tourCard.dateTo">Date To : </h5>
           <span>{{ tour.tourCard.dateTo }}</span>
         </div>
         <div>
@@ -72,7 +74,7 @@
             <div class="progress-bar" role="progressbar" [style.width.%]="(tour.tourCard.bookings / tour.tourCard.capacity ) * 100" [attr.aria-valuenow]="tour.tourCard.bookings" aria-valuemin="0" [attr.aria-valuemax]="tour.tourCard.capacity"></div>
           </div>
         </div>
-        
+
         <div>
           <a href="">Tour Guide Profile</a>
         </div>
@@ -83,9 +85,9 @@
               <p>{{ i+1 }}. {{ review }}</p>
             </div>
           </div>
-          
+
         </div>
-        
+
         <div>
           <h5 for="">Add Photos</h5>
           <button class="btn btn-primary">Add Photos</button>
@@ -94,8 +96,27 @@
           <h5 for="transportation">Transportation</h5>
           <input type="checkbox" name="transportation" id="transportation" [checked]="tour.hasTransportation" disabled>
         </div>
-        
+
       </div>
+
+      <div>
+        <a href="">Tour Guide Profile</a>
+      </div>
+      <div>
+        <h4>Reviews</h4>
+        <!-- <p *ngIf="tour.bookings.review.comment">{{ tour.bookings.review.comment }}</p>
+        <p *ngIf="!tour.bookings.review.comment">No reviews yet</p> -->
+      </div>
+
+      <div>
+        <label for="">Add Photos</label>
+        <button class="btn btn-primary">Add Photos</button>
+      </div>
+      <div>
+        <label for="transportation">Transportation</label>
+        <input type="checkbox" name="transportation" id="transportation" [checked]="tour.hasTransportation" disabled>
+      </div>
+
     </div>
 
   </div>
