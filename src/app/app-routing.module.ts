@@ -28,6 +28,7 @@ import { AdminReportComponent } from './component/admin-report/admin-report.comp
 
 import { OurServiceComponent } from './component/our-service/our-service.component';
 import { AdminPostsRequestsComponent } from './component/admin-posts-requests/admin-posts-requests.component';
+import { AdminAcceptTourGuidesComponent } from './component/admin-accept-tour-guides/admin-accept-tour-guides.component';
 
 
 const routes: Routes = [
@@ -80,6 +81,7 @@ const routes: Routes = [
   {path:"report" , component:AdminReportComponent},
 
   {path:"admin/posts", component:AdminPostsRequestsComponent},
+  {path:"admin/applicants", component:AdminAcceptTourGuidesComponent},
 
   {path:"**" , component:ErrorComponent}
 
