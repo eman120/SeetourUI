@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,7 +15,7 @@ export class AppComponent implements OnInit {
   ) { }
   user :any;
   title = 'projFront';
-  
+
   spinner(): void {
     setTimeout(() => {
       const spinnerElement = document.getElementById('spinner');
@@ -23,7 +24,7 @@ export class AppComponent implements OnInit {
       }
     }, 1);
   }
-  
+
   onBackToTopClick() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }

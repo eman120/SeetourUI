@@ -1,0 +1,17 @@
+.position-relative {
+    border-color: #86B817 !important;
+    border-radius: 5px;
+}
+
+.ayhaga {
+    /* color: var(--light) !important; */
+    background-color: #86B817 !important;
+    
+}
+
+i {
+    color: white !important;
+}
+.text{
+    font-size: 20px;
+}

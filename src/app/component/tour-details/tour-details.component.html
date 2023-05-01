@@ -8,7 +8,7 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container" *ngIf="tour">
 
   <!-- <form (ngSubmit)="submitForm()">
     <div class="form-group">
@@ -25,32 +25,40 @@
 
   <div class="row mt-5">
     <div class="col-md-6">
-      <h4>Photos</h4>
-      <!-- <div *ngFor="let photo of photos">
+      <!--<h4>Photos</h4>
+      <div *ngFor="let photo of photos">
         <img src="{{photo.url}}" alt="{{photo.alt}}" class="img-fluid">
       </div> -->
+      <ngb-carousel class="rounded-top overflow-hidden" [interval]="0">
+        <ng-template ngbSlide *ngFor="let photo of tour.photos">
+          <!-- slide content -->
+          <div class="carousel-item active">
+            <img src="{{photo}}" class="d-block w-100">
+          </div>
+        </ng-template>
+      </ngb-carousel>
     </div>
     <div class="col-md-6">
       <h4>Tour Information</h4>
       <div>
-        <p>Destination :<span *ngIf="tour.locationTo"> {{ tour?.locationTo}}</span></p>
+        <p>Destination :<span *ngIf="tour.locationTo"> {{ tour.locationTo}}</span></p>
         <div>
-          <p *ngIf="tour.dateFrom"><span>Date From : </span>{{ tour?.dateFrom | date:'dd/MM/yyyy'  }}</p>
-          <p *ngIf="tour.dateTo"><span>Date To : </span>{{ tour?.dateTo | date:'dd/MM/yyyy' }}</p>
+          <p *ngIf="tour.dateFrom"><span>Date From : </span>{{ tour.dateFrom | date:'dd/MM/yyyy'  }}</p>
+          <p *ngIf="tour.dateTo"><span>Date To : </span>{{ tour.dateTo | date:'dd/MM/yyyy' }}</p>
         </div>
       </div>
       <div>
         <label for="price">Price :</label>
-        <span *ngIf="tour.price"> {{ tour?.price}}$</span>
+        <span *ngIf="tour.price"> {{ tour.price}}$</span>
       </div>
       <div>
         <label for="likescounts">Likes :</label>
-        <span> {{ tour.likes ? tour.likes.length : 0 }}</span>
+        <span> {{ tour.likes }}</span>
       </div>
       <div>
         <label for="available-seats">Available Seats</label>
         <div class="progress">
-          <div class="progress-bar" role="progressbar" [style.width.%]="(tour.bookingsCount / tour.capacity ) * 100" [attr.aria-valuenow]="tour.bookingsCount" aria-valuemin="0" [attr.aria-valuemax]="tour.capacity"></div>
+          <div class="progress-bar" role="progressbar" [style.width.%]="(tour.bookings / tour.capacity ) * 100" [attr.aria-valuenow]="tour.bookings" aria-valuemin="0" [attr.aria-valuemax]="tour.capacity"></div>
         </div>
       </div>
       
@@ -69,7 +77,7 @@
       </div>
       <div>
         <label for="transportation">Transportation</label>
-        <input type="checkbox" name="transportation" id="transportation" [checked]="tour?.hasTransportation" disabled>
+        <input type="checkbox" name="transportation" id="transportation" [checked]="tour.hasTransportation" disabled>
       </div>
       
     </div>

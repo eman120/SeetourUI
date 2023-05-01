@@ -7,7 +7,7 @@ import * as moment from "moment";
 
 @Injectable({
   providedIn: 'root'
-})
+}) 
 export class AuthService {
 
   constructor(private http: HttpClient) {
@@ -27,18 +27,23 @@ export class AuthService {
 
   private setSession(authResult: any) {
     const expiresAt = moment(authResult.expiry);
-    console.log(authResult)
     localStorage.setItem('id_token', authResult.token);
+    localStorage.setItem('interface', authResult.interface);
     localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()) );
   }
 
-  logout() {
+  public logout() {
     localStorage.removeItem("id_token");
     localStorage.removeItem("expires_at");
+    localStorage.removeItem("interface");
   }
 
   public isLoggedIn() {
     return moment().isBefore(this.getExpiration());
+  }
+
+  public getInterface() {
+    return localStorage.getItem('interface') || '';
   }
 
   isLoggedOut() {

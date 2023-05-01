@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { ApiPaths } from 'src/app/Enums/api-paths';
+import { TourCard } from 'src/app/Interfaces/tour-card';
+import { ToursService } from 'src/app/Services/tours.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-tour-details',
@@ -11,29 +14,50 @@ import { ApiPaths } from 'src/app/Enums/api-paths';
 })
 export class TourDetailsComponent implements OnInit {
 
+  // /*@Input()*/ tour: TourCard | undefined;
+  // get tourLink(): string {
+  //   console.log(this.tour);
+  //   return this.tour ? `/tour/${this.tour.id}` : '#';
+  // }
+
   tour: any;
   question:any;
   dateFrom:any;
   tourAnswer:any;
 
+  // constructor(
+  //   private http: HttpClient,
+  //   private route: ActivatedRoute,
+  //   private router: Router
+  // ) { }
+
   constructor(
-    private http: HttpClient,
-    private route: ActivatedRoute,
-    private router: Router
-  ) { }
+    private toursService: ToursService,
+    private titleService:Title,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     const tourId = this.route.snapshot.paramMap.get('id');
-    const url = environment.baseUrl+ApiPaths.tour+ApiPaths.tourdetails+tourId
+    // const url = environment.baseUrl+ApiPaths.tour+ApiPaths.tourCard+'?id='+tourId
 
-    this.http.get(url).subscribe({
+    // this.http.get(url).subscribe({
+    //   next: (data) => {
+    //     console.log(data);
+    //     this.tour = data;
+    //   },
+    //   error: () => {
+    //     //this.router.navigateByUrl('/Error');
+    //   }
+    // });
+
+    this.toursService.GetTourById(tourId ? tourId.toString() : "").subscribe({
       next: (data) => {
-        this.tour = data;
+        this.tour = data as TourCard;
       },
-      error: () => {
-        //this.router.navigateByUrl('/Error');
-      }
+      error: () => { }
     });
+    
   }
 
   // submitForm() {

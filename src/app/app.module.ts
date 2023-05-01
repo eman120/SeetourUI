@@ -1,5 +1,5 @@
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgModule } from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +12,7 @@ import { DetailsComponent } from './component/details/details.component';
 import { TourHomeComponent } from './component/tour-home/tour-home.component';
 
 import { TourGuideComponent } from './component/tour-guide/tour-guide.component';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule,NgModel,ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ErrorComponent } from './component/error/error.component';
 import { HeaderComponent } from './component/header/header.component';
@@ -22,7 +22,17 @@ import { UploadImagesComponent } from './component/upload-images/upload-images.c
 import { AuthInterceptorProviders } from './Middlewares/auth-interceptor';
 import { FooterComponent } from './component/footer/footer.component';
 import { TourDetailsComponent } from './component/tour-details/tour-details.component';
+import { AdminStatisticsComponent } from './component/admin-statistics/admin-statistics.component';
 import { UserregisterComponent } from './component/userregister/userregister.component';
+
+import { PaymentComponent } from './component/payment/payment.component';
+import { AdminReviewComponent } from './component/admin-review/admin-review.component';
+import { PaymentSuccessComponent } from './component/payment-success/payment-success.component';
+import { QuestionAnswerComponent } from './component/question-answer/question-answer.component';
+
+
+
+
 import { TourCardComponent } from './component/tour-card/tour-card.component';
 import { StarRatingComponent } from './component/star-rating/star-rating.component';
 import { LikeButtonComponent } from './component/like-button/like-button.component';
@@ -48,6 +58,14 @@ import { TGToursComponent } from './component/tgtours/tgtours.component';
 import { ToursSectionFilterableComponent } from './component/tours-section-filterable/tours-section-filterable.component';
 import { BookTourComponent } from './component/book-tour/book-tour.component';
 
+import { NgModule } from '@angular/core';
+import { AboutStartComponent } from './component/about-start/about-start.component';
+import { TeamDataComponent } from './component/team-data/team-data.component';
+import { OurServiceComponent } from './component/our-service/our-service.component';
+import { PopularDistnationsComponent } from './component/popular-distnations/popular-distnations.component';
+import { PaymentprocessHomeComponent } from './component/paymentprocess-home/paymentprocess-home.component';
+import { PartialServiceHomeComponent } from './component/partial-service-home/partial-service-home.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +80,16 @@ import { BookTourComponent } from './component/book-tour/book-tour.component';
     ErrorComponent,
     HeaderComponent,
     FooterComponent,
+
+
+    AdminStatisticsComponent,
+    TourDetailsComponent,
+    PaymentComponent,
+    AdminReviewComponent,
+    PaymentSuccessComponent,
+    QuestionAnswerComponent,
+
+
     UserregisterComponent,
     TourCardComponent,
     StarRatingComponent,
@@ -88,7 +116,17 @@ import { BookTourComponent } from './component/book-tour/book-tour.component';
     ToursFilterComponent,
     TGToursComponent,
     ToursSectionFilterableComponent,
+<<<<<<< HEAD
     BookTourComponent
+=======
+    AboutStartComponent,
+    TeamDataComponent,
+    OurServiceComponent,
+    PopularDistnationsComponent,
+    PaymentprocessHomeComponent,
+    PartialServiceHomeComponent
+
+>>>>>>> e1aa5062041c1d6923e2e5e9b969b0bf64222573
   ],
   imports: [
     BrowserModule,
