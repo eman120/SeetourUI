@@ -1,1 +1,46 @@
-<p>admin-accept-tour-guides works!</p>
+<div class="container-fluid bg-primary py-5 mb-5 bg-dark bg-gradient">
+  <div class="row justify-content-center py-5">
+
+    <div class="row justify-content-center">
+      <div class="d-flex justify-content-center flex-wrap gy-4 px-0">
+        <div class="col-12 col-lg-9 mx-auto bg-light border rounded p-3">
+
+          <div class="d-flex flex-row">
+
+            <h3 class="m-3">Applicants</h3>
+
+          </div>
+
+          <div class="card text-start m-2" *ngFor="let tourguide of tourguides">
+            <div class="row g-0">
+              <div class="col-md-2">
+                <img [src]="tourguide.profilePic" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-10">
+                <div class="card-body h-100 d-flex justify-content-between align-items-center">
+                  <h2 class="card-title">{{tourguide.name}}</h2>
+
+                  <a [routerLink]="tourguide.id" class="btn btn-primary">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <ng-container *ngIf="tourguides; else elseTemplate">
+
+            <p *ngIf="!tourguides.length" class="text-center mx-auto mb-0 mt-3 text-white">
+              No applicants found
+            </p>
+          </ng-container>
+
+          <ng-template #elseTemplate>
+
+            <app-spinner class="flex-grow-1"></app-spinner>
+
+          </ng-template>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

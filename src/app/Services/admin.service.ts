@@ -15,16 +15,21 @@ export class AdminService {
   constructor(private readonly client : HttpClient,
     private route: ActivatedRoute) {}
 
-    GetTourRequests() {
+  GetTourRequests() {
 
-      let url = this.urlBase+ApiPaths.admin+ApiPaths.adminTour+ApiPaths.adminTourRequest;
+    let url = this.urlBase+ApiPaths.admin+ApiPaths.adminTour+ApiPaths.adminTourRequest;
 
-      return this.client.get(url);
-    }
+    return this.client.get(url);
+  }
 
-    PostEditRequest(request: AdminPostStatus) {
-      let url = this.urlBase+ApiPaths.admin+ApiPaths.adminTour+ApiPaths.adminTourRequest;
+  PostEditRequest(request: AdminPostStatus) {
+    let url = this.urlBase+ApiPaths.admin+ApiPaths.adminTour+ApiPaths.adminTourRequest;
 
-      return this.client.post(url, request);
-    }
+    return this.client.post(url, request);
+  }
+
+  GetApplicants() {
+    let url = this.urlBase+ApiPaths.admin+ApiPaths.adminTourguide+ApiPaths.adminTGApplicant;
+    return this.client.get(url);
+  }
 }

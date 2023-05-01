@@ -29,6 +29,7 @@ import { AdminReportComponent } from './component/admin-report/admin-report.comp
 import { OurServiceComponent } from './component/our-service/our-service.component';
 import { AdminPostsRequestsComponent } from './component/admin-posts-requests/admin-posts-requests.component';
 import { AdminAcceptTourGuidesComponent } from './component/admin-accept-tour-guides/admin-accept-tour-guides.component';
+import { AdminApplicantDetailsComponent } from './component/admin-applicant-details/admin-applicant-details.component';
 
 
 const routes: Routes = [
@@ -82,6 +83,7 @@ const routes: Routes = [
 
   {path:"admin/posts", component:AdminPostsRequestsComponent},
   {path:"admin/applicants", component:AdminAcceptTourGuidesComponent},
+  {path:"admin/applicants/:id", component:AdminApplicantDetailsComponent},
 
   {path:"**" , component:ErrorComponent}
 
