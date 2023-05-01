@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { ApiPaths } from 'src/app/Enums/api-paths';
-import { TourCard } from 'src/app/Interfaces/tour-card';
+import { TourDet } from 'src/app/Interfaces/tour-det';
 import { ToursService } from 'src/app/Services/tours.service';
 import { Title } from '@angular/platform-browser';
 
@@ -24,6 +24,7 @@ export class TourDetailsComponent implements OnInit {
   question:any;
   dateFrom:any;
   tourAnswer:any;
+  loading = true;
 
   // constructor(
   //   private http: HttpClient,
@@ -35,11 +36,20 @@ export class TourDetailsComponent implements OnInit {
     private toursService: ToursService,
     private titleService:Title,
     private route: ActivatedRoute
-  ) {}
+    ) {}
+    
+    ngOnInit(): void {
+      const tourId = this.route.snapshot.paramMap.get('id');
+      this.toursService.GetTourById(tourId ? tourId.toString() : "").subscribe({
+        next: (data) => {
+          this.tour = data as TourDet;
+          console.log(this.tour);
+          this.loading = false;
+        },
+        error: () => { }
+      });
 
-  ngOnInit(): void {
-    const tourId = this.route.snapshot.paramMap.get('id');
-    // const url = environment.baseUrl+ApiPaths.tour+ApiPaths.tourCard+'?id='+tourId
+      // const url = environment.baseUrl+ApiPaths.tour+ApiPaths.tourCard+'?id='+tourId
 
     // this.http.get(url).subscribe({
     //   next: (data) => {
@@ -51,12 +61,6 @@ export class TourDetailsComponent implements OnInit {
     //   }
     // });
 
-    this.toursService.GetTourById(tourId ? tourId.toString() : "").subscribe({
-      next: (data) => {
-        this.tour = data as TourCard;
-      },
-      error: () => { }
-    });
     
   }
 

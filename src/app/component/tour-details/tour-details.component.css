@@ -1,0 +1,19 @@
+.like{
+    color:#86B817 !important;
+    margin-left: 5px;
+}
+.load{
+    text-align: center;
+    margin: auto;
+    color: #86B817;
+}
+
+h5{
+    color: #546457; 
+    display: inline-block; 
+    margin-right: 5px;   
+}
+
+span{
+    display: inline-block;
+}
