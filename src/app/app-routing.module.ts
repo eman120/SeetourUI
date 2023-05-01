@@ -27,6 +27,8 @@ import { ReviewCardComponent } from './component/review-card/review-card.compone
 import { AdminReportComponent } from './component/admin-report/admin-report.component';
 
 import { OurServiceComponent } from './component/our-service/our-service.component';
+import { AdminPostsRequestsComponent } from './component/admin-posts-requests/admin-posts-requests.component';
+import { CreateTourComponent } from './component/create-tour/create-tour.component';
 
 
 const routes: Routes = [
@@ -45,6 +47,7 @@ const routes: Routes = [
   {path:"payment-success",component:PaymentSuccessComponent},
   {path:"service",component:OurServiceComponent},
 
+  {path:"tour/create" , component:CreateTourComponent},
 
   {path:"tour/:id",component:TourDetailsComponent},
 
