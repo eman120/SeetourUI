@@ -1,10 +1,11 @@
 .form-group {
     margin-bottom: 1rem;
+    color: rgb(5, 5, 5);
   }
   
   label {
     font-weight: bold;
-    color: antiquewhite;
+    color: rgb(5, 5, 5);
   }
   
   input[type="datetime-local"] {

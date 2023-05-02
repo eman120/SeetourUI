@@ -12,9 +12,6 @@ import { environment } from 'src/environments/environment';
 export class BookTourComponent implements OnInit {
 
   tour: any;
-  question:any;
-  dateFrom:any;
-  tourAnswer:any;
 
   constructor(
     private http: HttpClient,
@@ -24,17 +21,52 @@ export class BookTourComponent implements OnInit {
 
   ngOnInit(): void {
     const tourId = this.route.snapshot.paramMap.get('id');
-    const url = environment.baseUrl+ApiPaths.tour+ApiPaths.tourdetails+tourId
+    // const url = environment.baseUrl+ApiPaths.tour+ApiPaths.tourdetails+tourId
 
-    this.http.get(url).subscribe({
-      next: (data) => {
-        this.tour = data;
-        console.log(data);
+    // this.http.get(url).subscribe({
+    //   next: (data) => {
+    //     this.tour = data;
+    //     console.log(data);
+    //   },
+    //   error: () => {
+    //     //this.router.navigateByUrl('/Error');
+    //   }
+    // });
+
+    this.http.post(environment.baseUrl + ApiPaths.tour+ApiPaths.bookDetails+'?id='+tourId ,tourId ).subscribe(
+      (response) => {
+        console.log('details successful!');
+        this.tour = response;
+        console.log(this.tour);
       },
-      error: () => {
-        //this.router.navigateByUrl('/Error');
+      (error) => {
+        console.log('Error occurred during registration.');
+        console.error(error);
+        console.log(error.status);
+        console.log(error.statusText);
+        console.log(error.error);
       }
-    });
+    );
+  }
+
+  book(seatsNum : any){
+    const tourId = this.route.snapshot.paramMap.get('id');
+    const bookDto = {tourId ,seatsNum };
+    this.http.post(environment.baseUrl + ApiPaths.tour+ApiPaths.bookTour+'?id='+tourId +'&seatsNum='+seatsNum, bookDto).subscribe(
+      (response) => {
+        console.log('booked successful!');
+        // console.log(response);
+        // Navigate to  component after adding the new Register
+        this.router.navigate(['/']);
+      },
+      (error) => {
+        console.log('Error occurred during registration.');
+        console.error(error);
+        console.log(error.status);
+        console.log(error.statusText);
+        console.log(error.error);
+      }
+    );
   }
 
 }
