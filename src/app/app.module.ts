@@ -70,6 +70,7 @@ import { AdminHeaderComponent } from './component/admin-header/admin-header.comp
 import { AdminAcceptTourGuidesComponent } from './component/admin-accept-tour-guides/admin-accept-tour-guides.component';
 import { AdminApplicantDetailsComponent } from './component/admin-applicant-details/admin-applicant-details.component';
 import { TourGuideDetailsComponent } from './component/tour-guide-details/tour-guide-details.component';
+import { CustomerHeaderComponent } from './component/customer-header/customer-header.component';
 
 @NgModule({
   declarations: [
@@ -132,7 +133,8 @@ import { TourGuideDetailsComponent } from './component/tour-guide-details/tour-g
     AdminHeaderComponent,
     AdminAcceptTourGuidesComponent,
     AdminApplicantDetailsComponent,
-    TourGuideDetailsComponent
+    TourGuideDetailsComponent,
+    CustomerHeaderComponent
 
   ],
   imports: [
