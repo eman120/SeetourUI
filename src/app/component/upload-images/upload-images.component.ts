@@ -33,13 +33,14 @@ export class UploadImagesComponent {
         this.tourPhoto=this.uploadedUrls.map(photo=>{
           return {
             id:0,
+            url:"",
             photoId:photo.id,
             tourId:0
             
           };
         });
         this.imagesUrls.emit(this.tourPhoto);
-       // console.log(this.uploadedUrls);
+        console.log(this.uploadedUrls);
        // console.log(this.tourPhoto);
 
         // Reset the form after successful upload
