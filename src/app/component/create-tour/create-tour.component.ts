@@ -117,7 +117,7 @@ export class CreateTourComponent implements OnInit {
 
   submitForm() {
     // Access the values of the URLs from the parent component and submit them along with the other form data
-    const formValue = { ...this.createtourform.value,  locationFromUrl: this.firsturl, locationFrom: this.locationFrom, locationToUrl: this.secondurl, locationTo: this.locationTo,photos:this.Photos,tourguideId:"string" };
+    const formValue = { ...this.createtourform.value,  locationFromUrl: this.firsturl, locationFrom: this.locationFrom, locationToUrl: this.secondurl, locationTo: this.locationTo,photos:this.Photos};
 
     console.log('form:', formValue);
     if (formValue) {
