@@ -48,8 +48,12 @@ export class RegisterComponent implements OnInit {
         (error) => {
           console.log('Error occurred during registration.');
           console.error(error);
+          console.log(error.status);
+          console.log(error.statusText);
+          console.log(error.error);
         }
       );
+      
     }
   }
 

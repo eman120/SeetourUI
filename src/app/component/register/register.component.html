@@ -69,45 +69,49 @@
                      </div>
                   </div>
 
+                  
+                  <div class="form-outline row">
 
-                  <div class=" form-outline row g-3 ">
-                    <div class="col-md-6 mb-4 p-2">
-                      <input #snn="ngModel"  ngModel name ="snn" type="number" id="snn" class="form-control form-control-lg"  placeholder="Your SNN" pattern="^[0-9]{6,16}$" required/>
+                    <!-- row 1 -->
+                    <div class="col-md-6">
+                      <input #snn="ngModel" ngModel name="snn" type="number" id="snn" class="form-control form-control-lg" placeholder="Your SNN" pattern="^[0-9]{6,16}$" required/>
                       <div class="alert alert-danger" [hidden]="snn.valid || snn.untouched">
                         <small *ngIf="snn.errors?.['required']">snn Number is Required!!</small>
                         <small *ngIf="snn.errors?.['pattern']">snn Number Length must be between 6 and 16 Numbers</small>
                       </div>
-                      <input #Tax="ngModel"  ngModel name ="Tax" type="text" id="Tax" class="form-control form-control-lg mb-4 p-2" placeholder="Your Tax Number" required/>
+                    </div>
+                    <div class="col-md-6">
+                      <input #Tax="ngModel" ngModel name="Tax" type="text" id="Tax" class="form-control form-control-lg mb-4 p-2" placeholder="Your Tax Number" required/>
                       <div class="alert alert-danger" [hidden]="Tax.valid || Tax.untouched">
                         <small *ngIf="Tax.errors?.['required']">TaxNumber is Required!!</small>
                       </div>
                     </div>
-                  </div>
-
-                      <!-- bankAccount -->
-                  <div class=" form-outline row g-3 ">
-                    <div class="col-md-6 mb-4 p-2">
-                      <input #bankAccount="ngModel"  ngModel name ="bankAccount" type="text" id="bankAccount" class="form-control form-control-lg mb-4 p-2" placeholder="Your bankAccount" required />
-                      <div class="alert alert-danger" [hidden]=" bankAccount.valid || bankAccount.untouched">
+                  
+                    <!-- row 2 -->
+                    <div class="col-md-6">
+                      <input #bankAccount="ngModel" ngModel name="bankAccount" type="text" id="bankAccount" class="form-control form-control-lg mb-4 p-2" placeholder="Your bankAccount" required />
+                      <div class="alert alert-danger" [hidden]="bankAccount.valid || bankAccount.untouched">
                         <small *ngIf="bankAccount.errors?.['required']">bankAccount is Required!!</small>
-
                       </div>
-                      <input #Address="ngModel"  ngModel name ="Address" type="text" id="Address" class="form-control form-control-lg mb-4 p-2" placeholder="Your Address" required/>
+                    </div>
+                    <div class="col-md-6">
+                      <input #Address="ngModel" ngModel name="Address" type="text" id="Address" class="form-control form-control-lg mb-4 p-2" placeholder="Your recipient Address" required/>
                       <div class="alert alert-danger" [hidden]="Address.valid || Address.untouched">
                         <small *ngIf="Address.errors?.['required']">Address is Required!!</small>
                       </div>
-
                     </div>
-                    <div class="col-md-6 mb-4 p-2">
-                      <input #AccountNumber="ngModel"  ngModel name ="AccountNumber" type="number" id="AccountNumber" class="form-control form-control-lg mb-4 p-2" placeholder="AccountNumber" required />
+                  
+                    <!-- row 3 -->
+                    <div class="col-md-6">
+                      <input #AccountNumber="ngModel" ngModel name="AccountNumber" type="number" id="AccountNumber" class="form-control form-control-lg mb-4 p-2" placeholder="AccountNumber" required />
                       <div class="alert alert-danger" [hidden]="AccountNumber.valid || AccountNumber.untouched">
                         <small *ngIf="AccountNumber.errors?.['required']">AccountNumber is Required!!</small>
-
                       </div>
-
-                         <input #SwiftCode="ngModel"  ngModel name ="SwiftCode" type="number" id="SwiftCode" class="form-control form-control-lg mb-4 p-2" placeholder="SwiftCode" required/>
-                        <div class="alert alert-danger" [hidden]="SwiftCode.valid || SwiftCode.untouched">
-                          <small *ngIf="SwiftCode.errors?.['required']">SwiftCode is Required!!</small>
+                    </div>
+                    <div class="col-md-6">
+                      <input #SwiftCode="ngModel" ngModel name="SwiftCode" type="number" id="SwiftCode" class="form-control form-control-lg mb-4 p-2" placeholder="SwiftCode" required/>
+                      <div class="alert alert-danger" [hidden]="SwiftCode.valid || SwiftCode.untouched">
+                        <small *ngIf="SwiftCode.errors?.['required']">SwiftCode is Required!!</small>
                         </div>
                     </div>
 
