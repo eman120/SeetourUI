@@ -74,7 +74,7 @@
 
                     <!-- row 1 -->
                     <div class="col-md-6">
-                      <input #snn="ngModel" ngModel name="snn" type="number" id="snn" class="form-control form-control-lg" placeholder="Your SNN" pattern="^[0-9]{6,16}$" required/>
+                      <input #snn="ngModel" ngModel name="snn" type="text" id="snn" class="form-control form-control-lg" placeholder="Your SNN" pattern="^[0-9]{6,16}$" required/>
                       <div class="alert alert-danger" [hidden]="snn.valid || snn.untouched">
                         <small *ngIf="snn.errors?.['required']">snn Number is Required!!</small>
                         <small *ngIf="snn.errors?.['pattern']">snn Number Length must be between 6 and 16 Numbers</small>

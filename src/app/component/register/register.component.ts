@@ -23,19 +23,19 @@ export class RegisterComponent implements OnInit {
       this.newReg = {username ,  name , email , phone , password , snn , bankAccount , address , AccountNumber , SwiftCode , file ,PPic , Tax};
       console.log('Registration...');
       const registrationDto = {
-        userName: this.newReg.username.replace(/\s+/g, ''),
-        password: this.newReg.password,
+        UserName: this.newReg.username.replace(/\s+/g, ''),
+        Password: this.newReg.password,
         profilepic: this.newReg.PPic, 
-        ssn: this.newReg.snn,
-        fullName: this.newReg.name, 
-        recipientBankNameAndAddress: this.newReg.bankAccount,
-        recipientAccountNumberOrIBAN: this.newReg.AccountNumber,
-        recipientBankSwiftCode: this.newReg.SwiftCode,
-        recipientNameAndAddress: this.newReg.address,
-        taxRegistrationNumber :this.newReg.Tax,
-        idCardPhoto: this.newReg.file,
-        phoneNumber: this.newReg.phone,
-        email: this.newReg.email
+        SSN: this.newReg.snn,
+        FullName: this.newReg.name, 
+        RecipientBankNameAndAddress: this.newReg.bankAccount,
+        RecipientAccountNumberOrIBAN: this.newReg.AccountNumber,
+        RecipientBankSwiftCode: this.newReg.SwiftCode,
+        RecipientNameAndAddress: this.newReg.address,
+        TaxRegistrationNumber :this.newReg.Tax,
+        IDCardPhoto: this.newReg.file,
+        PhoneNumber: this.newReg.phone,
+        Email: this.newReg.email
       };
       console.log(registrationDto);
       this.http.post(environment.baseUrl + ApiPaths.user+ApiPaths.custReg, registrationDto).subscribe(

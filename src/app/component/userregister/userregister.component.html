@@ -13,10 +13,10 @@
               <form #registerFrm="ngForm" >
 
                   <div class="form-outline mb-4">
-                    <input #name="ngModel"  ngModel name ="name" type="text" id="name" class="form-control form-control-lg" placeholder="Your Name *"  pattern="^[A-Za-z ]{8,50}$" required/>
+                    <input #name="ngModel"  ngModel name ="name" type="text" id="name" class="form-control form-control-lg" placeholder="Your Name *"  pattern="^[A-Za-z]{8,50}$" required/>
                     <div class="alert alert-danger" [hidden]="name.valid || name.untouched">
-                      <small *ngIf="name.errors?.['required']">Full Name is Required!!</small>
-                      <small *ngIf="name.errors?.['pattern']">Full Name must contain alphabetic characters and spaces only and between 8 and 50 characters</small>
+                      <small *ngIf="name.errors?.['required']">User Name is Required!!</small>
+                      <small *ngIf="name.errors?.['pattern']">User Name must contain alphabetic characters and spaces only and between 8 and 50 characters</small>
                   </div>
                   </div>
 

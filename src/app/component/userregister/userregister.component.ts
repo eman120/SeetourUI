@@ -23,7 +23,7 @@ export class UserregisterComponent implements OnInit{
       this.newReg = {file ,name , email , phone , password ,snn};
       
       const registrationDto = {
-        userName: this.newReg.name,
+        userName: this.newReg.name.replace(/\s+/g, ''),
         password: this.newReg.password,
         profilepic: this.newReg.file,
         ssn: this.newReg.snn,
