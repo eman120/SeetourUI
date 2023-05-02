@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
-  selector: 'app-admin-header',
-  templateUrl: './admin-header.component.html',
-  styleUrls: ['./admin-header.component.css']
+  selector: 'app-customer-header',
+  templateUrl: './customer-header.component.html',
+  styleUrls: ['./customer-header.component.css']
 })
-export class AdminHeaderComponent {
+export class CustomerHeaderComponent {
   constructor (private auth: AuthService) {}
 
   logout(){

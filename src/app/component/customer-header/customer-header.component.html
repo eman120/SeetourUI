@@ -16,11 +16,8 @@
                 <a routerLink="/service" routerLinkActive="active" class="nav-item nav-link">Services</a>
                 <a routerLink="/tour" routerLinkActive="active" class="nav-item nav-link">Tours</a>
                 <a routerLink="/contact" routerLinkActive="active" class="nav-item nav-link">Contact Us</a>
-
-                <a routerLink="/register" class="btn btn-primary rounded-pill me-2">Become a Partner</a>
-                <a routerLink="/login" class="btn btn-primary rounded-pill me-2">Login</a>
-                <a routerLink="/userregister" class="btn btn-primary rounded-pill">Register</a>
-
+                
+                <button (click)="logout()" class="btn btn-primary rounded-pill me-2">Logout</button>
             </div>
         </div>
     </nav>

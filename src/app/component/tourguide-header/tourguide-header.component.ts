@@ -12,8 +12,7 @@ import { TourguidService } from 'src/app/Services/tourguid.service';
 export class TourguideHeaderComponent {
   tourguide: TourGuide | undefined;
 
-  constructor(private tourguideService: TourguidService, private auth: AuthService,
-    private router: Router) {}
+  constructor(private tourguideService: TourguidService, private auth: AuthService) {}
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -27,6 +26,5 @@ export class TourguideHeaderComponent {
 
   logout(){
     this.auth.logout();
-    this.router.navigateByUrl('/login');
   }
 }

@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { ApiPaths } from '../Enums/api-paths';
 import { AdminPostStatus } from '../Interfaces/admin-post-status';
+import { TGStatus } from '../Enums/tgstatus';
 
 @Injectable({
   providedIn: 'root'
@@ -15,16 +16,31 @@ export class AdminService {
   constructor(private readonly client : HttpClient,
     private route: ActivatedRoute) {}
 
-    GetTourRequests() {
+  GetTourRequests() {
 
-      let url = this.urlBase+ApiPaths.admin+ApiPaths.adminTour+ApiPaths.adminTourRequest;
+    let url = this.urlBase+ApiPaths.admin+ApiPaths.adminTour+ApiPaths.adminTourRequest;
 
-      return this.client.get(url);
-    }
+    return this.client.get(url);
+  }
 
-    PostEditRequest(request: AdminPostStatus) {
-      let url = this.urlBase+ApiPaths.admin+ApiPaths.adminTour+ApiPaths.adminTourRequest;
+  PostEditRequest(request: AdminPostStatus) {
+    let url = this.urlBase+ApiPaths.admin+ApiPaths.adminTour+ApiPaths.adminTourRequest;
 
-      return this.client.post(url, request);
-    }
+    return this.client.post(url, request);
+  }
+
+  GetApplicants() {
+    let url = this.urlBase+ApiPaths.admin+ApiPaths.adminTourguide+ApiPaths.adminTGApplicant;
+    return this.client.get(url);
+  }
+
+  GetApplicant(Id: string) {
+    let url = this.urlBase+ApiPaths.admin+ApiPaths.adminTourguide+ApiPaths.adminTGApplicant+'/'+Id;
+    return this.client.get(url);
+  }
+
+  ChangeTourGuideStatus(Id: string, Status: TGStatus) {
+    let url = this.urlBase+ApiPaths.admin+ApiPaths.adminTourguide+ApiPaths.adminTGApplicant;
+    return this.client.patch(url, {Id, Status});
+  }
 }
