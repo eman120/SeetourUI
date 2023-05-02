@@ -67,6 +67,9 @@ import { PartialServiceHomeComponent } from './component/partial-service-home/pa
 import { AdminPostsRequestsComponent } from './component/admin-posts-requests/admin-posts-requests.component';
 import { AdminPostRequestFormComponent } from './component/admin-post-request-form/admin-post-request-form.component';
 import { AdminHeaderComponent } from './component/admin-header/admin-header.component';
+import { AdminAcceptTourGuidesComponent } from './component/admin-accept-tour-guides/admin-accept-tour-guides.component';
+import { AdminApplicantDetailsComponent } from './component/admin-applicant-details/admin-applicant-details.component';
+import { TourGuideDetailsComponent } from './component/tour-guide-details/tour-guide-details.component';
 
 @NgModule({
   declarations: [
@@ -126,7 +129,10 @@ import { AdminHeaderComponent } from './component/admin-header/admin-header.comp
     PartialServiceHomeComponent,
     AdminPostsRequestsComponent,
     AdminPostRequestFormComponent,
-    AdminHeaderComponent
+    AdminHeaderComponent,
+    AdminAcceptTourGuidesComponent,
+    AdminApplicantDetailsComponent,
+    TourGuideDetailsComponent
 
   ],
   imports: [
