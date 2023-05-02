@@ -1,0 +1,43 @@
+<div class="container-fluid bg-primary py-5 mb-5 hero-header">
+  <div class="container py-5">
+      <div class="row justify-content-center py-5">
+          <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+              <h1 class="display-3 text-white mb-3 animated slideInDown">Book Tour</h1>
+          </div>
+      </div>
+
+      <form>
+          <div class="form-group">
+            <label for="tourName">Tour Name</label>
+            <!-- <p *ngIf="tour.name">{{ tour?.name }}</p> -->
+          </div>
+          <div class="form-group">
+            <label for="guideName">Tour Guide Name</label>
+            <input type="text" class="form-control" id="guideName" placeholder="Enter tour guide name">
+          </div>
+          <div class="form-group">
+            <label for="tourTime">Tour Time</label>
+              <!-- <p *ngIf="tour.dateFrom">{{ tour?.dateFrom | date:'dd/MM/yyyy'  }}</p> -->
+          </div>
+          <div class="form-group">
+            <label for="meetingPoint">Meeting Point</label>
+            <input type="text" class="form-control" id="meetingPoint" placeholder="Enter meeting point">
+          </div>
+          <div class="form-group">
+            <label for="seatsCount">Seats Count</label>
+            <input type="number" class="form-control" id="seatsCount" placeholder="Enter number of seats">
+          </div>
+          <div class="form-group">
+            <label for="paymentMethod">Payment Method</label>
+            <select class="form-control" id="paymentMethod">
+              <option>Credit Card</option>
+              <option>PayPal</option>
+              <option>Cash on Arrival</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Book Now</button>
+        </form>
+  </div>
+</div>
+
+  

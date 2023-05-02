@@ -22,6 +22,7 @@ import { TourguideDashboardComponent } from './component/tourguide-dashboard/tou
 import { TGReviewsComponent } from './component/tgreviews/tgreviews.component';
 import { TGOverviewComponent } from './component/tgoverview/tgoverview.component';
 import { TGToursComponent } from './component/tgtours/tgtours.component';
+import { BookTourComponent } from './component/book-tour/book-tour.component';
 
 import { ReviewCardComponent } from './component/review-card/review-card.component';
 import { AdminReportComponent } from './component/admin-report/admin-report.component';
@@ -54,6 +55,7 @@ const routes: Routes = [
   {path:"tour/create" , component:CreateTourComponent},
 
   {path:"tour/:id",component:TourDetailsComponent},
+  {path:"bookTour/:id",component:BookTourComponent},
 
   {path:"tourguide/:id",component:TourGuideProfileComponent,
     children: [
@@ -80,15 +82,21 @@ const routes: Routes = [
     ]},
 
   {path:"userregister" , component:UserregisterComponent},
-  {path:"tourguide" , component:TourGuideComponent},
   {path:"dashboard" , component:TourguideDashboardComponent},
+<<<<<<< HEAD
+  {path:"tourguide" , component:TourGuideComponent},
+=======
   {path:"review" , component:ReviewCardComponent},
   {path:"report" , component:AdminReportComponent},
+<<<<<<< HEAD
+>>>>>>> e1aa5062041c1d6923e2e5e9b969b0bf64222573
+=======
 
   {path:"admin/posts", component:AdminPostsRequestsComponent},
   {path:"admin/applicants", component:AdminAcceptTourGuidesComponent},
   {path:"admin/applicants/:id", component:AdminApplicantDetailsComponent},
 
+>>>>>>> 466b450e36cf0df785d5c3d66ecf8790baca6391
   {path:"**" , component:ErrorComponent}
 
 ];

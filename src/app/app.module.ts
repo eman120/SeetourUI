@@ -56,6 +56,7 @@ import { SpinnerComponent } from './component/spinner/spinner.component';
 import { ToursFilterComponent } from './component/tours-filter/tours-filter.component';
 import { TGToursComponent } from './component/tgtours/tgtours.component';
 import { ToursSectionFilterableComponent } from './component/tours-section-filterable/tours-section-filterable.component';
+import { BookTourComponent } from './component/book-tour/book-tour.component';
 
 import { NgModule } from '@angular/core';
 import { AboutStartComponent } from './component/about-start/about-start.component';
@@ -122,6 +123,9 @@ import { CustomerHeaderComponent } from './component/customer-header/customer-he
     ToursFilterComponent,
     TGToursComponent,
     ToursSectionFilterableComponent,
+<<<<<<< HEAD
+    BookTourComponent
+=======
     AboutStartComponent,
     TeamDataComponent,
     OurServiceComponent,
@@ -136,6 +140,7 @@ import { CustomerHeaderComponent } from './component/customer-header/customer-he
     TourGuideDetailsComponent,
     CustomerHeaderComponent
 
+>>>>>>> e1aa5062041c1d6923e2e5e9b969b0bf64222573
   ],
   imports: [
     BrowserModule,
