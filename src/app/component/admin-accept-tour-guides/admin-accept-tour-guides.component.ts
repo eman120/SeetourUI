@@ -18,7 +18,6 @@ export class AdminAcceptTourGuidesComponent {
     this.admin.GetApplicants().subscribe({
       next: (data) => {
         this.tourguides = data as TourGuide[];
-        console.log(this.tourguides);
       }
     })
   }

@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { ApiPaths } from '../Enums/api-paths';
 import { AdminPostStatus } from '../Interfaces/admin-post-status';
+import { TGStatus } from '../Enums/tgstatus';
 
 @Injectable({
   providedIn: 'root'
@@ -31,5 +32,15 @@ export class AdminService {
   GetApplicants() {
     let url = this.urlBase+ApiPaths.admin+ApiPaths.adminTourguide+ApiPaths.adminTGApplicant;
     return this.client.get(url);
+  }
+
+  GetApplicant(Id: string) {
+    let url = this.urlBase+ApiPaths.admin+ApiPaths.adminTourguide+ApiPaths.adminTGApplicant+'/'+Id;
+    return this.client.get(url);
+  }
+
+  ChangeTourGuideStatus(Id: string, Status: TGStatus) {
+    let url = this.urlBase+ApiPaths.admin+ApiPaths.adminTourguide+ApiPaths.adminTGApplicant;
+    return this.client.patch(url, {Id, Status});
   }
 }

@@ -1,1 +1,36 @@
-<p>admin-applicant-details works!</p>
+<div class="container-fluid bg-primary py-5 mb-5 bg-dark bg-gradient">
+  <div class="row justify-content-center py-5">
+
+    <div class="row justify-content-center">
+      <div class="d-flex justify-content-center flex-wrap gy-4 px-0">
+        <div class="col-12 col-lg-9 mx-auto bg-light border rounded p-3">
+
+          <div class="d-flex flex-row justify-content-between align-items-center">
+
+            <h3 class="m-3">Applicant</h3>
+
+            <a class="btn btn-primary" routerLink="/admin/applicants">Back</a>
+
+          </div>
+
+          <app-tour-guide-details [tourguide]="tourguide"></app-tour-guide-details>
+
+          <div *ngIf="tourguide">
+            <div *ngIf="formStatus != 'Posted'" class="d-flex justify-content-evenly">
+              <button class="btn btn-primary" (click)="OnAccept()">Accept</button>
+              <button class="btn btn-outline-danger" (click)="OnReject()">Reject</button>
+            </div>
+
+            <div *ngIf="formStatus=='Error'" class="alert alert-danger" role="alert">
+              <strong>Something went wrong, please try again</strong>
+            </div>
+            <div *ngIf="formStatus=='Success'" class="alert alert-success" role="alert">
+              <strong>Your change has been sent successfully</strong>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -69,6 +69,7 @@ import { AdminPostRequestFormComponent } from './component/admin-post-request-fo
 import { AdminHeaderComponent } from './component/admin-header/admin-header.component';
 import { AdminAcceptTourGuidesComponent } from './component/admin-accept-tour-guides/admin-accept-tour-guides.component';
 import { AdminApplicantDetailsComponent } from './component/admin-applicant-details/admin-applicant-details.component';
+import { TourGuideDetailsComponent } from './component/tour-guide-details/tour-guide-details.component';
 
 @NgModule({
   declarations: [
@@ -130,7 +131,8 @@ import { AdminApplicantDetailsComponent } from './component/admin-applicant-deta
     AdminPostRequestFormComponent,
     AdminHeaderComponent,
     AdminAcceptTourGuidesComponent,
-    AdminApplicantDetailsComponent
+    AdminApplicantDetailsComponent,
+    TourGuideDetailsComponent
 
   ],
   imports: [
