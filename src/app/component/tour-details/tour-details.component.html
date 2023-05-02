@@ -96,25 +96,12 @@
           <h5 for="transportation">Transportation</h5>
           <input type="checkbox" name="transportation" id="transportation" [checked]="tour.hasTransportation" disabled>
         </div>
+        <div>
+          <a routerLink="/bookTour/{{tour.tourCard.id}}" class="btn btn-primary rounded-pill me-2" [ngClass]="{'disabled-link': tour.tourCard.capacity - tour.tourCard.bookings <= 0}">
+            Book Tour
+          </a>
+        </div>
 
-      </div>
-
-      <div>
-        <a href="">Tour Guide Profile</a>
-      </div>
-      <div>
-        <h4>Reviews</h4>
-        <!-- <p *ngIf="tour.bookings.review.comment">{{ tour.bookings.review.comment }}</p>
-        <p *ngIf="!tour.bookings.review.comment">No reviews yet</p> -->
-      </div>
-
-      <div>
-        <label for="">Add Photos</label>
-        <button class="btn btn-primary">Add Photos</button>
-      </div>
-      <div>
-        <label for="transportation">Transportation</label>
-        <input type="checkbox" name="transportation" id="transportation" [checked]="tour.hasTransportation" disabled>
       </div>
 
     </div>
