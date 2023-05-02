@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ApiPaths } from 'src/app/Enums/api-paths';
 import { RegisterService } from 'src/app/Services/register.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-register',
@@ -16,37 +18,42 @@ export class RegisterComponent implements OnInit {
   user: any;
   newReg: any;
 
-  Register(file: any, name: any, email: any, phone: any, address: any, snn: any, SwiftCode: any, bankAccount: any, AccountNumber: any, password: any) {
-    if (file && name && email && phone && snn && password && address && bankAccount && SwiftCode && AccountNumber) { // Check if all required fields have data
-      this.newReg = { file, name, email, phone, snn, password, address, bankAccount, SwiftCode, AccountNumber };
+  Register(username : any ,name : any, email : any, phone : any, password :any, snn : any, bankAccount:any , address:any, AccountNumber:any, SwiftCode:any, file:any, PPic:any , Tax :any) {
+    if (username && name && email && phone && password && snn && bankAccount && address && AccountNumber && SwiftCode && file && PPic && Tax) { // Check if all required fields have data
+      this.newReg = {username ,  name , email , phone , password , snn , bankAccount , address , AccountNumber , SwiftCode , file ,PPic , Tax};
       console.log('Registration...');
       const registrationDto = {
-        UserName: this.newReg.name,
-        SecurityLevel: 'tourguide',
-        profilepic: 'examplepic', //
-        SSN: this.newReg.snn,
-        FullName: this.newReg.name, //
-        Email: this.newReg.email,
-        PhoneNumber: this.newReg.phone,
+        UserName: this.newReg.username.replace(/\s+/g, ''),
         Password: this.newReg.password,
-        RecipientAccountNumberOrIBAN: this.newReg.AccountNumber,
+        profilepic: this.newReg.PPic, 
+        SSN: this.newReg.snn,
+        FullName: this.newReg.name, 
         RecipientBankNameAndAddress: this.newReg.bankAccount,
+        RecipientAccountNumberOrIBAN: this.newReg.AccountNumber,
         RecipientBankSwiftCode: this.newReg.SwiftCode,
         RecipientNameAndAddress: this.newReg.address,
-        IDCardPhoto: this.newReg.file
+        TaxRegistrationNumber :this.newReg.Tax,
+        IDCardPhoto: this.newReg.file,
+        PhoneNumber: this.newReg.phone,
+        Email: this.newReg.email
       };
-      this.http.post('https://localhost:44362/api/User/TourGuideRegistration', registrationDto).subscribe(
+      console.log(registrationDto);
+      this.http.post(environment.baseUrl + ApiPaths.user+ApiPaths.custReg, registrationDto).subscribe(
         (response) => {
           console.log('Registration successful!');
           console.log(response);
-          // Navigate to home component after adding the new Register
+          // Navigate to login component after adding the new Register
           this.router.navigate(['/login']);
         },
         (error) => {
           console.log('Error occurred during registration.');
           console.error(error);
+          console.log(error.status);
+          console.log(error.statusText);
+          console.log(error.error);
         }
       );
+      
     }
   }
 

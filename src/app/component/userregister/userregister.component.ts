@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
  import {UserregisterService } from 'src/app/Services/userregister.service';
+import { ApiPaths } from 'src/app/Enums/api-paths';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-userregister',
@@ -15,22 +17,23 @@ export class UserregisterComponent implements OnInit{
   user: any;
   newReg: any;
 
-  UserRegister(file:any,name:any, email:any, phone:any , snn:any , password:any){
-    if (file && name && email && phone  && snn && password)
+  UserRegister(username:any , file:any, name:any, email:any, phone:any, password:any, snn:any){
+    if (username && file && name && email && phone  && password && snn)
     { // Check if all required fields have data
-      let newReg = {file ,name , email , phone , snn , password};
-      this.service.AddNewRegister(newReg).subscribe();
-
+      this.newReg = {username ,file ,name , email , phone , password ,snn};
+      
       const registrationDto = {
-        UserName: this.newReg.name,
-        SecurityLevel: '',
-        SSN: this.newReg.snn,
-        Email: this.newReg.email,
-        PhoneNumber: this.newReg.phone,
-        Password: this.newReg.password,
-        IDCardPhoto: this.newReg.file
+        userName: this.newReg.username.replace(/\s+/g, ''),
+        password: this.newReg.password,
+        profilepic: this.newReg.file,
+        ssn: this.newReg.snn,
+        fullName: this.newReg.name,
+        phoneNumber: this.newReg.phone,
+        email: this.newReg.email
       };
-      this.http.post('https://localhost:44362/api/User/Registration', registrationDto).subscribe(
+      console.log(registrationDto);
+      // this.service.AddNewRegister(registrationDto).subscribe();
+      this.http.post(environment.baseUrl + ApiPaths.user+ApiPaths.custReg, registrationDto).subscribe(
         (response) => {
           console.log('Registration successful!');
           console.log(response);

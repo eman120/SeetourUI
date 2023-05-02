@@ -1,0 +1,32 @@
+<div *ngIf="isAdmin">
+
+  <div class="card">
+    <div class="card-body">
+
+      <div *ngIf="formstatus=='invalid'" class="alert alert-danger" role="alert">
+        <strong>Please enter a description of your edit request</strong>
+      </div>
+      <div *ngIf="formstatus=='error'" class="alert alert-danger" role="alert">
+        <strong>Something went wrong, please try again</strong>
+      </div>
+      <div *ngIf="formstatus=='success'" class="alert alert-success" role="alert">
+        <strong>Your change has been sent successfully</strong>
+      </div>
+
+      <h2 class="card-title">Posting Status</h2>
+      <form>
+        <div class="mb-3">
+          <label for="editRequest" class="form-label">Edit Request</label>
+          <textarea rows="4" id="editRequest" class="form-control" style="resize: none;" [value]="request"></textarea>
+        </div>
+
+        <div *ngIf="formstatus!='posted'" class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn btn-primary" type="button" (click)="onAccept()">Accept</button>
+          <button class="btn btn-danger" type="button" (click)="onReject()">Reject</button>
+          <button class="btn btn-outline-info" type="button" (click)="onRequestEdit()">Request Edit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>

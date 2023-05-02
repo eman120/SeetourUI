@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, createComponent } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './component/home/home.component';
 import { AboutUsComponent } from './component/about-us/about-us.component';
@@ -28,6 +28,12 @@ import { ReviewCardComponent } from './component/review-card/review-card.compone
 import { AdminReportComponent } from './component/admin-report/admin-report.component';
 
 import { OurServiceComponent } from './component/our-service/our-service.component';
+import { AdminPostsRequestsComponent } from './component/admin-posts-requests/admin-posts-requests.component';
+
+import { CreateTourComponent } from './component/create-tour/create-tour.component';
+
+import { AdminAcceptTourGuidesComponent } from './component/admin-accept-tour-guides/admin-accept-tour-guides.component';
+import { AdminApplicantDetailsComponent } from './component/admin-applicant-details/admin-applicant-details.component';
 
 
 const routes: Routes = [
@@ -40,12 +46,13 @@ const routes: Routes = [
   {path:"tour" , component:TourHomeComponent},
   {path:"services" , component:DetailsComponent},
   {path:"header" , component:HeaderComponent},
-
+{path:"createtour",component:CreateTourComponent},
   {path:"TourDetails/:id",component:TourDetailsComponent},
   {path:"payment",component:PaymentComponent},
   {path:"payment-success",component:PaymentSuccessComponent},
   {path:"service",component:OurServiceComponent},
 
+  {path:"tour/create" , component:CreateTourComponent},
 
   {path:"tour/:id",component:TourDetailsComponent},
   {path:"bookTour/:id",component:BookTourComponent},
@@ -81,7 +88,15 @@ const routes: Routes = [
 =======
   {path:"review" , component:ReviewCardComponent},
   {path:"report" , component:AdminReportComponent},
+<<<<<<< HEAD
 >>>>>>> e1aa5062041c1d6923e2e5e9b969b0bf64222573
+=======
+
+  {path:"admin/posts", component:AdminPostsRequestsComponent},
+  {path:"admin/applicants", component:AdminAcceptTourGuidesComponent},
+  {path:"admin/applicants/:id", component:AdminApplicantDetailsComponent},
+
+>>>>>>> 466b450e36cf0df785d5c3d66ecf8790baca6391
   {path:"**" , component:ErrorComponent}
 
 ];

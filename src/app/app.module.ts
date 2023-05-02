@@ -65,6 +65,13 @@ import { OurServiceComponent } from './component/our-service/our-service.compone
 import { PopularDistnationsComponent } from './component/popular-distnations/popular-distnations.component';
 import { PaymentprocessHomeComponent } from './component/paymentprocess-home/paymentprocess-home.component';
 import { PartialServiceHomeComponent } from './component/partial-service-home/partial-service-home.component';
+import { AdminPostsRequestsComponent } from './component/admin-posts-requests/admin-posts-requests.component';
+import { AdminPostRequestFormComponent } from './component/admin-post-request-form/admin-post-request-form.component';
+import { AdminHeaderComponent } from './component/admin-header/admin-header.component';
+import { AdminAcceptTourGuidesComponent } from './component/admin-accept-tour-guides/admin-accept-tour-guides.component';
+import { AdminApplicantDetailsComponent } from './component/admin-applicant-details/admin-applicant-details.component';
+import { TourGuideDetailsComponent } from './component/tour-guide-details/tour-guide-details.component';
+import { CustomerHeaderComponent } from './component/customer-header/customer-header.component';
 
 @NgModule({
   declarations: [
@@ -124,7 +131,14 @@ import { PartialServiceHomeComponent } from './component/partial-service-home/pa
     OurServiceComponent,
     PopularDistnationsComponent,
     PaymentprocessHomeComponent,
-    PartialServiceHomeComponent
+    PartialServiceHomeComponent,
+    AdminPostsRequestsComponent,
+    AdminPostRequestFormComponent,
+    AdminHeaderComponent,
+    AdminAcceptTourGuidesComponent,
+    AdminApplicantDetailsComponent,
+    TourGuideDetailsComponent,
+    CustomerHeaderComponent
 
 >>>>>>> e1aa5062041c1d6923e2e5e9b969b0bf64222573
   ],
