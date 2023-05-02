@@ -21,7 +21,7 @@
                     <input #username="ngModel"  ngModel name ="username" type="text" id="username" class="form-control form-control-lg" placeholder="Your UserName *"  pattern="^[A-Za-z]{8,50}$" required/>
                     <div class="alert alert-danger" [hidden]="username.valid || username.untouched">
                       <small *ngIf="username.errors?.['required']">User Name is Required!!</small>
-                      <small *ngIf="username.errors?.['pattern']">User Name must contain alphabetic characters and between 8 and 50 characters</small>
+                      <small *ngIf="username.errors?.['pattern']">User Name must contain alphabetic characters only and between 8 and 50 characters</small>
                     </div>
                   </div>
 

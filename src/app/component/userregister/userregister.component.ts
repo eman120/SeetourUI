@@ -17,13 +17,13 @@ export class UserregisterComponent implements OnInit{
   user: any;
   newReg: any;
 
-  UserRegister(file:any, name:any, email:any, phone:any, password:any, snn:any){
-    if (file && name && email && phone  && password && snn)
+  UserRegister(username:any , file:any, name:any, email:any, phone:any, password:any, snn:any){
+    if (username && file && name && email && phone  && password && snn)
     { // Check if all required fields have data
-      this.newReg = {file ,name , email , phone , password ,snn};
+      this.newReg = {username ,file ,name , email , phone , password ,snn};
       
       const registrationDto = {
-        userName: this.newReg.name.replace(/\s+/g, ''),
+        userName: this.newReg.username.replace(/\s+/g, ''),
         password: this.newReg.password,
         profilepic: this.newReg.file,
         ssn: this.newReg.snn,
