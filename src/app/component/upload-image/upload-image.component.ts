@@ -16,6 +16,8 @@ export class UploadImageComponent {
   uploadForm: FormGroup;
   fileSizeExceeded = false;
   invalidExtension = false;
+  isUploaded :boolean|undefined;
+ Flag=true;
 
   constructor(private http: HttpClient, private formBuilder: FormBuilder) {
     this.uploadForm = this.formBuilder.group({
@@ -28,6 +30,8 @@ export class UploadImageComponent {
   }
 
   onSubmit() {
+    this.Flag=false;
+
     const fileInput = document.querySelector('#fileInput') as HTMLInputElement;
     const file = fileInput?.files?.[0];
     if (file) {
@@ -36,8 +40,9 @@ export class UploadImageComponent {
       console.log(file);
       this.http.post('https://localhost:7277/api/AzureImagesURL/UploadImage', formData)
         .subscribe((result: any) => {
+          this.isUploaded=true;
           this.imageUrl.emit(result.url);
-          console.log(result.url);
+         // console.log(result.url);
           // Reset the form after successful upload
           this.uploadForm.reset();
         }, (error: any) => {

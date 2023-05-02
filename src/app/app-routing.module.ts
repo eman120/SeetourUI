@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, createComponent } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './component/home/home.component';
 import { AboutUsComponent } from './component/about-us/about-us.component';
@@ -28,9 +28,11 @@ import { AdminReportComponent } from './component/admin-report/admin-report.comp
 
 import { OurServiceComponent } from './component/our-service/our-service.component';
 import { AdminPostsRequestsComponent } from './component/admin-posts-requests/admin-posts-requests.component';
+
+import { CreateTourComponent } from './component/create-tour/create-tour.component';
+
 import { AdminAcceptTourGuidesComponent } from './component/admin-accept-tour-guides/admin-accept-tour-guides.component';
 import { AdminApplicantDetailsComponent } from './component/admin-applicant-details/admin-applicant-details.component';
-import { CreateTourComponent } from './component/create-tour/create-tour.component';
 
 
 const routes: Routes = [
@@ -43,7 +45,7 @@ const routes: Routes = [
   {path:"tour" , component:TourHomeComponent},
   {path:"services" , component:DetailsComponent},
   {path:"header" , component:HeaderComponent},
-
+{path:"createtour",component:CreateTourComponent},
   {path:"TourDetails/:id",component:TourDetailsComponent},
   {path:"payment",component:PaymentComponent},
   {path:"payment-success",component:PaymentSuccessComponent},
