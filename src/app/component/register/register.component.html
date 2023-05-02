@@ -18,7 +18,16 @@
               <form #registerFrm="ngForm" >
                   <div class="form-outline mb-4">
                     <!-- <img class="logo" src="assets/Images/testimonial-1.jpg" alt="Logo" width="100" height="100 " style="border-radius: 50%;"> -->
-                    <input #name="ngModel"  ngModel name ="name" type="text" id="name" class="form-control form-control-lg" placeholder="Your Name *"  pattern="^[A-Za-z ]{8,50}$" required/>
+                    <input #username="ngModel"  ngModel name ="username" type="text" id="username" class="form-control form-control-lg" placeholder="Your UserName *"  pattern="^[A-Za-z]{8,50}$" required/>
+                    <div class="alert alert-danger" [hidden]="username.valid || username.untouched">
+                      <small *ngIf="username.errors?.['required']">User Name is Required!!</small>
+                      <small *ngIf="username.errors?.['pattern']">User Name must contain alphabetic characters and between 8 and 50 characters</small>
+                    </div>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <!-- <img class="logo" src="assets/Images/testimonial-1.jpg" alt="Logo" width="100" height="100 " style="border-radius: 50%;"> -->
+                    <input #name="ngModel"  ngModel name ="name" type="text" id="name" class="form-control form-control-lg" placeholder="Your FullName *"  pattern="^[A-Za-z ]{8,50}$" required/>
                     <div class="alert alert-danger" [hidden]="name.valid || name.untouched">
                       <small *ngIf="name.errors?.['required']">Full Name is Required!!</small>
                       <small *ngIf="name.errors?.['pattern']">Full Name must contain alphabetic characters and spaces only and between 8 and 50 characters</small>
@@ -61,11 +70,17 @@
                   </div>
 
 
-                  <div class="form-outline mb-4">
-                    <input #snn="ngModel"  ngModel name ="snn" type="number" id="snn" class="form-control form-control-lg"  placeholder="Your SNN" pattern="^[0-9]{6,16}$" required/>
-                    <div class="alert alert-danger" [hidden]="snn.valid || snn.untouched">
-                      <small *ngIf="snn.errors?.['required']">snn Number is Required!!</small>
-                      <small *ngIf="snn.errors?.['pattern']">snn Number Length must be between 6 and 16 Numbers</small>
+                  <div class=" form-outline row g-3 ">
+                    <div class="col-md-6 mb-4 p-2">
+                      <input #snn="ngModel"  ngModel name ="snn" type="number" id="snn" class="form-control form-control-lg"  placeholder="Your SNN" pattern="^[0-9]{6,16}$" required/>
+                      <div class="alert alert-danger" [hidden]="snn.valid || snn.untouched">
+                        <small *ngIf="snn.errors?.['required']">snn Number is Required!!</small>
+                        <small *ngIf="snn.errors?.['pattern']">snn Number Length must be between 6 and 16 Numbers</small>
+                      </div>
+                      <input #Tax="ngModel"  ngModel name ="Tax" type="text" id="Tax" class="form-control form-control-lg mb-4 p-2" placeholder="Your Tax Number" required/>
+                      <div class="alert alert-danger" [hidden]="Tax.valid || Tax.untouched">
+                        <small *ngIf="Tax.errors?.['required']">TaxNumber is Required!!</small>
+                      </div>
                     </div>
                   </div>
 
@@ -77,10 +92,10 @@
                         <small *ngIf="bankAccount.errors?.['required']">bankAccount is Required!!</small>
 
                       </div>
-                         <input #Address="ngModel"  ngModel name ="Address" type="text" id="Address" class="form-control form-control-lg mb-4 p-2" placeholder="Your Address" required/>
-                        <div class="alert alert-danger" [hidden]="Address.valid || Address.untouched">
-                          <small *ngIf="Address.errors?.['required']">Address is Required!!</small>
-                        </div>
+                      <input #Address="ngModel"  ngModel name ="Address" type="text" id="Address" class="form-control form-control-lg mb-4 p-2" placeholder="Your Address" required/>
+                      <div class="alert alert-danger" [hidden]="Address.valid || Address.untouched">
+                        <small *ngIf="Address.errors?.['required']">Address is Required!!</small>
+                      </div>
 
                     </div>
                     <div class="col-md-6 mb-4 p-2">
@@ -98,15 +113,20 @@
 
                   </div>
 
-
                   <div class="input-group mb-3">
                     <label class="IDphoto">ID photo</label>
-                    <input #file="ngModel"  ngModel name ="file" type="file" class="form-control" id="inputGroupFile02">
+                    <input #file="ngModel"  ngModel name ="file" type="file" class="form-control" id="inputGroupFile01">
+
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <label class="IDphoto">Profile Pic</label>
+                    <input #PPic="ngModel"  ngModel name ="file" type="file" class="form-control" id="inputGroupFile02">
 
                   </div>
 
                   <div class="d-flex justify-content-center">
-                    <button  [disabled]="registerFrm.invalid || confirmPassword.value !== password.value " type="submit" (click)="Register(name.value , email.value , phone.value , password.value , snn.value , bankAccount.value , Address.value , AccountNumber.value , SwiftCode.value , file.value)"
+                    <button  [disabled]="registerFrm.invalid || confirmPassword.value !== password.value " type="submit" (click)="Register(username.value , name.value , email.value , phone.value , password.value , snn.value , bankAccount.value , Address.value , AccountNumber.value , SwiftCode.value , file.value , PPic.value , Tax.value)"
                     class="btn btn-outline-secondary btn-lg ms-2">Register</button>
                   </div>
               </form>
