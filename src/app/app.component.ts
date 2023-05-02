@@ -1,11 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-
-import { render } from 'creditcardpayments/creditCardPayments';
-import { RouterModule, Routes } from '@angular/router';
-
-
-import { ActivatedRoute } from '@angular/router';
+import { AfterContentInit, Component, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { AuthService } from './Services/auth.service';
+import { filter } from 'rxjs';
 
 
 @Component({
@@ -13,10 +10,10 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements  OnInit {
   constructor(
-    private http: HttpClient,
-    private route: ActivatedRoute
+    private router: Router,
+    private authService: AuthService,
   ) { }
   user :any;
   title = 'projFront';
@@ -37,11 +34,20 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.spinner();
     $('.back-to-top').css('display', 'none');
-  
+    this.user = this.authService.getInterface();
+
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe({
+        next: () => {
+          this.user = this.authService.getInterface();
+        }
+      })
+  }
+
     // this.http.get(`https://localhost:7277/api/User/GetUser?username=eman`).subscribe(data => {
     // this.user = data;
     // console.log(data);
     // });
-  }
 
 }

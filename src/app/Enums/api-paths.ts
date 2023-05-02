@@ -12,4 +12,12 @@ export enum ApiPaths {
   tgUpcomingTours = '/UpcomingTours',
   tgPastTours = '/PastTours',
   tgReviews = '/Reviews',
+  tourCard = '/CardDetails',
+  tourDet = '/tourDet',
+  createtour = '/',
+  admin = "/admin",
+  adminTour = "/Tour",
+  adminTourRequest = "/Request",
+  custReg = "/CustomerRegistration",
+  tgReg = "/CustomerRegistration",
 }

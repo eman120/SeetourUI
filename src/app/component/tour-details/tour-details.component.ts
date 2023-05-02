@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { ApiPaths } from 'src/app/Enums/api-paths';
+import { TourDet } from 'src/app/Interfaces/tour-det';
+import { ToursService } from 'src/app/Services/tours.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-tour-details',
@@ -11,29 +14,54 @@ import { ApiPaths } from 'src/app/Enums/api-paths';
 })
 export class TourDetailsComponent implements OnInit {
 
+  // /*@Input()*/ tour: TourCard | undefined;
+  // get tourLink(): string {
+  //   console.log(this.tour);
+  //   return this.tour ? `/tour/${this.tour.id}` : '#';
+  // }
+
   tour: any;
   question:any;
   dateFrom:any;
   tourAnswer:any;
+  loading = true;
+
+  // constructor(
+  //   private http: HttpClient,
+  //   private route: ActivatedRoute,
+  //   private router: Router
+  // ) { }
 
   constructor(
-    private http: HttpClient,
-    private route: ActivatedRoute,
-    private router: Router
-  ) { }
+    private toursService: ToursService,
+    private titleService:Title,
+    private route: ActivatedRoute
+    ) {}
 
-  ngOnInit(): void {
-    const tourId = this.route.snapshot.paramMap.get('id');
-    const url = environment.baseUrl+ApiPaths.tour+ApiPaths.tourdetails+tourId
+    ngOnInit(): void {
+      const tourId = this.route.snapshot.paramMap.get('id');
+      this.toursService.GetTourById(tourId ? tourId.toString() : "").subscribe({
+        next: (data) => {
+          this.tour = data as TourDet;
+          console.log(this.tour);
+          this.loading = false;
+        },
+        error: () => { }
+      });
 
-    this.http.get(url).subscribe({
-      next: (data) => {
-        this.tour = data;
-      },
-      error: () => {
-        //this.router.navigateByUrl('/Error');
-      }
-    });
+      // const url = environment.baseUrl+ApiPaths.tour+ApiPaths.tourCard+'?id='+tourId
+
+    // this.http.get(url).subscribe({
+    //   next: (data) => {
+    //     console.log(data);
+    //     this.tour = data;
+    //   },
+    //   error: () => {
+    //     //this.router.navigateByUrl('/Error');
+    //   }
+    // });
+
+
   }
 
   // submitForm() {
