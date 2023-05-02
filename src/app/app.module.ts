@@ -30,9 +30,6 @@ import { AdminReviewComponent } from './component/admin-review/admin-review.comp
 import { PaymentSuccessComponent } from './component/payment-success/payment-success.component';
 import { QuestionAnswerComponent } from './component/question-answer/question-answer.component';
 
-
-
-
 import { TourCardComponent } from './component/tour-card/tour-card.component';
 import { StarRatingComponent } from './component/star-rating/star-rating.component';
 import { LikeButtonComponent } from './component/like-button/like-button.component';
@@ -88,14 +85,12 @@ import { CustomerHeaderComponent } from './component/customer-header/customer-he
     HeaderComponent,
     FooterComponent,
 
-
     AdminStatisticsComponent,
     TourDetailsComponent,
     PaymentComponent,
     AdminReviewComponent,
     PaymentSuccessComponent,
     QuestionAnswerComponent,
-
 
     UserregisterComponent,
     TourCardComponent,
@@ -123,9 +118,9 @@ import { CustomerHeaderComponent } from './component/customer-header/customer-he
     ToursFilterComponent,
     TGToursComponent,
     ToursSectionFilterableComponent,
-<<<<<<< HEAD
-    BookTourComponent
-=======
+
+    BookTourComponent,
+
     AboutStartComponent,
     TeamDataComponent,
     OurServiceComponent,
@@ -140,7 +135,6 @@ import { CustomerHeaderComponent } from './component/customer-header/customer-he
     TourGuideDetailsComponent,
     CustomerHeaderComponent
 
->>>>>>> e1aa5062041c1d6923e2e5e9b969b0bf64222573
   ],
   imports: [
     BrowserModule,
