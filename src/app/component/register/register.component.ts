@@ -16,26 +16,28 @@ export class RegisterComponent implements OnInit {
   user: any;
   newReg: any;
 
-  Register(file: any, name: any, email: any, phone: any, address: any, snn: any, SwiftCode: any, bankAccount: any, AccountNumber: any, password: any) {
-    if (file && name && email && phone && snn && password && address && bankAccount && SwiftCode && AccountNumber) { // Check if all required fields have data
-      this.newReg = { file, name, email, phone, snn, password, address, bankAccount, SwiftCode, AccountNumber };
+  Register(name : any, email : any, phone : any, password :any, snn : any, bankAccount:any , address:any, AccountNumber:any, SwiftCode:any, file:any) {
+    if (name && email && phone && password && snn && bankAccount && address && AccountNumber && SwiftCode && file) { // Check if all required fields have data
+      this.newReg = { name , email , phone , password , snn , bankAccount , address , AccountNumber , SwiftCode , file };
       console.log('Registration...');
       const registrationDto = {
-        UserName: this.newReg.name,
-        SecurityLevel: 'tourguide',
-        profilepic: 'examplepic', //
-        SSN: this.newReg.snn,
-        FullName: this.newReg.name, //
+        UserName: this.newReg.name.replace(/\s+/g, ''),
         Email: this.newReg.email,
         PhoneNumber: this.newReg.phone,
         Password: this.newReg.password,
-        RecipientAccountNumberOrIBAN: this.newReg.AccountNumber,
+        SSN: this.newReg.snn,
         RecipientBankNameAndAddress: this.newReg.bankAccount,
-        RecipientBankSwiftCode: this.newReg.SwiftCode,
         RecipientNameAndAddress: this.newReg.address,
-        IDCardPhoto: this.newReg.file
+        RecipientAccountNumberOrIBAN: this.newReg.AccountNumber,
+        RecipientBankSwiftCode: this.newReg.SwiftCode,
+        IDCardPhoto: this.newReg.file,
+        profilepic: 'examplepic', //
+        FullName: this.newReg.name, //
+        SecurityLevel: 'TourGuide',
+        TaxRegistrationNumber :"111111"//
       };
-      this.http.post('https://localhost:44362/api/User/TourGuideRegistration', registrationDto).subscribe(
+      console.log(registrationDto);
+      this.http.post('https://localhost:7277/api/User/TourGuideRegistration', registrationDto).subscribe(
         (response) => {
           console.log('Registration successful!');
           console.log(response);

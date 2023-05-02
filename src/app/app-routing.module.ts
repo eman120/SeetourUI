@@ -30,6 +30,7 @@ import { OurServiceComponent } from './component/our-service/our-service.compone
 import { AdminPostsRequestsComponent } from './component/admin-posts-requests/admin-posts-requests.component';
 import { AdminAcceptTourGuidesComponent } from './component/admin-accept-tour-guides/admin-accept-tour-guides.component';
 import { AdminApplicantDetailsComponent } from './component/admin-applicant-details/admin-applicant-details.component';
+import { CreateTourComponent } from './component/create-tour/create-tour.component';
 
 
 const routes: Routes = [
@@ -48,6 +49,7 @@ const routes: Routes = [
   {path:"payment-success",component:PaymentSuccessComponent},
   {path:"service",component:OurServiceComponent},
 
+  {path:"tour/create" , component:CreateTourComponent},
 
   {path:"tour/:id",component:TourDetailsComponent},
 
