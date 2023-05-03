@@ -5,5 +5,6 @@ export interface BookedTour {
   createdAt:string,
   seats:number,
   canCancel:number,
+  canReview:number,
   tourCard: TourCard
 }

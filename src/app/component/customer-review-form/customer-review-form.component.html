@@ -1,0 +1,30 @@
+<div *ngIf="_bookedtourId" class="m-2">
+
+  <div class="card">
+    <div class="card-body">
+
+      <div *ngIf="formstatus=='error'" class="alert alert-danger" role="alert">
+        <strong>Something went wrong, please try again</strong>
+      </div>
+      <div *ngIf="formstatus=='success'" class="alert alert-success" role="alert">
+        <strong>Your review has been sent successfully</strong>
+      </div>
+
+      <h2 class="card-title">{{TourTitle}}</h2>
+
+      <form [formGroup]="fomrValidation" (ngSubmit)="OnReview()">
+        <div class="mb-3">
+          <label for="reviewBody" class="form-label">Your review</label>
+          <textarea formControlName="reviewBody" rows="5" id="reviewBody" class="form-control"
+          style="resize: none;" [value]="review"></textarea>
+        </div>
+
+        <div *ngIf="formstatus!='posted'" class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn btn-primary">Post</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+</div>

@@ -16,4 +16,9 @@ export class CustomerService {
     let url = this.baseUrl+ApiPaths.customerTour + urlSegment;
     return this.http.get(url);
   }
+
+  GetBookedTourIdToReview(tourId: number) {
+    let url = this.baseUrl+ApiPaths.customerTour + '/' + tourId + ApiPaths.customerTourReviewcheck;
+    return this.http.get(url);
+  }
 }

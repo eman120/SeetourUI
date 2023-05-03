@@ -73,6 +73,7 @@ import { TourGuideDetailsComponent } from './component/tour-guide-details/tour-g
 import { CustomerHeaderComponent } from './component/customer-header/customer-header.component';
 import { CustomerBookedToursComponent } from './component/customer-booked-tours/customer-booked-tours.component';
 import { BookingSliderComponent } from './component/booking-slider/booking-slider.component';
+import { CustomerReviewFormComponent } from './component/customer-review-form/customer-review-form.component';
 
 @NgModule({
   declarations: [
@@ -138,7 +139,8 @@ import { BookingSliderComponent } from './component/booking-slider/booking-slide
     TourGuideDetailsComponent,
     CustomerHeaderComponent,
     CustomerBookedToursComponent,
-    BookingSliderComponent
+    BookingSliderComponent,
+    CustomerReviewFormComponent
 
   ],
   imports: [
