@@ -74,6 +74,7 @@ import { CustomerHeaderComponent } from './component/customer-header/customer-he
 import { CustomerBookedToursComponent } from './component/customer-booked-tours/customer-booked-tours.component';
 import { BookingSliderComponent } from './component/booking-slider/booking-slider.component';
 import { CustomerReviewFormComponent } from './component/customer-review-form/customer-review-form.component';
+import { UploadImagesV2Component } from './component/upload-images-v2/upload-images-v2.component';
 
 @NgModule({
   declarations: [
@@ -140,7 +141,8 @@ import { CustomerReviewFormComponent } from './component/customer-review-form/cu
     CustomerHeaderComponent,
     CustomerBookedToursComponent,
     BookingSliderComponent,
-    CustomerReviewFormComponent
+    CustomerReviewFormComponent,
+    UploadImagesV2Component,
 
   ],
   imports: [

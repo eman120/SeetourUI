@@ -3,6 +3,9 @@
   <div class="card">
     <div class="card-body">
 
+      <div *ngIf="formstatus=='invalid'" class="alert alert-warning" role="alert">
+        <strong>Please include a rating [1-5] stars, and a review [32-512] characters</strong>
+      </div>
       <div *ngIf="formstatus=='error'" class="alert alert-danger" role="alert">
         <strong>Something went wrong, please try again</strong>
       </div>
@@ -12,15 +15,32 @@
 
       <h2 class="card-title">{{TourTitle}}</h2>
 
-      <form [formGroup]="fomrValidation" (ngSubmit)="OnReview()">
+      <form [formGroup]="fomrValidation">
+
         <div class="mb-3">
-          <label for="reviewBody" class="form-label">Your review</label>
+          <ngb-rating id="minRating" formControlName="rating" [max]="5"
+          [readonly]="false" class="py-0"></ngb-rating>
           <textarea formControlName="reviewBody" rows="5" id="reviewBody" class="form-control"
-          style="resize: none;" [value]="review"></textarea>
+          style="resize: none;" [value]="review" placeholder="Your review"></textarea>
         </div>
 
-        <div *ngIf="formstatus!='posted'" class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <button class="btn btn-primary">Post</button>
+        <div *ngIf="formstatus!='posted'" class="d-flex flex-row justify-content-start align-items-center overflow-auto">
+          <div class="d-flex">
+            <div class="image-box cursor-pointer me-1" style="width: 5rem;" *ngFor="let photo of photoUrls">
+              <img [src]="photo.compressedImage">
+              <button type="button" class="bi bi-x-circle position-absolute top-0 end-0 btn btn-primary"
+              (click)="RemoveImage(photo.fileName)"></button>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="formstatus!='posted'" class="d-flex flex-row flex-wrap justify-content-between align-items-center">
+
+          <app-upload-images-v2 d-block (imagesFormData)="ImagesSelected($event)"
+          (imagesCompressing)="imagesCompressing()">
+          </app-upload-images-v2>
+
+          <button type="button" *ngIf="formstatus!='hold'" class="btn btn-primary" (click)="OnReview()">Post</button>
         </div>
 
       </form>
