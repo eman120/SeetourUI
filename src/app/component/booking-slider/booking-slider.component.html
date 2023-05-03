@@ -14,19 +14,48 @@
 
         <div class="m-2 text-center d-flex flex-column" style="width: 22rem;" *ngFor="let booking of bookings">
 
-          <div class="d-flex flex-column card p-1">
+          <div class="card p-1 position-relative">
+
             <p class="mb-1">{{booking.createdAt | truncate:16:false:"" }}</p>
             <p class="m-0">Seats: {{booking.seats}}</p>
+
+            <div *ngIf="CanCancel || CanReport"
+            class="dropdown dropdown-menu-end position-absolute top-0 end-0">
+
+              <button class="btn pe-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-three-dots-vertical"></i>
+              </button>
+              <ul class="dropdown-menu bg-light">
+
+                <li>
+                  <button *ngIf="CanReport"
+                  class="btn dropdown-item">
+                    Report
+                  </button>
+                </li>
+
+                <li>
+                  <button *ngIf="CanCancel"
+                  [disabled]="!booking.canCancel"
+                  class="btn dropdown-item">
+                    Cancel
+                  </button>
+                </li>
+
+              </ul>
+            </div>
+
           </div>
 
           <app-tour-card class="flex-grow-1" [tour]="booking.tourCard">
           </app-tour-card>
 
-          <div class="d-flex">
-            <button *ngIf="CanReview" class="btn btn-primary flex-grow-1">Review</button>
-            <button *ngIf="CanCancel && booking.canCancel" class="btn btn-outline-danger flex-grow-1">Cancel</button>
-            <button *ngIf="CanReport" class="btn btn-outline-warning">Report</button>
-          </div>
+          <button *ngIf="CanReview"
+          [disabled]="!booking.canReview"
+          (click)="Review(booking)"
+          class="btn btn-primary">
+            Review
+          </button>
 
         </div>
 
@@ -44,6 +73,11 @@
         </ng-template>
 
       </div>
+
+      <app-customer-review-form *ngIf="CanReview" [bookedtourId]="ReviewTourbookingId"
+      [TourTitle]="ReviewTourbookingTitle??''">
+
+      </app-customer-review-form>
 
     </div>
   </div>

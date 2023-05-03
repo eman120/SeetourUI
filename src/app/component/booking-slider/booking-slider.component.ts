@@ -18,6 +18,9 @@ export class BookingSliderComponent {
   @Input() CanCancel: boolean | undefined;
   @Input() CanReport: boolean | undefined;
 
+  ReviewTourbookingId: number | undefined;
+  ReviewTourbookingTitle: string | undefined;
+
   get link() { return {outlets: { [this.MoreOutlet]: [this.MoreLink] }} };
 
   get bookings() {
@@ -27,5 +30,17 @@ export class BookingSliderComponent {
       });
 
     return this.Bookings;
+  }
+
+  Review(booking: BookedTour) {
+
+    if (this.ReviewTourbookingId == booking.id) {
+      this.ReviewTourbookingId = undefined;
+      return;
+    }
+
+    this.ReviewTourbookingId = booking.id;
+    this.ReviewTourbookingTitle = booking.tourCard.title;
+
   }
 }
