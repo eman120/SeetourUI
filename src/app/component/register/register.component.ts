@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit {
         Email: this.newReg.email
       };
       console.log(registrationDto);
-      this.http.post(environment.baseUrl + ApiPaths.user+ApiPaths.custReg, registrationDto).subscribe(
+      this.http.post(environment.baseUrl + ApiPaths.user+ApiPaths.tgReg, registrationDto).subscribe(
         (response) => {
           console.log('Registration successful!');
           console.log(response);

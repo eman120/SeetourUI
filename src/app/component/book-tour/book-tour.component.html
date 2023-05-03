@@ -20,7 +20,7 @@
       </div>
     <div >
       <label for="tourTime">Tour Time</label>
-        <p *ngIf="tour?.DateFrom">{{ tour?.DateFrom | date: 'dd/MM/yyyy HH:mm' }}</p>
+        <p *ngIf="tour?.dateFrom">from : {{ tour?.dateFrom | date: 'dd/MM/yyyy HH:mm' }} to : {{ tour?.dateTo | date: 'dd/MM/yyyy HH:mm' }}</p>
     </div>
     <div >
       <label for="meetingPoint">Meeting Point</label>
@@ -38,7 +38,7 @@
         <option>Cash on Arrival</option>
       </select>
     </div> -->
-    <button [disabled]="seats.invalid" type="submit" class="btn btn-primary" (click)="book(seats)">Book Now</button>
+    <button [disabled]="seats.invalid" type="submit" class="btn btn-primary" (click)="book(seats.value)">Book Now</button>
   </form>
 </div>
 
