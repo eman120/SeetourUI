@@ -8,38 +8,40 @@
   </div>
 </div>
 
-<div *ngIf="tour">
-  <form #bookFrm="ngForm">
-    <div >
-      <label for="tourName">Tour Name</label>
-      <p *ngIf="tour?.tourName">{{ tour?.tourName }}</p>
-    </div>
-    <div >
-      <label for="guideName">Tour Guide Name</label>
-      <p *ngIf="tour?.tourGuideName">{{ tour?.tourGuideName }}</p>          
+<div *ngIf="tour" class="card mb-3">
+  <div class="card-body">
+    <form #bookFrm="ngForm">
+      <div >
+        <label for="tourName">Tour Name : </label>
+        <span *ngIf="tour?.tourName"> {{ tour?.tourName }}</span>
       </div>
-    <div >
-      <label for="tourTime">Tour Time</label>
-        <p *ngIf="tour?.dateFrom">from : {{ tour?.dateFrom | date: 'dd/MM/yyyy HH:mm' }} to : {{ tour?.dateTo | date: 'dd/MM/yyyy HH:mm' }}</p>
-    </div>
-    <div >
-      <label for="meetingPoint">Meeting Point</label>
-      <p *ngIf="tour?.locationFrom">{{ tour?.locationFrom }}</p>           
-    </div>
-    <div >
-      <label for="seatsCount">Seats Count</label>
-      <input #seats="ngModel" ngModel name="seats" type="number" class="form-control form-control-lg" id="seats" placeholder="Enter number of seats" required>
-    </div>
-    <!-- <div class="form-group">
-      <label for="paymentMethod">Payment Method</label>
-      <select class="form-control" id="paymentMethod">
-        <option>Credit Card</option>
-        <option>PayPal</option>
-        <option>Cash on Arrival</option>
-      </select>
-    </div> -->
-    <button [disabled]="seats.invalid" type="submit" class="btn btn-primary" (click)="book(seats.value)">Book Now</button>
-  </form>
+      <div >
+        <label for="guideName">Tour Guide Name : </label>
+        <span *ngIf="tour?.tourGuideName"> {{ tour?.tourGuideName }}</span>          
+        </div>
+      <div >
+        <label for="tourTime">Tour Time : </label>
+          <span *ngIf="tour?.dateFrom"> from : {{ tour?.dateFrom | date: 'dd/MM/yyyy HH:mm' }} , to : {{ tour?.dateTo | date: 'dd/MM/yyyy HH:mm' }}</span>
+      </div>
+      <div >
+        <label for="meetingPoint">Meeting Point : </label>
+        <span *ngIf="tour?.locationFrom"> {{ tour?.locationFrom }}</span>           
+      </div>
+      <div >
+        <label for="seatsCount">Seats Count </label>
+        <input #seats="ngModel" ngModel name="seats" type="number" id="seats" placeholder="Enter number of seats" required>
+      </div>
+      <!-- <div class="form-group">
+        <label for="paymentMethod">Payment Method</label>
+        <select class="form-control" id="paymentMethod">
+          <option>Credit Card</option>
+          <option>PayPal</option>
+          <option>Cash on Arrival</option>
+        </select>
+      </div> -->
+      <button [disabled]="seats.invalid" type="submit" class="btn btn-primary" (click)="book(seats.value)">Book Now</button>
+    </form>
+  </div>
 </div>
 
 <div *ngIf="!tour">

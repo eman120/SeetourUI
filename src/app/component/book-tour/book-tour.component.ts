@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiPaths } from 'src/app/Enums/api-paths';
 import { environment } from 'src/environments/environment';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-book-tour',
@@ -12,8 +13,10 @@ import { environment } from 'src/environments/environment';
 export class BookTourComponent implements OnInit {
 
   tour: any;
+  status:any;
 
   constructor(
+    private toastr: ToastrService,
     private http: HttpClient,
     private route: ActivatedRoute,
     private router: Router
@@ -50,21 +53,25 @@ export class BookTourComponent implements OnInit {
   }
 
   book(seatsNum : any){
+    // this.toastr.success("I'm a toast!", "Success!");
     const tourId = this.route.snapshot.paramMap.get('id');
     const bookDto = {tourId ,seatsNum };
     this.http.post(environment.baseUrl + ApiPaths.tour+ApiPaths.bookTour+'?id='+tourId +'&seatsNum='+seatsNum, bookDto).subscribe(
       (response) => {
         console.log('booked successful!');
-        // console.log(response);
+        console.log(response);
+        // this.status = response;
         // Navigate to  component after adding the new Register
         this.router.navigate(['/']);
       },
       (error) => {
-        console.log('Error occurred during registration.');
+        console.log('Error occurred during booking.');
         console.error(error);
         console.log(error.status);
         console.log(error.statusText);
         console.log(error.error);
+        this.status = error.error;
+        this.toastr.error(this.status, 'Error');
       }
     );
   }

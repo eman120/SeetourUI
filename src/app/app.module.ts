@@ -69,6 +69,9 @@ import { AdminAcceptTourGuidesComponent } from './component/admin-accept-tour-gu
 import { AdminApplicantDetailsComponent } from './component/admin-applicant-details/admin-applicant-details.component';
 import { TourGuideDetailsComponent } from './component/tour-guide-details/tour-guide-details.component';
 import { CustomerHeaderComponent } from './component/customer-header/customer-header.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -143,7 +146,13 @@ import { CustomerHeaderComponent } from './component/customer-header/customer-he
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule,
-    CommonModule
+    CommonModule,
+    BrowserAnimationsModule
+    ,
+    ToastrModule.forRoot({
+      timeOut: 1000,
+      positionClass: 'toast-bottom-right'
+    })
   ],
   providers: [AuthInterceptorProviders,DatePipe],
   bootstrap: [AppComponent]
