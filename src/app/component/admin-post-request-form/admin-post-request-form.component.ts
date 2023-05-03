@@ -1,17 +1,20 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/Services/admin.service';
 import { AuthService } from 'src/app/Services/auth.service';
 import {AdminPostStatus} from 'src/app/Interfaces/admin-post-status'
 import { PostingStatus } from 'src/app/Enums/posting-status';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-post-request-form',
   templateUrl: './admin-post-request-form.component.html',
   styleUrls: ['./admin-post-request-form.component.css']
 })
-export class AdminPostRequestFormComponent {
+export class AdminPostRequestFormComponent implements OnInit {
 
-  constructor(auth: AuthService, private adminService: AdminService) {
+  constructor(auth: AuthService,
+    private adminService: AdminService,
+    private fb:FormBuilder) {
     this.interface = auth.getInterface();
   }
 
@@ -19,6 +22,14 @@ export class AdminPostRequestFormComponent {
   @Input() tourId: number|undefined;
   request:string = "";
   formstatus: string = "pending";
+
+  formValidation: FormGroup<any> = new FormGroup([]);
+
+  ngOnInit(): void {
+    this.formValidation = this.fb.group({
+      editRequest: ['', [Validators.required, Validators.minLength(64), Validators.maxLength(256)]]
+    })
+  }
 
   get isAdmin() { return this.interface == "Admin" }
 
