@@ -60,6 +60,5 @@ export class ToursService {
     let url = this.urlBase+ApiPaths.tour+ApiPaths.tourDet+'?id='+tourIdNum;
     return this.client.get(url);
   }
-  
 
 }

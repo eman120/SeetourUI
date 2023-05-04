@@ -26,11 +26,7 @@ export class TourDetailsComponent implements OnInit {
   tourAnswer:any;
   loading = true;
 
-  // constructor(
-  //   private http: HttpClient,
-  //   private route: ActivatedRoute,
-  //   private router: Router
-  // ) { }
+  @Input() tourById :number | undefined;
 
   constructor(
     private toursService: ToursService,
@@ -39,8 +35,9 @@ export class TourDetailsComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-      const tourId = this.route.snapshot.paramMap.get('id');
-      this.toursService.GetTourById(tourId ? tourId.toString() : "").subscribe({
+      // const tourId = this.route.snapshot.paramMap.get('id');
+      console.log(this.tourById);
+      this.toursService.GetTourById(this.tourById ? this.tourById.toString() : "").subscribe({
         next: (data) => {
           this.tour = data as TourDet;
           console.log(this.tour);

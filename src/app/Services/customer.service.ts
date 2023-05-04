@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { ApiPaths } from '../Enums/api-paths';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ReviewDto } from '../Interfaces/review-dto';
+import { CustomerTourSave } from '../Interfaces/customer-tour-save';
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +26,16 @@ export class CustomerService {
 
   PostBookedTourReview(files: FormData) {
     let url = this.baseUrl+ApiPaths.customerTour+ApiPaths.customerTourReview;
-
-    //const headers = new HttpHeaders().set('Content-Type', 'multipart/form-data');
     return this.http.post(url, files);
+  }
+
+  PostTourLike(like: CustomerTourSave) {
+    let url = this.baseUrl+ApiPaths.customerTour+ApiPaths.customerTourLike;
+    return this.http.post(url, like);
+  }
+
+  PostTourWish(wish: CustomerTourSave) {
+    let url = this.baseUrl+ApiPaths.customerTour+ApiPaths.customerTourWish;
+    return this.http.post(url, wish);
   }
 }

@@ -48,8 +48,8 @@
           <ngb-progressbar type="success" [value]="tour.bookings" class="flex-grow-1 me-1"
           [max]="tour.capacity" height=".5rem"></ngb-progressbar>
 
-          <like-button [likes]="tour.likes" [isLiked]="tour.isLiked" [Id]="tour.id"></like-button>
-          <wishlist-button [isInWishlist]="tour.addedToWishList" [Id]="tour.id"></wishlist-button>
+          <like-button [likes]="tour.likes" [isLiked]="tour.isLiked" [TourId]="tour.id"></like-button>
+          <wishlist-button [isInWishlist]="tour.addedToWishList" [TourId]="tour.id"></wishlist-button>
         </div>
       </li>
 

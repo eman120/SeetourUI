@@ -62,6 +62,7 @@ import { OurServiceComponent } from './component/our-service/our-service.compone
 import { PopularDistnationsComponent } from './component/popular-distnations/popular-distnations.component';
 import { PaymentprocessHomeComponent } from './component/paymentprocess-home/paymentprocess-home.component';
 import { PartialServiceHomeComponent } from './component/partial-service-home/partial-service-home.component';
+
 import { AdminPostsRequestsComponent } from './component/admin-posts-requests/admin-posts-requests.component';
 import { AdminPostRequestFormComponent } from './component/admin-post-request-form/admin-post-request-form.component';
 import { AdminHeaderComponent } from './component/admin-header/admin-header.component';
@@ -69,13 +70,17 @@ import { AdminAcceptTourGuidesComponent } from './component/admin-accept-tour-gu
 import { AdminApplicantDetailsComponent } from './component/admin-applicant-details/admin-applicant-details.component';
 import { TourGuideDetailsComponent } from './component/tour-guide-details/tour-guide-details.component';
 import { CustomerHeaderComponent } from './component/customer-header/customer-header.component';
+
+import { WishlistItemComponent } from './component/wishlist-item/wishlist-item.component';
+import { CustomerWishlistComponent } from './component/customer-wishlist/customer-wishlist.component';
+
 import { CustomerBookedToursComponent } from './component/customer-booked-tours/customer-booked-tours.component';
 import { BookingSliderComponent } from './component/booking-slider/booking-slider.component';
 import { CustomerReviewFormComponent } from './component/customer-review-form/customer-review-form.component';
 import { CompressImagesButton } from './component/compress-images-button/compress-images-button.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tour-details.component';
 
 @NgModule({
   declarations: [
@@ -134,6 +139,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PopularDistnationsComponent,
     PaymentprocessHomeComponent,
     PartialServiceHomeComponent,
+
     AdminPostsRequestsComponent,
     AdminPostRequestFormComponent,
     AdminHeaderComponent,
@@ -141,10 +147,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdminApplicantDetailsComponent,
     TourGuideDetailsComponent,
     CustomerHeaderComponent,
+
+    WishlistItemComponent,
+    CustomerWishlistComponent
+
     CustomerBookedToursComponent,
     BookingSliderComponent,
     CustomerReviewFormComponent,
     CompressImagesButton,
+    CustTourDetailsComponent,
 
   ],
   imports: [
