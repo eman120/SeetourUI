@@ -23,17 +23,22 @@ import { TourguideDashboardComponent } from './component/tourguide-dashboard/tou
 import { TGReviewsComponent } from './component/tgreviews/tgreviews.component';
 import { TGOverviewComponent } from './component/tgoverview/tgoverview.component';
 import { TGToursComponent } from './component/tgtours/tgtours.component';
+import { BookTourComponent } from './component/book-tour/book-tour.component';
 
 import { ReviewCardComponent } from './component/review-card/review-card.component';
 import { AdminReportComponent } from './component/admin-report/admin-report.component';
 
 import { OurServiceComponent } from './component/our-service/our-service.component';
+
 import { AdminPostsRequestsComponent } from './component/admin-posts-requests/admin-posts-requests.component';
 
 import { CreateTourComponent } from './component/create-tour/create-tour.component';
 
 import { AdminAcceptTourGuidesComponent } from './component/admin-accept-tour-guides/admin-accept-tour-guides.component';
 import { AdminApplicantDetailsComponent } from './component/admin-applicant-details/admin-applicant-details.component';
+
+import { CustomerBookedToursComponent } from './component/customer-booked-tours/customer-booked-tours.component';
+import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tour-details.component';
 
 const routes: Routes = [
   {path: "",component:HomeComponent},
@@ -46,7 +51,8 @@ const routes: Routes = [
   {path:"services" , component:DetailsComponent},
   {path:"header" , component:HeaderComponent},
 {path:"createtour",component:CreateTourComponent},
-  {path:"TourDetails/:id",component:TourDetailsComponent},
+  {path:"tourdetails/:id",component:TourDetailsComponent},
+  {path:"custdetails/:id",component:CustTourDetailsComponent},
   {path:"payment",component:PaymentComponent},
   {path:"payment-success",component:PaymentSuccessComponent},
   {path:"service",component:OurServiceComponent},
@@ -54,6 +60,7 @@ const routes: Routes = [
   {path:"tour/create" , component:CreateTourComponent},
 
   {path:"tour/:id",component:TourDetailsComponent},
+  {path:"bookTour/:id",component:BookTourComponent},
 
   {path:"tourguide/:id",component:TourGuideProfileComponent,
     children: [
@@ -80,16 +87,23 @@ const routes: Routes = [
     ]},
 
   {path:"userregister" , component:UserregisterComponent},
-  {path:"tourguide" , component:TourGuideComponent},
   {path:"dashboard" , component:TourguideDashboardComponent},
+
+  {path:"tourguide" , component:TourGuideComponent},
+
   {path:"review" , component:ReviewCardComponent},
   {path:"report" , component:AdminReportComponent},
+
 
   {path:"admin/posts", component:AdminPostsRequestsComponent},
   {path:"admin/applicants", component:AdminAcceptTourGuidesComponent},
   {path:"admin/applicants/:id", component:AdminApplicantDetailsComponent},
 
+
   {path:"customerwishlist",component:CustomerWishlistComponent},
+
+  {path:"customer/tour", component:CustomerBookedToursComponent},
+
   {path:"**" , component:ErrorComponent}
 
 ];

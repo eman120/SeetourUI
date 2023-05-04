@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CustomerService } from 'src/app/Services/customer.service';
 
 @Component({
   selector: 'wishlist-button',
@@ -25,12 +26,23 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class WishListButtonComponent {
   @Input() isInWishlist: boolean = false;
-  @Input() Id: number = 0;
+  @Input() TourId: number = 0;
 
-  @Output() wishlisted = new EventEmitter<{ isInWishlist: boolean, Id: number }>();
+  @Output() wishlisted = new EventEmitter<{ isInWishlist: boolean, TourId: number }>();
+
+  constructor(private customer: CustomerService){}
 
   toggleWishlist() {
+
     this.isInWishlist = !this.isInWishlist;
-    this.wishlisted.emit({ isInWishlist: this.isInWishlist, Id: this.Id });
+
+    this.customer.PostTourWish({tourId: this.TourId, isAdded: this.isInWishlist?1:0 }).subscribe({
+      next: () => {
+        this.wishlisted.emit({isInWishlist: this.isInWishlist, TourId: this.TourId});
+      },
+      error: () => {
+        this.isInWishlist = !this.isInWishlist;
+      }
+    })
   }
 }
