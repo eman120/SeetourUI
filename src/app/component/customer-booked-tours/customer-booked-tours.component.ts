@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ApiPaths } from 'src/app/Enums/api-paths';
 import { BookedTour } from 'src/app/Interfaces/booked-tour';
 import { CustomerService } from 'src/app/Services/customer.service';
@@ -13,7 +14,9 @@ export class CustomerBookedToursComponent {
   completedBookings: BookedTour[] | undefined;
   cancelledBookings: BookedTour[] | undefined;
 
-  constructor(private customer: CustomerService) {}
+  constructor(private customer: CustomerService, private title:Title) {
+    title.setTitle('Seetour - Booked Tours');
+  }
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
