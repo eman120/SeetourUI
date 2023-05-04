@@ -52,8 +52,11 @@ const routes: Routes = [
   {path:"header" , component:HeaderComponent},
 {path:"createtour",component:CreateTourComponent},
   {path:"tourdetails/:id",component:TourDetailsComponent},
+
+  {path:"payment/:id",component:PaymentComponent},
+
   {path:"custdetails/:id",component:CustTourDetailsComponent},
-  {path:"payment",component:PaymentComponent},
+
   {path:"payment-success",component:PaymentSuccessComponent},
   {path:"service",component:OurServiceComponent},
 
