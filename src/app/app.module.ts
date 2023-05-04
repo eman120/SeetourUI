@@ -64,6 +64,7 @@ import { OurServiceComponent } from './component/our-service/our-service.compone
 import { PopularDistnationsComponent } from './component/popular-distnations/popular-distnations.component';
 import { PaymentprocessHomeComponent } from './component/paymentprocess-home/paymentprocess-home.component';
 import { PartialServiceHomeComponent } from './component/partial-service-home/partial-service-home.component';
+import { DashboardStatisticsComponent } from './component/dashboard-statistics/dashboard-statistics.component';
 
 @NgModule({
   declarations: [
@@ -120,7 +121,8 @@ import { PartialServiceHomeComponent } from './component/partial-service-home/pa
     OurServiceComponent,
     PopularDistnationsComponent,
     PaymentprocessHomeComponent,
-    PartialServiceHomeComponent
+    PartialServiceHomeComponent,
+    DashboardStatisticsComponent
 
   ],
   imports: [

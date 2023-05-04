@@ -27,6 +27,7 @@ import { ReviewCardComponent } from './component/review-card/review-card.compone
 import { AdminReportComponent } from './component/admin-report/admin-report.component';
 
 import { OurServiceComponent } from './component/our-service/our-service.component';
+import { DashboardStatisticsComponent } from './component/dashboard-statistics/dashboard-statistics.component';
 
 
 const routes: Routes = [
@@ -77,6 +78,7 @@ const routes: Routes = [
   {path:"dashboard" , component:TourguideDashboardComponent},
   {path:"review" , component:ReviewCardComponent},
   {path:"report" , component:AdminReportComponent},
+  {path :"dashboardstatistics" , component:DashboardStatisticsComponent},
   {path:"**" , component:ErrorComponent}
 
 ];

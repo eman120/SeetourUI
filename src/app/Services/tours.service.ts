@@ -58,9 +58,8 @@ export class ToursService {
   GetTourById(tourId: string) {
     const tourIdNum = Number(tourId);
     let url = this.urlBase+ApiPaths.tour+ApiPaths.tourCard+'?id='+tourIdNum;
-  
+
     return this.client.get(url);
   }
-  
 
 }
