@@ -39,15 +39,15 @@ export class LikeButtonComponent {
     this.isLiked = !this.isLiked;
     this.likes += this.isLiked ? 1 : -1;
 
-    this.customer.PostTourLike({tourId: this.TourId, isAdded: this.isLiked?1:0 }).subscribe({
-      next: () => {
-        this.liked.emit({isLiked: this.isLiked, TourId: this.TourId});
-      },
-      error: () => {
-        this.isLiked = !this.isLiked;
-        this.likes += this.isLiked ? 1 : -1;
-      }
-    })
+    // this.customer.PostTourLike({tourId: this.TourId, isAdded: this.isLiked?1:0 }).subscribe({
+    //   next: () => {
+    //     this.liked.emit({isLiked: this.isLiked, TourId: this.TourId});
+    //   },
+    //   error: () => {
+    //     this.isLiked = !this.isLiked;
+    //     this.likes += this.isLiked ? 1 : -1;
+    //   }
+    // })
 
   }
 }
