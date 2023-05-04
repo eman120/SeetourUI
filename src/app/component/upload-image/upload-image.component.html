@@ -10,5 +10,13 @@
     </div>
   </div>
   <br>
-  <button type="submit" [disabled]=" fileSizeExceeded || invalidExtension" class="btn btn-primary">Upload</button>
+  <button type="submit" [disabled]=" fileSizeExceeded || invalidExtension" class="btn btn-primary">Upload</button> 
+  <br>
+  <br>
+  <div class="spinner-border text-primary" role="status" *ngIf="!isUploaded && !Flag">
+    <span class="sr-only"></span>
+    <br>
+    Uploading....
+  </div>
+  <div class="text-success" *ngIf="isUploaded">Images uploaded successfully</div>
 </form>

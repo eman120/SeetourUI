@@ -1,5 +1,6 @@
 import { AfterContentInit, Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
 import { AuthService } from 'src/app/Services/auth.service';
@@ -16,7 +17,8 @@ export class LoginComponent implements AfterContentInit {
 
   constructor(private fb:FormBuilder,
     private authService: AuthService,
-    private router: Router) {
+    private router: Router,
+    titleService:Title) {
 
       if (authService.isLoggedIn()){
         router.navigateByUrl('/');
@@ -26,6 +28,8 @@ export class LoginComponent implements AfterContentInit {
           username: ['',Validators.required],
           password: ['',Validators.required]
       });
+
+      titleService.setTitle('Seetour - Login');
 
     }
 
