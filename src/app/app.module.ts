@@ -62,6 +62,7 @@ import { OurServiceComponent } from './component/our-service/our-service.compone
 import { PopularDistnationsComponent } from './component/popular-distnations/popular-distnations.component';
 import { PaymentprocessHomeComponent } from './component/paymentprocess-home/paymentprocess-home.component';
 import { PartialServiceHomeComponent } from './component/partial-service-home/partial-service-home.component';
+
 import { AdminPostsRequestsComponent } from './component/admin-posts-requests/admin-posts-requests.component';
 import { AdminPostRequestFormComponent } from './component/admin-post-request-form/admin-post-request-form.component';
 import { AdminHeaderComponent } from './component/admin-header/admin-header.component';
@@ -134,6 +135,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PopularDistnationsComponent,
     PaymentprocessHomeComponent,
     PartialServiceHomeComponent,
+
     AdminPostsRequestsComponent,
     AdminPostRequestFormComponent,
     AdminHeaderComponent,
