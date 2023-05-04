@@ -48,8 +48,8 @@ const routes: Routes = [
   {path:"services" , component:DetailsComponent},
   {path:"header" , component:HeaderComponent},
 {path:"createtour",component:CreateTourComponent},
-  {path:"TourDetails/:id",component:TourDetailsComponent},
-  {path:"payment",component:PaymentComponent},
+  {path:"tourdetails/:id",component:TourDetailsComponent},
+  {path:"payment/:id",component:PaymentComponent},
   {path:"payment-success",component:PaymentSuccessComponent},
   {path:"service",component:OurServiceComponent},
 

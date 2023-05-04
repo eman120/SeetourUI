@@ -103,13 +103,13 @@
                   
                     <!-- row 3 -->
                     <div class="col-md-6">
-                      <input #AccountNumber="ngModel" ngModel name="AccountNumber" type="number" id="AccountNumber" class="form-control form-control-lg mb-4 p-2" placeholder="AccountNumber" required />
+                      <input #AccountNumber="ngModel" ngModel name="AccountNumber" type="text" id="AccountNumber" class="form-control form-control-lg mb-4 p-2" placeholder="AccountNumber" required />
                       <div class="alert alert-danger" [hidden]="AccountNumber.valid || AccountNumber.untouched">
                         <small *ngIf="AccountNumber.errors?.['required']">AccountNumber is Required!!</small>
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <input #SwiftCode="ngModel" ngModel name="SwiftCode" type="number" id="SwiftCode" class="form-control form-control-lg mb-4 p-2" placeholder="SwiftCode" required/>
+                      <input #SwiftCode="ngModel" ngModel name="SwiftCode" type="text" id="SwiftCode" class="form-control form-control-lg mb-4 p-2" placeholder="SwiftCode" required/>
                       <div class="alert alert-danger" [hidden]="SwiftCode.valid || SwiftCode.untouched">
                         <small *ngIf="SwiftCode.errors?.['required']">SwiftCode is Required!!</small>
                         </div>
@@ -119,18 +119,18 @@
 
                   <div class="input-group mb-3">
                     <label class="IDphoto">ID photo</label>
-                    <input #file="ngModel"  ngModel name ="file" type="file" class="form-control" id="inputGroupFile01">
-
+                    <!-- <input #file="ngModel"  ngModel name ="file" type="file" class="form-control" id="inputGroupFile01"> -->
+                    <!-- <app-upload-image (imageUrl)="Fun($event)"></app-upload-image> -->
                   </div>
 
                   <div class="input-group mb-3">
                     <label class="IDphoto">Profile Pic</label>
-                    <input #PPic="ngModel"  ngModel name ="file" type="file" class="form-control" id="inputGroupFile02">
-
+                    <!-- <input #PPic="ngModel"  ngModel name ="file" type="file" class="form-control" id="inputGroupFile02"> -->
+                    <app-upload-image (imageUrl)="Fun2($event)"></app-upload-image>
                   </div>
 
                   <div class="d-flex justify-content-center">
-                    <button  [disabled]="registerFrm.invalid || confirmPassword.value !== password.value " type="submit" (click)="Register(username.value , name.value , email.value , phone.value , password.value , snn.value , bankAccount.value , Address.value , AccountNumber.value , SwiftCode.value , file.value , PPic.value , Tax.value)"
+                    <button  [disabled]="registerFrm.invalid || confirmPassword.value !== password.value " type="submit" (click)="Register(username.value , name.value , email.value , phone.value , password.value , snn.value , bankAccount.value , Address.value , AccountNumber.value , SwiftCode.value ,Tax.value)"
                     class="btn btn-outline-secondary btn-lg ms-2">Register</button>
                   </div>
               </form>

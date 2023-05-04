@@ -42,7 +42,7 @@ export class UploadImageComponent {
         .subscribe((result: any) => {
           this.isUploaded=true;
           this.imageUrl.emit(result.url);
-         // console.log(result.url);
+         console.log(result.url);
           // Reset the form after successful upload
           this.uploadForm.reset();
         }, (error: any) => {
