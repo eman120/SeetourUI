@@ -76,6 +76,7 @@ import { CustomerReviewFormComponent } from './component/customer-review-form/cu
 import { CompressImagesButton } from './component/compress-images-button/compress-images-button.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tour-details.component';
 
 
 @NgModule({
@@ -147,6 +148,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BookingSliderComponent,
     CustomerReviewFormComponent,
     CompressImagesButton,
+    CustTourDetailsComponent,
 
   ],
   imports: [
