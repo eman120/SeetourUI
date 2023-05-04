@@ -71,6 +71,8 @@ import { AdminAcceptTourGuidesComponent } from './component/admin-accept-tour-gu
 import { AdminApplicantDetailsComponent } from './component/admin-applicant-details/admin-applicant-details.component';
 import { TourGuideDetailsComponent } from './component/tour-guide-details/tour-guide-details.component';
 import { CustomerHeaderComponent } from './component/customer-header/customer-header.component';
+import { WishlistItemComponent } from './component/wishlist-item/wishlist-item.component';
+import { CustomerWishlistComponent } from './component/customer-wishlist/customer-wishlist.component';
 
 @NgModule({
   declarations: [
@@ -134,7 +136,9 @@ import { CustomerHeaderComponent } from './component/customer-header/customer-he
     AdminAcceptTourGuidesComponent,
     AdminApplicantDetailsComponent,
     TourGuideDetailsComponent,
-    CustomerHeaderComponent
+    CustomerHeaderComponent,
+    WishlistItemComponent,
+    CustomerWishlistComponent
 
   ],
   imports: [
