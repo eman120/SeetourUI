@@ -22,6 +22,15 @@ export enum ApiPaths {
   adminTGApplicant = "/Applicant",
   custReg = "/CustomerRegistration",
   tgReg = "/TourGuideRegistration",
+
+  customer = "/customer",
+  customerTour = "/tour",
+  customerTourUpcoming = "/upcoming",
+  customerTourCompleted = "/completed",
+  customerTourCancelled = "/cancelled",
+  customerTourReview = "/Review",
+  customerTourReviewcheck = "/Check",
+  
   bookTour = "/BookTour",
   bookDetails ="/BookTourDetails"
 }

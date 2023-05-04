@@ -69,6 +69,10 @@ import { AdminAcceptTourGuidesComponent } from './component/admin-accept-tour-gu
 import { AdminApplicantDetailsComponent } from './component/admin-applicant-details/admin-applicant-details.component';
 import { TourGuideDetailsComponent } from './component/tour-guide-details/tour-guide-details.component';
 import { CustomerHeaderComponent } from './component/customer-header/customer-header.component';
+import { CustomerBookedToursComponent } from './component/customer-booked-tours/customer-booked-tours.component';
+import { BookingSliderComponent } from './component/booking-slider/booking-slider.component';
+import { CustomerReviewFormComponent } from './component/customer-review-form/customer-review-form.component';
+import { CompressImagesButton } from './component/compress-images-button/compress-images-button.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -136,7 +140,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdminAcceptTourGuidesComponent,
     AdminApplicantDetailsComponent,
     TourGuideDetailsComponent,
-    CustomerHeaderComponent
+    CustomerHeaderComponent,
+    CustomerBookedToursComponent,
+    BookingSliderComponent,
+    CustomerReviewFormComponent,
+    CompressImagesButton,
 
   ],
   imports: [

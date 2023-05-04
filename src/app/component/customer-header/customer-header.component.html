@@ -11,13 +11,12 @@
             <span class="fa fa-bars"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-0">
-                <a routerLink="/about" routerLinkActive="active" class="nav-item nav-link">About</a>
-                <a routerLink="/service" routerLinkActive="active" class="nav-item nav-link">Services</a>
+            <div class="navbar-nav ms-auto py-0 align-items-center">
                 <a routerLink="/tour" routerLinkActive="active" class="nav-item nav-link">Tours</a>
-                <a routerLink="/contact" routerLinkActive="active" class="nav-item nav-link">Contact Us</a>
-                
-                <button (click)="logout()" class="btn btn-primary rounded-pill me-2">Logout</button>
+                <a routerLink="/customer/tour" routerLinkActive="active" class="nav-item nav-link">Bookings</a>
+                <a routerLink="/contact" routerLinkActive="active" class="nav-item nav-link">Contact</a>
+
+                <button (click)="logout()" class="btn btn-primary rounded-pill me-2 mt-0">Logout</button>
             </div>
         </div>
     </nav>

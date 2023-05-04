@@ -14,18 +14,21 @@
       </div>
 
       <h2 class="card-title">Posting Status</h2>
-      <form>
+
+      <form [formGroup]="formValidation" (ngSubmit)="onRequestEdit()">
         <div class="mb-3">
           <label for="editRequest" class="form-label">Edit Request</label>
-          <textarea rows="4" id="editRequest" class="form-control" style="resize: none;" [value]="request"></textarea>
+          <textarea rows="4" id="editRequest" class="form-control" formControlName="editRequest"
+          style="resize: none;" [value]="request"></textarea>
         </div>
 
         <div *ngIf="formstatus!='posted'" class="d-grid gap-2 d-md-flex justify-content-md-end">
           <button class="btn btn-primary" type="button" (click)="onAccept()">Accept</button>
           <button class="btn btn-danger" type="button" (click)="onReject()">Reject</button>
-          <button class="btn btn-outline-info" type="button" (click)="onRequestEdit()">Request Edit</button>
+          <button [disabled]="!formValidation.valid" class="btn btn-outline-info">Request Edit</button>
         </div>
       </form>
+
     </div>
   </div>
 
