@@ -1,3 +1,4 @@
+import { CustomerWishlistComponent } from './component/customer-wishlist/customer-wishlist.component';
 import { NgModule, createComponent } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './component/home/home.component';
@@ -35,6 +36,7 @@ import { CreateTourComponent } from './component/create-tour/create-tour.compone
 
 import { AdminAcceptTourGuidesComponent } from './component/admin-accept-tour-guides/admin-accept-tour-guides.component';
 import { AdminApplicantDetailsComponent } from './component/admin-applicant-details/admin-applicant-details.component';
+
 import { CustomerBookedToursComponent } from './component/customer-booked-tours/customer-booked-tours.component';
 import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tour-details.component';
 
@@ -96,6 +98,9 @@ const routes: Routes = [
   {path:"admin/posts", component:AdminPostsRequestsComponent},
   {path:"admin/applicants", component:AdminAcceptTourGuidesComponent},
   {path:"admin/applicants/:id", component:AdminApplicantDetailsComponent},
+
+
+  {path:"customerwishlist",component:CustomerWishlistComponent},
 
   {path:"customer/tour", component:CustomerBookedToursComponent},
 
