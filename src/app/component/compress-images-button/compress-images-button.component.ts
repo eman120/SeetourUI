@@ -67,7 +67,7 @@ export class CompressImagesButton {
 
       if (uploaded.length) {
 
-        uploaded.slice(0, this.limit).forEach(file => {
+        uploaded.slice(0, Math.max(this.limit - this.photoUrls.length, 0)).forEach(file => {
           if (this.photos.get(file.fileName) == null) {
 
             this.photoUrls.push(file)

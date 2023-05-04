@@ -10,7 +10,7 @@ import { FormGroupQueryService } from 'src/app/Services/form-group-query.service
 })
 export class ToursSectionFilterableComponent {
   @Input() tours: TourCard[] | undefined;
-  @Input() title: string = ""
+  @Input() sectionTitle: string = ""
   @Output() FilterValue = new EventEmitter();
 
   @ViewChild('FilterClose') FilterClose: ElementRef |undefined;
