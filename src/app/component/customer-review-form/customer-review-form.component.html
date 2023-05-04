@@ -14,7 +14,11 @@
       <div  class="d-flex flex-row flex-wrap flex-md-nowrap align-items-center">
         <h2 class="card-title me-2 flex-grow-1">{{TourTitle == '' ? 'Post your review' : TourTitle}}</h2>
 
-        <button type="button" *ngIf="formstatus!='hold'" class="btn btn-primary" (click)="OnReview()">Post</button>
+        <button type="button" *ngIf="formstatus!='hold' && formstatus!='posted'" class="btn btn-primary" (click)="OnReview()">Post</button>
+        <button *ngIf="formstatus=='posted'" class="btn btn-primary" type="button" disabled>
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          Loading...
+        </button>
       </div>
 
       <form [formGroup]="fomrValidation">

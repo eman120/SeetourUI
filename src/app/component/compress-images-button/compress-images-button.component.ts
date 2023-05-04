@@ -19,6 +19,7 @@ export class CompressImagesButton {
   constructor(private imageCompress: NgxImageCompressService) {}
 
   @Input() hideSlider: boolean | undefined;
+  @Input() limit: number = 20;
 
   photos: FormData = new FormData();
   photoUrls: {compressedImage:string, fileName:string}[] =[];
@@ -66,7 +67,7 @@ export class CompressImagesButton {
 
       if (uploaded.length) {
 
-        uploaded.forEach(file => {
+        uploaded.slice(0, this.limit).forEach(file => {
           if (this.photos.get(file.fileName) == null) {
 
             this.photoUrls.push(file)
@@ -77,7 +78,6 @@ export class CompressImagesButton {
         })
 
         this.state = 'done'
-        console.log(this.photos)
       }
 
       this.imagesFormData.emit(this.exportPhotos());
