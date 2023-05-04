@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CustomerService } from 'src/app/Services/customer.service';
 
 @Component({
   selector: 'like-button',
@@ -27,14 +28,26 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class LikeButtonComponent {
   @Input() likes: number = 0;
   @Input() isLiked: boolean = false;
-  @Input() Id: number = 0;
+  @Input() TourId: number = 0;
 
   @Output() liked = new EventEmitter()
 
+  constructor(private customer: CustomerService){}
+
   like() {
+
     this.isLiked = !this.isLiked;
     this.likes += this.isLiked ? 1 : -1;
 
-    this.liked.emit({isLiked: this.isLiked, Id: this.Id});
+    this.customer.PostTourLike({tourId: this.TourId, isAdded: this.isLiked?1:0 }).subscribe({
+      next: () => {
+        this.liked.emit({isLiked: this.isLiked, TourId: this.TourId});
+      },
+      error: () => {
+        this.isLiked = !this.isLiked;
+        this.likes += this.isLiked ? 1 : -1;
+      }
+    })
+
   }
 }
