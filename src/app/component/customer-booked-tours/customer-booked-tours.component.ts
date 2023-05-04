@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { ApiPaths } from 'src/app/Enums/api-paths';
 import { BookedTour } from 'src/app/Interfaces/booked-tour';
 import { CustomerService } from 'src/app/Services/customer.service';
@@ -14,7 +15,8 @@ export class CustomerBookedToursComponent {
   completedBookings: BookedTour[] | undefined;
   cancelledBookings: BookedTour[] | undefined;
 
-  constructor(private customer: CustomerService, private title:Title) {
+  constructor(private customer: CustomerService, title:Title,
+    private router: Router) {
     title.setTitle('Seetour - Booked Tours');
   }
 
@@ -24,18 +26,27 @@ export class CustomerBookedToursComponent {
     this.customer.GetIsCompletedBookings(ApiPaths.customerTourUpcoming).subscribe({
       next: (data) => {
         this.upcomingBookings = data as BookedTour[];
+      },
+      error: () => {
+        this.router.navigateByUrl('error');
       }
     });
 
     this.customer.GetIsCompletedBookings(ApiPaths.customerTourCompleted).subscribe({
       next: (data) => {
         this.completedBookings = data as BookedTour[];
+      },
+      error: () => {
+        this.router.navigateByUrl('error');
       }
     });
 
     this.customer.GetIsCompletedBookings(ApiPaths.customerTourCancelled).subscribe({
       next: (data) => {
         this.cancelledBookings = data as BookedTour[];
+      },
+      error: () => {
+        this.router.navigateByUrl('error');
       }
     });
   }
