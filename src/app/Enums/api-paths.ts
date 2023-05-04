@@ -28,5 +28,6 @@ export enum ApiPaths {
   customerTourUpcoming = "/upcoming",
   customerTourCompleted = "/completed",
   customerTourCancelled = "/cancelled",
-  customerTourReviewcheck = "/ReviewCheck"
+  customerTourReview = "/Review",
+  customerTourReviewcheck = "/Check",
 }

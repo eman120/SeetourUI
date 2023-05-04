@@ -43,4 +43,13 @@ export class BookingSliderComponent {
     this.ReviewTourbookingTitle = booking.tourCard.title;
 
   }
+
+  Reviewed() {
+    if (this.Bookings && this.ReviewTourbookingId) {
+
+      const booking = this.Bookings.filter(b => b.id == this.ReviewTourbookingId)[0];
+      if (booking)
+        booking.canReview = 0;
+    }
+  }
 }

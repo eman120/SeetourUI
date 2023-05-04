@@ -75,7 +75,7 @@
       </div>
 
       <app-customer-review-form *ngIf="CanReview" [bookedtourId]="ReviewTourbookingId"
-      [TourTitle]="ReviewTourbookingTitle??''">
+      [TourTitle]="ReviewTourbookingTitle??''" (Reviewed)="Reviewed()">
 
       </app-customer-review-form>
 

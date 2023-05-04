@@ -1,7 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CustomerService } from 'src/app/Services/customer.service';
-import { ImageCompressorOutput } from '../upload-images-v2/upload-images-v2.component';
+import { ImageCompressorOutput } from '../compress-images-button/compress-images-button.component';
+import { ReviewDto } from 'src/app/Interfaces/review-dto';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-customer-review-form',
@@ -10,9 +12,11 @@ import { ImageCompressorOutput } from '../upload-images-v2/upload-images-v2.comp
 })
 export class CustomerReviewFormComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private customer: CustomerService) { }
+  constructor(private fb: FormBuilder, private customer: CustomerService, private readonly http:HttpClient) { }
 
   public _bookedtourId: number|undefined;
+
+  @Output() Reviewed: EventEmitter<void> = new EventEmitter;
 
   @Input() TourTitle: string = "";
 
@@ -25,14 +29,16 @@ export class CustomerReviewFormComponent implements OnInit {
   }
 
   @Input() set bookedtourId(value: number|undefined) {
+
     this._bookedtourId = value;
+
+    this.photos = new FormData();
     this.fomrValidation.reset();
+    this.formstatus='pending'
   }
 
   review:string = "";
   photos:FormData = new FormData();
-
-  photoUrls: {compressedImage:string, fileName:string}[] =[];
 
   formstatus: string = "pending";
 
@@ -45,6 +51,9 @@ export class CustomerReviewFormComponent implements OnInit {
       rating: ['', [Validators.required, Validators.min(1), Validators.max(5)]]
     })
 
+    var form = $('form');
+
+    this.photos = new FormData(form[0] as HTMLFormElement)
   }
 
   imagesCompressing() {
@@ -53,47 +62,45 @@ export class CustomerReviewFormComponent implements OnInit {
 
   ImagesSelected(data: ImageCompressorOutput) {
 
-    data.uploaded.forEach(file => {
-      if (this.photos.get(file.fileName) == null)
-        this.photoUrls.push(file)
-    })
+    this.photos = data.formData;
 
-    data.formData.forEach((file, key) => {
-      if (file instanceof File && this.photos.get(key) == null) {
-        this.photos.append(key, file, key);
-      }
-    });
+    console.log(this.photos);
 
     this.formstatus = 'pending';
   }
 
-  RemoveImage(key: string) {
-    this.photos.delete(key);
-    this.photoUrls.splice(this.photoUrls.findIndex(p => p.fileName == key), 1);
-  }
-
   OnReview() {
 
-    if (this.fomrValidation.valid) {
+    if (this._bookedtourId && this.fomrValidation.valid) {
+
       this.formstatus = "posted";
-      //this.PostRequest(this.GenerateRequest(PostingStatus.EditRequested, this.review));
+
+      const reviewDto: ReviewDto = {
+        bookedTourId: this._bookedtourId,
+        rating: this.fomrValidation.value['rating'] as number,
+        reviewBody: this.fomrValidation.value['reviewBody'] as string
+      }
+
+      Object.entries(reviewDto).forEach(([key, value]) => {
+        this.photos.append(key, value.toString());
+      });
+
+      this.customer.PostBookedTourReview(this.photos).subscribe({
+        next: () => {
+          this.formstatus = "success";
+
+          this.photos = new FormData();
+          this.fomrValidation.reset();
+
+          this.Reviewed.emit();
+        },
+        error: () => {
+          this.formstatus = "error";
+        }
+      })
     }
     else {
       this.formstatus = "invalid"
     }
-    console.log(this.formstatus)
-    console.log(this.fomrValidation)
   }
-
-  // private PostRequest(request: AdminPostStatus) {
-  //   this.adminService.PostEditRequest(request).subscribe({
-  //     next: () => {
-  //       this.formstatus = "success";
-  //       this.review = "";
-  //     },
-  //     error: () => {
-  //       this.formstatus = "error";
-  //     }
-  //   });
-  // }
 }

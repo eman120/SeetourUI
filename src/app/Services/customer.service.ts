@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { ApiPaths } from '../Enums/api-paths';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ReviewDto } from '../Interfaces/review-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,14 @@ export class CustomerService {
   }
 
   GetBookedTourIdToReview(tourId: number) {
-    let url = this.baseUrl+ApiPaths.customerTour + '/' + tourId + ApiPaths.customerTourReviewcheck;
+    let url = this.baseUrl+ApiPaths.customerTour + '/' + tourId + ApiPaths.customerTourReview+ApiPaths.customerTourReviewcheck;
     return this.http.get(url);
+  }
+
+  PostBookedTourReview(files: FormData) {
+    let url = this.baseUrl+ApiPaths.customerTour+ApiPaths.customerTourReview;
+
+    //const headers = new HttpHeaders().set('Content-Type', 'multipart/form-data');
+    return this.http.post(url, files);
   }
 }
