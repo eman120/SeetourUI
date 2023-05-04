@@ -30,9 +30,6 @@ import { AdminReviewComponent } from './component/admin-review/admin-review.comp
 import { PaymentSuccessComponent } from './component/payment-success/payment-success.component';
 import { QuestionAnswerComponent } from './component/question-answer/question-answer.component';
 
-
-
-
 import { TourCardComponent } from './component/tour-card/tour-card.component';
 import { StarRatingComponent } from './component/star-rating/star-rating.component';
 import { LikeButtonComponent } from './component/like-button/like-button.component';
@@ -56,6 +53,7 @@ import { SpinnerComponent } from './component/spinner/spinner.component';
 import { ToursFilterComponent } from './component/tours-filter/tours-filter.component';
 import { TGToursComponent } from './component/tgtours/tgtours.component';
 import { ToursSectionFilterableComponent } from './component/tours-section-filterable/tours-section-filterable.component';
+import { BookTourComponent } from './component/book-tour/book-tour.component';
 
 import { NgModule } from '@angular/core';
 import { AboutStartComponent } from './component/about-start/about-start.component';
@@ -75,6 +73,9 @@ import { CustomerBookedToursComponent } from './component/customer-booked-tours/
 import { BookingSliderComponent } from './component/booking-slider/booking-slider.component';
 import { CustomerReviewFormComponent } from './component/customer-review-form/customer-review-form.component';
 import { CompressImagesButton } from './component/compress-images-button/compress-images-button.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -91,14 +92,12 @@ import { CompressImagesButton } from './component/compress-images-button/compres
     HeaderComponent,
     FooterComponent,
 
-
     AdminStatisticsComponent,
     TourDetailsComponent,
     PaymentComponent,
     AdminReviewComponent,
     PaymentSuccessComponent,
     QuestionAnswerComponent,
-
 
     UserregisterComponent,
     TourCardComponent,
@@ -126,6 +125,9 @@ import { CompressImagesButton } from './component/compress-images-button/compres
     ToursFilterComponent,
     TGToursComponent,
     ToursSectionFilterableComponent,
+
+    BookTourComponent,
+
     AboutStartComponent,
     TeamDataComponent,
     OurServiceComponent,
@@ -152,7 +154,13 @@ import { CompressImagesButton } from './component/compress-images-button/compres
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule,
-    CommonModule
+    CommonModule,
+    BrowserAnimationsModule
+    ,
+    ToastrModule.forRoot({
+      timeOut: 1000,
+      positionClass: 'toast-bottom-right'
+    })
   ],
   providers: [AuthInterceptorProviders,DatePipe],
   bootstrap: [AppComponent]
