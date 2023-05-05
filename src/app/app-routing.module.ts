@@ -42,6 +42,7 @@ import { CustomerCancelBookingComponent } from './component/customer-cancel-book
 import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tour-details.component';
 import { DashboardStatisticsComponent } from './component/dashboard-statistics/dashboard-statistics.component';
 import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-details.component';
+import { WishlistItemComponent } from './component/wishlist-item/wishlist-item.component';
 
 const routes: Routes = [
   {path: "",component:HomeComponent},
@@ -111,6 +112,7 @@ const routes: Routes = [
 
   {path:"customer/tour", component:CustomerBookedToursComponent},
   {path:"customer/tour/cancel", component:CustomerCancelBookingComponent},
+  {path:"wishlist", component:WishlistItemComponent},
 
   {path:"**" , component:ErrorComponent}
 
