@@ -38,6 +38,7 @@ import { AdminAcceptTourGuidesComponent } from './component/admin-accept-tour-gu
 import { AdminApplicantDetailsComponent } from './component/admin-applicant-details/admin-applicant-details.component';
 
 import { CustomerBookedToursComponent } from './component/customer-booked-tours/customer-booked-tours.component';
+import { CustomerCancelBookingComponent } from './component/customer-cancel-booking/customer-cancel-booking.component';
 import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tour-details.component';
 
 const routes: Routes = [
@@ -106,6 +107,7 @@ const routes: Routes = [
   {path:"customerwishlist",component:CustomerWishlistComponent},
 
   {path:"customer/tour", component:CustomerBookedToursComponent},
+  {path:"customer/tour/cancel", component:CustomerCancelBookingComponent},
 
   {path:"**" , component:ErrorComponent}
 

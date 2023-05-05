@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { BookedTour } from 'src/app/Interfaces/booked-tour';
 import { TourCard } from 'src/app/Interfaces/tour-card';
 
@@ -21,16 +22,11 @@ export class BookingSliderComponent {
   ReviewTourbookingId: number | undefined;
   ReviewTourbookingTitle: string | undefined;
 
-  get link() { return {outlets: { [this.MoreOutlet]: [this.MoreLink] }} };
+  constructor(private router: Router) {
 
-  get bookings() {
-    if (this.Bookings)
-      this.Bookings.forEach((element) => {
-        element.tourCard.photos = [];
-      });
-
-    return this.Bookings;
   }
+
+  get link() { return {outlets: { [this.MoreOutlet]: [this.MoreLink] }} };
 
   Review(booking: BookedTour) {
 
@@ -41,7 +37,6 @@ export class BookingSliderComponent {
 
     this.ReviewTourbookingId = booking.id;
     this.ReviewTourbookingTitle = booking.tourCard.title;
-
   }
 
   Reviewed() {
@@ -51,5 +46,9 @@ export class BookingSliderComponent {
       if (booking)
         booking.canReview = 0;
     }
+  }
+
+  CancelBooking(Booking: BookedTour) {
+    this.router.navigate([`customer/tour/cancel`], {state: Booking});
   }
 }
