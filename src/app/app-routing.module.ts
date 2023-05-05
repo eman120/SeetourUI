@@ -28,6 +28,7 @@ import { ReviewCardComponent } from './component/review-card/review-card.compone
 import { AdminReportComponent } from './component/admin-report/admin-report.component';
 
 import { OurServiceComponent } from './component/our-service/our-service.component';
+
 import { AdminPostsRequestsComponent } from './component/admin-posts-requests/admin-posts-requests.component';
 
 import { CreateTourComponent } from './component/create-tour/create-tour.component';
@@ -35,7 +36,6 @@ import { CreateTourComponent } from './component/create-tour/create-tour.compone
 import { AdminAcceptTourGuidesComponent } from './component/admin-accept-tour-guides/admin-accept-tour-guides.component';
 import { AdminApplicantDetailsComponent } from './component/admin-applicant-details/admin-applicant-details.component';
 import { CustomerBookedToursComponent } from './component/customer-booked-tours/customer-booked-tours.component';
-
 
 const routes: Routes = [
   {path: "",component:HomeComponent},
@@ -89,6 +89,15 @@ const routes: Routes = [
 
   {path:"review" , component:ReviewCardComponent},
   {path:"report" , component:AdminReportComponent},
+
+
+  {path:"admin/posts", component:AdminPostsRequestsComponent},
+  {path:"admin/applicants", component:AdminAcceptTourGuidesComponent},
+  {path:"admin/applicants/:id", component:AdminApplicantDetailsComponent},
+
+  {path:"customer/tour", component:CustomerBookedToursComponent},
+
+  {path:"**" , component:ErrorComponent}
 
 ];
 
