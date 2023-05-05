@@ -44,7 +44,7 @@ export enum ApiPaths {
 
   bookDetails ="/BookTourDetails",
   dashStatistics ="/Get Statistics",
-  pics = "/AddPics"
+  pics = "/AddPics",
 
   booking = "/booking",
 }
