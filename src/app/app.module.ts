@@ -149,7 +149,7 @@ import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tou
     CustomerHeaderComponent,
 
     WishlistItemComponent,
-    CustomerWishlistComponent
+    CustomerWishlistComponent,
 
     CustomerBookedToursComponent,
     BookingSliderComponent,
@@ -166,8 +166,7 @@ import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tou
     HttpClientModule,
     NgbModule,
     CommonModule,
-    BrowserAnimationsModule
-    ,
+    BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 1000,
       positionClass: 'toast-bottom-right'
