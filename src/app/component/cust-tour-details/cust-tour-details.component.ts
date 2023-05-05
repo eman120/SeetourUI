@@ -17,6 +17,7 @@ export class CustTourDetailsComponent implements OnInit{
     }
     
     tourById:any;
+    tour:any;
   ngOnInit(): void {
     this.tourById = this.route.snapshot.params["id"];
     console.log(this.tourById);

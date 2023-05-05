@@ -1,2 +1,13 @@
 
-<app-tour-details [tourById] = "tourById"></app-tour-details>
+<app-tour-details [tourById] = "tourById" (tourSend)="tour = $event"></app-tour-details>
+
+<div>
+    <a routerLink="/tourguide/{{tour.tourguideId}}">Tour Guide Profile</a>
+</div>
+
+<div>
+    <a routerLink="/bookTour/{{tour.id}}" class="btn btn-primary rounded-pill me-2"
+      [ngClass]="{'disabled-link': tour.capacity - tour.bookings <= 0}">
+      Book Tour
+    </a>
+</div>

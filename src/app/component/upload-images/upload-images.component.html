@@ -6,11 +6,10 @@
     <div *ngIf="invalidExtension" class="text-danger">There is Invalid file extension. Allowed extensions are {{allowedExtensions.join(', ')}}</div>
   </div>
   <br>
-  <button type="submit" class="btn btn-primary" [disabled]="uploadForm.invalid|| fileSizeExceeded || invalidExtension">Submit</button> &nbsp; &nbsp;
+  <button type="submit" class="btn btn-primary" [disabled]="uploadForm.invalid|| fileSizeExceeded || invalidExtension">upload</button> &nbsp; &nbsp;
   <div class="spinner-border text-primary" role="status" *ngIf="!isUploaded && !flag">
     <span class="sr-only"></span>
     <br>
-    Uploading....
   </div>
   <div class="text-success" *ngIf="isUploaded">Images uploaded successfully</div>
 </form>
