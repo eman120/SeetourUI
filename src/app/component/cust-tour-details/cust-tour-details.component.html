@@ -1,13 +1,33 @@
 
 <app-tour-details [tourById] = "tourById" (tourSend)="tour = $event"></app-tour-details>
 
-<div>
-    <a routerLink="/tourguide/{{tour.tourguideId}}">Tour Guide Profile</a>
-</div>
+<div *ngIf="tour" class="container ps-5">
+  <div class="row">
+    <div class="col-6">
+      <div class="mb-3">
+        <a routerLink="/tourguide/{{tour.tourguideId}}">Tour Guide Profile</a>
+      </div>
+       
+      <form [formGroup]="askQuestion" (ngSubmit)="Ask()">
+        <label>Ask your question: </label>
+        <br>
+        <textarea formControlName="question" placeholder="Enter your question" ></textarea>
+        <br>
+        <input type="submit" name="submit" value="Ask" class="btn btn-primary rounded-pill me-2 book"/>
+      </form>
+    </div>
 
-<div>
-    <a routerLink="/bookTour/{{tour.id}}" class="btn btn-primary rounded-pill me-2"
-      [ngClass]="{'disabled-link': tour.capacity - tour.bookings <= 0}">
-      Book Tour
-    </a>
+    <div class="col-4 pt-5 mt-5">
+      <a routerLink="" class="btn btn-primary rounded-pill me-2">
+        See all questions & answers here
+      </a>
+    </div>
+
+    <div class="col-2 pt-5 mt-5">
+        <a routerLink="/bookTour/{{tour.id}}" class="btn btn-primary rounded-pill me-2"
+          [ngClass]="{'disabled-link': tour.capacity - tour.bookings <= 0}">
+          Book Tour
+        </a>
+    </div>
+  </div>
 </div>
