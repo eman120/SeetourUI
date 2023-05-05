@@ -25,7 +25,9 @@ export class TourDetailsComponent implements OnInit {
   dateFrom:any;
   tourAnswer:any;
   loading = true;
+  checkForTour :any;
 
+  Photos: any[]=[];
   @Input() tourById :number | undefined;
 
   constructor(
@@ -35,31 +37,29 @@ export class TourDetailsComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-      // const tourId = this.route.snapshot.paramMap.get('id');
+      // const tourById = this.route.snapshot.paramMap.get('id');
       console.log(this.tourById);
       this.toursService.GetTourById(this.tourById ? this.tourById.toString() : "").subscribe({
         next: (data) => {
           this.tour = data as TourDet;
+          this.checkForTour = this.tour.dateTo < new Date();
           console.log(this.tour);
           this.loading = false;
         },
         error: () => { }
       });
 
-      // const url = environment.baseUrl+ApiPaths.tour+ApiPaths.tourCard+'?id='+tourId
+      // this.Photos=this.Photos.map(photo=>{
+      //   return {
+      //     id:0,
+      //     url:"",
+      //     photoId:photo.id,
+      //     tourId:this.tourById
+          
+      //   };
+      // });
+    }
 
-    // this.http.get(url).subscribe({
-    //   next: (data) => {
-    //     console.log(data);
-    //     this.tour = data;
-    //   },
-    //   error: () => {
-    //     //this.router.navigateByUrl('/Error');
-    //   }
-    // });
-
-
-  }
 
   // submitForm() {
   //   // iterate over the questions and answers and send a separate request for each

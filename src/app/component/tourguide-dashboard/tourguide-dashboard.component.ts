@@ -1,34 +1,25 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { dashboard } from 'src/app/Interfaces/dashboard';
+import { DashboardstatisticsService } from 'src/app/Services/dashboardstatistics.service';
 
 @Component({
   selector: 'app-tourguide-dashboard',
   templateUrl: './tourguide-dashboard.component.html',
   styleUrls: ['./tourguide-dashboard.component.css']
 })
-export class TourguideDashboardComponent  {
+export class TourguideDashboardComponent implements OnInit{
+  statistics : any;
+  constructor(private statisticsService: DashboardstatisticsService) { }
 
-  //implements OnInit
-
-  
-  // tour: any;
-  // question:any;
-  // dateFrom:any;
-  // tourAnswer:any;
-
-  // constructor(
-  //   private http: HttpClient,
-  //   private route: ActivatedRoute
-  // ) { }
-
-  // ngOnInit(): void {
-  //   const tourId = this.route.snapshot.paramMap.get('id');
-
-  //   this.http.get(`https://localhost:7277/api/User/GetRole?username=`).subscribe(data => {
-  //   this.tour = data;
-  //   console.log(data);
-  //   });
-  //   //https://localhost:7277/api/Tour/Getbooks
-  // }
+  ngOnInit(): void {
+    this.statisticsService.getStatistics().subscribe({
+      next: (data) => {
+        console.log(data);
+        this.statistics = data as dashboard;
+      },
+      error: () => { }
+    });
+  }
 }

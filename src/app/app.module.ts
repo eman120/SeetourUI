@@ -81,6 +81,7 @@ import { CompressImagesButton } from './component/compress-images-button/compres
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tour-details.component';
+import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-details.component';
 
 @NgModule({
   declarations: [
@@ -149,13 +150,14 @@ import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tou
     CustomerHeaderComponent,
 
     WishlistItemComponent,
-    CustomerWishlistComponent
+    CustomerWishlistComponent,
 
     CustomerBookedToursComponent,
     BookingSliderComponent,
     CustomerReviewFormComponent,
     CompressImagesButton,
     CustTourDetailsComponent,
+    TgTourDetailsComponent
 
   ],
   imports: [
