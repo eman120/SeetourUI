@@ -70,13 +70,20 @@ import { AdminAcceptTourGuidesComponent } from './component/admin-accept-tour-gu
 import { AdminApplicantDetailsComponent } from './component/admin-applicant-details/admin-applicant-details.component';
 import { TourGuideDetailsComponent } from './component/tour-guide-details/tour-guide-details.component';
 import { CustomerHeaderComponent } from './component/customer-header/customer-header.component';
+
+import { WishlistItemComponent } from './component/wishlist-item/wishlist-item.component';
+import { CustomerWishlistComponent } from './component/customer-wishlist/customer-wishlist.component';
+
 import { CustomerBookedToursComponent } from './component/customer-booked-tours/customer-booked-tours.component';
 import { BookingSliderComponent } from './component/booking-slider/booking-slider.component';
 import { CustomerReviewFormComponent } from './component/customer-review-form/customer-review-form.component';
 import { CompressImagesButton } from './component/compress-images-button/compress-images-button.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { CustomerCancelBookingComponent } from './component/customer-cancel-booking/customer-cancel-booking.component';
+import { BookingCardComponent } from './component/booking-card/booking-card.component';
+import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tour-details.component';
+import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-details.component';
 
 @NgModule({
   declarations: [
@@ -143,10 +150,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdminApplicantDetailsComponent,
     TourGuideDetailsComponent,
     CustomerHeaderComponent,
+    WishlistItemComponent,
+    CustomerWishlistComponent,
+
     CustomerBookedToursComponent,
     BookingSliderComponent,
     CustomerReviewFormComponent,
     CompressImagesButton,
+    CustomerCancelBookingComponent,
+    BookingCardComponent,
+    CustTourDetailsComponent,
+    TgTourDetailsComponent
 
   ],
   imports: [

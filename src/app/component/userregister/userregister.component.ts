@@ -13,19 +13,19 @@ import { environment } from 'src/environments/environment';
 export class UserregisterComponent implements OnInit{
   constructor(private service:UserregisterService, private router: Router, private route: ActivatedRoute, private http: HttpClient) { }
 
-
+  UserPhoto : any;
   user: any;
   newReg: any;
 
-  UserRegister(username:any , file:any, name:any, email:any, phone:any, password:any, snn:any){
-    if (username && file && name && email && phone  && password && snn)
+  UserRegister(username:any , name:any, email:any, phone:any, password:any, snn:any){
+    if (username && name && email && phone  && password && snn)
     { // Check if all required fields have data
-      this.newReg = {username ,file ,name , email , phone , password ,snn};
+      this.newReg = {username  ,name , email , phone , password ,snn};
       
       const registrationDto = {
         userName: this.newReg.username.replace(/\s+/g, ''),
         password: this.newReg.password,
-        profilepic: this.newReg.file,
+        profilepic: this.UserPhoto,
         ssn: this.newReg.snn,
         fullName: this.newReg.name,
         phoneNumber: this.newReg.phone,

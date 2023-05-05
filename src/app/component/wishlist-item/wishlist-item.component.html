@@ -1,0 +1,23 @@
+<div *ngIf="oneWishlist">
+
+  
+  <div class="Cart-Items">
+    <div class="image-box">
+      <img src="{{oneWishlist.photoUrl}}"  />
+    </div>
+    <div class="about">
+      <h1 class="title">{{oneWishlist.title | truncate}}</h1>
+      <h3 class="subtitle">Capacity :{{oneWishlist.capacity}}</h3>
+      <!-- <img src="images/veg.png" style=" height:30px;" /> -->
+  
+    </div>
+    <div class="counter">
+      <button></button>
+    </div>
+    <div class="prices">
+      <div class="amount"><u>Price</u></div>
+      <div class="save">${{oneWishlist.price}}</div>
+    </div>
+  </div>
+  <hr>
+</div>

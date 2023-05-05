@@ -1,3 +1,4 @@
+import { CustomerWishlistComponent } from './component/customer-wishlist/customer-wishlist.component';
 import { NgModule, createComponent } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './component/home/home.component';
@@ -35,7 +36,12 @@ import { CreateTourComponent } from './component/create-tour/create-tour.compone
 
 import { AdminAcceptTourGuidesComponent } from './component/admin-accept-tour-guides/admin-accept-tour-guides.component';
 import { AdminApplicantDetailsComponent } from './component/admin-applicant-details/admin-applicant-details.component';
+
 import { CustomerBookedToursComponent } from './component/customer-booked-tours/customer-booked-tours.component';
+import { CustomerCancelBookingComponent } from './component/customer-cancel-booking/customer-cancel-booking.component';
+import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tour-details.component';
+import { DashboardStatisticsComponent } from './component/dashboard-statistics/dashboard-statistics.component';
+import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-details.component';
 
 const routes: Routes = [
   {path: "",component:HomeComponent},
@@ -48,14 +54,18 @@ const routes: Routes = [
   {path:"services" , component:DetailsComponent},
   {path:"header" , component:HeaderComponent},
 {path:"createtour",component:CreateTourComponent},
-  {path:"TourDetails/:id",component:TourDetailsComponent},
-  {path:"payment",component:PaymentComponent},
+  // {path:"tourdetails/:id",component:TourDetailsComponent},
+  {path:"custdetails/:id",component:CustTourDetailsComponent},
+  {path:"tour/:id",component:TgTourDetailsComponent},
+
+  {path:"payment/:id",component:PaymentComponent},
+
+
   {path:"payment-success",component:PaymentSuccessComponent},
   {path:"service",component:OurServiceComponent},
 
   {path:"tour/create" , component:CreateTourComponent},
 
-  {path:"tour/:id",component:TourDetailsComponent},
   {path:"bookTour/:id",component:BookTourComponent},
 
   {path:"tourguide/:id",component:TourGuideProfileComponent,
@@ -84,6 +94,7 @@ const routes: Routes = [
 
   {path:"userregister" , component:UserregisterComponent},
   {path:"dashboard" , component:TourguideDashboardComponent},
+  {path:"dashboardStas" , component:DashboardStatisticsComponent},
 
   {path:"tourguide" , component:TourGuideComponent},
 
@@ -95,7 +106,11 @@ const routes: Routes = [
   {path:"admin/applicants", component:AdminAcceptTourGuidesComponent},
   {path:"admin/applicants/:id", component:AdminApplicantDetailsComponent},
 
+
+  {path:"customerwishlist",component:CustomerWishlistComponent},
+
   {path:"customer/tour", component:CustomerBookedToursComponent},
+  {path:"customer/tour/cancel", component:CustomerCancelBookingComponent},
 
   {path:"**" , component:ErrorComponent}
 

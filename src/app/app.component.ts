@@ -35,7 +35,7 @@ export class AppComponent implements  OnInit {
     this.spinner();
     $('.back-to-top').css('display', 'none');
     this.user = this.authService.getInterface();
-    console.log(this.user);
+    // console.log(this.user);
 
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))

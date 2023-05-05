@@ -1,12 +1,13 @@
 <div>
-
   <app-header *ngIf="user === ''"></app-header>
+
   <app-customer-header *ngIf="user === 'Customer'"></app-customer-header>
+
 
   <!-- <app-header></app-header> -->
   <app-tourguide-header *ngIf="user === 'TourGuide'"></app-tourguide-header>
   <!-- <app-tourguide-header></app-tourguide-header> -->
- <app-admin-header *ngIf="user === 'Admin'"></app-admin-header>
+  <app-admin-header *ngIf="user === 'Admin'"></app-admin-header>
 </div>
 
 <!-- Spinner Start -->
@@ -17,17 +18,18 @@
 </div>
 <!-- Spinner End -->
 
- <div>
+<div>
   <router-outlet></router-outlet>
 </div>
 
 <div>
   <app-footer></app-footer>
-</div> 
+</div>
 
 <!-- Back to Top -->
- <div>
+<div>
   <a (click)="onBackToTopClick()" class="btn btn-lg btn-primary btn-lg back-to-top">
     <i class="bi bi-arrow-up"></i>
   </a>
+
 </div>
