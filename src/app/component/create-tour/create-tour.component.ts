@@ -37,7 +37,7 @@ export class CreateTourComponent implements OnInit {
 
     // Load the Google Maps API
     const script = document.createElement('script');
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBag-NFxNqdn3CM9L-WvNu8gegaNwHNDgY&callback=initMap';
+    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCJHJ_4hb90K86QL_uBrIy0iRZWNTLBHZE&callback=initMap';
     document.body.appendChild(script);
   }
 

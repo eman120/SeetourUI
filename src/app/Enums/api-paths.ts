@@ -13,6 +13,7 @@ export enum ApiPaths {
   tgPastTours = '/PastTours',
   tgReviews = '/Reviews',
   tourCard = '/CardDetails',
+
   tourDet = '/tourDet',
   createtour = '/',
 
@@ -23,6 +24,8 @@ export enum ApiPaths {
   adminTGApplicant = "/Applicant",
   custReg = "/CustomerRegistration",
   tgReg = "/TourGuideRegistration",
+
+  cuswishlist="/Wishlist",
 
   customer = "/customer",
   customerTour = "/tour",
@@ -42,3 +45,5 @@ export enum ApiPaths {
 
   booking = "/booking",
 }
+
+
