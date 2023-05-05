@@ -2,14 +2,18 @@
   border: none;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.logo{
+/* .logo{
   margin: 0 auto;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-bottom: 15px;
-}
+} */
 .IDphoto{
   margin-right: 10px;
+}
+
+.register{
+  margin-top: 8%;
 }

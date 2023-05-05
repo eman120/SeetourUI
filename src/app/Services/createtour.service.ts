@@ -10,6 +10,6 @@ export class CreatetourService {
   constructor(private readonly http:HttpClient) { }
 CreateTour(Tour:any)
 {
-  return this.http.post(environment.baseUrl+ApiPaths.createtour,Tour);
+  return this.http.post(environment.baseUrl+ApiPaths.tour,Tour);
 }
 }

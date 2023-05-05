@@ -1,0 +1,27 @@
+<div class="container-fluid bg-primary py-5 hero-header">
+  <div class="container py-5">
+    <div class="row justify-content-center py-5">
+      <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+
+        <h1 class="display-3 text-white animated slideInDown">Bookings</h1>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-secondary pb-5 bg-gradient">
+
+  <app-booking-slider [Bookings]="upcomingBookings"
+    DisplayTitle="Upcoming Tours" [CanCancel]="true">
+  </app-booking-slider>
+
+  <app-booking-slider [Bookings]="completedBookings"
+    DisplayTitle="Completed Tours" [CanReview]="true" [CanReport]="true">
+  </app-booking-slider>
+
+  <app-booking-slider [Bookings]="cancelledBookings"
+    DisplayTitle="Cancelled Bookings">
+  </app-booking-slider>
+
+</div>

@@ -30,9 +30,6 @@ import { AdminReviewComponent } from './component/admin-review/admin-review.comp
 import { PaymentSuccessComponent } from './component/payment-success/payment-success.component';
 import { QuestionAnswerComponent } from './component/question-answer/question-answer.component';
 
-
-
-
 import { TourCardComponent } from './component/tour-card/tour-card.component';
 import { StarRatingComponent } from './component/star-rating/star-rating.component';
 import { LikeButtonComponent } from './component/like-button/like-button.component';
@@ -56,6 +53,7 @@ import { SpinnerComponent } from './component/spinner/spinner.component';
 import { ToursFilterComponent } from './component/tours-filter/tours-filter.component';
 import { TGToursComponent } from './component/tgtours/tgtours.component';
 import { ToursSectionFilterableComponent } from './component/tours-section-filterable/tours-section-filterable.component';
+import { BookTourComponent } from './component/book-tour/book-tour.component';
 
 import { NgModule } from '@angular/core';
 import { AboutStartComponent } from './component/about-start/about-start.component';
@@ -64,7 +62,20 @@ import { OurServiceComponent } from './component/our-service/our-service.compone
 import { PopularDistnationsComponent } from './component/popular-distnations/popular-distnations.component';
 import { PaymentprocessHomeComponent } from './component/paymentprocess-home/paymentprocess-home.component';
 import { PartialServiceHomeComponent } from './component/partial-service-home/partial-service-home.component';
-import { DashboardStatisticsComponent } from './component/dashboard-statistics/dashboard-statistics.component';
+import { AdminPostsRequestsComponent } from './component/admin-posts-requests/admin-posts-requests.component';
+import { AdminPostRequestFormComponent } from './component/admin-post-request-form/admin-post-request-form.component';
+import { AdminHeaderComponent } from './component/admin-header/admin-header.component';
+import { AdminAcceptTourGuidesComponent } from './component/admin-accept-tour-guides/admin-accept-tour-guides.component';
+import { AdminApplicantDetailsComponent } from './component/admin-applicant-details/admin-applicant-details.component';
+import { TourGuideDetailsComponent } from './component/tour-guide-details/tour-guide-details.component';
+import { CustomerHeaderComponent } from './component/customer-header/customer-header.component';
+import { CustomerBookedToursComponent } from './component/customer-booked-tours/customer-booked-tours.component';
+import { BookingSliderComponent } from './component/booking-slider/booking-slider.component';
+import { CustomerReviewFormComponent } from './component/customer-review-form/customer-review-form.component';
+import { CompressImagesButton } from './component/compress-images-button/compress-images-button.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -81,14 +92,12 @@ import { DashboardStatisticsComponent } from './component/dashboard-statistics/d
     HeaderComponent,
     FooterComponent,
 
-
     AdminStatisticsComponent,
     TourDetailsComponent,
     PaymentComponent,
     AdminReviewComponent,
     PaymentSuccessComponent,
     QuestionAnswerComponent,
-
 
     UserregisterComponent,
     TourCardComponent,
@@ -116,13 +125,26 @@ import { DashboardStatisticsComponent } from './component/dashboard-statistics/d
     ToursFilterComponent,
     TGToursComponent,
     ToursSectionFilterableComponent,
+
+    BookTourComponent,
+
     AboutStartComponent,
     TeamDataComponent,
     OurServiceComponent,
     PopularDistnationsComponent,
     PaymentprocessHomeComponent,
     PartialServiceHomeComponent,
-    DashboardStatisticsComponent
+    AdminPostsRequestsComponent,
+    AdminPostRequestFormComponent,
+    AdminHeaderComponent,
+    AdminAcceptTourGuidesComponent,
+    AdminApplicantDetailsComponent,
+    TourGuideDetailsComponent,
+    CustomerHeaderComponent,
+    CustomerBookedToursComponent,
+    BookingSliderComponent,
+    CustomerReviewFormComponent,
+    CompressImagesButton,
 
   ],
   imports: [
@@ -132,7 +154,13 @@ import { DashboardStatisticsComponent } from './component/dashboard-statistics/d
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule,
-    CommonModule
+    CommonModule,
+    BrowserAnimationsModule
+    ,
+    ToastrModule.forRoot({
+      timeOut: 1000,
+      positionClass: 'toast-bottom-right'
+    })
   ],
   providers: [AuthInterceptorProviders,DatePipe],
   bootstrap: [AppComponent]
