@@ -75,6 +75,8 @@ import { CustomerReviewFormComponent } from './component/customer-review-form/cu
 import { CompressImagesButton } from './component/compress-images-button/compress-images-button.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CustomerCancelBookingComponent } from './component/customer-cancel-booking/customer-cancel-booking.component';
+import { BookingCardComponent } from './component/booking-card/booking-card.component';
 
 
 @NgModule({
@@ -145,6 +147,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BookingSliderComponent,
     CustomerReviewFormComponent,
     CompressImagesButton,
+    CustomerCancelBookingComponent,
+    BookingCardComponent,
 
   ],
   imports: [

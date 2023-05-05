@@ -15,6 +15,7 @@ export enum ApiPaths {
   tourCard = '/CardDetails',
   tourDet = '/tourDet',
   createtour = '/',
+
   admin = "/admin",
   adminTour = "/Tour",
   adminTourRequest = "/Request",
@@ -37,5 +38,7 @@ export enum ApiPaths {
   customerTourWish = "/Wish",
 
   bookTour = "/BookTour",
-  bookDetails ="/BookTourDetails"
+  bookDetails = "/BookTourDetails",
+
+  booking = "/booking",
 }

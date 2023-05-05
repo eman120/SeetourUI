@@ -35,6 +35,7 @@ import { CreateTourComponent } from './component/create-tour/create-tour.compone
 import { AdminAcceptTourGuidesComponent } from './component/admin-accept-tour-guides/admin-accept-tour-guides.component';
 import { AdminApplicantDetailsComponent } from './component/admin-applicant-details/admin-applicant-details.component';
 import { CustomerBookedToursComponent } from './component/customer-booked-tours/customer-booked-tours.component';
+import { CustomerCancelBookingComponent } from './component/customer-cancel-booking/customer-cancel-booking.component';
 
 
 const routes: Routes = [
@@ -95,6 +96,7 @@ const routes: Routes = [
   {path:"admin/applicants/:id", component:AdminApplicantDetailsComponent},
 
   {path:"customer/tour", component:CustomerBookedToursComponent},
+  {path:"customer/tour/cancel", component:CustomerCancelBookingComponent},
 
   {path:"**" , component:ErrorComponent}
 
