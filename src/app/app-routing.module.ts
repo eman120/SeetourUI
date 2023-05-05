@@ -40,6 +40,8 @@ import { AdminApplicantDetailsComponent } from './component/admin-applicant-deta
 import { CustomerBookedToursComponent } from './component/customer-booked-tours/customer-booked-tours.component';
 import { CustomerCancelBookingComponent } from './component/customer-cancel-booking/customer-cancel-booking.component';
 import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tour-details.component';
+import { DashboardStatisticsComponent } from './component/dashboard-statistics/dashboard-statistics.component';
+import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-details.component';
 
 const routes: Routes = [
   {path: "",component:HomeComponent},
@@ -52,18 +54,18 @@ const routes: Routes = [
   {path:"services" , component:DetailsComponent},
   {path:"header" , component:HeaderComponent},
 {path:"createtour",component:CreateTourComponent},
-  {path:"tourdetails/:id",component:TourDetailsComponent},
+  // {path:"tourdetails/:id",component:TourDetailsComponent},
+  {path:"custdetails/:id",component:CustTourDetailsComponent},
+  {path:"tour/:id",component:TgTourDetailsComponent},
 
   {path:"payment/:id",component:PaymentComponent},
 
-  {path:"custdetails/:id",component:CustTourDetailsComponent},
 
   {path:"payment-success",component:PaymentSuccessComponent},
   {path:"service",component:OurServiceComponent},
 
   {path:"tour/create" , component:CreateTourComponent},
 
-  {path:"tour/:id",component:TourDetailsComponent},
   {path:"bookTour/:id",component:BookTourComponent},
 
   {path:"tourguide/:id",component:TourGuideProfileComponent,
@@ -92,6 +94,7 @@ const routes: Routes = [
 
   {path:"userregister" , component:UserregisterComponent},
   {path:"dashboard" , component:TourguideDashboardComponent},
+  {path:"dashboardStas" , component:DashboardStatisticsComponent},
 
   {path:"tourguide" , component:TourGuideComponent},
 

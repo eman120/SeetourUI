@@ -88,9 +88,9 @@
 
         </div>
 
-        <div>
+        <div *ngIf="!checkForTour">
           <h5 for="">Add Photos</h5>
-          <button class="btn btn-primary">Add Photos</button>
+          <app-upload-images (PastToursUrls)="Photos=$event" [tourId]="tourById"></app-upload-images>
         </div>
         <div>
           <h5 for="transportation">Transportation</h5>

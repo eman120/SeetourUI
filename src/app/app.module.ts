@@ -83,6 +83,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomerCancelBookingComponent } from './component/customer-cancel-booking/customer-cancel-booking.component';
 import { BookingCardComponent } from './component/booking-card/booking-card.component';
 import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tour-details.component';
+import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-details.component';
 
 @NgModule({
   declarations: [
@@ -151,6 +152,7 @@ import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tou
     CustomerHeaderComponent,
     WishlistItemComponent,
     CustomerWishlistComponent,
+
     CustomerBookedToursComponent,
     BookingSliderComponent,
     CustomerReviewFormComponent,
@@ -158,6 +160,7 @@ import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tou
     CustomerCancelBookingComponent,
     BookingCardComponent,
     CustTourDetailsComponent,
+    TgTourDetailsComponent
 
   ],
   imports: [

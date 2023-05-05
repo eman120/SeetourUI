@@ -30,9 +30,9 @@ export class RegisterComponent implements OnInit {
     console.log(this.Photo);
   }
 
-  Register(username : any ,name : any, email : any, phone : any, password :any, snn : any, bankAccount:any , address:any, AccountNumber:any, SwiftCode:any, Tax :any) {
-    if (username && name && email && phone && password && snn && bankAccount && address && AccountNumber && SwiftCode && Tax) { // Check if all required fields have data
-      this.newReg = {username ,  name , email , phone , password , snn , bankAccount , address , AccountNumber , SwiftCode , Tax};
+  Register(username : any ,name : any, email : any, phone : any, password :any, snn : any, bankAccount:any , address:any, AccountNumber:any, SwiftCode:any, Tax :any, file:any) {
+    if (username && name && email && phone && password && snn && bankAccount && address && AccountNumber && SwiftCode && Tax && file) { // Check if all required fields have data
+      this.newReg = {username ,  name , email , phone , password , snn , bankAccount , address , AccountNumber , SwiftCode , Tax , file};
       console.log('Registration...');
       const registrationDto = {
         userName: this.newReg.username.replace(/\s+/g, ''),
@@ -45,7 +45,7 @@ export class RegisterComponent implements OnInit {
         recipientBankSwiftCode: this.newReg.SwiftCode,
         recipientNameAndAddress: this.newReg.address,
         taxRegistrationNumber :this.newReg.Tax,
-        idCardPhoto: this.PhotoID,
+        idCardPhoto: this.newReg.file,
         phoneNumber: this.newReg.phone,
         email: this.newReg.email
       };
