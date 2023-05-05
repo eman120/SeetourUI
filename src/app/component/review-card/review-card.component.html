@@ -1,4 +1,5 @@
 <div *ngIf="review" class="container-md">
+
   <app-gallery *ngIf="review.photos" [showGallery]="showGallery"
   [photos]="review.photos" (closed)="closeGallery()"></app-gallery>
 
@@ -19,7 +20,7 @@
 
     </div>
 
-    <div *ngIf="photos.length" class="image-grid col-12 col-md-3 gap-1 gap-md-2" (click)="openGallery()">
+    <div *ngIf="photos.length" class="image-grid col-12 col-md-3 gap-1 gap-md-2 p-2 bg-light rounded" (click)="openGallery()">
       <div class="image-box cursor-pointer" *ngFor="let photo of photos">
         <img [src]="photo">
       </div>

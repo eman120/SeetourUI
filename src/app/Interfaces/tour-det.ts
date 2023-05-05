@@ -2,20 +2,17 @@ export interface TourDet {
     id: number,
     photos: string[],
     locationTo: string,
+    locationFrom: string,
+    tourguideId: string,
     price: number,
     likes: number,
-    isLiked: boolean,
     bookings: number,
     capacity: number,
-    tourGuideId: string,
-    tourGuideName: string,
-    tourGuideRating: number,
-    tourGuideRatingCount: number,
     dateFrom: string,
     dateTo: string,
-    category: string,
     title: string,
-    addedToWishList: boolean,
-    hasTransportation: boolean
+    hasTransportation: boolean,
+    description:string,
+    reviews: string[]
   }
   

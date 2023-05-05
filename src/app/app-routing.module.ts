@@ -38,7 +38,11 @@ import { AdminAcceptTourGuidesComponent } from './component/admin-accept-tour-gu
 import { AdminApplicantDetailsComponent } from './component/admin-applicant-details/admin-applicant-details.component';
 
 import { CustomerBookedToursComponent } from './component/customer-booked-tours/customer-booked-tours.component';
+import { CustomerCancelBookingComponent } from './component/customer-cancel-booking/customer-cancel-booking.component';
 import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tour-details.component';
+import { DashboardStatisticsComponent } from './component/dashboard-statistics/dashboard-statistics.component';
+import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-details.component';
+import { WishlistItemComponent } from './component/wishlist-item/wishlist-item.component';
 
 const routes: Routes = [
   {path: "",component:HomeComponent},
@@ -51,15 +55,18 @@ const routes: Routes = [
   {path:"services" , component:DetailsComponent},
   {path:"header" , component:HeaderComponent},
 {path:"createtour",component:CreateTourComponent},
-  {path:"tourdetails/:id",component:TourDetailsComponent},
+  // {path:"tourdetails/:id",component:TourDetailsComponent},
   {path:"custdetails/:id",component:CustTourDetailsComponent},
-  {path:"payment",component:PaymentComponent},
+  {path:"tour/:id",component:TgTourDetailsComponent},
+
+  {path:"payment/:id",component:PaymentComponent},
+
+
   {path:"payment-success",component:PaymentSuccessComponent},
   {path:"service",component:OurServiceComponent},
 
   {path:"tour/create" , component:CreateTourComponent},
 
-  {path:"tour/:id",component:TourDetailsComponent},
   {path:"bookTour/:id",component:BookTourComponent},
 
   {path:"tourguide/:id",component:TourGuideProfileComponent,
@@ -88,6 +95,7 @@ const routes: Routes = [
 
   {path:"userregister" , component:UserregisterComponent},
   {path:"dashboard" , component:TourguideDashboardComponent},
+  {path:"dashboardStas" , component:DashboardStatisticsComponent},
 
   {path:"tourguide" , component:TourGuideComponent},
 
@@ -103,6 +111,8 @@ const routes: Routes = [
   {path:"customerwishlist",component:CustomerWishlistComponent},
 
   {path:"customer/tour", component:CustomerBookedToursComponent},
+  {path:"customer/tour/cancel", component:CustomerCancelBookingComponent},
+  {path:"wishlist", component:WishlistItemComponent},
 
   {path:"**" , component:ErrorComponent}
 

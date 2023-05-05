@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
@@ -6,6 +6,7 @@ import { ApiPaths } from 'src/app/Enums/api-paths';
 import { TourDet } from 'src/app/Interfaces/tour-det';
 import { ToursService } from 'src/app/Services/tours.service';
 import { Title } from '@angular/platform-browser';
+import { ReviewCard } from 'src/app/Interfaces/review-card';
 
 @Component({
   selector: 'app-tour-details',
@@ -19,47 +20,51 @@ export class TourDetailsComponent implements OnInit {
   //   console.log(this.tour);
   //   return this.tour ? `/tour/${this.tour.id}` : '#';
   // }
-
+  Math = Math;
   tour: any;
   question:any;
   dateFrom:any;
   tourAnswer:any;
   loading = true;
+  checkForTour :any;
 
+  // reviews: ReviewCard[] = [];
   @Input() tourById :number | undefined;
+  @Output() tourSend = new EventEmitter();
 
   constructor(
     private toursService: ToursService,
     private titleService:Title,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private http: HttpClient
     ) {}
 
     ngOnInit(): void {
-      // const tourId = this.route.snapshot.paramMap.get('id');
+      // const tourById = this.route.snapshot.paramMap.get('id');
       console.log(this.tourById);
       this.toursService.GetTourById(this.tourById ? this.tourById.toString() : "").subscribe({
         next: (data) => {
           this.tour = data as TourDet;
+          this.tourSend.emit(this.tour);          
+          // this.reviews = this.tour.reviews as ReviewCard[];
           console.log(this.tour);
           this.loading = false;
         },
         error: () => { }
       });
+      
+      // this.Photos=this.Photos.map(photo=>{
+        //   return {
+          //     id:0,
+          //     url:"",
+          //     photoId:photo.id,
+          //     tourId:this.tourById
+          
+      //   };
+      // });
+    }
+    
 
-      // const url = environment.baseUrl+ApiPaths.tour+ApiPaths.tourCard+'?id='+tourId
-
-    // this.http.get(url).subscribe({
-    //   next: (data) => {
-    //     console.log(data);
-    //     this.tour = data;
-    //   },
-    //   error: () => {
-    //     //this.router.navigateByUrl('/Error');
-    //   }
-    // });
-
-
-  }
 
   // submitForm() {
   //   // iterate over the questions and answers and send a separate request for each

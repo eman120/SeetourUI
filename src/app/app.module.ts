@@ -80,7 +80,10 @@ import { CustomerReviewFormComponent } from './component/customer-review-form/cu
 import { CompressImagesButton } from './component/compress-images-button/compress-images-button.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CustomerCancelBookingComponent } from './component/customer-cancel-booking/customer-cancel-booking.component';
+import { BookingCardComponent } from './component/booking-card/booking-card.component';
 import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tour-details.component';
+import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-details.component';
 
 @NgModule({
   declarations: [
@@ -147,7 +150,6 @@ import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tou
     AdminApplicantDetailsComponent,
     TourGuideDetailsComponent,
     CustomerHeaderComponent,
-
     WishlistItemComponent,
     CustomerWishlistComponent,
 
@@ -155,7 +157,10 @@ import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tou
     BookingSliderComponent,
     CustomerReviewFormComponent,
     CompressImagesButton,
+    CustomerCancelBookingComponent,
+    BookingCardComponent,
     CustTourDetailsComponent,
+    TgTourDetailsComponent
 
   ],
   imports: [

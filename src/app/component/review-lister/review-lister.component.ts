@@ -7,7 +7,7 @@ import { ReviewCard } from 'src/app/Interfaces/review-card';
 })
 export class ReviewListerComponent {
   @Input() Reviews: ReviewCard[] | undefined;
-  @Input() Title: string = "";
+  @Input() SliderTitle: string = "";
   @Input() MoreText: string = "";
   @Input() MoreLink: string = "";
   @Input() MoreOutlet: string = "primary";

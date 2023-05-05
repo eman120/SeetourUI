@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { ToursService } from 'src/app/Services/tours.service';
@@ -8,7 +8,7 @@ import { ToursService } from 'src/app/Services/tours.service';
   templateUrl: './cust-tour-details.component.html',
   styleUrls: ['./cust-tour-details.component.css']
 })
-export class CustTourDetailsComponent {
+export class CustTourDetailsComponent implements OnInit{
   constructor(
     private toursService: ToursService,
     private titleService:Title,
@@ -17,6 +17,7 @@ export class CustTourDetailsComponent {
     }
     
     tourById:any;
+    tour:any;
   ngOnInit(): void {
     this.tourById = this.route.snapshot.params["id"];
     console.log(this.tourById);

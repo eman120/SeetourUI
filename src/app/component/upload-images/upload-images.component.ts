@@ -1,6 +1,8 @@
-import { Component, EventEmitter,Output } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, EventEmitter,Input,Output } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { ApiPaths } from 'src/app/Enums/api-paths';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-upload-images',
@@ -8,10 +10,13 @@ import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn,
   styleUrls: ['./upload-images.component.css']
 })
 export class UploadImagesComponent {
+  @Input() tourId :number| undefined;
   selectedFiles: File[] = [];
   uploadedUrls: any[] = [];
   @Output() imagesUrls = new EventEmitter<any>();
+  @Output() PastToursUrls = new EventEmitter<any>();
   tourPhoto:any[]=[];
+  pastPhoto:any[]=[];
   readonly maxFileSize = 1; // MB
   readonly allowedExtensions = [".jpg", ".jpeg", ".png", ".gif", ".bmp"];
   uploadForm: FormGroup;
@@ -77,17 +82,36 @@ export class UploadImagesComponent {
         this.uploadedUrls = result;
 
         //Mapping the array to TourPhoto array
-        this.tourPhoto=this.uploadedUrls.map(photo=>{
-          return {
-            id:0,
-            url:"",
-            photoId:photo.id,
-            tourId:0
-            
-          };
-        });
-        this.isUploaded=true;
-        this.imagesUrls.emit(this.tourPhoto);
+        if(this.tourId){
+          this.pastPhoto=this.uploadedUrls.map(photo=>{
+            return {
+              id:0,
+              // url:"",
+              photoId:photo.id,
+              tourId:Number(this.tourId)
+              
+            };
+          });
+          this.isUploaded=true;
+          this.PastToursUrls.emit(this.pastPhoto);
+          console.log(this.tourId);
+          console.log(this.pastPhoto);
+          
+        }
+         else{
+          this.tourPhoto=this.uploadedUrls.map(photo=>{
+            return {
+              id:0,
+              url:"",
+              photoId:photo.id,
+              tourId:0
+              
+            };
+          });
+          this.isUploaded=true;
+          this.imagesUrls.emit(this.tourPhoto);
+        }
+
         console.log(this.uploadedUrls);
        // console.log(this.tourPhoto);
 

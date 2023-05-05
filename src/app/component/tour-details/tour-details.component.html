@@ -1,10 +1,10 @@
 <div class="container-fluid bg-primary py-5 mb-5 hero-header">
   <div class="container py-5">
-      <div class="row justify-content-center py-5">
-          <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
-              <h1 class="display-3 text-white animated slideInDown">Tour Details</h1>
-          </div>
+    <div class="row justify-content-center py-5">
+      <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+        <h1 class="display-3 text-white animated slideInDown">Tour Details</h1>
       </div>
+    </div>
   </div>
 </div>
 
@@ -28,85 +28,105 @@
 
     <div class="row mt-5">
       <div class="col-md-6">
-        <!--<h5>Photos</h5>
-        <div *ngFor="let photo of photos">
-          <img src="{{photo.url}}" alt="{{photo.alt}}" class="img-fluid">
-        </div> -->
         <ngb-carousel class="rounded-top overflow-hidden" [interval]="0">
-          <ng-template ngbSlide *ngFor="let photo of tour.tourCard.photos">
+          <ng-template ngbSlide *ngFor="let photo of tour.photos">
             <!-- slide content -->
             <div class="carousel-item active">
-              <img src="{{photo}}" class="d-block w-100">
+              <img src="{{photo}}" class="d-block w-100"  style="height: 700px;">
             </div>
           </ng-template>
         </ngb-carousel>
       </div>
       <div class="col-md-6">
         <h4>Tour Information</h4>
-        <div>
+        <div class="mb-3">
           <h5>Description : </h5>
-          <p *ngIf="tour.description" style="height: 200px; overflow-y: scroll; border: 1px solid black; margin-bottom: 10px; padding: 5px;"> {{ tour.description}}</p>
+          <div class="card flex-md-row align-items-start">
+            <div class="p-3 d-flex flex-column align-self-stretch">
+              <p *ngIf="tour.description"> {{tour.description}}</p>
+              <!-- style="height: 200px; overflow-y: scroll; border: 1px solid black; margin-bottom: 10px; padding: 5px;" -->
+            </div>
+          </div>
+        </div>
+        <div>
+          <h5>Meet Point : </h5>
+          <span *ngIf="tour.locationFrom"> {{ tour.locationFrom}}</span>
         </div>
         <div>
           <h5>Destination : </h5>
-          <span *ngIf="tour.tourCard.locationTo"> {{ tour.tourCard.locationTo}}</span>
+          <span *ngIf="tour.locationTo"> {{ tour.locationTo}}</span>
         </div>
         <div>
-          <h5 *ngIf="tour.tourCard.dateFrom">Date From : </h5>
-          <span>{{ tour.tourCard.dateFrom }}</span>
+          <h5 *ngIf="tour.dateFrom">Date From : </h5>
+          <span>{{ tour.dateFrom }}</span>
         </div>
         <div>
-          <h5 *ngIf="tour.tourCard.dateTo">Date To : </h5>
-          <span>{{ tour.tourCard.dateTo }}</span>
+          <h5 *ngIf="tour.dateTo">Date To : </h5>
+          <span>{{ tour.dateTo }}</span>
         </div>
         <div>
           <h5 for="price">Price :</h5>
-          <span *ngIf="tour.tourCard.price"> {{ tour.tourCard.price}}$</span>
+          <span *ngIf="tour.price"> {{ tour.price}}$</span>
         </div>
         <div>
           <h5 for="likescounts">Likes : </h5>
-            <span> {{ tour.tourCard.likes }}</span>
-            <i class="fa-solid fa-thumbs-up like"></i>
+          <span> {{ tour.likes }}</span>
+          <i class="fa-solid fa-thumbs-up like"></i>
         </div>
         <div>
           <h5 for="available-seats">Available Seats</h5>
           <div class="progress">
-            <div class="progress-bar" role="progressbar" [style.width.%]="(tour.tourCard.bookings / tour.tourCard.capacity ) * 100" [attr.aria-valuenow]="tour.tourCard.bookings" aria-valuemin="0" [attr.aria-valuemax]="tour.tourCard.capacity"></div>
+            <div class="progress-bar" role="progressbar" [style.width.%]="(tour.bookings / tour.capacity ) * 100"
+              [attr.aria-valuenow]="tour.bookings" aria-valuemin="0" [attr.aria-valuemax]="tour.capacity"></div>
           </div>
         </div>
-
-        <div>
-          <a href="">Tour Guide Profile</a>
-        </div>
-        <div>
-          <h5>Reviews : </h5>
-          <div class="review-list" style="height: 200px; overflow-y: scroll; border: 1px solid black; margin-bottom: 10px; padding: 5px;">
-            <div *ngFor="let review of tour.reviews; let i = index">
-              <p>{{ i+1 }}. {{ review }}</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div>
-          <h5 for="">Add Photos</h5>
-          <button class="btn btn-primary">Add Photos</button>
-        </div>
+        
         <div>
           <h5 for="transportation">Transportation</h5>
           <input type="checkbox" name="transportation" id="transportation" [checked]="tour.hasTransportation" disabled>
         </div>
-        <div>
-          <a routerLink="/bookTour/{{tour.tourCard.id}}" class="btn btn-primary rounded-pill me-2" [ngClass]="{'disabled-link': tour.tourCard.capacity - tour.tourCard.bookings <= 0}">
-            Book Tour
-          </a>
-        </div>
 
+        
+        <!-- <div class="m-3">
+          <h5>Reviews : </h5>
+          <div class="card flex-md-row align-items-start">
+            <div class="p-3 d-flex flex-column align-self-stretch">
+              <div *ngFor="let rating of tour.rating; let i = index">
+                <p>{{ i+1 }}. {{ tour.reviews[i] }}</p>
+                <star-rating [rating]="rating"></star-rating>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        
       </div>
 
-    </div>
+      <div class="m-3">
+        <h5>Reviews : </h5>
+        <div class="card flex-md-row align-items-start">
+          <div class="p-3 d-flex flex-column align-self-stretch col-md-6">
+            <ng-container *ngFor="let review of tour.reviews.slice(0, Math.ceil(tour.reviews.length / 2)-1); let i = index">
+              <p>{{ i+1 }}. {{ review }}</p>
+              <star-rating [rating]="tour.rating[i]"></star-rating>
+              <hr>
+              <br>
+            </ng-container>
+          </div>
+          <div class="p-3 d-flex flex-column align-self-stretch col-md-6">
+            <ng-container *ngFor="let review of tour.reviews.slice(Math.ceil(tour.reviews.length / 2)); let i = index">
+              <p>{{ i + Math.ceil(tour.reviews.length / 2) }}. {{ review }}</p>
+              <star-rating [rating]="tour.rating[i + Math.ceil(tour.reviews.length / 2)]"></star-rating>
+              <hr>
+              <br>
+            </ng-container>
+          </div>
+        </div>
+      </div>        
 
   </div>
+
+</div>
 </div>
 
 <div *ngIf="loading" class="load">
