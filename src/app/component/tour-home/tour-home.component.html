@@ -8,7 +8,11 @@
   </div>
 </div>
 
-<app-tours-section-filterable sectionTitle="Upcoming Tours" [tours]="tours"
-(FilterValue)="Filter($event)">
+<div class="container-fluid bg-secondary pt-4 pb-5 bg-gradient">
 
-</app-tours-section-filterable>
+    <app-tours-section-filterable sectionTitle="Upcoming Tours" [tours]="tours"
+    (FilterValue)="Filter($event)" class="col-lg-10 mx-auto">
+
+    </app-tours-section-filterable>
+
+</div>
