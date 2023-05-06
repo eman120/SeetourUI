@@ -171,8 +171,7 @@ import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-deta
     HttpClientModule,
     NgbModule,
     CommonModule,
-    BrowserAnimationsModule
-    ,
+    BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 1000,
       positionClass: 'toast-bottom-right'
