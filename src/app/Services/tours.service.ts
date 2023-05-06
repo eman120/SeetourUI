@@ -29,7 +29,7 @@ export class ToursService {
       return this.FilterTours(url, toursFilter);
   }
 
-  private FilterTours(url: string, toursFilter: FormGroup<any> | undefined) {
+  public FilterTours(url: string, toursFilter: FormGroup<any> | undefined) {
 
     if (toursFilter)
     {

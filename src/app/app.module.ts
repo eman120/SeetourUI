@@ -89,6 +89,7 @@ import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-deta
 import { ToursSorterComponent } from './component/tours-sorter/tours-sorter.component';
 
 import { FavoriteButtonComponent } from './component/favorite-button/favorite-button.component';
+import { CustomerFavoriteToursComponent } from './component/customer-favorite-tours/customer-favorite-tours.component';
 
 
 @NgModule({
@@ -169,6 +170,7 @@ import { FavoriteButtonComponent } from './component/favorite-button/favorite-bu
     TgTourDetailsComponent,
     ToursSorterComponent,
     FavoriteButtonComponent,
+    CustomerFavoriteToursComponent,
   ],
   imports: [
     BrowserModule,
