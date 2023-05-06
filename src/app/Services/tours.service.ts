@@ -19,14 +19,20 @@ export class ToursService {
     private readonly FGQuery: FormGroupQueryService) {
     }
 
-  GetTours(isCompleted: boolean,
-    toursFilter: FormGroup<any>|undefined = undefined) {
+    GetTours(isCompleted: boolean,
+      toursFilter: FormGroup<any>|undefined = undefined) {
 
-      let url = this.urlBase+ApiPaths.tour;
+        let url = this.urlBase+ApiPaths.tour;
 
-      url += isCompleted? ApiPaths.tourPast : ApiPaths.tourUpcoming;
+        url += isCompleted? ApiPaths.tourPast : ApiPaths.tourUpcoming;
 
-      return this.FilterTours(url, toursFilter);
+        return this.FilterTours(url, toursFilter);
+  }
+
+  getTrending() {
+    let url = this.urlBase+ApiPaths.tour+ApiPaths.tourTrending;
+
+    return this.client.get(url);
   }
 
   public FilterTours(url: string, toursFilter: FormGroup<any> | undefined) {
@@ -66,7 +72,7 @@ export class ToursService {
 
   GetTourById(tourId: string) {
     const tourIdNum = Number(tourId);
-    let url = this.urlBase+ApiPaths.tour+ApiPaths.tourDet+'?id='+tourIdNum;
+    let url = this.urlBase+ApiPaths.tourDet+'?id='+tourIdNum;
     return this.client.get(url);
   }
 

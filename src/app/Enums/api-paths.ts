@@ -47,7 +47,8 @@ export enum ApiPaths {
   pics = "/AddPics",
 
   booking = "/booking",
-  favorites = "/favorites"
+  favorites = "/favorites",
+  tourTrending = "/trending"
 }
 
 
