@@ -12,7 +12,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class ToursService {
 
   urlBase: string = environment.baseUrl;
-  queryParams: Params = {};
+  queryParams: URLSearchParams = new URLSearchParams;
 
   constructor(private readonly client : HttpClient,
     private route: ActivatedRoute,
@@ -37,24 +37,20 @@ export class ToursService {
 
   public FilterTours(url: string, toursFilter: FormGroup<any> | undefined) {
 
+    this.queryParams = new URLSearchParams(this.route.snapshot.queryParams);
+
     if (toursFilter)
     {
-      this.queryParams = this.FGQuery.GetQuery(toursFilter);
+      Object.entries(toursFilter.value).forEach ((entry) => {
+        if (entry[1])
+          this.queryParams.append(entry[0], entry[1] as string);
+      });
     }
-    else {
-      this.queryParams = this.route.snapshot.queryParams;
-    }
 
-    this.queryParams = this.queryParams;
-
-    const filtered = Object.keys(this.queryParams)
-      .filter(key => !key.startsWith('Sort'))
-      .reduce((obj:any, key) => {
-        obj[key] = this.queryParams[key];
-        return obj;
-      }, {});
-
-    this.queryParams = new URLSearchParams(filtered);
+    this.queryParams.forEach((key, value) => {
+      if (key.startsWith('Sort'))
+        this.queryParams.delete(key);
+    });
 
     url += '?' + this.queryParams.toString();
     return  this.client.get(url);
