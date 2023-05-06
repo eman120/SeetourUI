@@ -12,19 +12,17 @@ import { DetailsComponent } from './component/details/details.component';
 import { HeaderComponent } from './component/header/header.component';
 import { TourDetailsComponent } from './component/tour-details/tour-details.component';
 import { UserregisterComponent } from './component/userregister/userregister.component';
+
 import { AdminStatisticsComponent } from './component/admin-statistics/admin-statistics.component';
 import { PaymentComponent } from './component/payment/payment.component';
 import { PaymentSuccessComponent } from './component/payment-success/payment-success.component';
+
 import { TourGuideProfileComponent } from './component/tour-guide-profile/tour-guide-profile.component';
 import { TourGuideComponent } from './component/tour-guide/tour-guide.component';
 import { TourguideDashboardComponent } from './component/tourguide-dashboard/tourguide-dashboard.component';
 import { TGReviewsComponent } from './component/tgreviews/tgreviews.component';
 import { TGOverviewComponent } from './component/tgoverview/tgoverview.component';
 import { TGToursComponent } from './component/tgtours/tgtours.component';
-
-import { QuestionAnswerComponent } from './component/question-answer/question-answer.component';
-import { AdminReviewComponent } from './component/admin-review/admin-review.component';
-
 import { BookTourComponent } from './component/book-tour/book-tour.component';
 
 import { ReviewCardComponent } from './component/review-card/review-card.component';
@@ -43,7 +41,6 @@ import { CustomerBookedToursComponent } from './component/customer-booked-tours/
 import { CustomerCancelBookingComponent } from './component/customer-cancel-booking/customer-cancel-booking.component';
 import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tour-details.component';
 import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-details.component';
-import { CustomerFavoriteToursComponent } from './component/customer-favorite-tours/customer-favorite-tours.component';
 import { WishlistItemComponent } from './component/wishlist-item/wishlist-item.component';
 import { TourQuestionsAnswersComponent } from './component/tour-questions-answers/tour-questions-answers.component';
 
@@ -65,8 +62,6 @@ const routes: Routes = [
 
   {path:"payment/:id",component:PaymentComponent},
 
-  {path:"TourDetails",component:TourDetailsComponent},
-  {path:"payment/:bookedTourId",component:PaymentComponent},
 
   {path:"payment-success",component:PaymentSuccessComponent},
   {path:"service",component:OurServiceComponent},
@@ -102,17 +97,11 @@ const routes: Routes = [
   {path:"userregister" , component:UserregisterComponent},
   {path:"dashboard" , component:TourguideDashboardComponent},
 
-  {path:"question-answer",component:QuestionAnswerComponent},
-  {path:"admin-statistics",component:AdminStatisticsComponent},
-  {path:"admin-review",component:AdminReviewComponent},
-
-  {path:"dashboardStas" , component:DashboardStatisticsComponent},
+  {path:"tourguide" , component:TourGuideComponent},
 
 
-  //{path:"tourguide" , component:TourGuideComponent},
-
-  //{path:"review" , component:ReviewCardComponent},
-  //{path:"report" , component:AdminReportComponent},
+  {path:"review" , component:ReviewCardComponent},
+  {path:"report" , component:AdminReportComponent},
 
 
   {path:"admin/posts", component:AdminPostsRequestsComponent},
@@ -124,9 +113,7 @@ const routes: Routes = [
 
   {path:"customer/tour", component:CustomerBookedToursComponent},
   {path:"customer/tour/cancel", component:CustomerCancelBookingComponent},
-  {path:"favorites", component:CustomerFavoriteToursComponent},
   {path:"wishlist", component:WishlistItemComponent},
-
 
   {path:"**" , component:ErrorComponent}
 

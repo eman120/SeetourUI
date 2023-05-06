@@ -19,7 +19,7 @@ export class ToursFilterComponent {
   }
 
   filterForm: FormGroup<any> = new FormGroup({});
-  @Output() FilterValue = new EventEmitter<FormGroup>();
+  @Output() FilterValue = new EventEmitter();
   categories: string[] = [];
 
   constructor(private formBuilder: FormBuilder,

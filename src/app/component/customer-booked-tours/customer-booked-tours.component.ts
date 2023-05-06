@@ -14,7 +14,6 @@ export class CustomerBookedToursComponent {
   upcomingBookings: BookedTour[] | undefined;
   completedBookings: BookedTour[] | undefined;
   cancelledBookings: BookedTour[] | undefined;
-  cartBookings: BookedTour[] | undefined;
 
   constructor(private customer: CustomerService, title:Title,
     private router: Router) {
@@ -24,15 +23,6 @@ export class CustomerBookedToursComponent {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this.customer.GetIsCompletedBookings(ApiPaths.customerTourCart).subscribe({
-      next: (data) => {
-        this.cartBookings = data as BookedTour[];
-      },
-      error: () => {
-        this.router.navigateByUrl('error');
-      }
-    });
-
     this.customer.GetIsCompletedBookings(ApiPaths.customerTourUpcoming).subscribe({
       next: (data) => {
         this.upcomingBookings = data as BookedTour[];

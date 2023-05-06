@@ -5,12 +5,9 @@
 
         <ng-container *ngIf="tourGuide; else elseTemplate">
 
-          <div class="col-4 col-md-3 mb-3 mx-auto image-box">
-
-            <img [src]="tourGuide.profilePic" class="rounded-circle border border-3 border-white">
-
-            <app-favorite-button *ngIf="interface == 'Customer'" [tourguideId]="tourGuide.id"
-            class="position-absolute end-0 bottom-0"></app-favorite-button>
+          <div class="col-4 col-md-3 mb-3 mx-auto image-box rounded-circle
+          border border-3 border-white overflow-hidden">
+            <img [src]="tourGuide.profilePic" class="rounded-circle">
           </div>
 
           <a [routerLink]="[{ outlets: { TGProfile: [''] } }]" class="btn d-block">

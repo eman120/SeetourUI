@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { BookedTour } from 'src/app/Interfaces/booked-tour';
-import { BookingService } from 'src/app/Services/booking.service';
 
 @Component({
   selector: 'app-booking-card',
@@ -10,7 +9,6 @@ import { BookingService } from 'src/app/Services/booking.service';
 })
 export class BookingCardComponent {
 
-  @Input() CanRemove: boolean | undefined;
   @Input() CanReview: boolean | undefined;
   @Input() CanCancel: boolean | undefined;
   @Input() CanReport: boolean | undefined;
@@ -18,13 +16,9 @@ export class BookingCardComponent {
   @Input() DisplayPhotos: boolean = true;
 
   @Input() Booking: BookedTour | undefined;
-
   @Output() OnReview: EventEmitter<void> = new EventEmitter<void>();
-  @Output() OnRemove: EventEmitter<void> = new EventEmitter<void>();
 
   get booking() {
-
-    console.log(this.Booking)
 
     let display = this.Booking;
 
@@ -38,29 +32,13 @@ export class BookingCardComponent {
     return display;
   }
 
-  constructor(private router: Router, private bookingService: BookingService) { }
+  constructor(private router: Router) { }
 
   Review() {
     this.OnReview.emit();
   }
 
-  CancelBooking() {
-    this.router.navigate([`customer/tour/cancel`], {state: this.Booking});
-  }
-
-  RemoveBooking() {
-    if (this.booking)
-      this.bookingService.CancelBooking(this.booking.id).subscribe({
-        next: () => {
-          this.OnRemove.emit();
-        },
-        error: () => {
-          alert("Something went wrong, please try again");
-        }
-      })
-  }
-
-  Checkout() {
-    this.router.navigate(['/payment/' + this.booking?.id]);
+  CancelBooking(Booking: BookedTour) {
+    this.router.navigate([`customer/tour/cancel`], {state: Booking});
   }
 }
