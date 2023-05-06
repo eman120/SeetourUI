@@ -43,6 +43,7 @@ export class TgTourDetailsComponent implements OnInit{
       response => {
         console.log('Answer submitted successfully');
         console.log(this.Photos);
+        this.Photos = [];
       }, error => {
         console.log('Error occurred during uploading.');
         console.error(error);

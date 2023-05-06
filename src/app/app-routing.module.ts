@@ -40,7 +40,6 @@ import { AdminApplicantDetailsComponent } from './component/admin-applicant-deta
 import { CustomerBookedToursComponent } from './component/customer-booked-tours/customer-booked-tours.component';
 import { CustomerCancelBookingComponent } from './component/customer-cancel-booking/customer-cancel-booking.component';
 import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tour-details.component';
-import { DashboardStatisticsComponent } from './component/dashboard-statistics/dashboard-statistics.component';
 import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-details.component';
 import { WishlistItemComponent } from './component/wishlist-item/wishlist-item.component';
 import { TourQuestionsAnswersComponent } from './component/tour-questions-answers/tour-questions-answers.component';
@@ -97,7 +96,6 @@ const routes: Routes = [
 
   {path:"userregister" , component:UserregisterComponent},
   {path:"dashboard" , component:TourguideDashboardComponent},
-  {path:"dashboardStas" , component:DashboardStatisticsComponent},
 
   {path:"tourguide" , component:TourGuideComponent},
 

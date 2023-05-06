@@ -201,7 +201,7 @@ export class CreateTourComponent implements OnInit {
         // datefromTracker.setHours(0,0,0,0);
 
         // console.log(this.InValidDateFrom);
-        if (canceldate && datefromTracker && (canceldate > datefromTracker || canceldate > today)) {
+        if (canceldate && datefromTracker && (canceldate > datefromTracker )) {
           this.InValidCancelDate = true;
           observer.next({ 'InValidCancelDate': true });
         } else {
