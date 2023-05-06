@@ -28,7 +28,6 @@ export class ToursSectionFilterableComponent {
 
   ngOnChanges(changes: SimpleChanges) {
     this.SortTours();
-    console.log(changes);
   };
 
   Sort(data: FormGroup<any>) {
@@ -116,8 +115,6 @@ export class ToursSectionFilterableComponent {
         const aValue = a[key];
         const bValue = b[key];
 
-        console.log(key, direction)
-
         if (key.startsWith('date')) {
 
           let [day, month, year, hour, minute, second] = aValue.split(/[/: ]/);
@@ -132,12 +129,10 @@ export class ToursSectionFilterableComponent {
             comparison = dateB.getTime() - dateA.getTime();
         }
         else if (['price', 'capacity', 'tourGuideRating'].includes(key)) {
-          console.log(key, aValue, bValue)
           if (direction == 'Ascending')
             comparison = aValue - bValue;
           else
             comparison = bValue - aValue;
-          console.log(comparison)
         }
         else if (key == 'availableSeats') {
 

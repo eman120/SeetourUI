@@ -20,6 +20,8 @@ export class BookingCardComponent {
 
   get booking() {
 
+    console.log(this.Booking)
+
     let display = this.Booking;
 
     if (this.Booking && !this.DisplayPhotos) {

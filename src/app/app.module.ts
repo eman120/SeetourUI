@@ -2,6 +2,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { jqxSortableModule  } from 'jqwidgets-ng/jqxsortable';
+
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './component/register/register.component';
 import { LoginComponent } from './component/login/login.component';
@@ -86,8 +88,8 @@ import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tou
 import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-details.component';
 import { ToursSorterComponent } from './component/tours-sorter/tours-sorter.component';
 
+import { FavoriteButtonComponent } from './component/favorite-button/favorite-button.component';
 
-import { jqxSortableModule  } from 'jqwidgets-ng/jqxsortable';
 
 @NgModule({
   declarations: [
@@ -165,9 +167,8 @@ import { jqxSortableModule  } from 'jqwidgets-ng/jqxsortable';
     BookingCardComponent,
     CustTourDetailsComponent,
     TgTourDetailsComponent,
-
     ToursSorterComponent,
-
+    FavoriteButtonComponent,
   ],
   imports: [
     BrowserModule,

@@ -45,7 +45,6 @@ export class ToursSorterComponent {
       this.sorterForm.setValue(sortObj);
 
       this.SorterValue.emit(this.sorterForm);
-      console.log(sortObj)
     }
   }
 
