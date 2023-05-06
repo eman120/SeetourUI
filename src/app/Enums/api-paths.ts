@@ -30,6 +30,7 @@ export enum ApiPaths {
   customer = "/customer",
   customerTour = "/tour",
 
+  customerTourCart = "/cart",
   customerTourUpcoming = "/upcoming",
   customerTourCompleted = "/completed",
   customerTourCancelled = "/cancelled",
@@ -48,7 +49,7 @@ export enum ApiPaths {
 
   booking = "/booking",
   favorites = "/favorites",
-  tourTrending = "/trending"
+  tourTrending = "/trending",
 }
 
 

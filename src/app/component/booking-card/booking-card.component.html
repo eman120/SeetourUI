@@ -5,7 +5,7 @@
     <p class="mb-1">{{Booking.createdAt | truncate:16:false:"" }}</p>
     <p class="m-0">Seats: {{Booking.seats}}</p>
 
-    <div *ngIf="CanCancel || CanReport"
+    <div *ngIf="CanCancel || CanReport || CanRemove"
     class="dropdown dropdown-menu-end position-absolute top-0 end-0">
 
       <button class="btn pe-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -13,17 +13,24 @@
       </button>
       <ul class="dropdown-menu bg-light">
 
-        <li>
-          <button *ngIf="CanReport"
+        <li  *ngIf="CanReport">
+          <button
           class="btn dropdown-item">
             Report
           </button>
         </li>
 
-        <li>
-          <button *ngIf="CanCancel"
+        <li  *ngIf="CanRemove">
+          <button (click)="RemoveBooking()"
+          class="btn dropdown-item">
+            Remove
+          </button>
+        </li>
+
+        <li *ngIf="CanCancel">
+          <button
           [disabled]="!Booking.canCancel"
-          (click)="CancelBooking(Booking)"
+          (click)="CancelBooking()"
           class="btn dropdown-item">
             Cancel
           </button>
@@ -42,6 +49,12 @@
   (click)="Review()"
   class="btn btn-primary">
     Review
+  </button>
+
+  <button *ngIf="CanRemove"
+  (click)="Checkout()"
+  class="btn btn-primary">
+    Checkout
   </button>
 
 </div>

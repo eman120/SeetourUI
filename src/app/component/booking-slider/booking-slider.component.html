@@ -14,8 +14,9 @@
 
         <app-booking-card [CanCancel]="CanCancel" [CanReport]="CanReport"
         [DisplayPhotos]="false" style="width: 22rem;" class="d-flex me-2"
-        *ngFor="let booking of Bookings" (OnReview)="Review(booking)"
-        [CanReview]="CanReview" [Booking]="booking"></app-booking-card>
+        *ngFor="let booking of Bookings" (OnReview)="Review(booking)" (OnRemove)="Remove(booking)"
+        [CanReview]="CanReview" [Booking]="booking" [CanRemove]="CanRemove">
+        </app-booking-card>
 
         <ng-container *ngIf="Bookings; else elseTemplate">
 
