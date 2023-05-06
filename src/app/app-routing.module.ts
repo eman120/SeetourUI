@@ -106,8 +106,6 @@ const routes: Routes = [
   {path:"admin-statistics",component:AdminStatisticsComponent},
   {path:"admin-review",component:AdminReviewComponent},
 
-  {path:"dashboardStas" , component:DashboardStatisticsComponent},
-
 
   //{path:"tourguide" , component:TourGuideComponent},
 
