@@ -100,15 +100,15 @@ import { TourQuestionsAnswersComponent } from './component/tour-questions-answer
     ErrorComponent,
     HeaderComponent,
     FooterComponent,
-
     AdminStatisticsComponent,
     TourDetailsComponent,
+
+    UserregisterComponent,
     PaymentComponent,
     AdminReviewComponent,
     PaymentSuccessComponent,
     QuestionAnswerComponent,
 
-    UserregisterComponent,
     TourCardComponent,
     StarRatingComponent,
     LikeButtonComponent,

@@ -12,17 +12,19 @@ import { DetailsComponent } from './component/details/details.component';
 import { HeaderComponent } from './component/header/header.component';
 import { TourDetailsComponent } from './component/tour-details/tour-details.component';
 import { UserregisterComponent } from './component/userregister/userregister.component';
-
 import { AdminStatisticsComponent } from './component/admin-statistics/admin-statistics.component';
 import { PaymentComponent } from './component/payment/payment.component';
 import { PaymentSuccessComponent } from './component/payment-success/payment-success.component';
-
 import { TourGuideProfileComponent } from './component/tour-guide-profile/tour-guide-profile.component';
 import { TourGuideComponent } from './component/tour-guide/tour-guide.component';
 import { TourguideDashboardComponent } from './component/tourguide-dashboard/tourguide-dashboard.component';
 import { TGReviewsComponent } from './component/tgreviews/tgreviews.component';
 import { TGOverviewComponent } from './component/tgoverview/tgoverview.component';
 import { TGToursComponent } from './component/tgtours/tgtours.component';
+
+import { QuestionAnswerComponent } from './component/question-answer/question-answer.component';
+import { AdminReviewComponent } from './component/admin-review/admin-review.component';
+
 import { BookTourComponent } from './component/book-tour/book-tour.component';
 
 import { ReviewCardComponent } from './component/review-card/review-card.component';
@@ -63,6 +65,8 @@ const routes: Routes = [
 
   {path:"payment/:id",component:PaymentComponent},
 
+  {path:"TourDetails",component:TourDetailsComponent},
+  {path:"payment/:bookedTourId",component:PaymentComponent},
 
   {path:"payment-success",component:PaymentSuccessComponent},
   {path:"service",component:OurServiceComponent},
@@ -97,6 +101,11 @@ const routes: Routes = [
 
   {path:"userregister" , component:UserregisterComponent},
   {path:"dashboard" , component:TourguideDashboardComponent},
+
+  {path:"question-answer",component:QuestionAnswerComponent},
+  {path:"admin-statistics",component:AdminStatisticsComponent},
+  {path:"admin-review",component:AdminReviewComponent},
+
   {path:"dashboardStas" , component:DashboardStatisticsComponent},
 
   {path:"tourguide" , component:TourGuideComponent},
@@ -115,6 +124,7 @@ const routes: Routes = [
   {path:"customer/tour", component:CustomerBookedToursComponent},
   {path:"customer/tour/cancel", component:CustomerCancelBookingComponent},
   {path:"wishlist", component:WishlistItemComponent},
+
 
   {path:"**" , component:ErrorComponent}
 
