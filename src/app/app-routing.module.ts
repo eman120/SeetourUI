@@ -99,6 +99,7 @@ const routes: Routes = [
 
   {path:"tourguide" , component:TourGuideComponent},
 
+
   {path:"review" , component:ReviewCardComponent},
   {path:"report" , component:AdminReportComponent},
 
