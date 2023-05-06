@@ -62,6 +62,7 @@ const routes: Routes = [
 
   {path:"payment/:id",component:PaymentComponent},
 
+  {path:"admin-statistics",component:AdminStatisticsComponent},
 
   {path:"payment-success",component:PaymentSuccessComponent},
   {path:"service",component:OurServiceComponent},

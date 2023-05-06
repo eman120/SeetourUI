@@ -62,7 +62,7 @@ export class BookTourComponent implements OnInit {
         console.log(response);
         // this.status = response;
         // Navigate to  component after adding the new Register
-        this.router.navigate(['/payment/:' + response.toString()]);
+        this.router.navigate(['/payment/:' + response.toString() + '' + seatsNum * this.tour.price]);
       },
       (error) => {
         console.log('Error occurred during booking.');
