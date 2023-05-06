@@ -1,0 +1,29 @@
+<div class="d-inline-block">
+
+  <div class="d-inline-flex flex-row align-items-center">
+
+    <button class="btn btn-primary me-2" (click)="compressFile()">attach photos</button>
+
+    <div *ngIf="state == 'compressing'" class="spinner-border text-primary spinner-border-sm" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+
+    <i *ngIf="state == 'done'" class="bi bi-check-circle text-success fs-3"></i>
+    <i *ngIf="state == 'done' && failedToUpload.length" class="bi bi-exclamation-circle text-danger fs-3"></i>
+
+  </div>
+
+  <div *ngIf="!hideSlider" class="d-flex flex-row justify-content-start align-items-center overflow-auto">
+    <div class="d-flex">
+      <div class="image-box cursor-pointer me-1" style="width: 5rem;" *ngFor="let photo of photoUrls">
+        <img [src]="photo.compressedImage">
+        <button type="button" class="bi bi-x-circle position-absolute top-0 end-0 btn btn-primary"
+        (click)="RemoveImage(photo.fileName)"></button>
+      </div>
+    </div>
+  </div>
+
+  <ul class="m-0">
+    <li class="text-danger" *ngFor="let item of failedToUpload">Failed to upload '{{item}}', please select a smaller image</li>
+  </ul>
+</div>

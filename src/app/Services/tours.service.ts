@@ -55,4 +55,10 @@ export class ToursService {
     return this.FilterTours(url, toursFilter);
   }
 
+  GetTourById(tourId: string) {
+    const tourIdNum = Number(tourId);
+    let url = this.urlBase+ApiPaths.tour+ApiPaths.tourDet+'?id='+tourIdNum;
+    return this.client.get(url);
+  }
+
 }

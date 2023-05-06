@@ -1,7 +1,6 @@
 :root {
     --primary: #86B817;
     --secondary: #FE8800;
-    --light: #F5F5F5;
     --dark: #14141F;
 }
 
@@ -60,7 +59,9 @@
     background-color: #86B817;
     border-color: #86B817;
 }
-
+h1,h2,h3,h4,h5,h6{
+    color: #86B817;
+}
 .btn-square {
     width: 38px;
     height: 38px;
@@ -125,4 +126,45 @@
   content: "";
   display: block;
   padding-bottom: 100%;
+}
+/*** Section Title ***/
+.section-title {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.section-title::before {
+    position: absolute;
+    content: "";
+    width: calc(100% + 80px);
+    height: 2px;
+    top: 4px;
+    left: -40px;
+    background: var(--primary);
+    z-index: -1;
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: calc(100% + 120px);
+    height: 2px;
+    bottom: 5px;
+    left: -60px;
+    background: var(--primary);
+    z-index: -1;
+}
+
+.section-title.text-start::before {
+    width: calc(100% + 40px);
+    left: 0;
+}
+
+.section-title.text-start::after {
+    width: calc(100% + 60px);
+    left: 0;
+}
+#toast-container > div {
+    opacity:1;
 }

@@ -4,13 +4,14 @@ import { map, shareReplay } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ApiPaths } from 'src/app/Enums/api-paths';
 import * as moment from "moment";
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router:Router) {
   }
 
   login(username:string, password:string ) {
@@ -36,6 +37,8 @@ export class AuthService {
     localStorage.removeItem("id_token");
     localStorage.removeItem("expires_at");
     localStorage.removeItem("interface");
+
+    this.router.navigateByUrl('/login');
   }
 
   public isLoggedIn() {

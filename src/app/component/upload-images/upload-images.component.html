@@ -1,14 +1,23 @@
-<form (submit)="onSubmit()">
+<form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
-    <label for="formFileLg" class="form-label">Select images:</label>
-    <input class="form-control form-control-lg" type="file" multiple (change)="onSelect($event)">
+    <label for="fileInput">Select image(s) to upload:</label>
+    <input type="file" class="form-control form-control-lg" style="width: 500px;" id="fileInput" formControlName="fileInput" multiple (change)="onSelect($event)">
+    <div *ngIf="fileSizeExceeded" class="text-danger">File size exceeds {{maxFileSize}} MB</div>
+    <div *ngIf="invalidExtension" class="text-danger">There is Invalid file extension. Allowed extensions are {{allowedExtensions.join(', ')}}</div>
   </div>
-  <button type="submit" class="btn btn-primary">Upload Images</button>
+  <br>
+  <button type="submit" class="btn btn-primary" [disabled]="uploadForm.invalid|| fileSizeExceeded || invalidExtension">upload</button> &nbsp; &nbsp;
+  <div class="spinner-border text-primary" role="status" *ngIf="!isUploaded && !flag">
+    <span class="sr-only"></span>
+    <br>
+  </div>
+  <div class="text-success" *ngIf="isUploaded">Images uploaded successfully</div>
 </form>
 
-<div *ngIf="uploadedUrls.length > 0" >
+
+<!-- <div *ngIf="uploadedUrls.length > 0" >
   <div *ngFor="let image of uploadedUrls">
 
       <img  [src]="image.url" />
     </div>
-  </div>
+  </div> -->

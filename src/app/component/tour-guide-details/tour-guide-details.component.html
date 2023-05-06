@@ -1,0 +1,54 @@
+<div *ngIf="tourguide">
+
+  <div class="col-4 col-md-3 mb-3 mx-auto image-box rounded-circle
+  border border-3 border-white overflow-hidden">
+    <img [src]="tourguide.profilePic" class="rounded-circle">
+  </div>
+
+  <h3 class="text-center">{{tourguide.name}}</h3>
+
+  <div class="row mt-3">
+    <div class="mb-3 col-md-6">
+      <label class="form-label">Username</label>
+      <label type="text" class="form-control">{{tourguide.username}}</label>
+    </div>
+    <div class="mb-3 col-md-6">
+      <label class="form-label">Tax Registration Number</label>
+      <label type="text" class="form-control">{{tourguide.taxRegistrationNumber}}</label>
+    </div>
+    <div class="mb-3 col-12">
+      <label class="form-label">Address</label>
+      <label type="text" class="form-control">{{tourguide.recipientNameAndAddress}}</label>
+    </div>
+    <div class="mb-3 col-12">
+      <label class="form-label">Bank Address</label>
+      <label type="text" class="form-control">{{tourguide.recipientBankNameAndAddress}}</label>
+    </div>
+    <div class="mb-3 col-md-6">
+      <label class="form-label">IBAN</label>
+      <label type="text" class="form-control">{{tourguide.recipientAccountNumberOrIBAN}}</label>
+    </div>
+    <div class="mb-3 col-md-6">
+      <label class="form-label">SWIFT Code</label>
+      <label type="text" class="form-control">{{tourguide.recipientBankSwiftCode}}</label>
+    </div>
+    <div class="mb-3 col-12">
+      <label class="form-label">Email</label>
+      <label type="text" class="form-control">{{tourguide.email}}</label>
+    </div>
+    <div class="mb-3 col-md-6">
+      <label class="form-label">SSN</label>
+      <label type="text" class="form-control">{{tourguide.ssn}}</label>
+    </div>
+    <div class="mb-3 col-md-6">
+      <label class="form-label">Phone</label>
+      <label type="text" class="form-control">{{tourguide.phone}}</label>
+    </div>
+
+    <img [src]="tourguide.idCardPhoto" class="img-fluid rounded mb-3 col-md-8 mx-auto d-block">
+
+  </div>
+
+</div>
+
+<app-spinner *ngIf="!tourguide"></app-spinner>

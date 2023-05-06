@@ -15,5 +15,5 @@ export interface TourCard {
   dateTo: string,
   category: string,
   title: string,
-  addedToWishList: boolean,
+  addedToWishList: boolean
 }

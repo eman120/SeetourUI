@@ -1,0 +1,49 @@
+<div class="container-fluid bg-primary py-5 mb-5 bg-dark bg-gradient">
+  <div class="row justify-content-center py-5">
+
+    <div class="row justify-content-center">
+      <div class="d-flex justify-content-center flex-wrap gy-4 px-0">
+        <div class="col-12 col-lg-9 mx-auto bg-light border rounded p-3">
+
+          <div class="d-flex flex-row justify-content-between align-items-center">
+
+            <h3 class="m-3">Cancelling your booking</h3>
+
+          </div>
+
+          <div *ngIf="Booking && status != 'success'" class="d-flex flex-column align-items-center">
+
+            <div class="alert alert-warning col-12" role="alert">
+              <h4 class="alert-heading">Are you sure?</h4>
+              <p>You are about to cancel this booking.</p>
+              <hr>
+              <p class="mb-0">This step can't be undone and we can't make sure you will find an available seat later on</p>
+            </div>
+
+            <app-booking-card [CanCancel]="false" [CanReport]="false"
+            [DisplayPhotos]="true" class="col-sm-10 col-md-8 col-lg-7 col-xl-6"
+            [CanReview]="false" [Booking]="Booking"></app-booking-card>
+
+            <div *ngIf="status != 'posted'" class="m-2">
+              <button class="btn btn-outline-danger me-2" (click)="Cancel()">Cancel</button>
+              <a routerLink=".." class="btn btn-primary">Go Back</a>
+            </div>
+
+          </div>
+          <div *ngIf="!Booking">
+            <app-spinner></app-spinner>
+          </div>
+
+          <div *ngIf="status=='success'" class="alert alert-success col-md-8 mx-auto" role="alert">
+            <strong>Success:</strong> We are sorry to see you go. Looking forward to seeing you again.
+          </div>
+          <div *ngIf="status=='error'" class="alert alert-danger col-md-8 mx-auto" role="alert">
+            <strong>Error:</strong> Something went wrong, please try again later.
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
