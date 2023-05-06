@@ -1,39 +1,41 @@
+<ng-container *ngIf="unanswersandQues; else elseTemplate">
 <div class=" parent container">
-    <h5>Questions: </h5>
-    <div class="card flex-md-row align-items-start m-6">
-      <div class="p-3 d-flex flex-column align-self-stretch col-md-12">
-        <ng-container *ngFor="let ques of unanswersandQues  let i = index">
-          <ng-container *ngIf="ques; else elseTemplate">
+  <h5>Questions: </h5>
+  <div class="card flex-md-row align-items-start m-6">
+    <div class="p-3 d-flex flex-column align-self-stretch col-md-12">
+      <ng-container *ngFor="let ques of unanswersandQues  let i = index">
 
-           
-            
-            <p><span>Tour Title :</span> {{ ques.tourTitle }} ?</p>
-          <p><span>Q : </span>{{ i+1 }}. {{ ques.question }} ?</p>
-           <p>Crated At: {{ques.createdAt}}</p>
-           <a routerLink="/tour/{{ques.tourId}}">Tour Details</a>
-           <form [formGroup]="QuestionAnswer" (ngSubmit)="Answer(ques.id)">
-            <label class="submitlabel ">submitt Answer : </label>
-            <br>
-            <textarea formControlName="answer" placeholder="Enter your Answer" ></textarea>
-            <br>
-            <input type="submit"   [disabled]="QuestionAnswer.invalid || flag" name="submit"  value="Submitt" class="btn btn-primary rounded-pill me-2 book"/>
-          </form>
-          <!-- <star-rating [rating]="tour.rating[i]"></star-rating> -->
-          <!-- <div class="alert alert-warning col-12" role="alert">
+
+
+
+        <p><span>Tour Title :</span> {{ ques.tourTitle }} ?</p>
+        <p><span>Q : </span>{{ i+1 }}. {{ ques.question }} ?</p>
+        <p>Crated At: {{ques.createdAt}}</p>
+        <a routerLink="/tour/{{ques.tourId}}">Tour Details</a>
+        <form [formGroup]="QuestionAnswer" (ngSubmit)="Answer(ques.id)">
+          <label class="submitlabel ">submitt Answer : </label>
+          <br>
+          <textarea formControlName="answer" placeholder="Enter your Answer"></textarea>
+          <br>
+          <input type="submit" [disabled]="QuestionAnswer.invalid || flag" name="submit" value="Submitt"
+            class="btn btn-primary rounded-pill me-2 book" />
+        </form>
+        <!-- <star-rating [rating]="tour.rating[i]"></star-rating> -->
+        <!-- <div class="alert alert-warning col-12" role="alert">
             <h4 class="alert-heading">Are you sure?</h4>
             <p>You are about to cancel this booking.</p>
             <hr>
             <p class="mb-0">This step can't be undone and we can't make sure you will find an available seat later on</p>
           </div> -->
-          <hr>
-          <br>
-        </ng-container>
-        </ng-container>
-        <ng-template #elseTemplate>
-      
-          <app-spinner class="flex-grow-1"></app-spinner>
-    
-        </ng-template>
-      </div>
+        <hr>
+        <br>
+      </ng-container>
     </div>
-  </div> 
+  </div>
+</div>
+</ng-container>
+<ng-template #elseTemplate>
+
+  <app-spinner class="flex-grow-1"></app-spinner>
+
+</ng-template>

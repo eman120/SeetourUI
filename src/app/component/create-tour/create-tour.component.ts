@@ -149,7 +149,7 @@ export class CreateTourComponent implements OnInit {
         const today = new Date();
         const dateTo = new Date(this.createtourform.get('dateTo')?.value);
         
-        if (dateFrom && dateTo && (dateFrom < today || dateFrom >= dateTo)) {
+        if (dateFrom && dateTo && (dateFrom < today || dateFrom > dateTo)) {
           this.InValidDateFrom = true;
           observer.next({ 'InValidDateFrom': true });
         } else {
