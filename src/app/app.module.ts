@@ -93,6 +93,7 @@ import { CustomerFavoriteToursComponent } from './component/customer-favorite-to
 import { TrendingToursComponent } from './component/trending-tours/trending-tours.component';
 import { CustomerHomeComponent } from './component/customer-home/customer-home.component';
 
+import { TourQuestionsAnswersComponent } from './component/tour-questions-answers/tour-questions-answers.component';
 
 @NgModule({
   declarations: [
@@ -108,15 +109,15 @@ import { CustomerHomeComponent } from './component/customer-home/customer-home.c
     ErrorComponent,
     HeaderComponent,
     FooterComponent,
-
     AdminStatisticsComponent,
     TourDetailsComponent,
+
+    UserregisterComponent,
     PaymentComponent,
     AdminReviewComponent,
     PaymentSuccessComponent,
     QuestionAnswerComponent,
 
-    UserregisterComponent,
     TourCardComponent,
     StarRatingComponent,
     LikeButtonComponent,
@@ -170,6 +171,7 @@ import { CustomerHomeComponent } from './component/customer-home/customer-home.c
     BookingCardComponent,
     CustTourDetailsComponent,
     TgTourDetailsComponent,
+    TourQuestionsAnswersComponent,
     ToursSorterComponent,
     FavoriteButtonComponent,
     CustomerFavoriteToursComponent,
@@ -185,8 +187,7 @@ import { CustomerHomeComponent } from './component/customer-home/customer-home.c
     NgbModule,
     CommonModule,
     BrowserAnimationsModule,
-    jqxSortableModule
-    ,
+    jqxSortableModule,
     ToastrModule.forRoot({
       timeOut: 1000,
       positionClass: 'toast-bottom-right'

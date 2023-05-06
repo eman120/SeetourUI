@@ -1,56 +1,37 @@
-<div class="container-xxl position-relative bg-white d-flex p-0">
+<div class="container-xxl position-relative bg-white d-flex p-0 full-page">
 
 
-    <div class="sidebar pe-4 pb-3">
+    <div class="sidebar pe-4 pb-3 ">
         <nav class="navbar">
-            <!-- <a href="index.html" class="navbar-brand mx-4 mb-3">
-               <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>DASHMIN</h3>
-           </a> -->
-            <!-- <div class="d-flex align-items-center ms-4 mb-4">
-               <div class="position-relative">
-                   <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                   <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
-               </div>
-               <div class="ms-3">
-                   <h6 class="mb-0">Jhon Doe</h6>
-                   <span>Admin</span>
-               </div>
-           </div> -->
+
             <div class="navbar-nav w-100">
-                <a href="index.html" class="nav-item nav-link active"><i
-                        class="fa fa-tachometer-alt me-4"></i>Dashboard</a>
-                <!-- <div class="nav-item dropdown">
-                   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
-                   <div class="dropdown-menu bg-transparent border-0">
-                       <a href="button.html" class="dropdown-item">Buttons</a>
-                       <a href="typography.html" class="dropdown-item">Typography</a>
-                       <a href="element.html" class="dropdown-item">Other Elements</a>
-                   </div>
-               </div> -->
+              <a routerLink="/dashboard" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+          </div>
+            <div class="navbar-nav w-100">
+                <a routerLink="/tour" class="nav-item nav-link active "><i class="fa fa-table me-2"></i>UpComming</a>
             </div>
 
             <div class="navbar-nav w-100">
-                <a href="table.html" class="nav-item nav-link active"><i class="fa fa-table me-2"></i>Tables</a>
+                <a routerLink="/Past-Tours" class="nav-item nav-link active "><i class="fa fa-chart-bar me-2 "></i>Past Tour</a>
             </div>
 
             <div class="navbar-nav w-100">
-                <a href="chart.html" class="nav-item nav-link active"><i class="fa fa-chart-bar me-2 "></i>Charts</a>
-            </div>
-
-            <div class="navbar-nav w-100">
-                <a href="table.html" class="nav-item nav-link active"><i class="fa fa-keyboard me-2"></i>Forms</a>
+                <a routerLink="/review" class="nav-item nav-link active "><i class="fa fa-keyboard me-2"></i>Reviews</a>
             </div>
 
         </nav>
     </div>
 
     <!-- Content Start -->
-    <div class="content" *ngIf="statistics">
+    <!-- <div class="content" *ngIf="statistics"> -->
+       <div class="content">
         <div class="container-fluid pt-4 px-4 contain">
             <div class="row g-4 parent">
                 <div class="col-sm-6 col-xl-4">
                     <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                        <i class="fa fa-chart-line fa-3x text-primary icon"></i>
+                        <i class="fa fa-sharp fa-solid fa-plane fa-3x text-primary icon"></i>
+                        <!-- <i class="fa-sharp fa-solid fa-plane"></i> -->
+
                         <div class="ms-3">
                             <p class="mb-2">Tours</p>
                             <!-- <h6 class="mb-0">$1253</h6> -->
@@ -60,7 +41,7 @@
                 </div>
                 <div class="col-sm-6 col-xl-4">
                     <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                        <i class="fa fa-chart-bar fa-3x text-primary icon"></i>
+                      <i class="fa-solid fa-rectangle-xmark fa-3x text-primary icon"></i>
                         <div class="ms-3">
                             <p class="mb-2">Cancelled </p>
 
@@ -71,7 +52,7 @@
                 </div>
                 <div class="col-sm-6 col-xl-4">
                     <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                        <i class="fa fa-chart-area fa-3x text-primary icon"></i>
+                        <i class="fa-sharp fa-solid fa-dollar-sign fa-3x text-primary icon"></i>
                         <div class="ms-3">
                             <p class="mb-2">total Past Tours Price</p>
 
@@ -109,7 +90,7 @@
                 </div>
                 <div class="col-sm-6 col-xl-4">
                     <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                        <i class="fa fa-chart-area fa-3x text-primary icon"></i>
+                        <i class="fa-sharp fa-solid fa-dollar-sign fa-3x text-primary icon"></i>
                         <div class="ms-3">
                             <p class="mb-2">Total Upcoming Tours Price</p>
 
@@ -124,7 +105,9 @@
             <div class="row g-4 parent">
                 <div class="col-sm-6 col-xl-4">
                     <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                        <i class="fa fa-chart-line fa-3x text-primary icon"></i>
+                        <i class="fa fa-solid fa-plane-departure fa-3x text-primary icon"></i>
+                        <!-- <i class="fa-solid fa-plane-departure"></i> -->
+
                         <div class="ms-3">
                             <p class="mb-2"> Total Upcoming Tour Seats</p>
 
@@ -135,7 +118,8 @@
                 </div>
                 <div class="col-sm-6 col-xl-4">
                     <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                        <i class="fa fa-chart-bar fa-3x text-primary icon"></i>
+                        <i class="fa fa-thin fa-plane-departure fa-3x text-primary icon"></i>
+
                         <div class="ms-3">
                             <p class="mb-2">Avg Upcoming Tour Seats</p>
 
@@ -146,9 +130,10 @@
                 </div>
                 <div class="col-sm-6 col-xl-4">
                     <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                        <i class="fa fa-chart-area fa-3x text-primary icon"></i>
+                        <i class="fa fa-sharp fa-solid fa-flag fa-3x text-primary icon"></i>
+                        <!-- <i class="fa-sharp fa-solid fa-flag"></i> -->
                         <div class="ms-3">
-                            <p class="mb-2">Fully Booked Upcoming Tours Count</p>
+                            <p class="mb-2">FullyBookedUpcomingTCount</p>
 
                             <!-- <h6 class="mb-0">$1253</h6> -->
                             <h6 class="mb-0">{{statistics.fullyBookedUpcomingToursCount}}</h6>
@@ -161,18 +146,19 @@
             <div class="row g-4 parent">
                 <div class="col-sm-6 col-xl-4">
                     <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                        <i class="fa fa-chart-line fa-3x text-primary icon"></i>
+                        <i class="fa-sharp fa-solid fa-dollar-sign fa-3x text-primary icon"></i>
                         <div class="ms-3">
                             <p class="mb-2">Avg Past Tours Price</p>
 
                             <!-- <h6 class="mb-0">$1253</h6> -->
+                           <!-- <i class="fa-sharp fa-solid fa-dollar-sign"></i>  -->
                             <h6 class="mb-0">{{statistics.avgPastoursPrice | currency:'USD':'symbol':'.2'}}</h6>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-xl-4">
                     <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                        <i class="fa fa-chart-bar fa-3x text-primary icon"></i>
+                        <i class="fa-sharp fa-solid fa-dollar-sign fa-3x text-primary icon"></i>
                         <div class="ms-3">
                             <p class="mb-2">Avg Upcoming Tours Price</p>
 
@@ -183,7 +169,8 @@
                 </div>
                 <div class="col-sm-6 col-xl-4">
                     <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                        <i class="fa fa-chart-area fa-3x text-primary icon"></i>
+                      <i class="fa fa-regular fa-flag fa-3x text-primary icon"></i>
+                      <!-- <i class="fa-regular fa-flag"></i> -->
                         <div class="ms-3">
                             <p class="mb-2">Tours InCart Count</p>
                             <h6 class="mb-0">{{statistics.toursInCartCount}}</h6>
@@ -196,7 +183,7 @@
 
 
             <!-- Sales Chart Start -->
-            <div class="container-fluid pt-4 px-4">
+            <!-- <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light text-center rounded p-4">
@@ -217,7 +204,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Sales Chart End -->
         </div>
     </div>
+  </div>

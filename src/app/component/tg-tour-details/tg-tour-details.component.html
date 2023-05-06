@@ -1,2 +1,13 @@
 
-<app-tour-details [tourById] = "tourById"></app-tour-details>
+<app-tour-details [tourById] = "tourById" (tourSend)="tour = $event"></app-tour-details>
+
+<div class="ms-5">
+    <form (ngSubmit)="onSubmit()" *ngIf="tour">
+        <div *ngIf="!checkForTour">
+        <h5 for="">Add Photos</h5>
+        <app-upload-images (PastToursUrls)="Photos=$event" [tourId]="tourById"></app-upload-images>
+        <br>
+        <button type="submit" class="btn btn-primary">submit</button>
+        </div>
+    </form>
+</div>

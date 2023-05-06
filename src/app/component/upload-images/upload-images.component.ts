@@ -1,5 +1,5 @@
 import { Component, EventEmitter,Input,Output } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { ApiPaths } from 'src/app/Enums/api-paths';
 import { environment } from 'src/environments/environment';
@@ -92,21 +92,11 @@ export class UploadImagesComponent {
               
             };
           });
+          this.isUploaded=true;
           this.PastToursUrls.emit(this.pastPhoto);
           console.log(this.tourId);
           console.log(this.pastPhoto);
-          const requestBody = {
-            tourid: Number(this.tourId),
-            photoDtos: this.pastPhoto
-          };
-          console.log(requestBody);
-          // const requestBody = new HttpParams().set('tourid' ,this.tourId).set('photoDtos' ,this.imagesUrls);
-          this.http.post(environment.baseUrl+ "" + ApiPaths.tour + ApiPaths.pics , requestBody).subscribe(
-            response => {
-              console.log('Answer submitted successfully');
-            }, error => {
-              console.error('Error submitting answer: ', error);
-            });
+          
         }
          else{
           this.tourPhoto=this.uploadedUrls.map(photo=>{

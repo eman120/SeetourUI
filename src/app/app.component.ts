@@ -34,6 +34,7 @@ export class AppComponent implements  OnInit {
   ngOnInit(): void {
     this.spinner();
     $('.back-to-top').css('display', 'none');
+
     this.user = this.authService.getInterface();
     // console.log(this.user);
 
