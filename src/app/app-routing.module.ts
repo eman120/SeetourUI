@@ -13,7 +13,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { TourDetailsComponent } from './component/tour-details/tour-details.component';
 import { UserregisterComponent } from './component/userregister/userregister.component';
 
-import { AdminStatisticsComponent } from './component/admin-statistics/admin-statistics.component';
+
 import { PaymentComponent } from './component/payment/payment.component';
 import { PaymentSuccessComponent } from './component/payment-success/payment-success.component';
 
@@ -55,7 +55,7 @@ const routes: Routes = [
   {path:"services" , component:DetailsComponent},
   {path:"header" , component:HeaderComponent},
 {path:"createtour",component:CreateTourComponent},
-  // {path:"tourdetails/:id",component:TourDetailsComponent},
+
   {path:"custdetails/:id",component:CustTourDetailsComponent},
   {path:"tour/:id",component:TgTourDetailsComponent},
 
