@@ -30,11 +30,11 @@
                 <div class="col-sm-6 col-xl-4">
                     <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                         <i class="fa fa-sharp fa-solid fa-plane fa-3x text-primary icon"></i>
-                        <!-- <i class="fa-sharp fa-solid fa-plane"></i> -->
+
 
                         <div class="ms-3">
                             <p class="mb-2">Tours</p>
-                            <!-- <h6 class="mb-0">$1253</h6> -->
+
                             <h6 class="mb-0" >{{statistics.pastToursCount}}</h6>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                         <div class="ms-3">
                             <p class="mb-2">Cancelled </p>
 
-                            <!-- <h6 class="mb-0">$1253</h6> -->
+
                             <h6 class="mb-0" >{{statistics.cancelledInPastTourscount}}</h6>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                         <div class="ms-3">
                             <p class="mb-2">total Past Tours Price</p>
 
-                            <!-- <h6 class="mb-0">$1253</h6> -->
+
                             <h6 class="mb-0" >{{statistics.totalPastToursPrice | currency:'USD':'symbol':'.2'}}</h6>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                         <div class="ms-3">
                             <p class="mb-2">Fully Booked </p>
 
-                            <!-- <h6 class="mb-0">$1253</h6> -->
+
                             <h6 class="mb-0" >{{statistics.fullyBookedPastToursCount}}</h6>
                         </div>
                     </div>
@@ -83,7 +83,6 @@
                         <div class="ms-3">
                             <p class="mb-2">UpComing Tours </p>
 
-                            <!-- <h6 class="mb-0">$1253</h6> -->
                             <h6 class="mb-0">{{statistics.upComingToursCount}}</h6>
                         </div>
                     </div>
@@ -94,7 +93,6 @@
                         <div class="ms-3">
                             <p class="mb-2">Total Upcoming Tours Price</p>
 
-                            <!-- <h6 class="mb-0">$1253</h6> -->
                             <h6 class="mb-0" >{{statistics.totalUpcomingToursPrice | currency:'USD':'symbol':'.2'}}</h6>
                         </div>
                     </div>
@@ -106,12 +104,12 @@
                 <div class="col-sm-6 col-xl-4">
                     <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                         <i class="fa fa-solid fa-plane-departure fa-3x text-primary icon"></i>
-                        <!-- <i class="fa-solid fa-plane-departure"></i> -->
+
 
                         <div class="ms-3">
                             <p class="mb-2"> Total Upcoming Tour Seats</p>
 
-                            <!-- <h6 class="mb-0">$1253</h6> -->
+
                             <h6 class="mb-0" >{{statistics.totalUpcomingTourSeats}}</h6>
                         </div>
                     </div>
@@ -123,7 +121,7 @@
                         <div class="ms-3">
                             <p class="mb-2">Avg Upcoming Tour Seats</p>
 
-                            <!-- <h6 class="mb-0">$1253</h6> -->
+
                             <h6 class="mb-0">{{statistics.avgUpcomingTourSeats}}</h6>
                         </div>
                     </div>
@@ -131,11 +129,11 @@
                 <div class="col-sm-6 col-xl-4">
                     <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                         <i class="fa fa-sharp fa-solid fa-flag fa-3x text-primary icon"></i>
-                        <!-- <i class="fa-sharp fa-solid fa-flag"></i> -->
+
                         <div class="ms-3">
                             <p class="mb-2">FullyBookedUpcomingTCount</p>
 
-                            <!-- <h6 class="mb-0">$1253</h6> -->
+
                             <h6 class="mb-0">{{statistics.fullyBookedUpcomingToursCount}}</h6>
                         </div>
                     </div>
@@ -150,8 +148,7 @@
                         <div class="ms-3">
                             <p class="mb-2">Avg Past Tours Price</p>
 
-                            <!-- <h6 class="mb-0">$1253</h6> -->
-                           <!-- <i class="fa-sharp fa-solid fa-dollar-sign"></i>  -->
+
                             <h6 class="mb-0">{{statistics.avgPastoursPrice | currency:'USD':'symbol':'.2'}}</h6>
                         </div>
                     </div>
@@ -162,7 +159,6 @@
                         <div class="ms-3">
                             <p class="mb-2">Avg Upcoming Tours Price</p>
 
-                            <!-- <h6 class="mb-0">$1253</h6> -->
                             <h6 class="mb-0">{{statistics.avgUpcomingToursPrice | currency:'USD':'symbol':'.2'}}</h6>
                         </div>
                     </div>
@@ -170,7 +166,7 @@
                 <div class="col-sm-6 col-xl-4">
                     <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                       <i class="fa fa-regular fa-flag fa-3x text-primary icon"></i>
-                      <!-- <i class="fa-regular fa-flag"></i> -->
+
                         <div class="ms-3">
                             <p class="mb-2">Tours InCart Count</p>
                             <h6 class="mb-0">{{statistics.toursInCartCount}}</h6>
@@ -182,30 +178,7 @@
             <!-- Sale & Revenue End -->
 
 
-            <!-- Sales Chart Start -->
-            <!-- <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Worldwide Sales</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="worldwide-sales"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Salse & Revenue</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="salse-revenue"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            <!-- Sales Chart End -->
+
         </div>
     </div>
   </div>
