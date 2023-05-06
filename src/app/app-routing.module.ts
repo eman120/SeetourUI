@@ -1,3 +1,4 @@
+import { TgUnansweredQuestionsComponent } from './component/tg-unanswered-questions/tg-unanswered-questions.component';
 import { CustomerWishlistComponent } from './component/customer-wishlist/customer-wishlist.component';
 import { NgModule, createComponent } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -43,7 +44,6 @@ import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tou
 import { DashboardStatisticsComponent } from './component/dashboard-statistics/dashboard-statistics.component';
 import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-details.component';
 import { WishlistItemComponent } from './component/wishlist-item/wishlist-item.component';
-
 const routes: Routes = [
   {path: "",component:HomeComponent},
   {path: "home" , component:HomeComponent},
@@ -113,7 +113,7 @@ const routes: Routes = [
   {path:"customer/tour", component:CustomerBookedToursComponent},
   {path:"customer/tour/cancel", component:CustomerCancelBookingComponent},
   {path:"wishlist", component:WishlistItemComponent},
-
+{path:"unansweredQuestions",component:TgUnansweredQuestionsComponent},
   {path:"**" , component:ErrorComponent}
 
 ];

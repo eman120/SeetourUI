@@ -47,7 +47,9 @@ export enum ApiPaths {
   pics = "/AddPics",
   addQuestion="/AddQuestion",
   booking = "/booking",
-  answersAndQues="/GetQuestWithAns"
+  answersAndQues="/GetQuestWithAns",
+  unansweredquestions="/TourGuide/GetAllUnAnsweredQusetions",
+  tganswerQusetions="/TourGuide/AnswerQusetion"
 }
 
 

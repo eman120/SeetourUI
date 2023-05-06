@@ -144,22 +144,23 @@ export class CreateTourComponent implements OnInit {
   private DateFromValidator(): AsyncValidatorFn {
     return (control: AbstractControl): Observable<ValidationErrors | null> => {
       return new Observable((observer: Observer<ValidationErrors | null>) => {
-        const datefromm = new Date(control.value);
-        datefromm.setHours(23, 59, 59, 999);
+        const dateFrom = new Date(control.value);
+        dateFrom.setHours(23, 59, 59, 999);
         const today = new Date();
-        if (datefromm && datefromm < today) {
+        const dateTo = new Date(this.createtourform.get('dateTo')?.value);
+        
+        if (dateFrom && dateTo && (dateFrom < today || dateFrom >= dateTo)) {
           this.InValidDateFrom = true;
-          // console.log (this.createtourform.get('datefrom')?.value );
           observer.next({ 'InValidDateFrom': true });
         } else {
           this.InValidDateFrom = false;
           observer.next(null);
-
         }
         observer.complete();
       });
     };
   }
+  
 
   //Check for DateTo Before Creating tour
   //Future & DateFrom Dates are allowed
@@ -173,7 +174,7 @@ export class CreateTourComponent implements OnInit {
         // datefromTracker.setHours(0,0,0,0);
 
         // console.log(this.InValidDateFrom);
-        if (datetoo && datefromTracker && datetoo < datefromTracker) {
+        if (datetoo && datefromTracker && (datetoo<today|| datetoo < datefromTracker )) {
           this.InValidDateTo = true;
           observer.next({ 'InValidDateTo': true });
         } else {
@@ -201,7 +202,7 @@ export class CreateTourComponent implements OnInit {
         // datefromTracker.setHours(0,0,0,0);
 
         // console.log(this.InValidDateFrom);
-        if (canceldate && datefromTracker && (canceldate > datefromTracker || canceldate > today)) {
+        if (canceldate && datefromTracker && (canceldate > datefromTracker)) {
           this.InValidCancelDate = true;
           observer.next({ 'InValidCancelDate': true });
         } else {
