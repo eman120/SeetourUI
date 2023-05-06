@@ -43,6 +43,7 @@ import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tou
 import { DashboardStatisticsComponent } from './component/dashboard-statistics/dashboard-statistics.component';
 import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-details.component';
 import { WishlistItemComponent } from './component/wishlist-item/wishlist-item.component';
+import { TourQuestionsAnswersComponent } from './component/tour-questions-answers/tour-questions-answers.component';
 
 const routes: Routes = [
   {path: "",component:HomeComponent},
@@ -54,6 +55,7 @@ const routes: Routes = [
   {path:"tour" , component:TourHomeComponent},
   {path:"services" , component:DetailsComponent},
   {path:"header" , component:HeaderComponent},
+  {path:"QuestAns/:id" , component:TourQuestionsAnswersComponent},
 {path:"createtour",component:CreateTourComponent},
   // {path:"tourdetails/:id",component:TourDetailsComponent},
   {path:"custdetails/:id",component:CustTourDetailsComponent},

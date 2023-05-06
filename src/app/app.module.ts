@@ -84,6 +84,7 @@ import { CustomerCancelBookingComponent } from './component/customer-cancel-book
 import { BookingCardComponent } from './component/booking-card/booking-card.component';
 import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tour-details.component';
 import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-details.component';
+import { TourQuestionsAnswersComponent } from './component/tour-questions-answers/tour-questions-answers.component';
 
 @NgModule({
   declarations: [
@@ -160,7 +161,8 @@ import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-deta
     CustomerCancelBookingComponent,
     BookingCardComponent,
     CustTourDetailsComponent,
-    TgTourDetailsComponent
+    TgTourDetailsComponent,
+    TourQuestionsAnswersComponent
 
   ],
   imports: [

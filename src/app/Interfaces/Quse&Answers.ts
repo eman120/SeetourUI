@@ -1,6 +1,6 @@
 export interface QusesAndAns{
-       QuestionId:number,
-       Question:string,
-       AnswerId?:number,
-       Answer:string
+       questionId:number,
+       question:string,
+       answerId?:number,
+       answer:string
 }
