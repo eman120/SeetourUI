@@ -39,7 +39,16 @@ export class ToursService {
       this.queryParams = this.route.snapshot.queryParams;
     }
 
-    this.queryParams = new URLSearchParams(this.queryParams);
+    this.queryParams = this.queryParams;
+
+    const filtered = Object.keys(this.queryParams)
+      .filter(key => !key.startsWith('Sort'))
+      .reduce((obj:any, key) => {
+        obj[key] = this.queryParams[key];
+        return obj;
+      }, {});
+
+    this.queryParams = new URLSearchParams(filtered);
 
     url += '?' + this.queryParams.toString();
     return  this.client.get(url);

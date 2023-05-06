@@ -34,9 +34,32 @@
       aria-label="Close"></button>
     </div>
 
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="sorterSideLabel">Filter</h5>
+      <button #SorterClose type="button" class="btn-close" data-bs-dismiss="offcanvas"
+      aria-label="Close"></button>
+    </div>
+
     <div class="offcanvas-body">
 
       <app-tours-filter (FilterValue)="Filter($event)"></app-tours-filter>
+
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-end" tabindex="-1"
+  data-bs-scroll="true" data-bs-backdrop="false"
+  id="sorterSide" aria-labelledby="sorterSideLabel">
+
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="sorterSideLabel">Sort</h5>
+      <button #FilterClose type="button" class="btn-close" data-bs-dismiss="offcanvas"
+      aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body">
+
+      <app-tours-sorter (SorterValue)="Sort($event)"></app-tours-sorter>
 
     </div>
   </div>

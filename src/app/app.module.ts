@@ -84,6 +84,10 @@ import { CustomerCancelBookingComponent } from './component/customer-cancel-book
 import { BookingCardComponent } from './component/booking-card/booking-card.component';
 import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tour-details.component';
 import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-details.component';
+import { ToursSorterComponent } from './component/tours-sorter/tours-sorter.component';
+
+
+import { jqxSortableModule  } from 'jqwidgets-ng/jqxsortable';
 
 @NgModule({
   declarations: [
@@ -160,7 +164,9 @@ import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-deta
     CustomerCancelBookingComponent,
     BookingCardComponent,
     CustTourDetailsComponent,
-    TgTourDetailsComponent
+    TgTourDetailsComponent,
+
+    ToursSorterComponent,
 
   ],
   imports: [
@@ -171,7 +177,8 @@ import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-deta
     HttpClientModule,
     NgbModule,
     CommonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    jqxSortableModule
     ,
     ToastrModule.forRoot({
       timeOut: 1000,
