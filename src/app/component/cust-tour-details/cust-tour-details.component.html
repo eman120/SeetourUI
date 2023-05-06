@@ -32,6 +32,10 @@
           <label>Add to wishlist: </label>
           <wishlist-button [TourId] = "tourById"></wishlist-button>
         </div>
+        <div>
+          <label>Like tour: </label>
+          <like-button [TourId] = "tourById" [likes]="tour.likes"></like-button>
+        </div>
     </div>
   </div>
 </div>
