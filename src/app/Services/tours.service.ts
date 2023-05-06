@@ -12,34 +12,45 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class ToursService {
 
   urlBase: string = environment.baseUrl;
-  queryParams: Params = {};
+  queryParams: URLSearchParams = new URLSearchParams;
 
   constructor(private readonly client : HttpClient,
     private route: ActivatedRoute,
     private readonly FGQuery: FormGroupQueryService) {
     }
 
-  GetTours(isCompleted: boolean,
-    toursFilter: FormGroup<any>|undefined = undefined) {
+    GetTours(isCompleted: boolean,
+      toursFilter: FormGroup<any>|undefined = undefined) {
 
-      let url = this.urlBase+ApiPaths.tour;
+        let url = this.urlBase+ApiPaths.tour;
 
-      url += isCompleted? ApiPaths.tourPast : ApiPaths.tourUpcoming;
+        url += isCompleted? ApiPaths.tourPast : ApiPaths.tourUpcoming;
 
-      return this.FilterTours(url, toursFilter);
+        return this.FilterTours(url, toursFilter);
   }
 
-  private FilterTours(url: string, toursFilter: FormGroup<any> | undefined) {
+  getTrending() {
+    let url = this.urlBase+ApiPaths.tour+ApiPaths.tourTrending;
+
+    return this.client.get(url);
+  }
+
+  public FilterTours(url: string, toursFilter: FormGroup<any> | undefined) {
+
+    this.queryParams = new URLSearchParams(this.route.snapshot.queryParams);
 
     if (toursFilter)
     {
-      this.queryParams = this.FGQuery.GetQuery(toursFilter);
-    }
-    else {
-      this.queryParams = this.route.snapshot.queryParams;
+      Object.entries(toursFilter.value).forEach ((entry) => {
+        if (entry[1])
+          this.queryParams.append(entry[0], entry[1] as string);
+      });
     }
 
-    this.queryParams = new URLSearchParams(this.queryParams);
+    this.queryParams.forEach((key, value) => {
+      if (key.startsWith('Sort'))
+        this.queryParams.delete(key);
+    });
 
     url += '?' + this.queryParams.toString();
     return  this.client.get(url);

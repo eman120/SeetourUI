@@ -2,6 +2,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { jqxSortableModule  } from 'jqwidgets-ng/jqxsortable';
+
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './component/register/register.component';
 import { LoginComponent } from './component/login/login.component';
@@ -84,6 +86,13 @@ import { CustomerCancelBookingComponent } from './component/customer-cancel-book
 import { BookingCardComponent } from './component/booking-card/booking-card.component';
 import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tour-details.component';
 import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-details.component';
+import { ToursSorterComponent } from './component/tours-sorter/tours-sorter.component';
+
+import { FavoriteButtonComponent } from './component/favorite-button/favorite-button.component';
+import { CustomerFavoriteToursComponent } from './component/customer-favorite-tours/customer-favorite-tours.component';
+import { TrendingToursComponent } from './component/trending-tours/trending-tours.component';
+import { CustomerHomeComponent } from './component/customer-home/customer-home.component';
+
 import { TourQuestionsAnswersComponent } from './component/tour-questions-answers/tour-questions-answers.component';
 
 @NgModule({
@@ -162,8 +171,12 @@ import { TourQuestionsAnswersComponent } from './component/tour-questions-answer
     BookingCardComponent,
     CustTourDetailsComponent,
     TgTourDetailsComponent,
-    TourQuestionsAnswersComponent
-
+    TourQuestionsAnswersComponent,
+    ToursSorterComponent,
+    FavoriteButtonComponent,
+    CustomerFavoriteToursComponent,
+    TrendingToursComponent,
+    CustomerHomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -174,6 +187,7 @@ import { TourQuestionsAnswersComponent } from './component/tour-questions-answer
     NgbModule,
     CommonModule,
     BrowserAnimationsModule,
+    jqxSortableModule,
     ToastrModule.forRoot({
       timeOut: 1000,
       positionClass: 'toast-bottom-right'

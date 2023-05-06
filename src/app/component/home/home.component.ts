@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 
 import { Title } from '@angular/platform-browser';
+import { AuthService } from 'src/app/Services/auth.service';
 
 
 @Component({
@@ -14,8 +15,12 @@ import { Title } from '@angular/platform-browser';
 
 export class HomeComponent implements OnInit {
   viewsCount: number = 0;
+  interface: string;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private auth: AuthService, titleService:Title) {
+    titleService.setTitle("Seetour");
+    this.interface = auth.getInterface();
+  }
 
   ngOnInit() {
     // Make the API call to increment the views count

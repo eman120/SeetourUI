@@ -1,23 +1,45 @@
-<div class="container-fluid bg-secondary pt-5 pb-5 bg-gradient">
+<div class="col-lg-10 mx-auto bg-light border rounded p-3">
 
-  <div class="d-flex flex-row">
-    <button class="btn btn-primary" type="button"
-    data-bs-toggle="offcanvas" data-bs-target="#filterSide"
-    aria-controls="filterSide">
-      <i class="bi bi-funnel-fill"></i>
-    </button>
+  <div class="d-flex flex-column">
 
-    <h3 class="text-center text-white flex-grow-1">{{sectionTitle}}</h3>
+    <div class="d-flex flex-row p-3">
+
+      <h3 class="flex-grow-1">{{sectionTitle}}</h3>
+
+      <button class="btn btn-primary me-2" type="button"
+      data-bs-toggle="offcanvas" data-bs-target="#filterSide"
+      aria-controls="filterSide">
+        <i class="bi bi-funnel-fill"></i>
+      </button>
+
+      <button class="btn btn-primary" type="button"
+      data-bs-toggle="offcanvas" data-bs-target="#sorterSide"
+      aria-controls="sorterSide">
+        <i class="bi bi-sort-down-alt"></i>
+      </button>
+
+    </div>
+
+    <app-tour-lister [tours]="tours"></app-tour-lister>
+
   </div>
 
   <div class="offcanvas offcanvas-start" tabindex="-1"
   data-bs-scroll="true" data-bs-backdrop="false"
   id="filterSide" aria-labelledby="filterSideLabel">
+
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="filterSideLabel">Filter</h5>
       <button #FilterClose type="button" class="btn-close" data-bs-dismiss="offcanvas"
       aria-label="Close"></button>
     </div>
+
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="sorterSideLabel">Filter</h5>
+      <button #SorterClose type="button" class="btn-close" data-bs-dismiss="offcanvas"
+      aria-label="Close"></button>
+    </div>
+
     <div class="offcanvas-body">
 
       <app-tours-filter (FilterValue)="Filter($event)"></app-tours-filter>
@@ -25,6 +47,21 @@
     </div>
   </div>
 
-  <app-tour-lister [tours]="tours"></app-tour-lister>
+  <div class="offcanvas offcanvas-end" tabindex="-1"
+  data-bs-scroll="true" data-bs-backdrop="false"
+  id="sorterSide" aria-labelledby="sorterSideLabel">
+
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="sorterSideLabel">Sort</h5>
+      <button #FilterClose type="button" class="btn-close" data-bs-dismiss="offcanvas"
+      aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body">
+
+      <app-tours-sorter (SorterValue)="Sort($event)"></app-tours-sorter>
+
+    </div>
+  </div>
 
 </div>

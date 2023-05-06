@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TourCard } from 'src/app/Interfaces/tour-card';
-import { ToursService } from 'src/app/Services/tours.service';
+import { FavoriteService } from 'src/app/Services/favorite.service';
 
 @Component({
-  selector: 'app-tour-home',
-  templateUrl: './tour-home.component.html',
-  styleUrls: ['./tour-home.component.css']
+  selector: 'app-customer-favorite-tours',
+  templateUrl: './customer-favorite-tours.component.html',
+  styleUrls: ['./customer-favorite-tours.component.css']
 })
-export class TourHomeComponent {
+export class CustomerFavoriteToursComponent {
 
   Filter(filter: any = undefined) {
     this.GetTours(filter)
@@ -18,7 +18,8 @@ export class TourHomeComponent {
   tours: TourCard[] | undefined;
 
   constructor(
-    private toursService: ToursService,
+    private favorites: FavoriteService,
+    private router: Router,
     private titleService: Title,
     route:ActivatedRoute
   ) {
@@ -31,13 +32,16 @@ export class TourHomeComponent {
 
   GetTours(filter:any) {
 
-    this.titleService.setTitle(`Seetour - Upcoming tours`);
+    this.titleService.setTitle(`Seetour - Favorites`);
 
     this.tours = undefined;
 
-    this.toursService.GetTours(false, filter).subscribe({
+    this.favorites.GetTours(filter).subscribe({
         next: (data) => {
           this.tours = data as TourCard[];
+        },
+        error: () => {
+          this.router.navigateByUrl('/Error')
         }
       });
   }
