@@ -1,8 +1,8 @@
 <div class="row justify-content-center">
-  <div class="d-flex justify-content-center flex-wrap gy-4">
+  <div class="d-flex justify-content-center flex-wrap gy-4 col-lg-10">
 
     <app-tour-card *ngFor="let tour of tours" [tour]="tour"
-    class="m-2" style="flex: 0 1 auto; width: 22rem;"></app-tour-card>
+    class="m-2" style="flex: 0 1 auto; max-width: 22rem;"></app-tour-card>
 
     <ng-container *ngIf="tours; else elseTemplate">
 

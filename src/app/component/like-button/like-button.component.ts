@@ -27,10 +27,10 @@ import { CustomerService } from 'src/app/Services/customer.service';
 })
 export class LikeButtonComponent {
   @Input() likes: number = 0;
-  @Input() isLiked: boolean | null = null;
+  @Input() isLiked: boolean = false;
   @Input() TourId: number = 0;
 
-  @Output() liked = new EventEmitter<{ isLiked: boolean, TourId: number }>()
+  @Output() liked = new EventEmitter()
 
   constructor(private customer: CustomerService){}
 
@@ -39,28 +39,15 @@ export class LikeButtonComponent {
     this.isLiked = !this.isLiked;
     this.likes += this.isLiked ? 1 : -1;
 
-    this.customer.PostTourLike({tourId: this.TourId, isAdded: this.isLiked?1:0 }).subscribe({
-      next: () => {
-        this.liked.emit({isLiked: this.isLiked??false, TourId: this.TourId});
-      },
-      error: () => {
-        this.isLiked = !this.isLiked;
-        this.likes += this.isLiked ? 1 : -1;
-      }
-    })
-  }
+    // this.customer.PostTourLike({tourId: this.TourId, isAdded: this.isLiked?1:0 }).subscribe({
+    //   next: () => {
+    //     this.liked.emit({isLiked: this.isLiked, TourId: this.TourId});
+    //   },
+    //   error: () => {
+    //     this.isLiked = !this.isLiked;
+    //     this.likes += this.isLiked ? 1 : -1;
+    //   }
+    // })
 
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    if (this.isLiked == null)
-    this.customer.isLiked(this.TourId).subscribe({
-      next: () => {
-        this.isLiked = true;
-      },
-      error: () => {
-        this.isLiked = false;
-      }
-    })
   }
 }

@@ -15,7 +15,6 @@ export class BookingSliderComponent {
   @Input() MoreLink: string = "";
   @Input() MoreOutlet: string = "primary";
 
-  @Input() CanRemove: boolean | undefined;
   @Input() CanReview: boolean | undefined;
   @Input() CanCancel: boolean | undefined;
   @Input() CanReport: boolean | undefined;
@@ -51,11 +50,5 @@ export class BookingSliderComponent {
 
   CancelBooking(Booking: BookedTour) {
     this.router.navigate([`customer/tour/cancel`], {state: Booking});
-  }
-
-  Remove(Booking: BookedTour) {
-    if (this.Bookings) {
-      this.Bookings.splice(this.Bookings.findIndex(b => b.id == Booking.id), 1);
-    }
   }
 }

@@ -1,12 +1,13 @@
-
 <div>
   <app-header *ngIf="user === ''"></app-header>
 
-  <app-customer-header *ngIf="user.toLowerCase() === 'customer'"></app-customer-header>
+  <app-customer-header *ngIf="user === 'Customer'"></app-customer-header>
+
+
   <!-- <app-header></app-header> -->
-  <app-tourguide-header *ngIf="user.toLowerCase() === 'tourguide'"></app-tourguide-header>
+  <app-tourguide-header *ngIf="user === 'TourGuide'"></app-tourguide-header>
   <!-- <app-tourguide-header></app-tourguide-header> -->
-  <app-admin-header *ngIf="user.toLowerCase() === 'admin'"></app-admin-header>
+  <app-admin-header *ngIf="user === 'Admin'"></app-admin-header>
 </div>
 
 <!-- Spinner Start -->

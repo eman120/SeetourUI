@@ -32,7 +32,7 @@ export class TGOverviewComponent implements OnInit {
 
     this.titleService.setTitle("Seetour - " + this.tourGuide?.name);
 
-    const urlUpcoming = urlBase+ApiPaths.tgUpcomingTours+'?Take=10';
+    const urlUpcoming = urlBase+ApiPaths.tgUpcomingTours
     this.http.get(urlUpcoming).subscribe({
       next: (data) => {
         this.upcomingTours = data as TourCard[];
@@ -40,7 +40,7 @@ export class TGOverviewComponent implements OnInit {
       error: () => {}
     });
 
-    const urlPast = urlBase+ApiPaths.tgPastTours+'?Take=10';
+    const urlPast = urlBase+ApiPaths.tgPastTours
     this.http.get(urlPast).subscribe({
       next: (data) => {
         this.pastTours = data as TourCard[];
@@ -48,7 +48,7 @@ export class TGOverviewComponent implements OnInit {
       error: () => {}
     });
 
-    const urlReviews = urlBase+ApiPaths.tgReviews+'?Take=10';
+    const urlReviews = urlBase+ApiPaths.tgReviews
     this.http.get(urlReviews).subscribe({
       next: (data) => {
         this.reviews = data as ReviewCard[];
