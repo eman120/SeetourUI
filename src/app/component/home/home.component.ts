@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,11 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  constructor(titleService:Title) {
+
+  interface: string;
+
+  constructor(titleService:Title, auth: AuthService) {
     titleService.setTitle("Seetour")
+    this.interface = auth.getInterface()
   }
 }

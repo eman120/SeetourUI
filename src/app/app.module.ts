@@ -91,6 +91,7 @@ import { ToursSorterComponent } from './component/tours-sorter/tours-sorter.comp
 import { FavoriteButtonComponent } from './component/favorite-button/favorite-button.component';
 import { CustomerFavoriteToursComponent } from './component/customer-favorite-tours/customer-favorite-tours.component';
 import { TrendingToursComponent } from './component/trending-tours/trending-tours.component';
+import { CustomerHomeComponent } from './component/customer-home/customer-home.component';
 
 
 @NgModule({
@@ -173,6 +174,7 @@ import { TrendingToursComponent } from './component/trending-tours/trending-tour
     FavoriteButtonComponent,
     CustomerFavoriteToursComponent,
     TrendingToursComponent,
+    CustomerHomeComponent,
   ],
   imports: [
     BrowserModule,
