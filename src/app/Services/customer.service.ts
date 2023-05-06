@@ -38,4 +38,14 @@ export class CustomerService {
     let url = this.baseUrl+ApiPaths.customerTour+ApiPaths.customerTourWish;
     return this.http.post(url, wish);
   }
+
+  isWishlisted(TourId: number) {
+    let url = this.baseUrl+ApiPaths.customerTour+ApiPaths.customerTourWish+'/'+TourId;
+    return this.http.get(url);
+  }
+
+  isLiked(TourId: number) {
+    let url = this.baseUrl+ApiPaths.customerTour+ApiPaths.customerTourLike+'/'+TourId;
+    return this.http.get(url);
+  }
 }

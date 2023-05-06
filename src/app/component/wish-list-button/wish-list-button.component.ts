@@ -25,7 +25,7 @@ import { CustomerService } from 'src/app/Services/customer.service';
   `]
 })
 export class WishListButtonComponent {
-  @Input() isInWishlist: boolean = false;
+  @Input() isInWishlist: boolean | null = null;
   @Input() TourId: number = 0;
 
   @Output() wishlisted = new EventEmitter<{ isInWishlist: boolean, TourId: number }>();
@@ -38,11 +38,25 @@ export class WishListButtonComponent {
 
     this.customer.PostTourWish({tourId: this.TourId, isAdded: this.isInWishlist?1:0 }).subscribe({
       next: () => {
-        this.wishlisted.emit({isInWishlist: this.isInWishlist, TourId: this.TourId});
+        this.wishlisted.emit({isInWishlist: this.isInWishlist??false, TourId: this.TourId});
       },
       error: () => {
         this.isInWishlist = !this.isInWishlist;
       }
     })
+  }
+
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    if (this.isInWishlist == null)
+      this.customer.isWishlisted(this.TourId).subscribe({
+        next: () => {
+          this.isInWishlist = true;
+        },
+        error: () => {
+          this.isInWishlist = false;
+        }
+      })
   }
 }
