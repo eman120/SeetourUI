@@ -70,6 +70,10 @@
           <span>{{ tour.dateTo | truncate: 16:false:"" }}</span>
         </div>
         <div>
+          <h5 *ngIf="tour.dateToCancel">Last Date To Cancel Booking: </h5>
+          <span>{{ tour.dateToCancel | truncate: 16:false:"" }}</span>
+        </div>
+        <div>
           <h5 for="price">Price :</h5>
           <span *ngIf="tour.price"> {{ tour.price}}$</span>
         </div>
@@ -90,6 +94,11 @@
         <div>
           <h5 for="transportation">Transportation</h5>
           <input type="checkbox" name="transportation" id="transportation" [checked]="tour.hasTransportation" disabled>
+        </div>
+
+        <div>
+          <h5 for="category">Category:</h5>
+          <span> {{ tour.category }}</span>
         </div>
 
 
