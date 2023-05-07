@@ -24,7 +24,6 @@
     "@ng-bootstrap/ng-bootstrap": "^14.1.0",
     "@paypal/checkout-server-sdk": "^1.0.3",
     "@paypal/react-paypal-js": "^7.8.3",
-
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.4",
