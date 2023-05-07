@@ -11,7 +11,9 @@
       <div class="col-md-8">
         <div class="card-body">
 
-          <p class="card-text">{{oneWishlist.title | truncate}}</p>
+          <a class="d-block text-decoration-none text-black" [routerLink]="'/tour/'+oneWishlist.id">
+            {{oneWishlist.title | truncate}}
+          </a>
           <!-- <p class="card-text">{{oneWishlist.title | truncate}}</p> -->
           <span class="card-text capacity"><small class="text-muted">Capacity : {{oneWishlist.capacity}} </small></span>
           <!-- <span class="card-text capacity"><small class="text-muted">Capacity :{{oneWishlist.capacity}} </small></span> -->
