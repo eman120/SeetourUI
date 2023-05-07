@@ -40,9 +40,9 @@ export class PaymentComponent implements OnInit {
         //console.log('Currency:', token.card.currency);
         //console.log('Card number:', token.card.last4);
         //console.log(
-          'Expiration date:',
-          token.card.exp_month + '/' + token.card.exp_year
-        );
+        //   'Expiration date:',
+        //   token.card.exp_month + '/' + token.card.exp_year
+        // );
         //console.log('CVC:', token.card.cvc);
         //console.log('Cardholder name:', token.card.name);
         //console.log('Date time:', new Date().toString());
