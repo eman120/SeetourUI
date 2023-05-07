@@ -1,29 +1,52 @@
-
-
-
 <div class="container-fluid position-relative p-0">
-    <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-        <a routerLink="" class="navbar-brand p-0">
-            <h1 class="text-primary m-0"><i class="fa fa-map-marker-alt me-3"></i>Seetour</h1>
-            <!-- <img src="img/logo.png" alt="Logo"> -->
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-expanded="false">
-            <span class="fa fa-bars"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-0">
-                <a routerLink="/about" routerLinkActive="active" class="nav-item nav-link">About</a>
-                <a routerLink="/service" routerLinkActive="active" class="nav-item nav-link">Services</a>
-                <a routerLink="/tour" routerLinkActive="active" class="nav-item nav-link">Tours</a>
-                <a routerLink="/contact" routerLinkActive="active" class="nav-item nav-link">Contact Us</a>
+  <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+    <a routerLink="" class="navbar-brand p-0">
+      <h1 class="text-primary m-0"><i class="fa fa-map-marker-alt me-3"></i>Seetour</h1>
+      <!-- <img src="img/logo.png" alt="Logo"> -->
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+      aria-expanded="false">
+      <span class="fa fa-bars"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav flex-grow-1 py-0 align-items-start align-items-lg-center">
 
-                <a routerLink="/register" class="btn btn-primary rounded-pill me-2">Become a Partner</a>
-                <a routerLink="/login" class="btn btn-primary rounded-pill me-2">Login</a>
-
-                <a routerLink="/userregister" class="btn btn-primary rounded-pill">Register</a>
-
-            </div>
+        <div class="mx-auto justify-content-center mt-3 mt-lg-0">
+          <form [formGroup]="searchForm" (ngSubmit)="Search()" class="d-flex align-items-center" role="search">
+            <input class="form-control me-2 rounded-pill" formControlName="query" type="search" placeholder="Search"
+              aria-label="Search">
+            <button class="btn btn-primary rounded-circle mt-0" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </form>
         </div>
-    </nav>
+
+        <a routerLink="/about" routerLinkActive="active" class="nav-item nav-link">About</a>
+        <a routerLink="/service" routerLinkActive="active" class="nav-item nav-link">Services</a>
+        <a routerLink="/tour" routerLinkActive="active" class="nav-item nav-link">Tours</a>
+
+        <a routerLink="/contact" routerLinkActive="active" class="nav-item nav-link d-lg-none">Contact us</a>
+
+        <div class="d-flex flex-row" >
+          <a routerLink="/login" class="btn btn-primary rounded-pill me-2 mt-0">Login</a>
+          <a routerLink="/userregister" class="btn btn-primary rounded-pill me-2 mt-0 d-lg-none">Register</a>
+          <a routerLink="/register" class="btn btn-primary rounded-pill me-2 mt-0 d-lg-none">Become a Partner</a>
+        </div>
+
+        <li class="nav-item dropdown d-none d-lg-block">
+          <button class="btn nav-link p-0" id="navbarDropdownMenuLink" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-three-dots-vertical"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end mt-3 me-3" aria-labelledby="navbarDropdownMenuLink">
+            <li><a routerLink="/register" class="dropdown-item">Become a Partner</a></li>
+            <li><a routerLink="/userregister" class="dropdown-item">Register</a></li>
+            <li><a routerLink="/contact" routerLinkActive="active" class="dropdown-item">Contact us</a></li>
+          </ul>
+        </li>
+
+      </div>
+    </div>
+  </nav>
 
 </div>
