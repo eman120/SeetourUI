@@ -1,3 +1,5 @@
+import { ReviewCard } from "./review-card";
+
 export interface TourDet {
     id: number,
     photos: string[],
@@ -13,6 +15,5 @@ export interface TourDet {
     title: string,
     hasTransportation: boolean,
     description:string,
-    reviews: string[]
+    reviews: ReviewCard[]
   }
-  

@@ -60,8 +60,8 @@ const routes: Routes = [
   {path:"QuestAns/:id" , component:TourQuestionsAnswersComponent},
 {path:"createtour",component:CreateTourComponent},
   // {path:"tourdetails/:id",component:TourDetailsComponent},
-  {path:"custdetails/:id",component:CustTourDetailsComponent},
-  {path:"tour/:id",component:TgTourDetailsComponent},
+  //{path:"custdetails/:id",component:CustTourDetailsComponent},
+  {path:"tour/:id",component:TourDetailsComponent},
 
   {path:"payment/:id",component:PaymentComponent},
 

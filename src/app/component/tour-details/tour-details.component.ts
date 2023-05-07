@@ -7,6 +7,7 @@ import { TourDet } from 'src/app/Interfaces/tour-det';
 import { ToursService } from 'src/app/Services/tours.service';
 import { Title } from '@angular/platform-browser';
 import { ReviewCard } from 'src/app/Interfaces/review-card';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-tour-details',
@@ -29,18 +30,22 @@ export class TourDetailsComponent implements OnInit {
   checkForTour :any;
 
   // reviews: ReviewCard[] = [];
-  @Input() tourById :number | undefined;
+  tourById! :string | null;
+  interface: string = '';
   @Output() tourSend = new EventEmitter();
 
   constructor(
     private toursService: ToursService,
     private titleService:Title,
     private route: ActivatedRoute,
-    private http: HttpClient
-    ) {}
+    private http: HttpClient,
+    auth: AuthService
+    ) {
+      this.interface = auth.getInterface();
+    }
 
     ngOnInit(): void {
-      // const tourById = this.route.snapshot.paramMap.get('id');
+      this.tourById = this.route.snapshot.paramMap.get('id');
       //console.log(this.tourById);
       this.toursService.GetTourById(this.tourById ? this.tourById.toString() : "").subscribe({
         next: (data) => {
