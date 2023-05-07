@@ -122,7 +122,7 @@ const routes: Routes = [
   {path:"customer/tour", component:CustomerBookedToursComponent},
   {path:"customer/tour/cancel", component:CustomerCancelBookingComponent},
   {path:"favorites", component:CustomerFavoriteToursComponent},
-  {path:"wishlist", component:WishlistItemComponent},
+  {path:"wishlist", component:CustomerWishlistComponent},
 
 
   {path:"**" , component:ErrorComponent}
