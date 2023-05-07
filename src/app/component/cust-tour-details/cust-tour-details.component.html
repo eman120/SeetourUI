@@ -1,3 +1,25 @@
+<div class="container-fluid bg-primary py-5 mb-5 hero-header">
+  <div class="container py-5">
+    <div class="row justify-content-center py-5">
+      <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+        <h1 class="display-3 text-white animated slideInDown">Tour Details</h1>
+        <div *ngIf="tour">
+          <a routerLink="/bookTour/{{tour.id}}" class="btn btn-primary rounded-pill me-2"
+            [ngClass]="{'disabled-link': tour.capacity - tour.bookings <= 0}">
+            Book Tour
+          </a>
+          <br><br>
+          <div class="btn me-2">
+            <wishlist-button [TourId] = "tourById"></wishlist-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 <app-tour-details [tourById] = "tourById" (tourSend)="tour = $event"></app-tour-details>
 
@@ -21,18 +43,10 @@
       </div>
     </div>
 
-
-    <div class="col-6 pt-5 mt-5">
-        <a routerLink="/bookTour/{{tour.id}}" class="btn btn-primary rounded-pill me-2"
-          [ngClass]="{'disabled-link': tour.capacity - tour.bookings <= 0}">
-          Book Tour
-        </a>
-        <br>
-        <div>
-          <label>Add to wishlist: </label>
-          <wishlist-button [TourId] = "tourById"></wishlist-button>
-        </div>
-    </div>
+    <div class="col-6 pt-5 mt-5" *ngIf="tour">
+      <label>Add to wishlist: </label>
+      <wishlist-button [TourId] = "tourById"></wishlist-button>
+  </div>
   </div>
 </div>
 

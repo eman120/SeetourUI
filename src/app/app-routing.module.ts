@@ -44,6 +44,11 @@ import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-deta
 import { WishlistItemComponent } from './component/wishlist-item/wishlist-item.component';
 import { TourQuestionsAnswersComponent } from './component/tour-questions-answers/tour-questions-answers.component';
 
+import { ManageCustomersComponent } from './manage-customers/manage-customers.component';
+import { ManageTourguidesComponent } from './manage-tourguides/manage-tourguides.component';
+import { QuestionAnswerComponent } from './component/question-answer/question-answer.component';
+import { AdminReviewComponent } from './component/admin-review/admin-review.component';
+
 const routes: Routes = [
   {path: "",component:HomeComponent},
   {path: "home" , component:HomeComponent},
@@ -55,7 +60,7 @@ const routes: Routes = [
   {path:"services" , component:DetailsComponent},
   {path:"header" , component:HeaderComponent},
   {path:"QuestAns/:id" , component:TourQuestionsAnswersComponent},
-{path:"createtour",component:CreateTourComponent},
+  {path:"createtour",component:CreateTourComponent},
   // {path:"tourdetails/:id",component:TourDetailsComponent},
   {path:"custdetails/:id",component:CustTourDetailsComponent},
   {path:"tour/:id",component:TgTourDetailsComponent},
@@ -100,8 +105,11 @@ const routes: Routes = [
 
   {path:"tourguide" , component:TourGuideComponent},
 
+  {path:"manage-customer" , component:ManageCustomersComponent},
+  {path:"manage-tourguide" , component:ManageTourguidesComponent},
 
-
+  {path:"question-answer",component:QuestionAnswerComponent},
+  {path:"admin-review",component:AdminReviewComponent},
   //{path:"tourguide" , component:TourGuideComponent},
 
   //{path:"review" , component:ReviewCardComponent},

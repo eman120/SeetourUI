@@ -1,5 +1,5 @@
 import { Component, OnInit, NgZone } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 declare var paypal: any;
 
@@ -10,15 +10,17 @@ declare var paypal: any;
 })
 export class PaymentComponent implements OnInit {
 
-  constructor(private router: Router, private ngZone: NgZone) { }
+  constructor(private router: Router, private ngZone: NgZone,private route: ActivatedRoute) { }
 
+  amount: any;
   handler:any = null;
 
   ngOnInit() {
     this.loadStripe();
   }
 
-  pay(amount: any) {
+  pay() {
+    this.amount = this.route.snapshot.paramMap.get('seatsNum');
     var handler = (<any>window).StripeCheckout.configure({
       key: 'pk_test_51HxRkiCumzEESdU2Z1FzfCVAJyiVHyHifo0GeCMAyzHPFme6v6ahYeYbQPpD9BvXbAacO2yFQ8ETlKjo4pkHSHSh00qKzqUVK9',
       locale: 'auto',
@@ -33,7 +35,7 @@ export class PaymentComponent implements OnInit {
     handler.open({
       name: 'Demo Site',
       description: '2 widgets',
-      amount: amount * 100
+      amount: this.amount * 100
     });
   }
 
