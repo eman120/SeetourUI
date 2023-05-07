@@ -32,17 +32,17 @@ export class CustomerReviewFormComponent implements OnInit {
 
     this._bookedtourId = value;
 
-    this.photos = new FormData();
     this.fomrValidation.reset();
     this.formstatus='pending'
   }
 
   review:string = "";
-  photos:FormData = new FormData();
 
   formstatus: string = "pending";
 
   fomrValidation: FormGroup<any> = new FormGroup([]);
+
+  photos: string[] = [];
 
   ngOnInit(): void {
 
@@ -50,10 +50,6 @@ export class CustomerReviewFormComponent implements OnInit {
       reviewBody: ['', [Validators.required, Validators.minLength(32), Validators.maxLength(512)]],
       rating: ['', [Validators.required, Validators.min(1), Validators.max(5)]]
     })
-
-    var form = $('form');
-
-    this.photos = new FormData(form[0] as HTMLFormElement)
   }
 
   imagesCompressing() {
@@ -62,7 +58,9 @@ export class CustomerReviewFormComponent implements OnInit {
 
   ImagesSelected(data: ImageCompressorOutput) {
 
-    this.photos = data.formData;
+    this.photos = [];
+
+    data.uploaded.forEach((photo) => {this.photos.push(photo.compressedImage)});
 
     ////console.log(this.photos);
 
@@ -78,18 +76,15 @@ export class CustomerReviewFormComponent implements OnInit {
       const reviewDto: ReviewDto = {
         bookedTourId: this._bookedtourId,
         rating: this.fomrValidation.value['rating'] as number,
-        reviewBody: this.fomrValidation.value['reviewBody'] as string
+        reviewBody: this.fomrValidation.value['reviewBody'] as string,
+        Base64Images: this.photos
       }
 
-      Object.entries(reviewDto).forEach(([key, value]) => {
-        this.photos.append(key, value.toString());
-      });
-
-      this.customer.PostBookedTourReview(this.photos).subscribe({
+      this.customer.PostBookedTourReview(reviewDto).subscribe({
         next: () => {
           this.formstatus = "success";
 
-          this.photos = new FormData();
+          this.photos = [];
           this.fomrValidation.reset();
 
           this.Reviewed.emit();
