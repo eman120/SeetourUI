@@ -1,6 +1,3 @@
-
-<app-tour-details [tourById] = "tourById" (tourSend)="tour = $event"></app-tour-details>
-
 <div class="ms-5">
     <form (ngSubmit)="onSubmit()" *ngIf="tour">
         <div *ngIf="!checkForTour">

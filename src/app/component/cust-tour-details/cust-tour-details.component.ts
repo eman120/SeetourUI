@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
@@ -27,7 +27,7 @@ export class CustTourDetailsComponent implements OnInit{
     }
 
     tourById:any;
-    tour:any;
+    @Input() tour:any;
     ngOnInit(): void {
       this.tourById = this.route.snapshot.params["id"];
       ////console.log(this.tourById);

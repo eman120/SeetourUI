@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { ToursService } from 'src/app/Services/tours.service';
@@ -21,7 +21,7 @@ export class TgTourDetailsComponent implements OnInit{
 
   Photos: any[]=[];
   tourById:any;
-  tour:any;
+  @Input() tour:any;
   checkForTour:any;
   // flag = this.Photos.length > 0;
 

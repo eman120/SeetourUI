@@ -1,8 +1,22 @@
-
-<app-tour-details [tourById] = "tourById" (tourSend)="tour = $event"></app-tour-details>
-
 <div *ngIf="tour" class="container ps-5">
   <div class="row">
+
+    <div class="col-6 pt-5 mt-5">
+        <a routerLink="/bookTour/{{tour.id}}" class="btn btn-primary rounded-pill me-2"
+          [ngClass]="{'disabled-link': tour.capacity - tour.bookings <= 0}">
+          Book Tour
+        </a>
+        <br>
+        <div>
+          <label>Add to wishlist: </label>
+          <wishlist-button [TourId] = "tourById"></wishlist-button>
+        </div>
+        <div>
+          <label>Like tour: </label>
+          <like-button [TourId] = "tourById" [likes]="tour.likes"></like-button>
+        </div>
+    </div>
+
     <div class="col-6">
       <form [formGroup]="askQuestion" (ngSubmit)="Ask()">
         <label>Ask your question: </label>
@@ -21,22 +35,6 @@
       </div>
     </div>
 
-
-    <div class="col-6 pt-5 mt-5">
-        <a routerLink="/bookTour/{{tour.id}}" class="btn btn-primary rounded-pill me-2"
-          [ngClass]="{'disabled-link': tour.capacity - tour.bookings <= 0}">
-          Book Tour
-        </a>
-        <br>
-        <div>
-          <label>Add to wishlist: </label>
-          <wishlist-button [TourId] = "tourById"></wishlist-button>
-        </div>
-        <div>
-          <label>Like tour: </label>
-          <like-button [TourId] = "tourById" [likes]="tour.likes"></like-button>
-        </div>
-    </div>
   </div>
 </div>
 

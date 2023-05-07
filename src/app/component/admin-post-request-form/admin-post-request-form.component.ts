@@ -41,7 +41,7 @@ export class AdminPostRequestFormComponent implements OnInit {
     })
   }
 
-  get isAdmin() { return this.interface == "Admin" }
+  get isAdmin() { return this.interface == "admin" }
 
   onAccept() {
     this.formstatus = "posted";

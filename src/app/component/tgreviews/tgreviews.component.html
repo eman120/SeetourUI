@@ -1,7 +1,7 @@
-<div *ngIf="reviews" class="container-fluid bg-secondary pt-5 pb-5 bg-gradient">
+<div *ngIf="reviews" class="container-fluid bg-secondary pt-5 pb-5 bg-gradient d-flex align-items-center flex-column">
 
   <h3 class="text-center text-white">Reviews</h3>
 
-  <app-review-lister [Reviews]="reviews"></app-review-lister>
+  <app-review-lister [Reviews]="reviews" class="col-12 col-lg-9"></app-review-lister>
 
 </div>
