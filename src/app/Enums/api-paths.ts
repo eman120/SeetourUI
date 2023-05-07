@@ -20,8 +20,10 @@ export enum ApiPaths {
   admin = "/admin",
   adminTour = "/Tour",
   adminTourRequest = "/Request",
+  adminTourIsPending = "/isPending",
   adminTourguide = "/TourGuide",
   adminTGApplicant = "/Applicant",
+
   custReg = "/CustomerRegistration",
   tgReg = "/TourGuideRegistration",
 
@@ -46,11 +48,11 @@ export enum ApiPaths {
   bookDetails = "/BookTourDetails",
   dashStatistics = "/Get Statistics",
   pics = "/AddPics",
-  addQuestion="/AddQuestion",
+  addQuestion = "/AddQuestion",
   booking = "/booking",
   favorites = "/favorites",
   tourTrending = "/trending",
-  answersAndQues="/GetQuestWithAns"
+  answersAndQues = "/GetQuestWithAns",
 }
 
 

@@ -3,23 +3,13 @@
   <div class="card">
     <div class="card-body">
 
-      <div *ngIf="formstatus=='invalid'" class="alert alert-danger" role="alert">
-        <strong>Please enter a description of your edit request</strong>
-      </div>
-      <div *ngIf="formstatus=='error'" class="alert alert-danger" role="alert">
-        <strong>Something went wrong, please try again</strong>
-      </div>
-      <div *ngIf="formstatus=='success'" class="alert alert-success" role="alert">
-        <strong>Your change has been sent successfully</strong>
-      </div>
-
       <h2 class="card-title">Posting Status</h2>
 
-      <form [formGroup]="formValidation" (ngSubmit)="onRequestEdit()">
+      <form *ngIf="pending" [formGroup]="formValidation" (ngSubmit)="onRequestEdit()">
         <div class="mb-3">
           <label for="editRequest" class="form-label">Edit Request</label>
           <textarea rows="4" id="editRequest" class="form-control" formControlName="editRequest"
-          style="resize: none;" [value]="request"></textarea>
+          style="resize: none;"></textarea>
         </div>
 
         <div *ngIf="formstatus!='posted'" class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -28,6 +18,19 @@
           <button [disabled]="!formValidation.valid" class="btn btn-outline-info">Request Edit</button>
         </div>
       </form>
+      <div *ngIf="!pending || formstatus == 'success'">
+        <p>This post is not available for modifications</p>
+      </div>
+
+      <div *ngIf="!formValidation.untouched && !formValidation.valid" class="alert alert-warning" role="alert">
+        <strong>Please enter a description of your edit request</strong>
+      </div>
+      <div *ngIf="formstatus=='error'" class="alert alert-danger" role="alert">
+        <strong>Something went wrong, please try again</strong>
+      </div>
+      <div *ngIf="formstatus=='success'" class="alert alert-success" role="alert">
+        <strong>Your change has been sent successfully</strong>
+      </div>
 
     </div>
   </div>
