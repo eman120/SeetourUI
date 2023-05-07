@@ -28,7 +28,7 @@ export class AdminStatisticsComponent {
      this.http.get('https://localhost:44362/api/DashBoard/TopTourRevenueName').subscribe(result=>{
      this.obj=result
      this.TopTourRevenueName=this.obj.tourName
-     console.log(result)
+     ////console.log(result)
      },error=>console.error(error));
      this.http.get('https://localhost:44362/api/DashBoard/TopTourRevenueMoney').subscribe(result=>{
        this.Revenue=result

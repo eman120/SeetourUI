@@ -23,12 +23,12 @@ answersandQues: QusesAndAns[]=[];
     subscribe({
       next:(data)=>{
             this.answersandQues= data as QusesAndAns[];
-            console.log(this.answersandQues);
+            //console.log(this.answersandQues);
       },
       error:()=>{
-        console.log('Error Happened');
-        console.log(this.answersandQues);
-        
+        //console.log('Error Happened');
+        //console.log(this.answersandQues);
+
       }
     })
   }

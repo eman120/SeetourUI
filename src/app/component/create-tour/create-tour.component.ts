@@ -105,7 +105,7 @@ export class CreateTourComponent implements OnInit {
       description: ['', [Validators.required]],
       category: ['', Validators.required],
       // postedAt: [''],
-      
+
 
     });
     // this.createtourform.get('postedAt')?.setValue(this.formattedDate);
@@ -119,7 +119,7 @@ export class CreateTourComponent implements OnInit {
     // Access the values of the URLs from the parent component and submit them along with the other form data
     const formValue = { ...this.createtourform.value,  locationFromUrl: this.firsturl, locationFrom: this.locationFrom, locationToUrl: this.secondurl, locationTo: this.locationTo,photos:this.Photos};
 
-    console.log('form:', formValue);
+    ////console.log('form:', formValue);
     if (formValue) {
 
       this.ClientService.CreateTour(formValue).subscribe(
@@ -149,7 +149,7 @@ export class CreateTourComponent implements OnInit {
         const today = new Date();
         if (datefromm && datefromm < today) {
           this.InValidDateFrom = true;
-          // console.log (this.createtourform.get('datefrom')?.value );
+          // //console.log (this.createtourform.get('datefrom')?.value );
           observer.next({ 'InValidDateFrom': true });
         } else {
           this.InValidDateFrom = false;
@@ -172,7 +172,7 @@ export class CreateTourComponent implements OnInit {
         const datefromTracker = new Date(this.createtourform.get('dateFrom')?.value);
         // datefromTracker.setHours(0,0,0,0);
 
-        // console.log(this.InValidDateFrom);
+        // //console.log(this.InValidDateFrom);
         if (datetoo && datefromTracker && datetoo < datefromTracker) {
           this.InValidDateTo = true;
           observer.next({ 'InValidDateTo': true });
@@ -200,7 +200,7 @@ export class CreateTourComponent implements OnInit {
 
         // datefromTracker.setHours(0,0,0,0);
 
-        // console.log(this.InValidDateFrom);
+        // //console.log(this.InValidDateFrom);
         if (canceldate && datefromTracker && (canceldate > datefromTracker )) {
           this.InValidCancelDate = true;
           observer.next({ 'InValidCancelDate': true });

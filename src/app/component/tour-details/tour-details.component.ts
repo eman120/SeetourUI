@@ -17,7 +17,7 @@ export class TourDetailsComponent implements OnInit {
 
   // /*@Input()*/ tour: TourCard | undefined;
   // get tourLink(): string {
-  //   console.log(this.tour);
+  //   //console.log(this.tour);
   //   return this.tour ? `/tour/${this.tour.id}` : '#';
   // }
   Math = Math;
@@ -41,29 +41,29 @@ export class TourDetailsComponent implements OnInit {
 
     ngOnInit(): void {
       // const tourById = this.route.snapshot.paramMap.get('id');
-      console.log(this.tourById);
+      //console.log(this.tourById);
       this.toursService.GetTourById(this.tourById ? this.tourById.toString() : "").subscribe({
         next: (data) => {
           this.tour = data as TourDet;
-          this.tourSend.emit(this.tour);          
+          this.tourSend.emit(this.tour);
           // this.reviews = this.tour.reviews as ReviewCard[];
-          console.log(this.tour);
+          //console.log(this.tour);
           this.loading = false;
         },
         error: () => { }
       });
-      
+
       // this.Photos=this.Photos.map(photo=>{
         //   return {
           //     id:0,
           //     url:"",
           //     photoId:photo.id,
           //     tourId:this.tourById
-          
+
       //   };
       // });
     }
-    
+
 
 
   // submitForm() {
@@ -74,7 +74,7 @@ export class TourDetailsComponent implements OnInit {
 
   //     // send the question-answer pair to the API endpoint
   //     this.http.post('https://localhost:7277/api/TourAnswer', { question, answer }).subscribe(response => {
-  //       console.log('Answer submitted successfully');
+  //       //console.log('Answer submitted successfully');
   //     }, error => {
   //       console.error('Error submitting answer: ', error);
   //     });

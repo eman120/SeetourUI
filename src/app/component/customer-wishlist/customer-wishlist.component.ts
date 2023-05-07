@@ -22,20 +22,20 @@ export class CustomerWishlistComponent {
       {
         next: (data) => {
           this.wishlist = data as WishList[];
-          console.log(this.wishlist);
+          //console.log(this.wishlist);
           // Subscribe to the valueEmitted event of the child component
       //  this.WishlistItemComponent.cusname.subscribe(
       //   (value: string) => {
       //     this.emittedValue = value;
       //   }
       // );
-        
+
         },
         error: () => { }
       }
     )
 
   }
-  
+
 
 }

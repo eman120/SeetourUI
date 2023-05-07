@@ -73,7 +73,7 @@ export class ToursSectionFilterableComponent {
 
     //   if (turn.startsWith('date')) {
 
-    //     console.log('dating');
+    //     //console.log('dating');
 
     //     this.tours.sort((a, b) => {
 
@@ -92,7 +92,7 @@ export class ToursSectionFilterableComponent {
 
     //   else if (['price', 'capacity'].includes(turn)) {
 
-    //     console.log('price & capacity');
+    //     //console.log('price & capacity');
 
     //     this.tours.sort((a, b) => {
 

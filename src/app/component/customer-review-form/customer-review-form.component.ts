@@ -64,7 +64,7 @@ export class CustomerReviewFormComponent implements OnInit {
 
     this.photos = data.formData;
 
-    console.log(this.photos);
+    ////console.log(this.photos);
 
     this.formstatus = 'pending';
   }
