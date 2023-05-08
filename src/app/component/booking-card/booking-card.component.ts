@@ -24,7 +24,7 @@ export class BookingCardComponent {
 
   get booking() {
 
-    console.log(this.Booking)
+    ////console.log(this.Booking)
 
     let display = this.Booking;
 

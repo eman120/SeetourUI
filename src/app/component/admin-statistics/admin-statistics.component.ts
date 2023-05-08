@@ -25,9 +25,16 @@ export class AdminStatisticsComponent {
     this.http.get('https://localhost:7277/api/Admin/CompletedTours').subscribe(result=>{
       this.Completed=result
     },error=>console.error(error));
+
      this.http.get('https://localhost:7277/api/Admin/TopTourRevenueName').subscribe(result=>{
      this.TopTourRevenueName=result
      console.log(this.TopTourRevenueName)
+
+     this.http.get('https://localhost:44362/api/DashBoard/TopTourRevenueName').subscribe(result=>{
+     this.obj=result
+     this.TopTourRevenueName=this.obj.tourName
+     ////console.log(result)
+
      },error=>console.error(error));
      this.http.get('https://localhost:7277/api/Admin/TopTourRevenueMoney').subscribe(result=>{
        this.Revenue=result

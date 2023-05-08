@@ -2,16 +2,16 @@
   <div class="container py-5">
     <div class="row justify-content-center py-5">
       <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
-        <h1 class="display-3 text-white animated slideInDown">Tour Details</h1>
+        <h1 class="display-3 text-white animated slideInDown">{{tour.title}}</h1>
       </div>
     </div>
   </div>
 </div>
 
 <div *ngIf="!loading">
-  <div class="container" *ngIf="tour">
+  <div class="container-lg" *ngIf="tour">
 
-    <app-admin-post-request-form [tourId]="tour.id"></app-admin-post-request-form>
+    <app-admin-post-request-form *ngIf="interface == 'admin'" [tourId]="tour.id"></app-admin-post-request-form>
 
     <!-- <form (ngSubmit)="submitForm()">
       <div class="form-group">
@@ -32,12 +32,17 @@
           <ng-template ngbSlide *ngFor="let photo of tour.photos">
             <!-- slide content -->
             <div class="carousel-item active">
-              <img src="{{photo}}" class="d-block w-100"  style="height: 700px;">
+              <img src="{{photo}}" class="d-block w-100" style="height: 700px;">
             </div>
           </ng-template>
         </ngb-carousel>
       </div>
+
+
       <div class="col-md-6">
+
+        <app-tg-tour-details class="card mb-3 py-4" *ngIf="interface == 'tourguide'" [tour]="tour"></app-tg-tour-details>
+
         <h4>Tour Information</h4>
         <div class="mb-3">
           <h5>Description : </h5>
@@ -58,11 +63,15 @@
         </div>
         <div>
           <h5 *ngIf="tour.dateFrom">Date From : </h5>
-          <span>{{ tour.dateFrom }}</span>
+          <span>{{ tour.dateFrom | truncate: 16:false:"" }}</span>
         </div>
         <div>
           <h5 *ngIf="tour.dateTo">Date To : </h5>
-          <span>{{ tour.dateTo }}</span>
+          <span>{{ tour.dateTo | truncate: 16:false:"" }}</span>
+        </div>
+        <div>
+          <h5 *ngIf="tour.dateToCancel">Last Date To Cancel Booking: </h5>
+          <span>{{ tour.dateToCancel | truncate: 16:false:"" }}</span>
         </div>
         <div>
           <h5 for="price">Price :</h5>
@@ -74,19 +83,25 @@
           <i class="fa-solid fa-thumbs-up like"></i>
         </div>
         <div>
-          <h5 for="available-seats">Available Seats</h5>
-          <div class="progress">
+          <h5 for="available-seats">Bookings</h5>
+          <span> {{ tour.bookings }}/{{tour.capacity}}</span>
+          <!-- <div class="progress">
             <div class="progress-bar" role="progressbar" [style.width.%]="(tour.bookings / tour.capacity ) * 100"
               [attr.aria-valuenow]="tour.bookings" aria-valuemin="0" [attr.aria-valuemax]="tour.capacity"></div>
-          </div>
+          </div> -->
         </div>
-        
+
         <div>
           <h5 for="transportation">Transportation</h5>
           <input type="checkbox" name="transportation" id="transportation" [checked]="tour.hasTransportation" disabled>
         </div>
 
-        
+        <div>
+          <h5 for="category">Category:</h5>
+          <span> {{ tour.category }}</span>
+        </div>
+
+
         <!-- <div class="m-3">
           <h5>Reviews : </h5>
           <div class="card flex-md-row align-items-start">
@@ -99,11 +114,16 @@
           </div>
         </div> -->
 
-        
       </div>
 
-      <div class="m-3">
-        <h5>Reviews : </h5>
+      <app-cust-tour-details *ngIf="interface == 'customer'" [tour]="tour"></app-cust-tour-details>
+
+      <div class="col-12">
+        <app-customer-review-form *ngIf="interface == 'customer'" [tourId]="tour.id">
+        </app-customer-review-form>
+
+        <app-review-lister SliderTitle="Reviews" [Reviews]="tour.reviews"></app-review-lister>
+        <!-- <h5>Reviews : </h5>
         <div class="card flex-md-row align-items-start">
           <div class="p-3 d-flex flex-column align-self-stretch col-md-6">
             <ng-container *ngFor="let review of tour.reviews.slice(0, Math.ceil(tour.reviews.length / 2)); let i = index">
@@ -121,12 +141,11 @@
               <br>
             </ng-container>
           </div>
-        </div>
-      </div>        
+        </div> -->
+      </div>
+    </div>
 
   </div>
-
-</div>
 </div>
 
 <div *ngIf="loading" class="load">

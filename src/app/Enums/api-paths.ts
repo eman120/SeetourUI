@@ -53,6 +53,8 @@ export enum ApiPaths {
   favorites = "/favorites",
   tourTrending = "/trending",
   answersAndQues = "/GetQuestWithAns",
+  unansweredquestions="/TourGuide/GetAllUnAnsweredQusetions",
+  tganswerQusetions="/TourGuide/AnswerQusetion",
 }
 
 

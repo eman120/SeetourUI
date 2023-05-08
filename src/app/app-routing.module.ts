@@ -1,3 +1,4 @@
+import { TgUnansweredQuestionsComponent } from './component/tg-unanswered-questions/tg-unanswered-questions.component';
 import { CustomerWishlistComponent } from './component/customer-wishlist/customer-wishlist.component';
 import { NgModule, createComponent } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -43,11 +44,15 @@ import { CustomerBookedToursComponent } from './component/customer-booked-tours/
 import { CustomerCancelBookingComponent } from './component/customer-cancel-booking/customer-cancel-booking.component';
 import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tour-details.component';
 import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-details.component';
-import { CustomerFavoriteToursComponent } from './component/customer-favorite-tours/customer-favorite-tours.component';
+import { CustomerFavoriteToursComponent } from './component/customer-favorite-tours/customer-favorite-tours.component'
 import { WishlistItemComponent } from './component/wishlist-item/wishlist-item.component';
 import { TourQuestionsAnswersComponent } from './component/tour-questions-answers/tour-questions-answers.component';
+
 import { ManageTourguidesComponent } from './component/manage-tourguides/manage-tourguides.component';
 import { ManageCustomersComponent } from './component/manage-customers/manage-customers.component';
+
+import { UnAuthorizedComponent } from './component/un-authorized/un-authorized.component';
+
 
 const routes: Routes = [
   {path: "",component:HomeComponent},
@@ -62,8 +67,8 @@ const routes: Routes = [
   {path:"QuestAns/:id" , component:TourQuestionsAnswersComponent},
 {path:"createtour",component:CreateTourComponent},
   // {path:"tourdetails/:id",component:TourDetailsComponent},
-  {path:"custdetails/:id",component:CustTourDetailsComponent},
-  {path:"tour/:id",component:TgTourDetailsComponent},
+  //{path:"custdetails/:id",component:CustTourDetailsComponent},
+  {path:"tour/:id",component:TourDetailsComponent},
 
   {path:"payment/:id/:amount",component:PaymentComponent},
 
@@ -127,9 +132,9 @@ const routes: Routes = [
   {path:"customer/tour", component:CustomerBookedToursComponent},
   {path:"customer/tour/cancel", component:CustomerCancelBookingComponent},
   {path:"favorites", component:CustomerFavoriteToursComponent},
-  {path:"wishlist", component:WishlistItemComponent},
 
-
+{path:"unansweredQuestions",component:TgUnansweredQuestionsComponent},
+{path:"unauthorized",component:UnAuthorizedComponent},
   {path:"**" , component:ErrorComponent}
 
 ];

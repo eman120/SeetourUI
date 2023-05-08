@@ -24,9 +24,9 @@ export class CustomerService {
     return this.http.get(url);
   }
 
-  PostBookedTourReview(files: FormData) {
+  PostBookedTourReview(review: ReviewDto) {
     let url = this.baseUrl+ApiPaths.customerTour+ApiPaths.customerTourReview;
-    return this.http.post(url, files);
+    return this.http.post(url, review);
   }
 
   PostTourLike(like: CustomerTourSave) {

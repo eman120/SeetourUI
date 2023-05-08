@@ -37,12 +37,12 @@ export class UploadImageComponent {
     if (file) {
       const formData = new FormData();
       formData.append('file', file);
-      console.log(file);
+      //console.log(file);
       this.http.post('https://localhost:7277/api/AzureImagesURL/UploadImage', formData)
         .subscribe((result: any) => {
           this.isUploaded=true;
           this.imageUrl.emit(result.url);
-         console.log(result.url);
+         //console.log(result.url);
           // Reset the form after successful upload
           this.uploadForm.reset();
         }, (error: any) => {
@@ -50,7 +50,7 @@ export class UploadImageComponent {
           // Display user-friendly error message here
         });
     } else {
-      console.log('No Selected Files');
+      //console.log('No Selected Files');
     }
   }
 

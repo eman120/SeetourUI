@@ -37,18 +37,18 @@ export class PaymentComponent implements OnInit {
       key: 'pk_test_51HxRkiCumzEESdU2Z1FzfCVAJyiVHyHifo0GeCMAyzHPFme6v6ahYeYbQPpD9BvXbAacO2yFQ8ETlKjo4pkHSHSh00qKzqUVK9',
       locale: 'auto',
       token: (token: any) => {
-        console.log(token);
-        console.log('Payment token:', token);
-        console.log('Amount:', amount);
-        console.log('Currency:', token.card.currency);
-        console.log('Card number:', token.card.last4);
-        console.log(
-          'Expiration date:',
-          token.card.exp_month + '/' + token.card.exp_year
-        );
-        console.log('CVC:', token.card.cvc);
-        console.log('Cardholder name:', token.card.name);
-        console.log('Date time:', new Date().toString());
+        //console.log(token);
+        //console.log('Payment token:', token);
+        //console.log('Amount:', amount);
+        //console.log('Currency:', token.card.currency);
+        //console.log('Card number:', token.card.last4);
+        //console.log(
+        //   'Expiration date:',
+        //   token.card.exp_month + '/' + token.card.exp_year
+        // );
+        //console.log('CVC:', token.card.cvc);
+        //console.log('Cardholder name:', token.card.name);
+        //console.log('Date time:', new Date().toString());
         const paymentInfo = {
           bookedTourId:this.bookedTourId,
           amount:this.amount,
@@ -65,7 +65,7 @@ export class PaymentComponent implements OnInit {
             paymentInfo
           )
           .subscribe((response: any) => {
-            console.log('Payment saved to backend:', response);
+            //console.log('Payment saved to backend:', response);
           });
         this.ngZone.run(() => {
           this.router.navigate(['/payment-success']);
@@ -91,7 +91,7 @@ export class PaymentComponent implements OnInit {
           key: 'pk_test_51HxRkiCumzEESdU2Z1FzfCVAJyiVHyHifo0GeCMAyzHPFme6v6ahYeYbQPpD9BvXbAacO2yFQ8ETlKjo4pkHSHSh00qKzqUVK9',
           locale: 'auto',
           token: (token: any) => {
-            console.log(token);
+            //console.log(token);
             alert('Payment Success!!');
             this.ngZone.run(() => {
               this.router.navigate(['/']);

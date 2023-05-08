@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Title } from '@angular/platform-browser';
 import { AuthService } from 'src/app/Services/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,9 +18,12 @@ export class HomeComponent implements OnInit {
   viewsCount: number = 0;
   interface: string;
 
-  constructor(private http: HttpClient, private auth: AuthService, titleService:Title) {
+  constructor(private http: HttpClient, auth: AuthService, titleService:Title, router: Router) {
     titleService.setTitle("Seetour");
     this.interface = auth.getInterface();
+    if (this.interface == 'tourguide') {
+      router.navigateByUrl('/dashboard');
+    }
   }
 
   ngOnInit() {

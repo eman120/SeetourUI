@@ -25,7 +25,7 @@ export class TourguideDashboardComponent implements OnInit{
 
     this.statisticsService.getStatistics().subscribe({
       next: (data) => {
-        console.log(data);
+        //console.log(data);
         this.statistics = data as dashboard;
       },
       error: () => { }

@@ -1,8 +1,7 @@
-<div class="card mb-3" style="max-width: 540px;">
 
   <!-- <div *ngIf="oneWishlist" class="card mb-3" style="max-width: 540px;"> -->
 
-  <div *ngIf="oneWishlist" class="card mb-3" style="max-width: 650px;">
+  <div *ngIf="oneWishlist" class="card mb-3" style="max-width: 1000px;">
     <div class="row g-0">
       <div class="col-md-4">
         <img src="{{oneWishlist.photoUrl}}" class="img-fluid rounded-start" alt="">
@@ -11,25 +10,29 @@
       <div class="col-md-8">
         <div class="card-body">
 
-          <p class="card-text">{{oneWishlist.title | truncate}}</p>
+          <p class="card-text">{{oneWishlist.title}}</p>
           <!-- <p class="card-text">{{oneWishlist.title | truncate}}</p> -->
           <span class="card-text capacity"><small class="text-muted">Capacity : {{oneWishlist.capacity}} </small></span>
+          <br>
           <!-- <span class="card-text capacity"><small class="text-muted">Capacity :{{oneWishlist.capacity}} </small></span> -->
           <span class="card-text"><small class="text-muted">Price : $ {{oneWishlist.price}} </small></span>
           <!-- <span class="card-text"><small class="text-muted">${{oneWishlist.price}}</small></span> -->
-
+         
           <div class="button">
-            <button type="button" class="btn btn-outline-primary">Book</button>
+            <button type="button" class="btn btn-outline-success">
+              <a routerLink="/bookTour/{{oneWishlist.id}}" style="text-decoration: none;">Book Tour</a>
+            </button> &nbsp;&nbsp;&nbsp;&nbsp;
+            <a routerLink="/tour/{{oneWishlist.id}}">Tour Details</a>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <span>Tourguide Profile :</span>
+            <a routerLink="/tourguide/{{oneWishlist.tourGuideId}}">{{oneWishlist.tourGuidename}}</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-
-
   <!-- /////////////Hager///////////// -->
-  <div *ngIf="oneWishlist">
+  <!-- <div *ngIf="oneWishlist">
 
 
     <div class="Cart-Items">
@@ -38,10 +41,10 @@
       </div>
       <div class="about">
         <h1 class="title">{{oneWishlist.title | truncate}}</h1>
-        <h3 class="subtitle">Capacity :{{oneWishlist.capacity}}</h3>
-        <!-- <img src="images/veg.png" style=" height:30px;" /> -->
+        <h3 class="subtitle">Capacity :{{oneWishlist.capacity}}</h3> -->
+  <!-- <img src="images/veg.png" style=" height:30px;" /> -->
 
-      </div>
+  <!-- </div>
       <div class="counter">
         <button></button>
       </div>
@@ -51,4 +54,4 @@
       </div>
     </div>
     <hr>
-  </div>
+  </div> -->

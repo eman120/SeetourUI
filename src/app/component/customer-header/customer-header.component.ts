@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/Services/auth.service';
 export class CustomerHeaderComponent {
 
   constructor (private auth: AuthService, private form: FormBuilder,
-    private router: Router, private route: ActivatedRoute) {
+    private router: Router, route: ActivatedRoute) {
 
     route.queryParams.subscribe({
       next: (data) => {
