@@ -37,7 +37,7 @@ export class UploadImagesComponent {
 
  onSelect(event: any) {
   this.isUploaded=false;
-  
+
   const files = event.target.files as File[];
   if (files && files.length > 0) {
     const fileNames = [];
@@ -58,15 +58,15 @@ export class UploadImagesComponent {
     }
     // Clear the input element before setting new file names
    // event.target.value = '';
-   //console.log(files);
+   ////console.log(files);
    this.selectedFiles=files;
-  
+
    // this.uploadForm.controls['fileInput'].setValue(files);
     //this.uploadForm.controls['fileInput'].updateValueAndValidity();
   }
 }
 
-  
+
 
   onSubmit() {
     this.flag=false;
@@ -78,7 +78,7 @@ export class UploadImagesComponent {
 
     this.http.post('https://localhost:7277/api/AzureImagesURL/UploadImages', formData)
       .subscribe((result: any) => {
-       // console.log(result);
+       // //console.log(result);
         this.uploadedUrls = result;
 
         //Mapping the array to TourPhoto array
@@ -89,14 +89,14 @@ export class UploadImagesComponent {
               // url:"",
               photoId:photo.id,
               tourId:Number(this.tourId)
-              
+
             };
           });
           this.isUploaded=true;
           this.PastToursUrls.emit(this.pastPhoto);
-          console.log(this.tourId);
-          console.log(this.pastPhoto);
-          
+          //console.log(this.tourId);
+          //console.log(this.pastPhoto);
+
         }
          else{
           this.tourPhoto=this.uploadedUrls.map(photo=>{
@@ -105,18 +105,18 @@ export class UploadImagesComponent {
               url:"",
               photoId:photo.id,
               tourId:0
-              
+
             };
           });
           this.isUploaded=true;
           this.imagesUrls.emit(this.tourPhoto);
         }
 
-        console.log(this.uploadedUrls);
-       // console.log(this.tourPhoto);
+        //console.log(this.uploadedUrls);
+       // //console.log(this.tourPhoto);
 
         // Reset the form after successful upload
-       // console.log(this.uploadedUrls[0].url);
+       // //console.log(this.uploadedUrls[0].url);
         this.selectedFiles = [];
       }, (error: any) => {
         console.error(error);
@@ -136,7 +136,7 @@ export class UploadImagesComponent {
       return null;
     };
   }
-  
+
 
   private fileExtensionValidator(allowedExtensions: string[]): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
@@ -153,28 +153,28 @@ export class UploadImagesComponent {
       return null;
     };
   }
-  
+
 
   // validateFiles(files: File[]) {
   //   for (const file of files) {
   //     const fileName = file.name;
   //     const fileSize = file.size / 1024 / 1024; // Convert bytes to MB
   //     const fileExtension = fileName.split('.').pop()?.toLowerCase();
-  
+
   //     if (fileSize > this.maxFileSize) {
   //       this.fileSizeExceeded = true;
   //       return { 'fileSizeExceeded': true };
   //     }
-  
+
   //     if (fileExtension && this.allowedExtensions.indexOf('.' + fileExtension) === -1) {
   //       this.invalidExtension = true;
   //       return { 'invalidExtension': true };
   //     }
   //   }
-  
+
   //   this.fileSizeExceeded = false;
   //   this.invalidExtension = false;
   //   return null;
   // }
-  
+
 }

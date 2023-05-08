@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
@@ -25,25 +25,25 @@ export class CustTourDetailsComponent implements OnInit{
         question:['']
       })
     }
-    
+
     tourById:any;
-    tour:any;
+    @Input() tour:any;
     ngOnInit(): void {
       this.tourById = this.route.snapshot.params["id"];
-      console.log(this.tourById);
+      ////console.log(this.tourById);
     }
     Ask(){
       const questionDto ={
-        ...this.askQuestion.value, 
-        tourId : this.tourById 
+        ...this.askQuestion.value,
+        tourId : this.tourById
       };
       this.http.post("https://localhost:7277/api/Tour/AddQuestion", questionDto).subscribe({
         next:()=>{
-          console.log("thanks for asking us");
+          ////console.log("thanks for asking us");
         },
         error:()=>{
-          console.log("noooooooo!!!!!!!!");
-          console.log(...this.askQuestion.value);
+          ////console.log("noooooooo!!!!!!!!");
+          ////console.log(...this.askQuestion.value);
         }
       }
       );

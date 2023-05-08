@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { ToursService } from 'src/app/Services/tours.service';
@@ -21,7 +21,7 @@ export class TgTourDetailsComponent implements OnInit{
 
   Photos: any[]=[];
   tourById:any;
-  tour:any;
+  @Input() tour:any;
   checkForTour:any;
   // flag = this.Photos.length > 0;
 
@@ -41,15 +41,16 @@ export class TgTourDetailsComponent implements OnInit{
     };
     this.http.post(environment.baseUrl+ "" + ApiPaths.tour + ApiPaths.pics, this.Photos).subscribe(
       response => {
-        console.log('Answer submitted successfully');
-        console.log(this.Photos);
+        //console.log('Answer submitted successfully');
+        //console.log(this.Photos);
+        this.Photos = [];
       }, error => {
-        console.log('Error occurred during uploading.');
+        //console.log('Error occurred during uploading.');
         console.error(error);
-        console.log(error.status);
-        console.log(error.statusText);
-        console.log(error.error);
-        console.log(this.Photos);
+        //console.log(error.status);
+        //console.log(error.statusText);
+        //console.log(error.error);
+        //console.log(this.Photos);
       });
   }
 }

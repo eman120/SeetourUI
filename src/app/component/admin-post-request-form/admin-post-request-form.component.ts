@@ -22,6 +22,7 @@ export class AdminPostRequestFormComponent implements OnInit {
   @Input() tourId: number|undefined;
   request:string = "";
   formstatus: string = "pending";
+  pending = false;
 
   formValidation: FormGroup<any> = new FormGroup([]);
 
@@ -29,9 +30,18 @@ export class AdminPostRequestFormComponent implements OnInit {
     this.formValidation = this.fb.group({
       editRequest: ['', [Validators.required, Validators.minLength(64), Validators.maxLength(256)]]
     })
+
+    this.adminService.isPostPending(this.tourId).subscribe({
+      next: () => {
+        this.pending = true;
+      },
+      error: () => {
+        this.pending = false;
+      }
+    })
   }
 
-  get isAdmin() { return this.interface == "Admin" }
+  get isAdmin() { return this.interface == "admin" }
 
   onAccept() {
     this.formstatus = "posted";
@@ -55,9 +65,9 @@ export class AdminPostRequestFormComponent implements OnInit {
 
   onRequestEdit() {
 
-    if (this.request.length > 30) {
+    if (this.formValidation.valid) {
       this.formstatus = "posted";
-      this.PostRequest(this.GenerateRequest(PostingStatus.EditRequested, this.request));
+      this.PostRequest(this.GenerateRequest(PostingStatus.EditRequested, this.formValidation.value['editRequest']));
     }
     else {
       this.formstatus = "invalid"
@@ -68,7 +78,8 @@ export class AdminPostRequestFormComponent implements OnInit {
     this.adminService.PostEditRequest(request).subscribe({
       next: () => {
         this.formstatus = "success";
-        this.request = "";
+        this.formValidation.reset();
+        this.pending = false;
       },
       error: () => {
         this.formstatus = "error";

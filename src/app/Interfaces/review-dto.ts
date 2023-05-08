@@ -1,5 +1,6 @@
 export interface ReviewDto {
   bookedTourId: number,
   rating: number,
-  reviewBody: string
+  reviewBody: string,
+  Base64Images: string[]
 }

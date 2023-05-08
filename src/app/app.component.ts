@@ -34,8 +34,9 @@ export class AppComponent implements  OnInit {
   ngOnInit(): void {
     this.spinner();
     $('.back-to-top').css('display', 'none');
+
     this.user = this.authService.getInterface();
-    // console.log(this.user);
+    // //console.log(this.user);
 
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
@@ -48,7 +49,7 @@ export class AppComponent implements  OnInit {
 
     // this.http.get(`https://localhost:7277/api/User/GetUser?username=eman`).subscribe(data => {
     // this.user = data;
-    // console.log(data);
+    // //console.log(data);
     // });
 
 }

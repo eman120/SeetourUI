@@ -20,16 +20,19 @@ export enum ApiPaths {
   admin = "/admin",
   adminTour = "/Tour",
   adminTourRequest = "/Request",
+  adminTourIsPending = "/isPending",
   adminTourguide = "/TourGuide",
   adminTGApplicant = "/Applicant",
+
   custReg = "/CustomerRegistration",
   tgReg = "/TourGuideRegistration",
 
-  cuswishlist="/Wishlist",
+  cuswishlist = "/Wishlist",
 
   customer = "/customer",
   customerTour = "/tour",
 
+  customerTourCart = "/cart",
   customerTourUpcoming = "/upcoming",
   customerTourCompleted = "/completed",
   customerTourCancelled = "/cancelled",
@@ -42,14 +45,16 @@ export enum ApiPaths {
 
   bookTour = "/BookTour",
 
-  bookDetails ="/BookTourDetails",
-  dashStatistics ="/Get Statistics",
+  bookDetails = "/BookTourDetails",
+  dashStatistics = "/Get Statistics",
   pics = "/AddPics",
-  addQuestion="/AddQuestion",
+  addQuestion = "/AddQuestion",
   booking = "/booking",
-  answersAndQues="/GetQuestWithAns",
+  favorites = "/favorites",
+  tourTrending = "/trending",
+  answersAndQues = "/GetQuestWithAns",
   unansweredquestions="/TourGuide/GetAllUnAnsweredQusetions",
-  tganswerQusetions="/TourGuide/AnswerQusetion"
+  tganswerQusetions="/TourGuide/AnswerQusetion",
 }
 
 

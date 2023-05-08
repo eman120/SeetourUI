@@ -24,9 +24,9 @@ export class CustomerService {
     return this.http.get(url);
   }
 
-  PostBookedTourReview(files: FormData) {
+  PostBookedTourReview(review: ReviewDto) {
     let url = this.baseUrl+ApiPaths.customerTour+ApiPaths.customerTourReview;
-    return this.http.post(url, files);
+    return this.http.post(url, review);
   }
 
   PostTourLike(like: CustomerTourSave) {
@@ -37,5 +37,15 @@ export class CustomerService {
   PostTourWish(wish: CustomerTourSave) {
     let url = this.baseUrl+ApiPaths.customerTour+ApiPaths.customerTourWish;
     return this.http.post(url, wish);
+  }
+
+  isWishlisted(TourId: number) {
+    let url = this.baseUrl+ApiPaths.customerTour+ApiPaths.customerTourWish+'/'+TourId;
+    return this.http.get(url);
+  }
+
+  isLiked(TourId: number) {
+    let url = this.baseUrl+ApiPaths.customerTour+ApiPaths.customerTourLike+'/'+TourId;
+    return this.http.get(url);
   }
 }

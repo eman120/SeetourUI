@@ -29,7 +29,7 @@ export class BookTourComponent implements OnInit {
     // this.http.get(url).subscribe({
     //   next: (data) => {
     //     this.tour = data;
-    //     console.log(data);
+    //     ////console.log(data);
     //   },
     //   error: () => {
     //     //this.router.navigateByUrl('/Error');
@@ -38,16 +38,16 @@ export class BookTourComponent implements OnInit {
 
     this.http.post(environment.baseUrl + ApiPaths.tour+ApiPaths.bookDetails+'?id='+tourId ,tourId ).subscribe(
       (response) => {
-        console.log('details successful!');
+        ////console.log('details successful!');
         this.tour = response;
-        console.log(this.tour);
+        ////console.log(this.tour);
       },
       (error) => {
-        console.log('Error occurred during registration.');
+        ////console.log('Error occurred during registration.');
         console.error(error);
-        console.log(error.status);
-        console.log(error.statusText);
-        console.log(error.error);
+        ////console.log(error.status);
+        ////console.log(error.statusText);
+        ////console.log(error.error);
       }
     );
   }
@@ -58,18 +58,18 @@ export class BookTourComponent implements OnInit {
     const bookDto = {tourId ,seatsNum };
     this.http.post(environment.baseUrl + ApiPaths.tour+ApiPaths.bookTour+'?id='+tourId +'&seatsNum='+seatsNum, bookDto).subscribe(
       (response) => {
-        console.log('booked successful!');
-        console.log(response);
+        ////console.log('booked successful!');
+        ////console.log(response);
         // this.status = response;
         // Navigate to  component after adding the new Register
-        this.router.navigate(['/payment/:' + response.toString()]);
+        this.router.navigate(['/payment/:' + response.toString() + '' + seatsNum * this.tour.price]);
       },
       (error) => {
-        console.log('Error occurred during booking.');
+        ////console.log('Error occurred during booking.');
         console.error(error);
-        console.log(error.status);
-        console.log(error.statusText);
-        console.log(error.error);
+        ////console.log(error.status);
+        ////console.log(error.statusText);
+        ////console.log(error.error);
         this.status = error.error;
         this.toastr.error(this.status, 'Error');
       }

@@ -46,7 +46,7 @@ export class AuthService {
   }
 
   public getInterface() {
-    return localStorage.getItem('interface') || '';
+    return localStorage.getItem('interface')?.toLocaleLowerCase() || '';
   }
 
   isLoggedOut() {

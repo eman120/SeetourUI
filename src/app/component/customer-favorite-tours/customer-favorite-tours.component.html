@@ -1,0 +1,18 @@
+<div class="container-fluid bg-primary py-5 hero-header">
+  <div class="container py-5">
+    <div class="row justify-content-center py-5">
+      <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+        <h1 class="display-3 text-white animated slideInDown">Tours from your favorite tour guides</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-secondary pt-4 pb-5 bg-gradient">
+
+    <app-tours-section-filterable sectionTitle="Upcoming Tours" [tours]="tours"
+    (FilterValue)="Filter($event)" class="col-lg-10 mx-auto">
+
+    </app-tours-section-filterable>
+
+</div>

@@ -32,6 +32,8 @@ export class TGToursComponent {
         this.isCompleted = data["isCompleted"] as boolean;
       }
     });
+
+    route.queryParams.subscribe(p => this.Filter());
   }
 
   ngOnInit(): void {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 import { TourCard } from 'src/app/Interfaces/tour-card';
 import { ToursService } from 'src/app/Services/tours.service';
 
@@ -18,8 +19,11 @@ export class TourHomeComponent {
 
   constructor(
     private toursService: ToursService,
-    private titleService: Title
-  ) {  }
+    private titleService: Title,
+    route:ActivatedRoute
+  ) {
+    route.queryParams.subscribe(p => this.Filter());
+  }
 
   ngOnInit(): void {
     this.Filter()

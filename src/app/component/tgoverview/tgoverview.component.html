@@ -1,19 +1,19 @@
 <div class="container-fluid bg-secondary pb-5 bg-gradient">
+  <div class="d-flex flex-column align-items-center">
+    <app-tour-slider [Tours]="upcomingTours"
+    MoreLink="Upcoming-Tours" MoreText="View All"
+    MoreOutlet="TGProfile" class="col-12"
+    SliderTitle="Upcoming Tours">
+    </app-tour-slider>
 
-  <app-tour-slider [Tours]="upcomingTours"
-  MoreLink="Upcoming-Tours" MoreText="View All"
-  MoreOutlet="TGProfile"
-  SliderTitle="Upcoming Tours">
-  </app-tour-slider>
+    <app-tour-slider [Tours]="pastTours" MoreLink="Past-Tours"
+    MoreOutlet="TGProfile" class="col-12"
+    MoreText="View All" SliderTitle="Past Tours">
+    </app-tour-slider>
 
-  <app-tour-slider [Tours]="pastTours" MoreLink="Past-Tours"
-  MoreOutlet="TGProfile"
-  MoreText="View All" SliderTitle="Past Tours">
-  </app-tour-slider>
-
-  <app-review-lister [Reviews]="reviews" MoreLink="Reviews"
-  MoreOutlet="TGProfile" [Limit]="7"
-  MoreText="View All" SliderTitle="Reviews">
-  </app-review-lister>
-
+    <app-review-lister [Reviews]="reviews" MoreLink="Reviews"
+    MoreOutlet="TGProfile" [Limit]="7" class="col-12 col-lg-9 "
+    MoreText="View All" SliderTitle="Reviews">
+    </app-review-lister>
+  </div>
 </div>

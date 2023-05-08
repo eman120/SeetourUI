@@ -8,15 +8,15 @@
               <a routerLink="/dashboard" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
           </div>
             <div class="navbar-nav w-100">
-                <a routerLink="/tour" class="nav-item nav-link active "><i class="fa fa-table me-2"></i>UpComming</a>
+                <a [routerLink]="['../tourguide', tourguide?.id,{ outlets: { TGProfile: ['Upcoming-Tours'] } } ]" class="nav-item nav-link active "><i class="fa fa-table me-2"></i>UpComming</a>
             </div>
 
             <div class="navbar-nav w-100">
-                <a routerLink="/Past-Tours" class="nav-item nav-link active "><i class="fa fa-chart-bar me-2 "></i>Past Tour</a>
+                <a [routerLink]="['../tourguide', tourguide?.id,{ outlets: { TGProfile: ['Past-Tours'] } } ]" class="nav-item nav-link active "><i class="fa fa-chart-bar me-2 "></i>Past Tour</a>
             </div>
 
             <div class="navbar-nav w-100">
-                <a routerLink="/review" class="nav-item nav-link active "><i class="fa fa-keyboard me-2"></i>Reviews</a>
+                <a [routerLink]="['../tourguide', tourguide?.id, { outlets: { TGProfile: ['Reviews'] } }]" class="nav-item nav-link active "><i class="fa fa-keyboard me-2"></i>Reviews</a>
             </div>
 
         </nav>
@@ -33,7 +33,7 @@
                         <!-- <i class="fa-sharp fa-solid fa-plane"></i> -->
 
                         <div class="ms-3">
-                            <p class="mb-2">Tours</p>
+                            <p class="mb-2">Past Tours</p>
                             <!-- <h6 class="mb-0">$1253</h6> -->
                             <h6 class="mb-0" >{{statistics.pastToursCount}}</h6>
                         </div>
@@ -43,7 +43,7 @@
                     <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                       <i class="fa-solid fa-rectangle-xmark fa-3x text-primary icon"></i>
                         <div class="ms-3">
-                            <p class="mb-2">Cancelled </p>
+                            <p class="mb-2">Cancelled Tours</p>
 
                             <!-- <h6 class="mb-0">$1253</h6> -->
                             <h6 class="mb-0" >{{statistics.cancelledInPastTourscount}}</h6>
@@ -70,7 +70,7 @@
                     <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                         <i class="fa fa-chart-line fa-3x text-primary icon"></i>
                         <div class="ms-3">
-                            <p class="mb-2">Fully Booked </p>
+                            <p class="mb-2">Fully Booked Tours</p>
 
                             <!-- <h6 class="mb-0">$1253</h6> -->
                             <h6 class="mb-0" >{{statistics.fullyBookedPastToursCount}}</h6>

@@ -106,7 +106,7 @@ export class CreateTourComponent implements OnInit {
       description: ['', [Validators.required]],
       category: ['', Validators.required],
       // postedAt: [''],
-      
+
 
     });
     // this.createtourform.get('postedAt')?.setValue(this.formattedDate);
@@ -120,7 +120,7 @@ export class CreateTourComponent implements OnInit {
     // Access the values of the URLs from the parent component and submit them along with the other form data
     const formValue = { ...this.createtourform.value,  locationFromUrl: this.firsturl, locationFrom: this.locationFrom, locationToUrl: this.secondurl, locationTo: this.locationTo,photos:this.Photos};
 
-    console.log('form:', formValue);
+    ////console.log('form:', formValue);
     if (formValue) {
 
       this.ClientService.CreateTour(formValue).subscribe(
