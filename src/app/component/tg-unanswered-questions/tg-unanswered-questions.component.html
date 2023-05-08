@@ -18,13 +18,7 @@
               <input type="submit" [disabled]="QuestionAnswer.invalid || flag" name="submit" value="Submitt"
                 class="btn btn-primary rounded-pill me-2 book" />
             </form>
-            <!-- <star-rating [rating]="tour.rating[i]"></star-rating> -->
-            <!-- <div class="alert alert-warning col-12" role="alert">
-            <h4 class="alert-heading">Are you sure?</h4>
-            <p>You are about to cancel this booking.</p>
-            <hr>
-            <p class="mb-0">This step can't be undone and we can't make sure you will find an available seat later on</p>
-           </div> -->
+            <div *ngIf="message" class="alert alert-success" role="alert">{{ message }}</div>
             <hr>
             <br>
           </ng-container>

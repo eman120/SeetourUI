@@ -3,6 +3,7 @@ import { TourguidService } from './../../Services/tourguid.service';
 import { Component } from '@angular/core';
 import { TourGuide } from 'src/app/Interfaces/tour-guide';
 import { tgquestions } from 'src/app/Interfaces/unansweredques';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tg-unanswered-questions',
@@ -11,9 +12,10 @@ import { tgquestions } from 'src/app/Interfaces/unansweredques';
 })
 export class TgUnansweredQuestionsComponent {
   flag:any;
+  message: string|undefined;
   QuestionAnswer:FormGroup;
   unanswersandQues: tgquestions[] = [];
-  constructor(private service: TourguidService, private fb: FormBuilder) {
+  constructor(private service: TourguidService, private fb: FormBuilder, private router: Router) {
     this.QuestionAnswer = fb.group({
       answer:['',Validators.required]
     })
@@ -25,9 +27,10 @@ export class TgUnansweredQuestionsComponent {
       subscribe({
         next: (data) => {
           this.unanswersandQues = data as tgquestions[];
+         
         },
         error: () => {
-          console.log('Error Happened');
+          this.router.navigateByUrl('Error');
         }
       })
   }
@@ -39,13 +42,14 @@ export class TgUnansweredQuestionsComponent {
     };
     this.service.PostAnswerForSepcifiecQues(questionDto).subscribe({
       next:()=>{
+        this.message = 'Answer submitted successfully!';
         console.log("thanks for asking us");
         console.log(questionDto);
         this.flag=true;
       },
       error:()=>{
-        console.log("noooooooo!!!!!!!!");
-        console.log(questionDto);
+        this.router.navigateByUrl('Error');
+       
       }
     }
     );

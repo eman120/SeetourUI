@@ -1,7 +1,7 @@
 <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label for="fileInput">Select image(s) to upload:</label>
-    <input type="file" class="form-control form-control-lg" style="width: 500px;" id="fileInput" formControlName="fileInput" multiple (change)="onSelect($event)">
+    <input type="file" class="form-control form-control-lg" style="width: 435px;" id="fileInput" formControlName="fileInput" multiple (change)="onSelect($event)">
     <div *ngIf="fileSizeExceeded" class="text-danger">File size exceeds {{maxFileSize}} MB</div>
     <div *ngIf="invalidExtension" class="text-danger">There is Invalid file extension. Allowed extensions are {{allowedExtensions.join(', ')}}</div>
   </div>

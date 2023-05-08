@@ -1,23 +1,25 @@
 #map{
-    height: 600px;
+    height: 600px !important;
+    width: 84%;
+    /* margin-top: 150px !important; */
    
+}
+.hagar{
+  padding-left: 500px;
 }
 .container{
   padding-top: 80px;
 }
-.bg-holder {
+/* .bg-holder {
     position: absolute;
     width: 100%;
     top: 530px;
     height: 500px;
     left: 0;
     z-index: 0;
-  }
+  } */
   
-  .bg-holder.bg-right {
-    left: auto;
-    right: 0;
-  }
+
   .input-group-icon {
     position: relative;
   }
