@@ -20,5 +20,12 @@ export class TourguidService {
     let url = this.BaseUrl+ApiPaths.tourguide;
     return this.client.get(url);
   }
+  GetAllUnAnsweredQuestions(){
+    return this.client.get(this.BaseUrl+ApiPaths.unansweredquestions);
+  }
+  PostAnswerForSepcifiecQues(answer:any)
+  {
+    return this.client.post(this.BaseUrl+ApiPaths.tganswerQusetions,answer);
+  }
 
 }

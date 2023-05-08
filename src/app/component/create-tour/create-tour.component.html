@@ -1,25 +1,15 @@
-<!DOCTYPE html>
-<html lang="en-US" dir="ltr">
+<div *ngIf="user === 'tourguide'; then tourguideTemplate else elseTemplate "></div>
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>voyage | Landing, Corporate &amp; Business Templatee</title>
-  <meta name="theme-color" content="#ffffff">
-</head>
-
-<body>
-
-  <main class="main" id="top">
-
-    <section class="mt-7 py-0">
-      <div id="map" class="bg-holder w-50 bg-right d-none d-lg-block">
-
-      </div>
+<ng-template #tourguideTemplate>
+  <!-- Content for tourguide users -->
+  <body>
+  
+    <main class="main" id="top">
+  
+  
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 py-5 py-xl-5 py-xxl-7">
+          <div class="col-lg-12 py-5 py-xl-5 py-xxl-7">
             <h1 class="display-3 text-1000 fw-normal">Let’s make a tour</h1>
             <h1 class="display-3 text-success fw-bold">Discover the beauty</h1>
             <div class="pt-5">
@@ -27,59 +17,60 @@
                 <!-- Plane Button/Icon -->
                 <div class="nav nav-tabs voyage-tabs" id="nav-tab" role="tablist">
                   <button class="nav-link active" id="nav-home-tab" type="button" role="tab" aria-controls="nav-home"><i
-                      class="fas fa-map-marker-alt"></i></button>
-                </div>
-
-
-                <!-- Map Binding -->
-                <div class="tab-content" id="nav-tabContent">
-
-                  <div class="row g-4 mt-5" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-
+                    class="fas fa-map-marker-alt"></i></button>
+                  </div>
+                  
+                  
+                  <!-- Map Binding -->
+                  <div class="tab-content" id="nav-tabContent">
+                    
+                    <div class="row g-4 mt-5" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div id="map" class="hagar"></div>
+  
                     <!-- Location From URL -->
-
+  
                     <div class="input-group-icon col-sm-6 col-md-6 col-xl-5">
                       <input class="form-control input-box form-voyage-control" id="inputAddress1" type="text"
                         placeholder=" Location From URL" [(ngModel)]="firsturl" /><span
                         class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-map-marker-alt"></i></span>
                     </div>
-
+  
                     <!-- Location From Name -->
-
+  
                     <div class="input-group-icon col-sm-6 col-md-6 col-xl-5">
                       <input class="form-control input-box form-voyage-control" id="inputAddress2" type="text"
                         placeholder="Location From" [(ngModel)]="locationFrom" /><span
                         class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-map-marker-alt">
                         </i></span>
                     </div>
-
-
+  
+  
                     <!-- Location To URL -->
-
+  
                     <div class="input-group-icon col-sm-6 col-md-6 col-xl-5">
                       <input class="form-control input-box form-voyage-control" id="inputAddress2" type="text"
                         placeholder="Location To URL" [(ngModel)]="secondurl" /><span
                         class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-map-marker-alt">
                         </i></span>
                     </div>
-
-
+  
+  
                     <!-- Location To Name -->
-
+  
                     <div class="input-group-icon col-sm-6 col-md-6 col-xl-5">
                       <input class="form-control input-box form-voyage-control" id="inputAddress2" type="text"
                         placeholder="Location To" [(ngModel)]="locationTo" /><span
                         class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-map-marker-alt">
                         </i></span>
                     </div>
-
-
+  
+  
                     <!-- Formmmmmmmmmmmmmmmm -->
                     <form class="row g-4 mt-2" [formGroup]="createtourform" (ngSubmit)="submitForm()">
-
-
+  
+  
                       <!-- Title -->
-                      <div class="input-group-icon col-sm-6 col-md-6 col-xl-10">
+                      <div class="input-group-icon col-sm-12 col-md-12 col-xl-10">
                         <input #title class="form-control input-box form-voyage-control" type="text"
                           placeholder="Enter Title tour title" formControlName="title"><span
                           class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-pen"></i></span>
@@ -88,33 +79,33 @@
                           Title field is required
                         </div>
                         <div *ngIf="title.value && !titleValid" class="alert alert-danger">
-
+  
                           Title should has at least 16 characters
                           <br>
                           and at most 100 characters
                         </div>
                       </div>
                       <!-- Date From -->
-
+  
                       <div class="input-group-icon col-sm-6 col-md-6 col-xl-5">
                         <input #dateFrom class="form-control input-box form-voyage-control" type="text"
                           placeholder="Date From" onfocus="(this.type='date')" formControlName="dateFrom" /><span
                           class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-calendar"></i></span>
                         <!-- <div *ngIf="InValidDateFrom " class="alert alert-danger">
-                          Invalid Date
-                        </div> -->
+                            Invalid Date
+                          </div> -->
                         <div class="alert alert-danger"
                           *ngIf="(createtourform.controls['dateFrom'].errors && createtourform.controls['dateFrom'].errors['required'] && (createtourform.controls['dateFrom'].dirty || createtourform.controls['dateFrom'].touched))">
-
+  
                           Datefrom is required
                         </div>
                         <div *ngIf="dateFrom && InValidDateFrom" class="alert alert-danger">
                           Invalid Date &nbsp;
-
+  
                           DateFrom Should be set after or at {{DateNow}}
                         </div>
                       </div>
-
+  
                       <!-- Date To -->
                       <div class="input-group-icon col-sm-6 col-md-6 col-xl-5">
                         <input #dateTo class="form-control input-box form-voyage-control" type="text"
@@ -122,7 +113,7 @@
                           class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-calendar"></i></span>
                         <div class="alert alert-danger"
                           *ngIf="(createtourform.controls['dateTo'].errors && createtourform.controls['dateTo'].errors['required'] && (createtourform.controls['dateTo'].dirty || createtourform.controls['dateTo'].touched))">
-
+  
                           DateTo is required
                         </div>
                         <div *ngIf="dateTo && InValidDateTo" class="alert alert-danger">
@@ -133,15 +124,16 @@
                           <br> at least at the same day
                         </div>
                       </div>
-
+  
                       <!--Cancel Due Date  -->
-                      <div class="input-group-icon col-sm-6 col-md-6 col-xl-10">
+                      <div class="input-group-icon col-sm-12 col-md-12 col-xl-10">
                         <input #lastDateToCancel class="form-control input-box form-voyage-control" type="text"
-                          placeholder="Cancel Due Date" formControlName="lastDateToCancel" onfocus="(this.type='date')" /><span
-                          class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-calendar"></i></span>
+                          placeholder="Cancel Due Date" formControlName="lastDateToCancel"
+                          onfocus="(this.type='date')" /><span class="nav-link-icon text-800 fs--1 input-box-icon"><i
+                            class="fas fa-calendar"></i></span>
                         <div class="alert alert-danger"
                           *ngIf="(createtourform.controls['lastDateToCancel'].errors && createtourform.controls['lastDateToCancel'].errors['required'] && (createtourform.controls['lastDateToCancel'].dirty || createtourform.controls['lastDateToCancel'].touched))">
-
+  
                           Cancel Date is required
                         </div>
                         <div *ngIf="lastDateToCancel && InValidCancelDate" class="alert alert-danger">
@@ -151,7 +143,7 @@
                           <br> The tour start day or
                         </div>
                       </div>
-
+  
                       <!-- Price -->
                       <div class="input-group-icon col-sm-6 col-md-6 col-xl-5">
                         <input #price class="form-control input-box form-voyage-control"
@@ -160,7 +152,7 @@
                             class="fas fa-calendar"></i></span>
                         <div class="alert alert-danger"
                           *ngIf="(createtourform.controls['price'].errors && createtourform.controls['price'].errors['required'] && (createtourform.controls['price'].dirty || createtourform.controls['price'].touched))">
-
+  
                           Price is required
                         </div>
                         <div *ngIf="price.value && !priceValid" class="alert alert-danger">
@@ -169,7 +161,7 @@
                           Price should be > 0
                         </div>
                       </div>
-
+  
                       <!-- Capacity -->
                       <div class="input-group-icon col-sm-6 col-md-6 col-xl-5">
                         <input #capacity class="form-control input-box form-voyage-control" type="number"
@@ -177,61 +169,50 @@
                           class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-calendar"></i></span>
                         <div class="alert alert-danger"
                           *ngIf="(createtourform.controls['capacity'].errors && createtourform.controls['capacity'].errors['required'] && (createtourform.controls['capacity'].dirty || createtourform.controls['capacity'].touched))">
-
+  
                           capacity is required
                         </div>
                         <div *ngIf="capacity.value && !capacityValid" class="alert alert-danger">
                           Cpacity should be > 0
                         </div>
-
+  
                       </div>
-
+  
                       <!-- Description -->
-                      <div class="input-group-icon col-sm-6 col-md-6 col-xl-10">
+                      <div class="input-group-icon col-sm-12 col-md-12 col-xl-10">
                         <textarea #description class="form-control input-box form-voyage-control" type=""
-                          placeholder="Write the Description of your tour"
-                          formControlName="description"></textarea><span
+                          placeholder="Write the Description of your tour" formControlName="description"></textarea><span
                           class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-calendar"></i></span>
                         <div class="alert alert-danger"
                           *ngIf="(createtourform.controls['description'].errors && createtourform.controls['description'].errors['required'] && (createtourform.controls['description'].dirty || createtourform.controls['description'].touched))">
                           Description field is required
                         </div>
                       </div>
-
-
+  
+  
                       <!-- Posted At -->
                       <!-- <div class="input-group-icon col-sm-6 col-md-6 col-xl-5">
-                        <input class="form-control input-box form-voyage-control" type="number" placeholder="Capacity "
-                          formControlName="postedAt" hidden /><span class="nav-link-icon text-800 fs--1 input-box-icon"><i
-                            class="fas fa-calendar"></i></span>
-                      </div> -->
-
-
-
-
+                          <input class="form-control input-box form-voyage-control" type="number" placeholder="Capacity "
+                            formControlName="postedAt" hidden /><span class="nav-link-icon text-800 fs--1 input-box-icon"><i
+                              class="fas fa-calendar"></i></span>
+                        </div> -->
+  
+  
+  
+  
                       <!-- Transportation -->
-
-                      <div class=" input-group-icon col-sm-6 col-md-4 col-xl-5">
+  
+                      <div class=" input-group-icon col-sm-12 col-md-12 col-xl-12">
                         <span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-bus"></i></span>
                         <input #hasTransportation class="form-voyage-control" id="checkbox1" type="checkbox" value="false"
                           placeholder="Transportaion Included?" formControlName="hasTransportation" />
-                        <div class="alert alert-danger"
-                          *ngIf="(createtourform.controls['hasTransportation'].errors && createtourform.controls['hasTransportation'].errors['hasTransportation'] && (createtourform.controls['hasTransportation'].dirty || createtourform.controls['hasTransportation'].touched))">
-                          Description field is required
-                        </div>
                         Transportation Included ?
                       </div>
-
-
-
-
-
-                      <div class="input-group-icon col-sm-6 col-md-6 col-xl-10">
-                        <app-upload-images (imagesUrls)="Photos=$event"></app-upload-images>
-                      </div>
-
-
-                      <div class="col-sm-6 col-md-6 col-xl-5">
+  
+  
+  
+  
+                      <div class="col-sm-12 col-md-12 col-xl-10">
                         <div class="input-group-icon">
                           <label class="form-label visually-hidden" for="inputCategory">Ctegory:</label>
                           <select #category class="form-select form-voyage-select input-box" id="inputPersonOne"
@@ -256,25 +237,32 @@
                           </div>
                         </div>
                       </div>
+  
+  
+  
+                      <div class="input-group-icon col-sm-12 col-md-12 col-xl-10">
+                        <app-upload-images (imagesUrls)="Photos=$event"></app-upload-images>
+                      </div>
+                      <div *ngIf="message" class="alert alert-success" role="alert">{{ message }}</div>
                       <!-- Adventure,
-        // Family tours that engage travelers of all ages
-        Family,
-        // National parks tours that showcase the natural beauty of the U.S.
-        Parks,
-        // Religious tours that focus on the holy sites and shrines of different faiths
-        Religious,
-        // Themed tours that center around a special interest such as wine, music, history, etc.
-        Themed,
-        // Snorkeling tours that explore the underwater world
-        Snorkeling,
-        // Safari tours that observe wildlife in their natural habitats
-        Safari,
-        Cruise,
-        Food,
-        Historical,
-        // Other categories that do not fit into the above ones
-        OTHER -->
-
+          // Family tours that engage travelers of all ages
+          Family,
+          // National parks tours that showcase the natural beauty of the U.S.
+          Parks,
+          // Religious tours that focus on the holy sites and shrines of different faiths
+          Religious,
+          // Themed tours that center around a special interest such as wine, music, history, etc.
+          Themed,
+          // Snorkeling tours that explore the underwater world
+          Snorkeling,
+          // Safari tours that observe wildlife in their natural habitats
+          Safari,
+          Cruise,
+          Food,
+          Historical,
+          // Other categories that do not fit into the above ones
+          OTHER -->
+  
                       <script>
                         $("#checkbox1").on('change', function () {
                           if ($(this).is(':checked')) {
@@ -285,29 +273,31 @@
                         });
                       </script>
                       <div class="col-12 col-xl-10 col-lg-12 d-grid mt-6">
-                        <input class="btn btn-secondary" type="submit" value="Create">
+                        <input class="btn btn-secondary"  [disabled]="createtourform.invalid" type="submit" value="Create">
                       </div>
                     </form>
                   </div>
-
-
-
+  
+  
+  
                 </div>
               </nav>
             </div>
           </div>
+  
         </div>
       </div>
-    </section>
-
-
-
-  </main>
-
-  <script src=" ../../../assets/Fonts/all.min.js"></script>
-
-  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&amp;display=swap"
-    rel="stylesheet">
-</body>
-
-</html>
+    </main>
+  
+    <script src=" ../../../assets/Fonts/all.min.js"></script>
+  
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&amp;display=swap"
+      rel="stylesheet">
+  </body>
+</ng-template>
+<ng-template #elseTemplate>
+  <app-un-authorized></app-un-authorized>
+</ng-template>
+<!-- <div *ngIf="user === 'tourguide' else elseTemplate">
+</div>
+<app-error #elseTemplate></app-error> -->

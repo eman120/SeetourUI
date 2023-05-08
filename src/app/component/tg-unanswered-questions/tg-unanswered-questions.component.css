@@ -1,0 +1,12 @@
+.parent{
+    margin: auto;
+    padding-top: 150px;
+}
+textarea{
+    width:60%;
+    height: 200px;
+}
+.submitlabel,span{
+    color:#86B817 !important;
+    font-weight: bold;
+}

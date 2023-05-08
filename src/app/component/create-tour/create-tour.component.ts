@@ -1,10 +1,11 @@
 import { Router } from '@angular/router';
-import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators, AbstractControl, ValidationErrors, ValidatorFn, AsyncValidatorFn } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { Observable } from 'rxjs/internal/Observable';
 import { Observer } from 'rxjs';
 import { CreatetourService } from 'src/app/Services/createtour.service';
+import { AuthService } from 'src/app/Services/auth.service';
 declare var google: any;
 @Component({
   selector: 'app-create-tour',
@@ -13,6 +14,7 @@ declare var google: any;
 })
 export class CreateTourComponent implements OnInit {
   createtourform: FormGroup;
+  message:string|undefined;
   formattedDate: string = '';
   Photos: any[]=[];
   @Input() firsturl: any;
@@ -27,18 +29,48 @@ export class CreateTourComponent implements OnInit {
   map: any;
   marker: any;
   Categories: string = "Tour Categories"
+user:any;
 
+ //FormControlls
+ constructor(private fb: FormBuilder, private datepi: DatePipe, 
+  private changeDetectorRef: ChangeDetectorRef, 
+  private ClientService: CreatetourService,
+   private router: Router,
+   private authService: AuthService) {
+ // const imageurlcontrol = new FormControl('', Validators.required);
+
+
+  this.formattedDate = this.datepi.transform(new Date, 'yyyy-MM-dd HH:mm:ss.SSSSSSS') ?? '';
+  this.createtourform = this.fb.group({
+    title: ['', [Validators.required, Validators.minLength(16), Validators.maxLength(100)]],
+    hasTransportation: [''],
+    price: ['', [Validators.required, Validators.min(0)]],
+    capacity: ['', [Validators.required, Validators.min(0)]],
+    dateFrom: ['', Validators.required, this.DateFromValidator()],
+    dateTo: ['', Validators.required, this.DateToValidator()],
+    lastDateToCancel: ['', Validators.required, this.CancelDateValidator()],
+    description: ['', [Validators.required]],
+    category: ['', Validators.required],
+    // postedAt: [''],
+
+
+  });
+  // this.createtourform.get('postedAt')?.setValue(this.formattedDate);
+
+
+}
 
   ngOnInit() {
+    this.user = this.authService.getInterface();
     // Define the initMap function globally
     (<any>window).initMap = () => {
       this.initMap();
     };
-
     // Load the Google Maps API
     const script = document.createElement('script');
     script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCJHJ_4hb90K86QL_uBrIy0iRZWNTLBHZE&callback=initMap';
     document.body.appendChild(script);
+    //const popup=document.getElementById('#instructionsModal')?.ariaModal('show');
   }
 
   initMap() {
@@ -88,31 +120,7 @@ export class CreateTourComponent implements OnInit {
     });
   }
 
-  //FormControlls
-  constructor(private fb: FormBuilder, private datepi: DatePipe, private changeDetectorRef: ChangeDetectorRef, private ClientService: CreatetourService, private router: Router) {
-   // const imageurlcontrol = new FormControl('', Validators.required);
-
-
-    this.formattedDate = this.datepi.transform(new Date, 'yyyy-MM-dd HH:mm:ss.SSSSSSS') ?? '';
-    this.createtourform = this.fb.group({
-      title: ['', [Validators.required, Validators.minLength(16), Validators.maxLength(100)]],
-      hasTransportation: ['', [Validators.required]],
-      price: ['', [Validators.required, Validators.min(0)]],
-      capacity: ['', [Validators.required, Validators.min(0)]],
-      dateFrom: ['', Validators.required, this.DateFromValidator()],
-      dateTo: ['', Validators.required, this.DateToValidator()],
-      lastDateToCancel: ['', Validators.required, this.CancelDateValidator()],
-      description: ['', [Validators.required]],
-      category: ['', Validators.required],
-      // postedAt: [''],
-
-
-    });
-    // this.createtourform.get('postedAt')?.setValue(this.formattedDate);
-
-
-  }
-
+ 
 
 
   submitForm() {
@@ -124,11 +132,14 @@ export class CreateTourComponent implements OnInit {
 
       this.ClientService.CreateTour(formValue).subscribe(
         {
-          next: () => {
-            this.router.navigateByUrl('/tour');
+          next: (data:any) => {
+            console.log(data);
+            this.message = 'Answer submitted successfully!';
+            this.router.navigateByUrl('/tour/'+data);
+            //this.router.navigateByUrl('/tour');
           },
           error: () => {
-            this.TourCreated = "No Created Tours"
+            this.router.navigateByUrl('Error');
           }
 
         });
@@ -144,22 +155,23 @@ export class CreateTourComponent implements OnInit {
   private DateFromValidator(): AsyncValidatorFn {
     return (control: AbstractControl): Observable<ValidationErrors | null> => {
       return new Observable((observer: Observer<ValidationErrors | null>) => {
-        const datefromm = new Date(control.value);
-        datefromm.setHours(23, 59, 59, 999);
+        const dateFrom = new Date(control.value);
+        dateFrom.setHours(23, 59, 59, 999);
         const today = new Date();
-        if (datefromm && datefromm < today) {
+        const dateTo = new Date(this.createtourform.get('dateTo')?.value);
+        
+        if (dateFrom && dateTo && (dateFrom < today || dateFrom > dateTo)) {
           this.InValidDateFrom = true;
-          // //console.log (this.createtourform.get('datefrom')?.value );
           observer.next({ 'InValidDateFrom': true });
         } else {
           this.InValidDateFrom = false;
           observer.next(null);
-
         }
         observer.complete();
       });
     };
   }
+  
 
   //Check for DateTo Before Creating tour
   //Future & DateFrom Dates are allowed
@@ -172,8 +184,8 @@ export class CreateTourComponent implements OnInit {
         const datefromTracker = new Date(this.createtourform.get('dateFrom')?.value);
         // datefromTracker.setHours(0,0,0,0);
 
-        // //console.log(this.InValidDateFrom);
-        if (datetoo && datefromTracker && datetoo < datefromTracker) {
+        // console.log(this.InValidDateFrom);
+        if (datetoo && datefromTracker && (datetoo<today|| datetoo < datefromTracker )) {
           this.InValidDateTo = true;
           observer.next({ 'InValidDateTo': true });
         } else {
@@ -200,8 +212,8 @@ export class CreateTourComponent implements OnInit {
 
         // datefromTracker.setHours(0,0,0,0);
 
-        // //console.log(this.InValidDateFrom);
-        if (canceldate && datefromTracker && (canceldate > datefromTracker )) {
+        // console.log(this.InValidDateFrom);
+        if (canceldate && datefromTracker && (canceldate > datefromTracker)) {
           this.InValidCancelDate = true;
           observer.next({ 'InValidCancelDate': true });
         } else {
