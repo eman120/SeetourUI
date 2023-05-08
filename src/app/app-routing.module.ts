@@ -43,7 +43,7 @@ import { CustomerBookedToursComponent } from './component/customer-booked-tours/
 import { CustomerCancelBookingComponent } from './component/customer-cancel-booking/customer-cancel-booking.component';
 import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tour-details.component';
 import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-details.component';
-import { CustomerFavoriteToursComponent } from './component/customer-favorite-tours/customer-favorite-tours.component';
+import { CustomerFavoriteToursComponent } from './component/customer-favorite-tours/customer-favorite-tours.component'
 import { WishlistItemComponent } from './component/wishlist-item/wishlist-item.component';
 import { TourQuestionsAnswersComponent } from './component/tour-questions-answers/tour-questions-answers.component';
 
