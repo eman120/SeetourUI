@@ -1,7 +1,16 @@
+<div class="container-fluid bg-primary py-5 mb-5 hero-header">
+  <div class="container py-5">
+    <div class="row justify-content-center py-5">
+      <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+        <h1 class="display-3 text-white animated slideInDown">Frequently Asked Questions</h1>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container">
   <div class="row">
     <div class="col">
-      <h2 class="text-center mb-4" style="color: #007bff;">Frequently Asked Questions</h2>
+
       <div *ngFor="let faq of faqs" class="card mb-3">
         <div class="card-body" style="background-color: #f7f7f7;">
           <h4 class="card-title" style="color: #007bff;">{{ faq.question }}</h4>

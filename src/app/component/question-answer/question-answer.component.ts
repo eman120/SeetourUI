@@ -17,8 +17,13 @@ export class QuestionAnswerComponent {
   faqs:any;
   constructor(private http: HttpClient) { }
   ngOnInit() {
+
+    this.http.get('https://localhost:7277/api/TourQuestion/questions-and-answers').subscribe(result => {
+    console.log(result);
+
     this.http.get('https://localhost:44362/api/TourQuestion/questions-and-answers').subscribe(result => {
     //console.log(result);
+
     this.faqs = result;
     }, error => console.error(error));
 
