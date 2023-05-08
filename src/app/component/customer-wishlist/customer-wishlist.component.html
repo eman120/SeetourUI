@@ -1,17 +1,32 @@
-<body>
-    <div class="Cart-Container">
-        <ng-container *ngIf="wishlist; else elseTemplate">
-        <div class="Header">
-            <h3 class="Heading">{{emittedValue}}My WishList</h3>
+<div *ngIf="user === 'customer'; then customerTemplate else elseTemplate "></div>
+<ng-template #customerTemplate>
+
+  <div class="container-fluid bg-primary py-5 hero-header">
+      <div class="container py-5">
+        <div class="row justify-content-center py-5">
+          <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+    
+            <h1 class="display-3 text-white animated slideInDown">Wishlist</h1>
+    
+          </div>
         </div>
-
-            <app-wishlist-item [oneWishlist]="w" *ngFor="let w of wishlist"></app-wishlist-item>
-        </ng-container>
-   
-        <ng-template #elseTemplate>
-
-            <app-spinner class="flex-grow-1"></app-spinner>
-
-        </ng-template>
+      </div>
     </div>
-</body>
+  <body>
+      <div class="Cart-Container">
+          <ng-container *ngIf="wishlist; else elseTemplate">
+  
+              <app-wishlist-item [oneWishlist]="w" *ngFor="let w of wishlist"></app-wishlist-item>
+          </ng-container>
+     
+          <ng-template #elseTemplate>
+  
+              <app-spinner class="flex-grow-1"></app-spinner>
+  
+          </ng-template>
+      </div>
+  </body>
+</ng-template>
+<ng-template #elseTemplate>
+  <app-un-authorized></app-un-authorized>
+</ng-template>

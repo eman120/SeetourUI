@@ -5,6 +5,7 @@ import { DatePipe } from '@angular/common';
 import { Observable } from 'rxjs/internal/Observable';
 import { Observer } from 'rxjs';
 import { CreatetourService } from 'src/app/Services/createtour.service';
+import { AuthService } from 'src/app/Services/auth.service';
 declare var google: any;
 @Component({
   selector: 'app-create-tour',
@@ -28,9 +29,39 @@ export class CreateTourComponent implements OnInit {
   map: any;
   marker: any;
   Categories: string = "Tour Categories"
+user:any;
 
+ //FormControlls
+ constructor(private fb: FormBuilder, private datepi: DatePipe, 
+  private changeDetectorRef: ChangeDetectorRef, 
+  private ClientService: CreatetourService,
+   private router: Router,
+   private authService: AuthService) {
+ // const imageurlcontrol = new FormControl('', Validators.required);
+
+
+  this.formattedDate = this.datepi.transform(new Date, 'yyyy-MM-dd HH:mm:ss.SSSSSSS') ?? '';
+  this.createtourform = this.fb.group({
+    title: ['', [Validators.required, Validators.minLength(16), Validators.maxLength(100)]],
+    hasTransportation: [''],
+    price: ['', [Validators.required, Validators.min(0)]],
+    capacity: ['', [Validators.required, Validators.min(0)]],
+    dateFrom: ['', Validators.required, this.DateFromValidator()],
+    dateTo: ['', Validators.required, this.DateToValidator()],
+    lastDateToCancel: ['', Validators.required, this.CancelDateValidator()],
+    description: ['', [Validators.required]],
+    category: ['', Validators.required],
+    // postedAt: [''],
+
+
+  });
+  // this.createtourform.get('postedAt')?.setValue(this.formattedDate);
+
+
+}
 
   ngOnInit() {
+    this.user = this.authService.getInterface();
     // Define the initMap function globally
     (<any>window).initMap = () => {
       this.initMap();
@@ -89,31 +120,7 @@ export class CreateTourComponent implements OnInit {
     });
   }
 
-  //FormControlls
-  constructor(private fb: FormBuilder, private datepi: DatePipe, private changeDetectorRef: ChangeDetectorRef, private ClientService: CreatetourService, private router: Router) {
-   // const imageurlcontrol = new FormControl('', Validators.required);
-
-
-    this.formattedDate = this.datepi.transform(new Date, 'yyyy-MM-dd HH:mm:ss.SSSSSSS') ?? '';
-    this.createtourform = this.fb.group({
-      title: ['', [Validators.required, Validators.minLength(16), Validators.maxLength(100)]],
-      hasTransportation: [''],
-      price: ['', [Validators.required, Validators.min(0)]],
-      capacity: ['', [Validators.required, Validators.min(0)]],
-      dateFrom: ['', Validators.required, this.DateFromValidator()],
-      dateTo: ['', Validators.required, this.DateToValidator()],
-      lastDateToCancel: ['', Validators.required, this.CancelDateValidator()],
-      description: ['', [Validators.required]],
-      category: ['', Validators.required],
-      // postedAt: [''],
-
-
-    });
-    // this.createtourform.get('postedAt')?.setValue(this.formattedDate);
-
-
-  }
-
+ 
 
 
   submitForm() {

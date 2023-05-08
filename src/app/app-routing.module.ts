@@ -47,6 +47,7 @@ import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-deta
 import { CustomerFavoriteToursComponent } from './component/customer-favorite-tours/customer-favorite-tours.component';
 import { WishlistItemComponent } from './component/wishlist-item/wishlist-item.component';
 import { TourQuestionsAnswersComponent } from './component/tour-questions-answers/tour-questions-answers.component';
+import { UnAuthorizedComponent } from './component/un-authorized/un-authorized.component';
 
 const routes: Routes = [
   {path: "",component:HomeComponent},
@@ -123,9 +124,9 @@ const routes: Routes = [
   {path:"customer/tour", component:CustomerBookedToursComponent},
   {path:"customer/tour/cancel", component:CustomerCancelBookingComponent},
   {path:"favorites", component:CustomerFavoriteToursComponent},
-  {path:"wishlist", component:CustomerWishlistComponent},
 
 {path:"unansweredQuestions",component:TgUnansweredQuestionsComponent},
+{path:"unauthorized",component:UnAuthorizedComponent},
   {path:"**" , component:ErrorComponent}
 
 ];

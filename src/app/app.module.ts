@@ -93,9 +93,7 @@ import { FavoriteButtonComponent } from './component/favorite-button/favorite-bu
 import { CustomerFavoriteToursComponent } from './component/customer-favorite-tours/customer-favorite-tours.component';
 import { TrendingToursComponent } from './component/trending-tours/trending-tours.component';
 import { CustomerHomeComponent } from './component/customer-home/customer-home.component';
-
-import { TourQuestionsAnswersComponent } from './component/tour-questions-answers/tour-questions-answers.component';
-
+import{UnAuthorizedComponent}from'./component/un-authorized/un-authorized.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -112,13 +110,11 @@ import { TourQuestionsAnswersComponent } from './component/tour-questions-answer
     FooterComponent,
     AdminStatisticsComponent,
     TourDetailsComponent,
-
     UserregisterComponent,
     PaymentComponent,
     AdminReviewComponent,
     PaymentSuccessComponent,
     QuestionAnswerComponent,
-
     TourCardComponent,
     StarRatingComponent,
     LikeButtonComponent,
@@ -144,16 +140,13 @@ import { TourQuestionsAnswersComponent } from './component/tour-questions-answer
     ToursFilterComponent,
     TGToursComponent,
     ToursSectionFilterableComponent,
-
     BookTourComponent,
-
     AboutStartComponent,
     TeamDataComponent,
     OurServiceComponent,
     PopularDistnationsComponent,
     PaymentprocessHomeComponent,
     PartialServiceHomeComponent,
-
     AdminPostsRequestsComponent,
     AdminPostRequestFormComponent,
     AdminHeaderComponent,
@@ -163,7 +156,6 @@ import { TourQuestionsAnswersComponent } from './component/tour-questions-answer
     CustomerHeaderComponent,
     WishlistItemComponent,
     CustomerWishlistComponent,
-
     CustomerBookedToursComponent,
     BookingSliderComponent,
     CustomerReviewFormComponent,
@@ -179,6 +171,7 @@ import { TourQuestionsAnswersComponent } from './component/tour-questions-answer
     CustomerFavoriteToursComponent,
     TrendingToursComponent,
     CustomerHomeComponent,
+    UnAuthorizedComponent
   ],
   imports: [
     BrowserModule,
