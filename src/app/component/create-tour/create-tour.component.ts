@@ -128,7 +128,7 @@ export class CreateTourComponent implements OnInit {
             this.router.navigateByUrl('/tour');
           },
           error: () => {
-            this.TourCreated = "No Created Tours"
+            this.router.navigateByUrl('Error');
           }
 
         });

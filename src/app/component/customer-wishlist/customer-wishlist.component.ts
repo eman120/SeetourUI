@@ -3,6 +3,7 @@ import { Component, ViewChild } from '@angular/core';
 import { WishList } from 'src/app/Interfaces/wishlist';
 import { Title } from '@angular/platform-browser';
 import { WishlistService } from 'src/app/Services/wishlist.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-customer-wishlist',
   templateUrl: './customer-wishlist.component.html',
@@ -15,7 +16,9 @@ export class CustomerWishlistComponent {
 
   constructor(
     private wishlistService: WishlistService,
-    private titleService: Title) { }
+    private titleService: Title,
+    private router: Router) { }
+    
   ngOnInit(): void {
     this.titleService.setTitle("Customer Wishlist");
     this.wishlistService.GetCustomerWishlist().subscribe(
@@ -31,7 +34,9 @@ export class CustomerWishlistComponent {
       // );
         
         },
-        error: () => { }
+        error: () => {
+          this.router.navigateByUrl('Error');
+         }
       }
     )
 
