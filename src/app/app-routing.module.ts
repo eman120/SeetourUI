@@ -65,7 +65,7 @@ const routes: Routes = [
   {path:"custdetails/:id",component:CustTourDetailsComponent},
   {path:"tour/:id",component:TgTourDetailsComponent},
 
-  {path:"payment/:id",component:PaymentComponent},
+  {path:"payment/:id/:amount",component:PaymentComponent},
 
   {path:"admin-statistics",component:AdminStatisticsComponent},
 

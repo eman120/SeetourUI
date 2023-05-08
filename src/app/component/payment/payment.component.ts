@@ -16,6 +16,7 @@ export class PaymentComponent implements OnInit {
     private ngZone: NgZone,
     private route: ActivatedRoute
   ) {
+    this.amount = route.snapshot.params['amount'];
     this.bookedTourId=route.snapshot.params["bookedTourId"]
   }
 
@@ -26,6 +27,8 @@ export class PaymentComponent implements OnInit {
   ngOnInit() {
     this.loadStripe();
     this.route.params.subscribe((params) => {
+      this.amount = params['amount'];
+      this.bookedTourId = params['id'];
     });
   }
 
@@ -48,7 +51,7 @@ export class PaymentComponent implements OnInit {
         console.log('Date time:', new Date().toString());
         const paymentInfo = {
           bookedTourId:this.bookedTourId,
-          amount: amount,
+          amount:this.amount,
           currency: token.card.currency,
           cardNumber: token.card.last4,
           expDate: token.card.exp_month + '/' + token.card.exp_year,
@@ -58,7 +61,7 @@ export class PaymentComponent implements OnInit {
 
         this.http
           .post(
-            `https://localhost:44362/api/Payment`,
+            `https://localhost:7277/api/Payment`,
             paymentInfo
           )
           .subscribe((response: any) => {
@@ -73,7 +76,7 @@ export class PaymentComponent implements OnInit {
     handler.open({
       name: 'Demo Site',
       description: '2 widgets',
-      amount: amount * 100,
+      amount: amount * this.amount,
     });
   }
 
