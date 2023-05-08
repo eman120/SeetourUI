@@ -44,8 +44,8 @@ import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-deta
 import { WishlistItemComponent } from './component/wishlist-item/wishlist-item.component';
 import { TourQuestionsAnswersComponent } from './component/tour-questions-answers/tour-questions-answers.component';
 
-import { ManageCustomersComponent } from './manage-customers/manage-customers.component';
-import { ManageTourguidesComponent } from './manage-tourguides/manage-tourguides.component';
+import { ManageCustomersComponent } from './component/manage-customers/manage-customers.component';
+import { ManageTourguidesComponent } from './component/manage-tourguides/manage-tourguides.component';
 import { QuestionAnswerComponent } from './component/question-answer/question-answer.component';
 import { AdminReviewComponent } from './component/admin-review/admin-review.component';
 

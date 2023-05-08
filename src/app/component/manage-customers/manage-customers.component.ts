@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TourDet } from '../Interfaces/tour-det';
+import { TourDet } from '../../Interfaces/tour-det';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 

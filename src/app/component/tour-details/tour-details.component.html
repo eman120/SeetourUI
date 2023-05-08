@@ -92,31 +92,32 @@
         
       </div>
 
-      <div class="m-3">
-        <h5>Reviews : </h5>
-        <div class="card flex-md-row align-items-start">
-          <div class="p-3 d-flex flex-column align-self-stretch col-md-6">
-            <ng-container *ngFor="let review of tour.reviews.slice(0, Math.ceil(tour.reviews.length / 2)); let i = index">
-              <p>{{ i+1 }}. {{ review }}</p>
-              <star-rating [rating]="tour.rating[i]"></star-rating>
-              <hr>
-              <br>
-            </ng-container>
-          </div>
-          <div class="p-3 d-flex flex-column align-self-stretch col-md-6">
-            <ng-container *ngFor="let review of tour.reviews.slice(Math.ceil(tour.reviews.length / 2)+1); let i = index">
-              <p>{{ i + Math.ceil(tour.reviews.length / 2)+1 }}. {{ review }}</p>
-              <star-rating [rating]="tour.rating[i + Math.ceil(tour.reviews.length / 2)]"></star-rating>
-              <hr>
-              <br>
-            </ng-container>
+      <div class="">
+        <h5>Reviews:</h5>
+        <div class="card">
+          <div class="row row-cols-1 row-cols-md-2">
+            <div class="col p-3">
+              <ng-container *ngFor="let review of tour.reviews.slice(0, Math.ceil(tour.reviews.length / 2)); let i = index">
+                <p>{{ i+1 }}. {{ review }}</p>
+                <star-rating [rating]="tour.rating[i]"></star-rating>
+                <hr>
+              </ng-container>
+            </div>
+            <div class="col p-3">
+              <ng-container *ngFor="let review of tour.reviews.slice(Math.ceil(tour.reviews.length / 2)+1); let i = index">
+                <p>{{ i + Math.ceil(tour.reviews.length / 2)+1 }}. {{ review }}</p>
+                <star-rating [rating]="tour.rating[i + Math.ceil(tour.reviews.length / 2)]"></star-rating>
+                <hr>
+              </ng-container>
+            </div>
           </div>
         </div>
-      </div>        
+      </div>
+            
+    </div>
 
   </div>
 
-</div>
 </div>
 
 <div *ngIf="loading" class="load">

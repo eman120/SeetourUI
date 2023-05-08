@@ -23,6 +23,9 @@ export class TourCardComponent implements  OnInit {
     if(this.user === 'TourGuide'){
       return this.tour ? `/tour/${this.tour.id}` : '#';
     }
+    else if(this.user === 'Admin'){
+      return this.tour ? `/tour/${this.tour.id}` : '#';
+    }
     return this.tour ? `/custdetails/${this.tour.id}` : '#';
   }
   get tourguideLink(): string {
