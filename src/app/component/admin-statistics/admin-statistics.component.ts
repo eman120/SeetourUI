@@ -19,36 +19,34 @@ export class AdminStatisticsComponent {
   Names:any
   constructor(private http: HttpClient) { }
   ngOnInit() {
-    this.http.get('https://localhost:44362/api/DashBoard/websiteviews').subscribe(result => {
+    this.http.get('https://localhost:7277/api/Admin/websiteviews').subscribe(result => {
       this.viewsCount = result;
     }, error => console.error(error));
-    this.http.get('https://localhost:44362/api/DashBoard/CompletedTours').subscribe(result=>{
+    this.http.get('https://localhost:7277/api/Admin/CompletedTours').subscribe(result=>{
       this.Completed=result
     },error=>console.error(error));
-     this.http.get('https://localhost:44362/api/DashBoard/TopTourRevenueName').subscribe(result=>{
-     this.obj=result
-     this.TopTourRevenueName=this.obj.tourName
-     console.log(result)
+     this.http.get('https://localhost:7277/api/Admin/TopTourRevenueName').subscribe(result=>{
+     this.TopTourRevenueName=result
+     console.log(this.TopTourRevenueName)
      },error=>console.error(error));
-     this.http.get('https://localhost:44362/api/DashBoard/TopTourRevenueMoney').subscribe(result=>{
+     this.http.get('https://localhost:7277/api/Admin/TopTourRevenueMoney').subscribe(result=>{
        this.Revenue=result
     },error=>console.error(error));
-     this.http.get('https://localhost:44362/api/DashBoard/refundRate').subscribe(result=>{
+     this.http.get('https://localhost:7277/api/Admin/refundRate').subscribe(result=>{
        this.RefundRate=result
      },error=>console.error(error));
-
   }
 
 
   onSearchSubmit() {
-    this.http.get('https://localhost:44362/api/DashBoard/TourGuideName?Name='+ this.Name).subscribe(
+    this.http.get('https://localhost:7277/api/Admin/TourGuideName?Name='+ this.Name).subscribe(
       (result: any) => {
         this.Names = result;
       },
       (error) => {
         console.error(error);
-      }
-    );
+      }
+    );
   }
 
 

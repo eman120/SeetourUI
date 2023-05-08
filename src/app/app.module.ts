@@ -94,6 +94,8 @@ import { TrendingToursComponent } from './component/trending-tours/trending-tour
 import { CustomerHomeComponent } from './component/customer-home/customer-home.component';
 
 import { TourQuestionsAnswersComponent } from './component/tour-questions-answers/tour-questions-answers.component';
+import { ManageCustomersComponent } from './component/manage-customers/manage-customers.component';
+import { ManageTourguidesComponent } from './component/manage-tourguides/manage-tourguides.component';
 
 @NgModule({
   declarations: [
@@ -177,6 +179,8 @@ import { TourQuestionsAnswersComponent } from './component/tour-questions-answer
     CustomerFavoriteToursComponent,
     TrendingToursComponent,
     CustomerHomeComponent,
+    ManageCustomersComponent,
+    ManageTourguidesComponent,
   ],
   imports: [
     BrowserModule,
