@@ -25,14 +25,18 @@ export class RegisterComponent implements OnInit {
   //   this.PhotoID = event;
   //   //console.log(this.PhotoID);
   // }
-  Fun2(event : any){
-    this.Photo = event;
-    //console.log(this.Photo);
-  }
+  // Fun2(event : any){
+  //   this.Photo = event;
+  //   console.log(this.Photo);
+  // }
+  // Fun1(event : any){
+  //   this.PhotoID = event;
+  //   console.log(this.PhotoID);
+  // }
 
-  Register(username : any ,name : any, email : any, phone : any, password :any, snn : any, bankAccount:any , address:any, AccountNumber:any, SwiftCode:any, Tax :any, file:any) {
-    if (username && name && email && phone && password && snn && bankAccount && address && AccountNumber && SwiftCode && Tax && file) { // Check if all required fields have data
-      this.newReg = {username ,  name , email , phone , password , snn , bankAccount , address , AccountNumber , SwiftCode , Tax , file};
+  Register(username : any ,name : any, email : any, phone : any, password :any, snn : any, bankAccount:any , address:any, AccountNumber:any, SwiftCode:any, Tax :any) {
+    if (username && name && email && phone && password && snn && bankAccount && address && AccountNumber && SwiftCode && Tax ) { // Check if all required fields have data
+      this.newReg = {username ,  name , email , phone , password , snn , bankAccount , address , AccountNumber , SwiftCode , Tax};
       //console.log('Registration...');
       const registrationDto = {
         userName: this.newReg.username.replace(/\s+/g, ''),
@@ -45,7 +49,7 @@ export class RegisterComponent implements OnInit {
         recipientBankSwiftCode: this.newReg.SwiftCode,
         recipientNameAndAddress: this.newReg.address,
         taxRegistrationNumber :this.newReg.Tax,
-        idCardPhoto: this.newReg.file,
+        idCardPhoto: this.PhotoID,
         phoneNumber: this.newReg.phone,
         email: this.newReg.email
       };
