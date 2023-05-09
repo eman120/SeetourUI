@@ -86,7 +86,6 @@ import { CustomerCancelBookingComponent } from './component/customer-cancel-book
 import { BookingCardComponent } from './component/booking-card/booking-card.component';
 import { CustTourDetailsComponent } from './component/cust-tour-details/cust-tour-details.component';
 import { TgTourDetailsComponent } from './component/tg-tour-details/tg-tour-details.component';
-import { TourQuestionsAnswersComponent } from './component/tour-questions-answers/tour-questions-answers.component';
 import { TgUnansweredQuestionsComponent } from './component/tg-unanswered-questions/tg-unanswered-questions.component';import { ToursSorterComponent } from './component/tours-sorter/tours-sorter.component';
 
 import { FavoriteButtonComponent } from './component/favorite-button/favorite-button.component';
