@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { error } from 'jquery';
 
-
 @Component({
   selector: 'app-admin-statistics',
   templateUrl: './admin-statistics.component.html',
@@ -29,6 +28,9 @@ export class AdminStatisticsComponent {
      this.http.get('https://localhost:7277/api/Admin/TopTourRevenueName').subscribe(result=>{
      this.TopTourRevenueName=result
      console.log(this.TopTourRevenueName)
+  },error=>console.error(error));
+
+
 
      this.http.get('https://localhost:44362/api/DashBoard/TopTourRevenueName').subscribe(result=>{
      this.obj=result
@@ -36,25 +38,26 @@ export class AdminStatisticsComponent {
      ////console.log(result)
 
      },error=>console.error(error));
+
      this.http.get('https://localhost:7277/api/Admin/TopTourRevenueMoney').subscribe(result=>{
        this.Revenue=result
     },error=>console.error(error));
      this.http.get('https://localhost:7277/api/Admin/refundRate').subscribe(result=>{
        this.RefundRate=result
      },error=>console.error(error));
-  }
+
+    }
+    onSearchSubmit() {
+      this.http.get('https://localhost:7277/api/Admin/TourGuideName?Name='+ this.Name).subscribe(
+        (result: any) => {
+          this.Names = result;
+        },
+        (error) => {
+          console.error(error);
+          }
+        );
+    }
+
+    }
 
 
-  onSearchSubmit() {
-    this.http.get('https://localhost:7277/api/Admin/TourGuideName?Name='+ this.Name).subscribe(
-      (result: any) => {
-        this.Names = result;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-  }
-
-
-}
