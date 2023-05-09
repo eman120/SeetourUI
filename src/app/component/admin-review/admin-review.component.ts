@@ -15,7 +15,7 @@ export class AdminReviewComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get<any[]>('https://localhost:7277/api/Review').subscribe(
+    this.http.get<any[]>('https://localhost:7277/api/Review/GetAll').subscribe(
       data => {
         this.reviews = data;
       },
@@ -27,8 +27,8 @@ export class AdminReviewComponent implements OnInit {
 
   }
   deleteReview(id: any) {
-    this.http.delete(`https://localhost:44362/api/Review?id=${id}`).subscribe(() => {
-      this.http.get<any[]>('https://localhost:44362/api/Review').subscribe(
+    this.http.delete(`https://localhost:7277/api/Admin/reviewDelete?id=${id}`).subscribe(() => {
+      this.http.get<any[]>('https://localhost:7277/api/Review/GetAll').subscribe(
         data => {
           this.reviews = data;
         },
