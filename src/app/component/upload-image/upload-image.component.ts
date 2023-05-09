@@ -8,9 +8,11 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: []
 })
 export class UploadImageComponent {
+   fileInput :any;
+  file :any;
   @Output() imageUrl = new EventEmitter<string>();
-   fileInput = document.querySelector('#fileInput') as HTMLInputElement;
-   file = this.fileInput?.files?.[0];
+  //  fileInput = document.querySelector('#fileInput') as HTMLInputElement;
+  //  file = this.fileInput?.files?.[0];
   readonly maxFileSize = 1; // MB
   readonly allowedExtensions = [".jpg", ".jpeg", ".png", ".gif", ".bmp"];
   uploadForm: FormGroup;
@@ -31,26 +33,18 @@ export class UploadImageComponent {
 
   onSubmit() {
     this.Flag=false;
-
-    const fileInput = document.querySelector('#fileInput') as HTMLInputElement;
-    const file = fileInput?.files?.[0];
-    if (file) {
+    if (this.file) {
       const formData = new FormData();
-      formData.append('file', file);
-      //console.log(file);
+      formData.append('file', this.file);
       this.http.post('https://localhost:7277/api/AzureImagesURL/UploadImage', formData)
         .subscribe((result: any) => {
           this.isUploaded=true;
           this.imageUrl.emit(result.url);
-         //console.log(result.url);
-          // Reset the form after successful upload
           this.uploadForm.reset();
         }, (error: any) => {
           console.error(error);
-          // Display user-friendly error message here
         });
     } else {
-      //console.log('No Selected Files');
     }
   }
 
@@ -80,12 +74,13 @@ export class UploadImageComponent {
     }
   }
 
-  validateFile() {
-    const fileInput = document.querySelector('#fileInput') as HTMLInputElement;
-    const file = fileInput?.files?.[0];
-    if (file) {
-      const fileName = file.name;
-      const fileSize = file.size / 1024 / 1024; // Convert bytes to MB
+  validateFile(event: Event) {
+    this.fileInput= event.target as HTMLInputElement;
+    this.file= this.fileInput.files?.[0];
+    console.log(this.file);
+    if (this.file) {
+      const fileName = this.file.name;
+      const fileSize = this.file.size / 1024 / 1024; // Convert bytes to MB
       const fileExtension = fileName.split('.').pop()?.toLowerCase();
 
       if (fileSize > this.maxFileSize) {

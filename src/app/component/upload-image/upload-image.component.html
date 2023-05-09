@@ -1,6 +1,6 @@
 <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
-    <input class="form-control form-control-lg" style="width: 500px;" type="file" id="fileInput" formControlName="fileInput" (change)="validateFile()">
+    <input class="form-control form-control-lg" style="width: 500px;" type="file"  formControlName="fileInput" (change)="validateFile($event)">
     <div *ngIf="fileSizeExceeded" class="alert alert-danger">
       File size exceeds maximum limit of {{ maxFileSize }} MB.
     </div>
@@ -10,13 +10,11 @@
     </div>
   </div>
   <br>
-  <button type="submit" [disabled]=" fileSizeExceeded || invalidExtension" class="btn btn-primary">Upload</button> 
-  <br>
-  <br>
+  <button type="submit" [disabled]=" uploadForm.invalid|| fileSizeExceeded || invalidExtension" class="btn btn-primary">Upload</button> 
+&nbsp; &nbsp;
   <div class="spinner-border text-primary" role="status" *ngIf="!isUploaded && !Flag">
     <span class="sr-only"></span>
     <br>
-    Uploading....
   </div>
-  <div class="text-success" *ngIf="isUploaded">Images uploaded successfully</div>
+  <div class="text-success" *ngIf="isUploaded">Image uploaded successfully</div>
 </form>
