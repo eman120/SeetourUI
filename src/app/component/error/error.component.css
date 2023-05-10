@@ -1,8 +1,10 @@
 .text-primary{
-    color:#86B817 !important;
+    /* color:#86B817 !important; */
+    color: red !important;
 }
 
 a {
-    color: #86B817;
+    /* color: #86B817; */
+    color: red;
     text-decoration: none;
 }

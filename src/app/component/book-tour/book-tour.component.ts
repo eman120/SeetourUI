@@ -71,6 +71,9 @@ export class BookTourComponent implements OnInit {
         ////console.log(error.status);
         ////console.log(error.statusText);
         ////console.log(error.error);
+        if(error.status == 403){
+          this.router.navigateByUrl('/unauthorized');
+        }
         this.status = error.error;
         this.toastr.error(this.status, 'Error');
       }

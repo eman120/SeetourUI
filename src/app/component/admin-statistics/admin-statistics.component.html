@@ -1,5 +1,5 @@
-<body>
-  <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+
+  <!-- <div class="container-fluid bg-primary py-5 mb-5 hero-header">
     <div class="container py-5">
       <div class="row justify-content-center py-5">
         <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
@@ -7,95 +7,117 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="container mt-5">
-    <h1 class="text-center mb-5">Admin Dashboard</h1>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            <h5 class="card-title">Completed Trips</h5>
-          </div>
-          <div class="card-body ">
-            <p class="card-text">{{Completed}}</p>
+  </div> -->
+<!-- <h1 class="text-center mb-5">Admin Dashboard</h1> -->
+<div class="container-xxl position-relative bg-white d-flex p-0 full-page">
+  <div class="sidebar pe-4 pb-3 ">
+    <nav class="navbar">
 
-            <!--<p class="card-text">50</p>-->
-
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            <h5 class="card-title">Website Views</h5>
-          </div>
-          <div class="card-body">
-            <p class="card-text">{{viewsCount}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row mt-5">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            <div></div>
-            <h5 class="card-title">Booking Refund Rate</h5>
-          </div>
-          <div class="card-body">
-            <p class="card-text">{{RefundRate}}%</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            <h5 class="card-title">Top Tours Revenue</h5>
-          </div>
-          <div class="card-body">
-            <p class="card-text">${{Revenue}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row mt-5">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            <h5 class="card-title">Top Tour</h5>
-          </div>
-          <div class="card-body">
-            <p class="card-text">{{TopTourRevenueName.title}}</p>
-          </div>
-        </div>
+      <div class="navbar-nav w-100">
+        <a routerLink="/Ublock-tour-guides" routerLinkActive="active" class="nav-item nav-link active"><i class="fa fa-table me-2"></i>UnBlockTG</a>
       </div>
 
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            <h5 class="card-title">Search for Tour Guides</h5>
-          </div>
-          <div class="card-body">
-            <form (ngSubmit)="onSearchSubmit()">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Enter The Name" [(ngModel)]="Name" name="searchName" />
-              </div>
-              <button type="submit" class="btn btn-primary">Search</button>
-            </form>
-            <div *ngIf="Names.length > 0" class="mt-3">
-              <h5>Search Results:</h5>
-              <ul>
-                <li *ngFor="let result of Names">{{result}}</li>
-              </ul>
+      <div class="navbar-nav w-100">
+        <a routerLink="/Block-tour-guides" routerLinkActive="active" class="nav-item nav-link active"><i class="fa fa-chart-bar me-2 "></i>BlockTG</a>
+      </div>
+
+      <div class="navbar-nav w-100">
+        <a routerLink="/Admin-CustomerUnBlock" routerLinkActive="active" class="nav-item nav-link active"><i class="fa fa-keyboard me-2"></i>UnBlockCS</a>
+      </div>
+
+      <div class="navbar-nav w-100">
+        <a routerLink="/Admin-CustomerBlock" routerLinkActive="active" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>BlockCS</a>
+      </div>
+            
+    </nav>
+  </div>
+
+  <div class="content">
+    <div class="container-fluid pt-4 px-4 contain">
+      <div class="row g-4 parent">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="card-title">Completed Trips</h5>
             </div>
+            <div class="card-body ">
+              <p class="card-text">{{Completed}}</p>
 
+              <!--<p class="card-text">50</p>-->
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="card-title">Website Views</h5>
+            </div>
+            <div class="card-body">
+              <p class="card-text">{{viewsCount}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4 parent">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <!-- <div></div> -->
+              <h5 class="card-title">Booking Refund Rate</h5>
+            </div>
+            <div class="card-body">
+              <p class="card-text">{{RefundRate}}%</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="card-title">Top Tours Revenue</h5>
+            </div>
+            <div class="card-body">
+              <p class="card-text">${{Revenue}}</p>
+            </div>
           </div>
         </div>
       </div>
 
+      <div class="row g-4 parent">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="card-title">Top Tour</h5>
+            </div>
+            <div class="card-body">
+              <p class="card-text">{{TopTourRevenueName.title}}</p>
+            </div>
+          </div>
+        </div>
 
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="card-title">Search for Tour Guides</h5>
+            </div>
+            <div class="card-body">
+              <form (ngSubmit)="onSearchSubmit()">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Enter The Name" [(ngModel)]="Name" name="searchName" />
+                </div>
+                <button type="submit" class="btn btn-primary">Search</button>
+              </form>
+              <div *ngIf="Names.length > 0" class="mt-3">
+                <h5>Search Results:</h5>
+                <ul>
+                  <li *ngFor="let result of Names">{{result}}</li>
+                </ul>
+              </div>
 
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</body>
+</div>
