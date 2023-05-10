@@ -52,10 +52,10 @@
                   </div>
 
                   <div class="form-outline mb-4">
-                    <input #password="ngModel"  ngModel name ="password" type="password" id="password" class="form-control form-control-lg" placeholder="Your password *"  required>
+                    <input #password="ngModel"  ngModel name ="password" type="password" id="password" class="form-control form-control-lg" placeholder="Your password *"  required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?!\s).{8,16}$">
                     <div class="alert alert-danger" [hidden]="password.valid || password.untouched">
+                      <small *ngIf="password.errors?.['pattern']">Password must contain alphabetic characters, numbers, one capital letter and Special character</small>
                       <small *ngIf="password.errors?.['required']">Password is Required!!</small>
-
                     </div>
                   </div>
 

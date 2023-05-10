@@ -23,7 +23,7 @@ export class CustomerWishlistComponent {
     private authService: AuthService) { }
   ngOnInit(): void {
     this.user = this.authService.getInterface();
-    if(this.user === 'customer'){
+    // if(this.user === 'customer'){
     this.titleService.setTitle("Customer Wishlist");
     this.wishlistService.GetCustomerWishlist().subscribe(
       {
@@ -33,13 +33,13 @@ export class CustomerWishlistComponent {
         
         },
         error: () => { 
-          this.router.navigateByUrl('Error');
+          // this.router.navigateByUrlk('Error');
         }
       }
     )
-    }
-
+    // }
   }
+
 
 
 }
