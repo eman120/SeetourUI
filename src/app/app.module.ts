@@ -99,7 +99,11 @@ import { ManageCustomersComponent } from './component/manage-customers/manage-cu
 import { ManageTourguidesComponent } from './component/manage-tourguides/manage-tourguides.component';
 
 
-import{UnAuthorizedComponent}from'./component/un-authorized/un-authorized.component'
+import{UnAuthorizedComponent}from'./component/un-authorized/un-authorized.component';
+import { AdminBlockedTourGuidesComponent } from './component/admin-Ublocked-tour-guides/admin-blocked-tour-guides.component';
+import { AdminBlockTourGuidessComponent } from './component/admin-block-tour-guidess/admin-block-tour-guidess.component';
+import { AdminCustomerBlockComponent } from './component/admin-customer-block/admin-customer-block.component';
+import { AdminCustomerUnblockComponent } from './component/admin-customer-unblock/admin-customer-unblock.component'
 
 @NgModule({
   declarations: [
@@ -182,7 +186,11 @@ import{UnAuthorizedComponent}from'./component/un-authorized/un-authorized.compon
     ManageCustomersComponent,
     ManageTourguidesComponent,
 
-    UnAuthorizedComponent
+    UnAuthorizedComponent,
+      AdminBlockedTourGuidesComponent,
+      AdminBlockTourGuidessComponent,
+      AdminCustomerBlockComponent,
+      AdminCustomerUnblockComponent
 
   ],
   imports: [
