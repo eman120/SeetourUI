@@ -16,7 +16,7 @@ export class AdminCustomerBlockComponent implements OnInit {
   }
 
   getCustomers() {
-    this.http.get<any[]>('https://localhost:7277/api/Admin/GettingAllUnblockedTourGuides').subscribe(result => {
+    this.http.get<any[]>('https://localhost:7277/api/Admin/GettingAllUnblockedCustomers').subscribe(result => {
       this.customers = result;
     }, error => console.error(error));
   }
@@ -24,7 +24,7 @@ export class AdminCustomerBlockComponent implements OnInit {
   blockCustomer(id: any) {
     this.http.post(`https://localhost:7277/api/Admin/CustomersBlock?id=${id}`, null).subscribe(() => {
       // Get the updated list of blocked users from the server
-      this.http.get<any[]>('https://localhost:7277/api/Admin/GettingAllUnblockedTourGuides').subscribe(result => {
+      this.http.get<any[]>('https://localhost:7277/api/Admin/GettingAllUnblockedCustomers').subscribe(result => {
         this.customers = result;
       }, error => console.error(error));
     }, error => console.error(error));
