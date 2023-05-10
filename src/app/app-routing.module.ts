@@ -52,6 +52,10 @@ import { ManageTourguidesComponent } from './component/manage-tourguides/manage-
 import { ManageCustomersComponent } from './component/manage-customers/manage-customers.component';
 
 import { UnAuthorizedComponent } from './component/un-authorized/un-authorized.component';
+import { AdminBlockedTourGuidesComponent } from './component/admin-Ublocked-tour-guides/admin-blocked-tour-guides.component';
+import { AdminBlockTourGuidessComponent } from './component/admin-block-tour-guidess/admin-block-tour-guidess.component';
+import { AdminCustomerBlockComponent } from './component/admin-customer-block/admin-customer-block.component';
+import { AdminCustomerUnblockComponent } from './component/admin-customer-unblock/admin-customer-unblock.component';
 
 
 const routes: Routes = [
@@ -69,6 +73,11 @@ const routes: Routes = [
   // {path:"tourdetails/:id",component:TourDetailsComponent},
   //{path:"custdetails/:id",component:CustTourDetailsComponent},
   {path:"tour/:id",component:TourDetailsComponent},
+  {path:"Ublock-tour-guides",component:AdminBlockedTourGuidesComponent},
+  {path:"Block-tour-guides",component:AdminBlockTourGuidessComponent},
+  {path:"Admin-CustomerBlock",component:AdminCustomerBlockComponent},
+  {path:"Admin-CustomerUnBlock",component:AdminCustomerUnblockComponent},
+
 
   {path:"payment/:id/:amount",component:PaymentComponent},
 

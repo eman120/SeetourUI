@@ -1,0 +1,28 @@
+<div class="container py-5">
+  <div class="row justify-content-center py-5">
+    <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+      <h1 class="display-3 text-black animated slideInDown">UnBlockedTourGuides</h1>
+    </div>
+  </div>
+ </div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ProfilePic</th>
+      <th>Name</th>
+      <th>UserName</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tourguide of tourguides">
+      <td><img src="{{tourguide.profilePic}}" width="50px" height="50px"></td>
+      <td>{{tourguide.fullName}}</td>
+      <td>{{tourguide.userName}}</td>
+      <td>{{tourguide.email}}</td>
+      <td><button (click)="blockTourGuide(tourguide.id)" class="btn btn-success">Unblock</button></td>
+    </tr>
+  </tbody>
+</table>
