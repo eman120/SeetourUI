@@ -17,11 +17,13 @@
           <p>No Questions yet</p>
         </ng-container>
       </div>
-      <ng-container *ngFor="let ques of answersandQues; let i = index">
-        <p>{{ i+1 }}. {{ ques.question }} ?</p>
-        <p> {{ ques.answer }}</p>
-        <hr>
-        <br>
+      <ng-container #elseTemplate *ngFor="let ques of answersandQues; let i = index">
+        <div *ngIf="ques.answer !=''">
+          <p>{{ i+1 }}. {{ ques.question }} ?</p>
+          <p> {{ ques.answer }}</p>
+          <hr>
+          <br>
+        </div>
       </ng-container>
     </div>
   </div>

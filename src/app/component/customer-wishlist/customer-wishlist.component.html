@@ -1,5 +1,5 @@
-<!-- <div *ngIf="user === 'customer'; then customerTemplate else elseTemplate "></div>
-<ng-template #customerTemplate> -->
+<div *ngIf="user === 'customer'; then customerTemplate else elseTemplate "></div>
+<ng-template #customerTemplate>
 
   <div class="container-fluid bg-primary py-5 hero-header">
       <div class="container py-5">
@@ -14,9 +14,13 @@
     </div>
   <body>
       <div class="Cart-Container">
-          <ng-container *ngIf="wishlist; else elseTemplate">
-  
-              <app-wishlist-item [oneWishlist]="w" *ngFor="let w of wishlist"></app-wishlist-item>
+        
+        <app-wishlist-item [oneWishlist]="w" *ngFor="let w of wishlist"></app-wishlist-item>
+        <ng-container *ngIf="wishlist; else elseTemplate">
+
+          <p *ngIf="!wishlist.length" class="text-center mx-auto mb-0 mt-3">
+           Your Wishlist is empty.
+          </p>
           </ng-container>
      
           <ng-template #elseTemplate>
@@ -26,7 +30,7 @@
           </ng-template>
       </div>
   </body>
-<!-- </ng-template>
+</ng-template>
 <ng-template #elseTemplate>
   <app-un-authorized></app-un-authorized>
-</ng-template> -->
+</ng-template>

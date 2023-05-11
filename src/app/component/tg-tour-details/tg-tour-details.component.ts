@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ToursService } from 'src/app/Services/tours.service';
 import { environment } from 'src/environments/environment';
 import { ApiPaths } from 'src/app/Enums/api-paths';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-tg-tour-details',
@@ -13,6 +14,7 @@ import { ApiPaths } from 'src/app/Enums/api-paths';
 })
 export class TgTourDetailsComponent implements OnInit{
   constructor(
+    private toastr: ToastrService,
     private toursService: ToursService,
     private titleService:Title,
     private route: ActivatedRoute,
@@ -20,6 +22,7 @@ export class TgTourDetailsComponent implements OnInit{
     ) {}
 
   Photos: any[]=[];
+  Urls: any[]=[];
   tourById:any;
   @Input() tour:any;
   checkForTour:any;
@@ -27,7 +30,7 @@ export class TgTourDetailsComponent implements OnInit{
 
   ngOnInit(): void {
     this.tourById = this.route.snapshot.paramMap.get('id');
-    this.checkForTour =this.tour? this.tour.dateTo < new Date():0;
+    this.checkForTour =this.tour? new Date(this.tour.dateTo) < new Date():false;
   }
 
   get isFormValid(): boolean {
@@ -35,15 +38,22 @@ export class TgTourDetailsComponent implements OnInit{
   }
 
   onSubmit(){
-    const requestBody = {
-      tourid: Number(this.tourById),
-      photoDtos: this.Photos
-    };
+    // const requestBody = {
+    //   tourid: Number(this.tourById),
+    //   photoDtos: this.Photos
+    // };
     this.http.post(environment.baseUrl+ "" + ApiPaths.tour + ApiPaths.pics, this.Photos).subscribe(
       response => {
         //console.log('Answer submitted successfully');
-        //console.log(this.Photos);
+        console.log(this.Urls);
+
+        this.tour.photos =this.tour.photos.concat( this.Urls.map(url =>{
+          return url.url;
+        }));
+        console.log(this.tour.photos);
+        this.toastr.success('uploaded successfully');
         this.Photos = [];
+        this.Urls = [];
       }, error => {
         //console.log('Error occurred during uploading.');
         console.error(error);

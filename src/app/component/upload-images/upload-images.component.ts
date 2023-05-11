@@ -14,6 +14,7 @@ export class UploadImagesComponent {
   selectedFiles: File[] = [];
   uploadedUrls: any[] = [];
   @Output() imagesUrls = new EventEmitter<any>();
+  @Output() PastToursPhotos = new EventEmitter<any>();
   @Output() PastToursUrls = new EventEmitter<any>();
   tourPhoto:any[]=[];
   pastPhoto:any[]=[];
@@ -93,8 +94,9 @@ export class UploadImagesComponent {
             };
           });
           this.isUploaded=true;
-          this.PastToursUrls.emit(this.pastPhoto);
-          //console.log(this.tourId);
+          this.PastToursPhotos.emit(this.pastPhoto);
+          this.PastToursUrls.emit(this.uploadedUrls);
+          console.log(this.uploadedUrls);
           //console.log(this.pastPhoto);
 
         }
