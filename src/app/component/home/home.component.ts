@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     // Make the API call to increment the views count
-    this.http.post<number>('https://localhost:7277/api/Admin/incrementviews', {}).subscribe((result) => {
+    this.http.post<number>('https://localhost:7277/api/dashboard/incrementviews', {}).subscribe((result) => {
       // Update the views count with the result from the API call
 
     });
