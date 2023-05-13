@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ApiPaths } from 'src/app/Enums/api-paths';
 import { ToursService } from 'src/app/Services/tours.service';
 import { environment } from 'src/environments/environment';
@@ -15,6 +16,7 @@ import { environment } from 'src/environments/environment';
 export class CustTourDetailsComponent implements OnInit{
   askQuestion:FormGroup;
   constructor(
+    private toastr: ToastrService,
     private toursService: ToursService,
     private titleService:Title,
     private route: ActivatedRoute,
@@ -39,6 +41,9 @@ export class CustTourDetailsComponent implements OnInit{
       };
       this.http.post("https://localhost:7277/api/Tour/AddQuestion", questionDto).subscribe({
         next:()=>{
+          const input = document.getElementById("book") as HTMLInputElement;
+          input.value = "";
+          this.toastr.success('question is sent successfully');
           ////console.log("thanks for asking us");
         },
         error:()=>{
